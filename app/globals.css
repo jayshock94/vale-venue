@@ -235,6 +235,31 @@ body {
 }
 
 /* ─────────────────────────────────────────────────────────────────────────────
+   GLASS CARD SURFACES
+   Two variants: warm (profile-placeholder tone) and dark (black glass).
+   Border + highlight are baked in — do not also apply Tailwind border-* classes.
+   ───────────────────────────────────────────────────────────────────────────── */
+.card-warm-glass {
+  background: rgba(237, 231, 217, 0.60); /* neutral-100 at 60% — same as Bobbi avatar */
+  border: 1px solid rgba(255, 255, 255, 0.78);
+  box-shadow:
+    0 2px 20px rgba(28, 25, 23, 0.07),
+    inset 0 1px 0 rgba(255, 255, 255, 0.95); /* top-edge shine */
+  backdrop-filter: blur(6px) saturate(1.12);
+  -webkit-backdrop-filter: blur(6px) saturate(1.12);
+}
+
+.card-dark-glass {
+  background: rgba(12, 10, 9, 0.82);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  box-shadow:
+    0 8px 36px rgba(0, 0, 0, 0.45),
+    inset 0 1px 0 rgba(255, 255, 255, 0.09); /* top-edge shimmer */
+  backdrop-filter: blur(14px) saturate(1.06);
+  -webkit-backdrop-filter: blur(14px) saturate(1.06);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
    CONTACT FORM ANIMATIONS
    ───────────────────────────────────────────────────────────────────────────── */
 @keyframes vale-pop {

@@ -215,7 +215,7 @@ export default function AmenityList() {
               role="region"
               aria-label={amenity.label}
               className={cn(
-                'bg-neutral-0 border border-rule-light rounded-soft px-6 py-5',
+                'card-warm-glass rounded-soft px-6 py-5',
                 'flex items-start gap-4',
                 activeId === amenity.id ? 'block' : 'hidden'
               )}

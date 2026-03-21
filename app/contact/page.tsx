@@ -167,7 +167,7 @@ export default async function ContactPage({
               </div>
 
               {/* Right — Form card */}
-              <div className="order-1 md:order-2 bg-neutral-0 border border-rule rounded-soft px-5 py-8 md:px-8 md:py-10">
+              <div className="order-1 md:order-2 card-warm-glass rounded-soft px-5 py-8 md:px-8 md:py-10">
                 <ContactForm defaultDate={date} defaultEndDate={dateTo} />
               </div>
 

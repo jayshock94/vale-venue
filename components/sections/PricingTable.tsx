@@ -66,10 +66,8 @@ function PricingCard({ pkg }: { pkg: PricingPackage }) {
   return (
     <div
       className={cn(
-        'rounded-soft border flex flex-col',
-        featured
-          ? 'bg-[var(--pricing-card-featured-bg)] border-[var(--pricing-card-featured-bg)]'
-          : 'bg-neutral-0 border-rule'
+        'rounded-soft flex flex-col',
+        featured ? 'card-dark-glass' : 'card-warm-glass'
       )}
     >
       {/* Header block */}
