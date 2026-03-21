@@ -1,0 +1,526 @@
+{
+  "$schema": "https://raw.githubusercontent.com/design-tokens/community-group/main/format/dtcg.json",
+  "$metadata": {
+    "project": "The Vale",
+    "address": "1078 South 250 East, Provo, Utah",
+    "version": "2.0.0",
+    "description": "Single source of truth. No hardcoded values anywhere in the codebase. Everything traces back here.",
+    "fonts": {
+      "display": "Playfair Display",
+      "ui": "DM Sans",
+      "googleFontsUrl": "https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap"
+    },
+    "rules": {
+      "serif": "Emotion and money only — hero headline, prices, pull quotes, logo, one italic accent word per card title",
+      "sans": "Everything else — nav, buttons, body, labels, forms, amenities, badges",
+      "gold": "Appears max 3 times per page — primary CTA button, price values, one accent word",
+      "no-hardcoding": "NEVER hardcode a color, font, or spacing value. Everything must reference a token."
+    }
+  },
+
+  "color": {
+    "primitive": {
+      "gold": {
+        "50":  { "$value": "#FAF5EE", "$type": "color" },
+        "100": { "$value": "#F2E6D4", "$type": "color" },
+        "200": { "$value": "#E5CBA8", "$type": "color" },
+        "300": { "$value": "#D9B082", "$type": "color" },
+        "400": { "$value": "#C9A06E", "$type": "color", "$description": "Brand primary — source color" },
+        "500": { "$value": "#B8892F", "$type": "color" },
+        "600": { "$value": "#9A7128", "$type": "color" },
+        "700": { "$value": "#7A5920", "$type": "color" },
+        "800": { "$value": "#5A4118", "$type": "color" },
+        "900": { "$value": "#3A290F", "$type": "color" }
+      },
+      "neutral": {
+        "0":   { "$value": "#FFFFFF", "$type": "color" },
+        "50":  { "$value": "#F5F0E8", "$type": "color", "$description": "Cream — page background" },
+        "100": { "$value": "#EDE7D9", "$type": "color" },
+        "150": { "$value": "#E5DDD0", "$type": "color" },
+        "200": { "$value": "#DDD6CA", "$type": "color" },
+        "300": { "$value": "#C8BFAF", "$type": "color", "$description": "Stone — borders on light" },
+        "400": { "$value": "#A09890", "$type": "color", "$description": "Ghost — placeholders" },
+        "500": { "$value": "#7C7469", "$type": "color", "$description": "Muted — body copy" },
+        "600": { "$value": "#4A4641", "$type": "color" },
+        "700": { "$value": "#2E2B27", "$type": "color" },
+        "800": { "$value": "#1C1917", "$type": "color", "$description": "Ink — hero, footer, primary dark" },
+        "900": { "$value": "#0E0C0A", "$type": "color" }
+      },
+      "rule": {
+        "default": { "$value": "#D9D2C5", "$type": "color" },
+        "light":   { "$value": "#EDE7D9", "$type": "color" }
+      },
+      "sage": {
+        "50":  { "$value": "#EAF0EA", "$type": "color" },
+        "600": { "$value": "#5A6B5A", "$type": "color" },
+        "800": { "$value": "#3D4D3D", "$type": "color" }
+      },
+      "rust": {
+        "50":  { "$value": "#F5EDEA", "$type": "color" },
+        "600": { "$value": "#9C4A2A", "$type": "color" },
+        "800": { "$value": "#6B3020", "$type": "color" }
+      },
+      "amber": {
+        "50":  { "$value": "#FBF1E4", "$type": "color" },
+        "400": { "$value": "#C17B2A", "$type": "color" },
+        "800": { "$value": "#5A3810", "$type": "color" }
+      }
+    },
+    "semantic": {
+      "surface": {
+        "page":     { "$value": "{color.primitive.neutral.50}" },
+        "raised":   { "$value": "{color.primitive.neutral.0}" },
+        "sunken":   { "$value": "{color.primitive.neutral.100}" },
+        "dark":     { "$value": "{color.primitive.neutral.800}" },
+        "dark-mid": { "$value": "{color.primitive.neutral.700}" }
+      },
+      "text": {
+        "primary":     { "$value": "{color.primitive.neutral.800}" },
+        "secondary":   { "$value": "{color.primitive.neutral.600}" },
+        "muted":       { "$value": "{color.primitive.neutral.500}" },
+        "ghost":       { "$value": "{color.primitive.neutral.400}" },
+        "inverse":     { "$value": "{color.primitive.neutral.50}", "$description": "On dark — cream not white" },
+        "accent":      { "$value": "{color.primitive.gold.600}" },
+        "accent-dark": { "$value": "{color.primitive.gold.300}" }
+      },
+      "border": {
+        "subtle":  { "$value": "{color.primitive.rule.light}" },
+        "default": { "$value": "{color.primitive.rule.default}" },
+        "strong":  { "$value": "{color.primitive.neutral.300}" },
+        "accent":  { "$value": "{color.primitive.gold.400}" }
+      },
+      "status": {
+        "success-bg":     { "$value": "{color.primitive.sage.50}" },
+        "success-text":   { "$value": "{color.primitive.sage.800}" },
+        "success-border": { "$value": "{color.primitive.sage.600}" },
+        "warning-bg":     { "$value": "{color.primitive.rust.50}" },
+        "warning-text":   { "$value": "{color.primitive.rust.800}" },
+        "warning-border": { "$value": "{color.primitive.rust.600}" },
+        "progress-bg":    { "$value": "{color.primitive.amber.50}" },
+        "progress-text":  { "$value": "{color.primitive.amber.800}" }
+      }
+    }
+  },
+
+  "typography": {
+    "family": {
+      "display": { "$value": "Playfair Display", "$type": "fontFamily" },
+      "ui":      { "$value": "DM Sans",          "$type": "fontFamily" }
+    },
+    "weight": {
+      "light":    { "$value": 300, "$type": "fontWeight" },
+      "regular":  { "$value": 400, "$type": "fontWeight" },
+      "medium":   { "$value": 500, "$type": "fontWeight" },
+      "semibold": { "$value": 600, "$type": "fontWeight" }
+    },
+    "size": {
+      "10": { "$value": "10px", "$type": "fontSize" },
+      "11": { "$value": "11px", "$type": "fontSize" },
+      "12": { "$value": "12px", "$type": "fontSize" },
+      "13": { "$value": "13px", "$type": "fontSize" },
+      "14": { "$value": "14px", "$type": "fontSize" },
+      "15": { "$value": "15px", "$type": "fontSize" },
+      "18": { "$value": "18px", "$type": "fontSize" },
+      "20": { "$value": "20px", "$type": "fontSize" },
+      "24": { "$value": "24px", "$type": "fontSize" },
+      "34": { "$value": "34px", "$type": "fontSize" },
+      "40": { "$value": "40px", "$type": "fontSize" },
+      "52": { "$value": "52px", "$type": "fontSize" },
+      "80": { "$value": "80px", "$type": "fontSize" }
+    },
+    "lineHeight": {
+      "tight":   { "$value": 1.1 },
+      "snug":    { "$value": 1.25 },
+      "normal":  { "$value": 1.5 },
+      "relaxed": { "$value": 1.7 },
+      "loose":   { "$value": 1.85 }
+    },
+    "letterSpacing": {
+      "tight":   { "$value": "-0.02em" },
+      "normal":  { "$value": "0" },
+      "btn":     { "$value": "0.06em",  "$description": "All button labels" },
+      "label":   { "$value": "0.22em",  "$description": "Form labels" },
+      "nav":     { "$value": "0.14em",  "$description": "Nav links" },
+      "eyebrow": { "$value": "0.30em",  "$description": "Section eyebrow labels" },
+      "badge":   { "$value": "0.12em" },
+      "stat":    { "$value": "0.12em" }
+    }
+  },
+
+  "spacing": {
+    "$description": "4px base unit. All values are multiples of 4. Never use arbitrary values like 13px, 22px, 37px.",
+    "1":  { "$value": "4px",  "$type": "spacing" },
+    "2":  { "$value": "8px",  "$type": "spacing" },
+    "3":  { "$value": "12px", "$type": "spacing" },
+    "4":  { "$value": "16px", "$type": "spacing" },
+    "5":  { "$value": "20px", "$type": "spacing" },
+    "6":  { "$value": "24px", "$type": "spacing" },
+    "8":  { "$value": "32px", "$type": "spacing" },
+    "10": { "$value": "40px", "$type": "spacing" },
+    "12": { "$value": "48px", "$type": "spacing" },
+    "16": { "$value": "64px", "$type": "spacing" },
+    "20": { "$value": "80px", "$type": "spacing" },
+    "24": { "$value": "96px", "$type": "spacing" },
+    "page-x":            { "$value": "48px", "$description": "Horizontal page padding desktop" },
+    "page-x-tablet":     { "$value": "32px" },
+    "page-x-mobile":     { "$value": "20px" },
+    "section":           { "$value": "96px", "$description": "Between all major page sections" },
+    "section-tight":     { "$value": "64px", "$description": "Section header to its component" },
+    "nav-height":        { "$value": "64px" },
+    "nav-height-mobile": { "$value": "56px" }
+  },
+
+  "borderRadius": {
+    "none":   { "$value": "0px" },
+    "sharp":  { "$value": "2px", "$description": "Badges — never pill-shaped" },
+    "button": { "$value": "6px", "$description": "CTA buttons — soft but not pill" },
+    "soft":   { "$value": "3px", "$description": "Cards" },
+    "admin":  { "$value": "4px", "$description": "Admin panels and inputs" }
+  },
+
+  "shadow": {
+    "none":       { "$value": "none" },
+    "focus-gold": { "$value": "0 0 0 3px rgba(201,160,110,0.20)", "$description": "Gold focus ring" },
+    "focus-ink":  { "$value": "0 0 0 3px rgba(28,25,23,0.15)" }
+  },
+
+  "transition": {
+    "fast":    { "$value": "130ms ease" },
+    "default": { "$value": "150ms ease" },
+    "slow":    { "$value": "300ms ease" }
+  },
+
+  "component": {
+    "button": {
+      "$description": "Material 3 sizing specs. Vale aesthetic. All colors are token references.",
+      "height-sm":       { "$value": "36px" },
+      "height-md":       { "$value": "40px" },
+      "height-lg":       { "$value": "48px" },
+      "height-mobile":   { "$value": "48px", "$description": "Minimum touch target" },
+      "padding-sm":      { "$value": "0 20px" },
+      "padding-md":      { "$value": "0 32px" },
+      "padding-lg":      { "$value": "0 40px" },
+      "font-size-sm":    { "$value": "{typography.size.11}" },
+      "font-size-md":    { "$value": "{typography.size.12}" },
+      "font-size-lg":    { "$value": "{typography.size.13}" },
+      "font-weight":     { "$value": "{typography.weight.semibold}" },
+      "letter-spacing":  { "$value": "{typography.letterSpacing.btn}" },
+      "text-transform":  { "$value": "uppercase" },
+      "border-radius":   { "$value": "{borderRadius.button}" },
+      "gap":             { "$value": "{spacing.2}" },
+      "group-gap":       { "$value": "{spacing.3}" },
+      "transition":      { "$value": "{transition.fast}" },
+      "gold": {
+        "bg":         { "$value": "{color.primitive.gold.400}" },
+        "bg-hover":   { "$value": "{color.primitive.gold.500}" },
+        "text":       { "$value": "{color.primitive.neutral.800}" },
+        "text-hover": { "$value": "{color.primitive.neutral.50}" }
+      },
+      "ink": {
+        "bg":         { "$value": "{color.primitive.neutral.800}" },
+        "bg-hover":   { "$value": "{color.primitive.neutral.700}" },
+        "text":       { "$value": "{color.primitive.neutral.50}" }
+      },
+      "outline": {
+        "bg":           { "$value": "transparent" },
+        "bg-hover":     { "$value": "{color.primitive.neutral.800}" },
+        "text":         { "$value": "{color.primitive.neutral.600}" },
+        "text-hover":   { "$value": "{color.primitive.neutral.50}" },
+        "border":       { "$value": "{color.primitive.neutral.300}" },
+        "border-hover": { "$value": "{color.primitive.neutral.800}" }
+      },
+      "ghost": {
+        "bg":          { "$value": "transparent" },
+        "text":        { "$value": "{color.primitive.neutral.500}" },
+        "text-hover":  { "$value": "{color.primitive.neutral.800}" },
+        "arrow-nudge": { "$value": "3px" }
+      },
+      "ghost-dark": {
+        "text":       { "$value": "rgba(245,240,232,0.40)" },
+        "text-hover": { "$value": "rgba(245,240,232,0.85)" }
+      },
+      "state-layer-hover-light": { "$value": "rgba(255,255,255,0.12)", "$description": "Hover overlay on gold and outline buttons" },
+      "state-layer-hover-dark":  { "$value": "rgba(255,255,255,0.08)", "$description": "Hover overlay on ink buttons" },
+      "state-layer-active":      { "$value": "rgba(0,0,0,0.10)",       "$description": "Active/press overlay on all buttons" }
+    },
+
+    "input": {
+      "$description": "Bottom-line style on public site. Full border on admin.",
+      "height-public":       { "$value": "56px", "$description": "Material 3 standard" },
+      "height-admin":        { "$value": "40px" },
+      "textarea-min-height": { "$value": "120px" },
+      "padding":             { "$value": "16px" },
+      "font-size":           { "$value": "{typography.size.14}" },
+      "font-weight":         { "$value": "{typography.weight.light}" },
+      "label-font-size":     { "$value": "{typography.size.11}" },
+      "label-font-weight":   { "$value": "{typography.weight.semibold}" },
+      "label-spacing":       { "$value": "{typography.letterSpacing.label}" },
+      "label-color":         { "$value": "{color.primitive.gold.600}" },
+      "border-default":      { "$value": "{color.primitive.rule.default}" },
+      "border-focused":      { "$value": "{color.primitive.gold.400}" },
+      "border-error":        { "$value": "{color.primitive.rust.600}" },
+      "border-width-default":{ "$value": "1px" },
+      "border-width-focused":{ "$value": "2px" },
+      "focus-ring":          { "$value": "{shadow.focus-gold}" },
+      "field-gap":           { "$value": "{spacing.6}" },
+      "group-gap":           { "$value": "{spacing.8}" }
+    },
+
+    "nav": {
+      "height":             { "$value": "{spacing.nav-height}" },
+      "height-mobile":      { "$value": "{spacing.nav-height-mobile}" },
+      "padding-x":          { "$value": "{spacing.page-x}" },
+      "bg-light":           { "$value": "{color.semantic.surface.page}" },
+      "bg-dark":            { "$value": "transparent" },
+      "border-light":       { "$value": "{color.semantic.border.subtle}" },
+      "link-color-light":   { "$value": "{color.semantic.text.muted}" },
+      "link-color-dark":    { "$value": "rgba(245,240,232,0.50)" },
+      "link-active-light":  { "$value": "{color.semantic.text.primary}" },
+      "link-active-dark":   { "$value": "{color.semantic.text.inverse}" },
+      "link-active-border": { "$value": "{color.primitive.gold.400}" },
+      "link-spacing":       { "$value": "{spacing.8}" },
+      "font-size":          { "$value": "{typography.size.10}" },
+      "letter-spacing":     { "$value": "{typography.letterSpacing.nav}" }
+    },
+
+    "section": {
+      "gap":                    { "$value": "{spacing.section}" },
+      "gap-tight":              { "$value": "{spacing.section-tight}" },
+      "padding-x":              { "$value": "{spacing.page-x}" },
+      "padding-x-mobile":       { "$value": "{spacing.page-x-mobile}" },
+      "hero-min-height":        { "$value": "100vh" },
+      "hero-padding-top":       { "$value": "120px" },
+      "page-hero-height":       { "$value": "240px" },
+      "page-hero-height-mobile":{ "$value": "200px" }
+    },
+
+    "pricing-card": {
+      "$description": "Card-based pricing — each package is a discrete card object, not a table row.",
+      "card-bg":                   { "$value": "{color.primitive.neutral.0}",        "$description": "White card surface on cream page" },
+      "card-border":               { "$value": "{color.semantic.border.default}" },
+      "card-radius":               { "$value": "{borderRadius.soft}" },
+      "card-padding-x":            { "$value": "{spacing.8}",                        "$description": "32px" },
+      "card-padding-y":            { "$value": "{spacing.8}",                        "$description": "32px" },
+      "card-featured-bg":          { "$value": "{color.semantic.surface.dark}",      "$description": "Ink — Full Day is the visual anchor" },
+      "card-featured-border":      { "$value": "{color.semantic.surface.dark}" },
+      "eyebrow-size":              { "$value": "{typography.size.10}" },
+      "eyebrow-weight":            { "$value": "{typography.weight.semibold}" },
+      "eyebrow-spacing":           { "$value": "{typography.letterSpacing.eyebrow}" },
+      "eyebrow-color":             { "$value": "{color.semantic.text.accent}" },
+      "eyebrow-color-featured":    { "$value": "{color.primitive.gold.300}" },
+      "name-font":                 { "$value": "{typography.family.display}" },
+      "name-size":                 { "$value": "{typography.size.24}" },
+      "name-color":                { "$value": "{color.semantic.text.primary}" },
+      "name-color-featured":       { "$value": "{color.semantic.text.inverse}" },
+      "meta-size":                 { "$value": "{typography.size.12}" },
+      "meta-weight":               { "$value": "{typography.weight.light}" },
+      "meta-color":                { "$value": "{color.semantic.text.muted}" },
+      "meta-color-featured":       { "$value": "rgba(245,240,232,0.45)" },
+      "rule-color":                { "$value": "{color.primitive.gold.400}",          "$description": "Horizontal rule between name block and price rows" },
+      "rule-color-featured":       { "$value": "{color.primitive.gold.300}" },
+      "day-label-size":            { "$value": "{typography.size.11}" },
+      "day-label-weight":          { "$value": "{typography.weight.regular}" },
+      "day-label-color":           { "$value": "{color.semantic.text.muted}" },
+      "day-label-color-featured":  { "$value": "rgba(245,240,232,0.50)" },
+      "price-font":                { "$value": "{typography.family.display}" },
+      "price-size":                { "$value": "{typography.size.18}" },
+      "price-color":               { "$value": "{color.semantic.text.primary}" },
+      "price-color-featured":      { "$value": "{color.semantic.text.inverse}" },
+      "row-border":                { "$value": "{color.semantic.border.subtle}" },
+      "row-border-featured":       { "$value": "rgba(245,240,232,0.10)" },
+      "footnote-size":             { "$value": "{typography.size.11}",                "$description": "Ghost-level — disappears behind CTA" },
+      "footnote-color":            { "$value": "{color.semantic.text.ghost}" },
+      "callout-bg":                { "$value": "{color.primitive.gold.50}",           "$description": "Warm background — no surrounding border" },
+      "callout-accent":            { "$value": "{color.primitive.gold.400}",          "$description": "Left accent line only — invitation, not form-field border" },
+      "callout-accent-width":      { "$value": "3px" }
+    },
+
+    "calendar": {
+      "$description": "Public read-only availability calendar — shows open/booked dates before inquiry.",
+      "day-radius":          { "$value": "{borderRadius.sharp}" },
+      "day-bg":              { "$value": "{color.primitive.neutral.0}" },
+      "day-border":          { "$value": "{color.semantic.border.default}" },
+      "day-color":           { "$value": "{color.semantic.text.primary}" },
+      "day-hover-border":    { "$value": "{color.primitive.gold.400}" },
+      "day-hover-color":     { "$value": "{color.primitive.gold.600}" },
+      "day-bg-booked":       { "$value": "{color.primitive.neutral.100}" },
+      "day-color-booked":    { "$value": "{color.primitive.neutral.300}" },
+      "day-color-past":      { "$value": "{color.primitive.neutral.300}" },
+      "day-today-border":    { "$value": "{color.primitive.gold.400}" },
+      "day-bg-selected":     { "$value": "{color.primitive.gold.400}" },
+      "day-color-selected":  { "$value": "{color.semantic.text.primary}" },
+      "nav-color":           { "$value": "{color.semantic.text.muted}" },
+      "nav-color-hover":     { "$value": "{color.semantic.text.primary}" }
+    },
+
+    "select": {
+      "$description": "Custom dropdown — trigger matches input bottom-border style, panel is Vale-branded.",
+      "panel-bg":             { "$value": "{color.primitive.neutral.0}" },
+      "panel-border":         { "$value": "{color.semantic.border.default}" },
+      "panel-radius":         { "$value": "{borderRadius.soft}" },
+      "panel-shadow":         { "$value": "0 4px 20px rgba(28,25,23,0.08)" },
+      "option-height":        { "$value": "48px" },
+      "option-color":         { "$value": "{color.semantic.text.primary}" },
+      "option-bg-hover":      { "$value": "{color.primitive.neutral.50}" },
+      "option-bg-selected":   { "$value": "{color.primitive.gold.50}" },
+      "option-color-selected":{ "$value": "{color.semantic.text.accent}" },
+      "chevron-color":        { "$value": "{color.semantic.text.muted}" },
+      "chevron-color-open":   { "$value": "{color.primitive.gold.400}" }
+    },
+
+    "amenity": {
+      "$description": "Chip grid — scan quickly, click for detail. Each amenity is a discrete interactive pill.",
+      "chip-height":          { "$value": "48px", "$description": "Matches --touch-target-min" },
+      "chip-padding":         { "$value": "0 18px" },
+      "chip-bg":              { "$value": "transparent" },
+      "chip-bg-active":       { "$value": "{color.primitive.gold.50}" },
+      "chip-border":          { "$value": "{color.semantic.border.default}" },
+      "chip-border-active":   { "$value": "{color.primitive.gold.400}" },
+      "chip-radius":          { "$value": "999px", "$description": "Full pill" },
+      "chip-icon-size":       { "$value": "16px" },
+      "chip-icon-color":      { "$value": "{color.semantic.text.muted}" },
+      "chip-icon-color-active": { "$value": "{color.primitive.gold.500}" },
+      "chip-label-size":      { "$value": "{typography.size.13}" },
+      "chip-label-weight":    { "$value": "{typography.weight.medium}" },
+      "chip-label-color":     { "$value": "{color.semantic.text.secondary}" },
+      "chip-label-color-active": { "$value": "{color.semantic.text.primary}" },
+      "detail-bg":            { "$value": "{color.primitive.neutral.0}" },
+      "detail-border":        { "$value": "{color.semantic.border.subtle}" },
+      "detail-radius":        { "$value": "{borderRadius.soft}" },
+      "detail-headline-size": { "$value": "{typography.size.15}" },
+      "detail-body-size":     { "$value": "{typography.size.14}" }
+    },
+
+    "gallery-filter": {
+      "$description": "Filter tabs styled as controls — bordered, filled active state.",
+      "tab-height":         "36px",
+      "tab-padding":        "0 16px",
+      "tab-radius":         { "$value": "{borderRadius.button}" },
+      "tab-bg":             { "$value": "transparent" },
+      "tab-bg-active":      { "$value": "{color.semantic.surface.dark}" },
+      "tab-border":         { "$value": "{color.semantic.border.default}" },
+      "tab-border-active":  { "$value": "{color.semantic.surface.dark}" },
+      "tab-color":          { "$value": "{color.semantic.text.secondary}" },
+      "tab-color-active":   { "$value": "{color.semantic.text.inverse}" },
+      "tab-font-size":      { "$value": "{typography.size.11}" },
+      "tab-font-weight":    { "$value": "{typography.weight.semibold}" },
+      "tab-letter-spacing": { "$value": "{typography.letterSpacing.btn}" }
+    },
+
+    "event-card": {
+      "$description": "CTA row is structurally defined — separated from body by a rule.",
+      "radius":             { "$value": "{borderRadius.soft}" },
+      "content-padding":    "20px 24px",
+      "cta-font-size":      { "$value": "{typography.size.11}" },
+      "cta-letter-spacing": { "$value": "{typography.letterSpacing.btn}" },
+      "cta-color":          { "$value": "{color.primitive.gold.600}" },
+      "cta-color-hover":    { "$value": "{color.primitive.gold.500}" },
+      "cta-border-top":     { "$value": "{color.semantic.border.subtle}" },
+      "cta-padding":        "12px 24px"
+    },
+
+    "testimonial": {
+      "bg":          { "$value": "{color.semantic.surface.dark}" },
+      "quote-size":  { "$value": "{typography.size.20}" },
+      "quote-color": { "$value": "rgba(245,240,232,0.85)" },
+      "attr-color":  { "$value": "rgba(245,240,232,0.30)" },
+      "rule-color":  { "$value": "rgba(201,160,110,0.30)" }
+    },
+
+    "stats-bar": {
+      "height":        { "$value": "88px" },
+      "number-size":   { "$value": "{typography.size.34}" },
+      "number-font":   { "$value": "{typography.family.display}" },
+      "number-weight": { "$value": "{typography.weight.semibold}" },
+      "label-size":    { "$value": "{typography.size.10}" },
+      "label-spacing": { "$value": "{typography.letterSpacing.stat}" }
+    },
+
+    "badge": {
+      "height":         { "$value": "20px" },
+      "padding":        { "$value": "0 8px" },
+      "font-size":      { "$value": "{typography.size.10}" },
+      "font-weight":    { "$value": "{typography.weight.semibold}" },
+      "letter-spacing": { "$value": "{typography.letterSpacing.badge}" },
+      "border-radius":  { "$value": "{borderRadius.sharp}" }
+    },
+
+    "flag": {
+      "border-width":  { "$value": "3px", "$description": "Left side only. No border-radius." },
+      "border-radius": { "$value": "0" },
+      "padding":       { "$value": "12px 16px" },
+      "font-size":     { "$value": "{typography.size.12}" },
+      "font-weight":   { "$value": "{typography.weight.light}" }
+    },
+
+    "faq": {
+      "row-min-height":  { "$value": "56px" },
+      "padding":         { "$value": "20px 0" },
+      "question-size":   { "$value": "{typography.size.14}" },
+      "question-weight": { "$value": "{typography.weight.medium}" },
+      "answer-size":     { "$value": "{typography.size.13}" },
+      "answer-weight":   { "$value": "{typography.weight.light}" }
+    },
+
+    "touch-target": {
+      "min-size": { "$value": "48px", "$description": "Material 3 minimum. All interactive elements on mobile." }
+    },
+
+    "admin": {
+      "$description": "Separate design language — functional, neutral, gold accents only",
+      "nav-height":    { "$value": "52px" },
+      "sidebar-width": { "$value": "200px" },
+      "panel-bg":      { "$value": "#FFFFFF" },
+      "panel-border":  { "$value": "1px solid #E0E0E0" },
+      "panel-radius":  { "$value": "{borderRadius.admin}" },
+      "panel-padding": { "$value": "20px 24px" },
+      "page-bg":       { "$value": "#F8F8F8" },
+      "text-primary":  { "$value": "#1A1A1A" },
+      "text-muted":    { "$value": "#888888" },
+      "border-color":  { "$value": "#E0E0E0" },
+      "accent":        { "$value": "{color.primitive.gold.400}" }
+    }
+  },
+
+  "layout": {
+    "$description": "Asymmetric editorial layouts. Never use repeat(3, 1fr) for content sections.",
+    "hero":           { "columns": "1fr 320px",                  "gap": "72px" },
+    "section-header": { "columns": "1fr 480px",                  "gap": "80px" },
+    "event-cards":    { "columns": "1.8fr 1fr",                  "description": "Large dominant + two stacked" },
+    "pricing-cards":  { "columns": "1fr 1fr 1fr",                "description": "Three equal cards — Half Day Morning | Half Day Evening | Full Day (featured)" },
+    "amenity-grid":   { "columns": "1fr 1fr" },
+    "footer":         { "columns": "1.5fr 1fr 1fr 1fr" }
+  },
+
+  "max-width": {
+    "body-text": { "$value": "680px" },
+    "content":   { "$value": "1280px" },
+    "form":      { "$value": "600px" },
+    "pricing":   { "$value": "840px" }
+  },
+
+  "breakpoint": {
+    "mobile":  { "$value": "375px" },
+    "tablet":  { "$value": "768px", "$description": "Nav collapses to hamburger" },
+    "laptop":  { "$value": "1024px" },
+    "desktop": { "$value": "1280px" }
+  },
+
+  "content": {
+    "venue": {
+      "name":           "The Vale",
+      "full-name":      "The Vale at Ten Seventy-Eight",
+      "tagline":        "A modern event space at the base of the Wasatch mountains.",
+      "address":        "1078 South 250 East, Provo, Utah",
+      "phone":          "801-592-6287",
+      "email":          "bobbi@valevenue.com",
+      "hours":          "By appointment, Mon - Sat",
+      "capacity":       "100 guests",
+      "starting-price": "$300"
+    },
+    "nav-links":     ["Home", "Pricing", "Gallery", "Contact"],
+    "cta-primary":   "Book the Space",
+    "cta-secondary": "Check Availability",
+    "cta-nav":       "Book Now"
+  }
+}

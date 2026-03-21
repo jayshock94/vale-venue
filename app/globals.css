@@ -1,26 +1,270 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
+/* ─────────────────────────────────────────────────────────────────────────────
+   DESIGN SYSTEM TOKEN PIPELINE
+   Source: lib/vale-design-system.json
+   Rule: No hardcoded values below this block. Everything references a var().
+   ───────────────────────────────────────────────────────────────────────────── */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* ── Fonts (fallbacks; overridden by next/font on <html>) ── */
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-sans:  'DM Sans', system-ui, sans-serif;
+
+  /* ── Color primitives ── */
+  --color-gold-50:       #FAF5EE;
+  --color-gold-100:      #F2E6D4;
+  --color-gold-200:      #E5CBA8;
+  --color-gold-300:      #D9B082;
+  --color-gold-400:      #C9A06E;
+  --color-gold-500:      #B8892F;
+  --color-gold-600:      #9A7128;
+  --color-gold-700:      #7A5920;
+  --color-gold-800:      #5A4118;
+  --color-gold-900:      #3A290F;
+
+  --color-neutral-0:     #FFFFFF;
+  --color-neutral-50:    #F5F0E8;
+  --color-neutral-100:   #EDE7D9;
+  --color-neutral-150:   #E5DDD0;
+  --color-neutral-200:   #DDD6CA;
+  --color-neutral-300:   #C8BFAF;
+  --color-neutral-400:   #A09890;
+  --color-neutral-500:   #7C7469;
+  --color-neutral-600:   #4A4641;
+  --color-neutral-700:   #2E2B27;
+  --color-neutral-800:   #1C1917;
+  --color-neutral-900:   #0E0C0A;
+
+  --color-rule:          #D9D2C5;
+  --color-rule-light:    #EDE7D9;
+
+  --color-sage-50:       #EAF0EA;
+  --color-sage-600:      #5A6B5A;
+  --color-sage-800:      #3D4D3D;
+
+  --color-rust-50:       #F5EDEA;
+  --color-rust-600:      #9C4A2A;
+  --color-rust-800:      #6B3020;
+
+  --color-amber-50:      #FBF1E4;
+  --color-amber-400:     #C17B2A;
+  --color-amber-800:     #5A3810;
+
+  /* ── Semantic color aliases ── */
+  --surface-page:        var(--color-neutral-50);
+  --surface-raised:      var(--color-neutral-0);
+  --surface-sunken:      var(--color-neutral-100);
+  --surface-dark:        var(--color-neutral-800);
+  --surface-dark-mid:    var(--color-neutral-700);
+
+  --text-primary:        var(--color-neutral-800);
+  --text-secondary:      var(--color-neutral-600);
+  --text-muted:          var(--color-neutral-500);
+  --text-ghost:          var(--color-neutral-400);
+  --text-inverse:        var(--color-neutral-50);
+  --text-accent:         var(--color-gold-600);
+  --text-accent-dark:    var(--color-gold-300);
+
+  --border-subtle:       var(--color-rule-light);
+  --border-default:      var(--color-rule);
+  --border-strong:       var(--color-neutral-300);
+  --border-accent:       var(--color-gold-400);
+
+  --status-success-bg:     var(--color-sage-50);
+  --status-success-text:   var(--color-sage-800);
+  --status-success-border: var(--color-sage-600);
+  --status-warning-bg:     var(--color-rust-50);
+  --status-warning-text:   var(--color-rust-800);
+  --status-warning-border: var(--color-rust-600);
+  --status-progress-bg:    var(--color-amber-50);
+  --status-progress-text:  var(--color-amber-800);
+
+  /* ── Spacing ── */
+  --space-1:               4px;
+  --space-2:               8px;
+  --space-3:               12px;
+  --space-4:               16px;
+  --space-5:               20px;
+  --space-6:               24px;
+  --space-8:               32px;
+  --space-10:              40px;
+  --space-12:              48px;
+  --space-16:              64px;
+  --space-20:              80px;
+  --space-24:              96px;
+  --space-page-x:          48px;
+  --space-page-x-tablet:   32px;
+  --space-page-x-mobile:   20px;
+  --space-section:         96px;
+  --space-section-tight:   64px;
+  --space-nav-height:      64px;
+  --space-nav-height-mobile: 56px;
+
+  /* ── Border radius ── */
+  --radius-none:   0px;
+  --radius-sharp:  2px;
+  --radius-button: 6px;
+  --radius-soft:   3px;
+  --radius-admin:  4px;
+
+  /* ── Shadows ── */
+  --shadow-focus-gold: 0 0 0 3px rgba(201, 160, 110, 0.20);
+  --shadow-focus-ink:  0 0 0 3px rgba(28, 25, 23, 0.15);
+
+  /* ── Transitions ── */
+  --transition-fast:    130ms ease;
+  --transition-default: 150ms ease;
+  --transition-slow:    300ms ease;
+
+  /* ── Typography ── */
+  --text-10: 10px;
+  --text-11: 11px;
+  --text-12: 12px;
+  --text-13: 13px;
+  --text-14: 14px;
+  --text-15: 15px;
+  --text-18: 18px;
+  --text-20: 20px;
+  --text-24: 24px;
+  --text-34: 34px;
+  --text-40: 40px;
+  --text-52: 52px;
+  --text-80: 80px;
+
+  --tracking-tight:   -0.02em;
+  --tracking-normal:  0;
+  --tracking-btn:     0.06em;
+  --tracking-label:   0.22em;
+  --tracking-nav:     0.14em;
+  --tracking-eyebrow: 0.30em;
+  --tracking-badge:   0.12em;
+  --tracking-stat:    0.12em;
+
+  /* ── Component tokens ── */
+  --btn-height-sm:     36px;
+  --btn-height-md:     40px;
+  --btn-height-lg:     48px;
+  --btn-height-mobile: 48px;
+  --btn-padding-sm:    0 20px;
+  --btn-padding-md:    0 32px;
+  --btn-padding-lg:    0 40px;
+  --btn-radius:        var(--radius-button);
+  --btn-transition:    var(--transition-fast);
+  --btn-sl-hover-light: rgba(255, 255, 255, 0.12);
+  --btn-sl-hover-dark:  rgba(255, 255, 255, 0.08);
+  --btn-sl-active:      rgba(0, 0, 0, 0.10);
+
+  --input-height-public:  56px;
+  --input-height-admin:   40px;
+  --input-textarea-min:   120px;
+  --input-padding:        16px;
+  --input-radius:         0px;
+  --input-focus-ring:     var(--shadow-focus-gold);
+
+  --nav-height:        var(--space-nav-height);
+  --nav-height-mobile: var(--space-nav-height-mobile);
+
+  --badge-height:      20px;
+  --badge-padding:     0 8px;
+  --badge-radius:      var(--radius-sharp);
+
+  --stats-bar-height:  88px;
+
+  --faq-row-min-height: 56px;
+  --touch-target-min:   48px;
+
+  /* ── Admin component values (separate design language) ── */
+  --admin-nav-height:   52px;
+  --admin-sidebar-width: 200px;
+  --admin-panel-bg:     #FFFFFF;
+  --admin-page-bg:      #F8F8F8;
+  --admin-alt-bg:       #FAFAFA;
+  --admin-divider:      #F0F0F0;
+  --admin-border:       #E0E0E0;
+  --admin-text-primary: #1A1A1A;
+  --admin-text-muted:   #888888;
+
+  /* ── Button ghost arrow nudge ── */
+  --btn-ghost-arrow-nudge: 3px;
+
+  /* ── Availability calendar ── */
+  --calendar-day-radius: var(--radius-sharp);
+
+  /* ── Select dropdown ── */
+  --select-panel-shadow: 0 4px 20px rgba(28,25,23,0.08);
+
+  /* ── Amenity chips ── */
+  --amenity-chip-height:          48px;
+  --amenity-chip-border-active:   var(--color-gold-400);
+  --amenity-chip-bg-active:       var(--color-gold-50);
+  --amenity-chip-icon-active:     var(--color-gold-500);
+
+  /* ── Gallery filter ── */
+  --gallery-filter-tab-height: 36px;
+
+  /* ── Pricing cards ── */
+  --pricing-card-featured-bg:         var(--surface-dark);
+  --pricing-card-rule-color:          var(--color-gold-400);
+  --pricing-card-rule-color-featured: var(--color-gold-300);
+  --pricing-callout-accent-width:     3px;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+/* ─────────────────────────────────────────────────────────────────────────────
+   GLOBAL BASE STYLES — all values via var()
+   ───────────────────────────────────────────────────────────────────────────── */
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  background-color: var(--surface-page);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--surface-page);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-default);
+  border-radius: var(--radius-soft);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   GLASS CARD SURFACES
+   Two variants: warm (profile-placeholder tone) and dark (black glass).
+   Border + highlight are baked in — do not also apply Tailwind border-* classes.
+   ───────────────────────────────────────────────────────────────────────────── */
+/* warm off-white — lighter than the neutral-50 page bg (#F5F0E8), not pure white */
+.card-warm-glass {
+  background: #FAF8F5;
+  border: 1px solid rgba(201, 160, 110, 0.40);
+  box-shadow: 0 1px 10px rgba(28, 25, 23, 0.06);
+}
+
+.card-dark-glass {
+  background: var(--color-neutral-800);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.30);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   CONTACT FORM ANIMATIONS
+   ───────────────────────────────────────────────────────────────────────────── */
+@keyframes vale-pop {
+  0%   { transform: scale(0);    opacity: 0; }
+  65%  { transform: scale(1.15); opacity: 1; }
+  100% { transform: scale(1);    opacity: 1; }
+}
+@keyframes vale-check-draw {
+  from { stroke-dashoffset: 24; }
+  to   { stroke-dashoffset: 0;  }
+}
+@keyframes vale-fade-up {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0);   }
 }
