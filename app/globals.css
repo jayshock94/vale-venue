@@ -13,32 +13,32 @@
   --font-sans:  'DM Sans', system-ui, sans-serif;
 
   /* ── Color primitives ── */
-  --color-gold-50:       #FAF5EE;
-  --color-gold-100:      #F2E6D4;
-  --color-gold-200:      #E5CBA8;
-  --color-gold-300:      #D9B082;
-  --color-gold-400:      #C9A06E;
-  --color-gold-500:      #B8892F;
-  --color-gold-600:      #9A7128;
-  --color-gold-700:      #7A5920;
-  --color-gold-800:      #5A4118;
-  --color-gold-900:      #3A290F;
+  --color-gold-50:       #FAF5EA;
+  --color-gold-100:      #F2E4C8;
+  --color-gold-200:      #E6C99A;
+  --color-gold-300:      #D8AB68;
+  --color-gold-400:      #C08840;
+  --color-gold-500:      #A87030;
+  --color-gold-600:      #8A5820;
+  --color-gold-700:      #6A4218;
+  --color-gold-800:      #4C2E10;
+  --color-gold-900:      #301A08;
 
   --color-neutral-0:     #FFFFFF;
-  --color-neutral-50:    #F5F0E8;
-  --color-neutral-100:   #EDE7D9;
-  --color-neutral-150:   #E5DDD0;
-  --color-neutral-200:   #DDD6CA;
-  --color-neutral-300:   #C8BFAF;
-  --color-neutral-400:   #A09890;
-  --color-neutral-500:   #7C7469;
-  --color-neutral-600:   #4A4641;
-  --color-neutral-700:   #2E2B27;
-  --color-neutral-800:   #1C1917;
-  --color-neutral-900:   #0E0C0A;
+  --color-neutral-50:    #EEEAE3;
+  --color-neutral-100:   #E5E1D8;
+  --color-neutral-150:   #DDD8CF;
+  --color-neutral-200:   #D4CFC6;
+  --color-neutral-300:   #BFB8AE;
+  --color-neutral-400:   #8A8078;
+  --color-neutral-500:   #6E6459;
+  --color-neutral-600:   #48423C;
+  --color-neutral-700:   #2C2824;
+  --color-neutral-800:   #1A1714;
+  --color-neutral-900:   #0D0B09;
 
-  --color-rule:          #D9D2C5;
-  --color-rule-light:    #EDE7D9;
+  --color-rule:          #CEC8C0;
+  --color-rule-light:    #E5E1D8;
 
   --color-sage-50:       #EAF0EA;
   --color-sage-600:      #5A6B5A;
@@ -110,8 +110,8 @@
   --radius-admin:  4px;
 
   /* ── Shadows ── */
-  --shadow-focus-gold: 0 0 0 3px rgba(201, 160, 110, 0.20);
-  --shadow-focus-ink:  0 0 0 3px rgba(28, 25, 23, 0.15);
+  --shadow-focus-gold: 0 0 0 3px rgba(192, 136, 64, 0.20);
+  --shadow-focus-ink:  0 0 0 3px rgba(26, 23, 20, 0.15);
 
   /* ── Transitions ── */
   --transition-fast:    130ms ease;
