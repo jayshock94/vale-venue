@@ -188,16 +188,15 @@ export default function PricingTable({
               <PricingCard key={pkg.id || pkg.name} pkg={pkg} />
             ))}
           </div>
-          <p className="font-sans font-light text-[length:var(--text-11)] text-neutral-400 border-t border-rule-light pt-3 mt-0">
-            All packages include full venue access, amenities, and parking.
-          </p>
-        </div>
-
-        {/* CTA */}
-        <div className="mt-6 flex justify-end">
-          <Button href="/contact" variant="gold" size="md">
-            Reserve Your Date
-          </Button>
+          {/* Footer row — footnote + CTA on same baseline, anchored to card grid */}
+          <div className="border-t border-rule-light pt-4 mt-0 flex items-center justify-between gap-4">
+            <p className="font-sans font-light text-[length:var(--text-11)] text-neutral-400">
+              All packages include full venue access, amenities, and parking.
+            </p>
+            <Button href="/contact" variant="gold" size="md" className="flex-shrink-0">
+              Reserve Your Date
+            </Button>
+          </div>
         </div>
 
         {/* Micro-event callout */}
