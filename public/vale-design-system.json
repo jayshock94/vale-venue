@@ -1,0 +1,554 @@
+{
+  "$schema": "https://raw.githubusercontent.com/design-tokens/community-group/main/format/dtcg.json",
+  "$metadata": {
+    "project": "The Vale",
+    "address": "1078 South 250 East, Provo, Utah",
+    "version": "1.0.0",
+    "description": "Complete design token system for The Vale venue website and admin interface",
+    "fonts": {
+      "display": "Playfair Display",
+      "ui": "DM Sans",
+      "googleFontsUrl": "https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap"
+    },
+    "rule": {
+      "serif": "Emotion and money only — hero headline, prices, pull quotes, logo, one italic word per card title",
+      "sans": "Everything else — nav, buttons, body, labels, forms, amenities, badges"
+    }
+  },
+
+  "color": {
+    "primitive": {
+      "gold": {
+        "50":  { "$value": "#FAF5EE", "$type": "color" },
+        "100": { "$value": "#F2E6D4", "$type": "color" },
+        "200": { "$value": "#E5CBA8", "$type": "color" },
+        "300": { "$value": "#D9B082", "$type": "color" },
+        "400": { "$value": "#C9A06E", "$type": "color", "$description": "Brand primary — source color" },
+        "500": { "$value": "#B8892F", "$type": "color" },
+        "600": { "$value": "#9A7128", "$type": "color" },
+        "700": { "$value": "#7A5920", "$type": "color" },
+        "800": { "$value": "#5A4118", "$type": "color" },
+        "900": { "$value": "#3A290F", "$type": "color" }
+      },
+      "neutral": {
+        "0":   { "$value": "#FFFFFF", "$type": "color" },
+        "50":  { "$value": "#F5F0E8", "$type": "color", "$description": "Cream — page background" },
+        "100": { "$value": "#EDE7D9", "$type": "color" },
+        "150": { "$value": "#E5DDD0", "$type": "color" },
+        "200": { "$value": "#DDD6CA", "$type": "color" },
+        "300": { "$value": "#C8BFAF", "$type": "color", "$description": "Stone" },
+        "400": { "$value": "#A09890", "$type": "color", "$description": "Ghost" },
+        "500": { "$value": "#7C7469", "$type": "color", "$description": "Muted" },
+        "600": { "$value": "#4A4641", "$type": "color", "$description": "Slate" },
+        "700": { "$value": "#2E2B27", "$type": "color", "$description": "Charcoal" },
+        "800": { "$value": "#1C1917", "$type": "color", "$description": "Ink — primary dark" },
+        "900": { "$value": "#0E0C0A", "$type": "color" }
+      },
+      "rule": {
+        "default": { "$value": "#D9D2C5", "$type": "color" },
+        "light":   { "$value": "#EDE7D9", "$type": "color" }
+      },
+      "sage": {
+        "50":  { "$value": "#EAF0EA", "$type": "color" },
+        "200": { "$value": "#B0C5B0", "$type": "color" },
+        "400": { "$value": "#7A8F7A", "$type": "color" },
+        "600": { "$value": "#5A6B5A", "$type": "color" },
+        "800": { "$value": "#3D4D3D", "$type": "color" }
+      },
+      "rust": {
+        "50":  { "$value": "#F5EDEA", "$type": "color" },
+        "200": { "$value": "#DDA898", "$type": "color" },
+        "400": { "$value": "#C06040", "$type": "color" },
+        "600": { "$value": "#9C4A2A", "$type": "color" },
+        "800": { "$value": "#6B3020", "$type": "color" }
+      },
+      "amber": {
+        "50":  { "$value": "#FBF1E4", "$type": "color" },
+        "200": { "$value": "#E8C08A", "$type": "color" },
+        "400": { "$value": "#C17B2A", "$type": "color" },
+        "600": { "$value": "#8A5518", "$type": "color" },
+        "800": { "$value": "#5A3810", "$type": "color" }
+      }
+    },
+
+    "semantic": {
+      "surface": {
+        "page":      { "$value": "{color.primitive.neutral.50}",  "$type": "color", "$description": "Page background — #F5F0E8 cream" },
+        "raised":    { "$value": "{color.primitive.neutral.0}",   "$type": "color", "$description": "Card / panel background" },
+        "sunken":    { "$value": "{color.primitive.neutral.100}", "$type": "color", "$description": "Inset / recessed area" },
+        "dark":      { "$value": "{color.primitive.neutral.800}", "$type": "color", "$description": "Dark hero / testimonial / footer" },
+        "dark-mid":  { "$value": "{color.primitive.neutral.700}", "$type": "color", "$description": "Secondary dark surface" }
+      },
+      "text": {
+        "primary":       { "$value": "{color.primitive.neutral.800}", "$type": "color" },
+        "secondary":     { "$value": "{color.primitive.neutral.600}", "$type": "color" },
+        "muted":         { "$value": "{color.primitive.neutral.500}", "$type": "color" },
+        "ghost":         { "$value": "{color.primitive.neutral.400}", "$type": "color" },
+        "inverse":       { "$value": "{color.primitive.neutral.50}",  "$type": "color", "$description": "On dark surfaces" },
+        "accent":        { "$value": "{color.primitive.gold.600}",    "$type": "color", "$description": "Gold text on light bg — prices, highlights" },
+        "accent-dark":   { "$value": "{color.primitive.gold.300}",    "$type": "color", "$description": "Gold text on dark bg" }
+      },
+      "border": {
+        "subtle":  { "$value": "{color.primitive.rule.light}",   "$type": "color" },
+        "default": { "$value": "{color.primitive.rule.default}", "$type": "color" },
+        "strong":  { "$value": "{color.primitive.neutral.300}",  "$type": "color" },
+        "accent":  { "$value": "{color.primitive.gold.400}",     "$type": "color" }
+      },
+      "action": {
+        "gold-bg":      { "$value": "{color.primitive.gold.400}",    "$type": "color", "$description": "Gold CTA background" },
+        "gold-hover":   { "$value": "{color.primitive.gold.600}",    "$type": "color" },
+        "gold-text":    { "$value": "{color.primitive.neutral.800}", "$type": "color", "$description": "Text on gold button" },
+        "gold-text-hover": { "$value": "{color.primitive.neutral.50}", "$type": "color" },
+        "ink-bg":       { "$value": "{color.primitive.neutral.800}", "$type": "color" },
+        "ink-hover":    { "$value": "{color.primitive.neutral.700}", "$type": "color" },
+        "focus-ring":   { "$value": "{color.primitive.gold.400}",    "$type": "color" }
+      },
+      "status": {
+        "success-bg":   { "$value": "{color.primitive.sage.50}",   "$type": "color" },
+        "success-text": { "$value": "{color.primitive.sage.800}",  "$type": "color" },
+        "success-border":{ "$value": "{color.primitive.sage.600}", "$type": "color" },
+        "warning-bg":   { "$value": "{color.primitive.rust.50}",   "$type": "color" },
+        "warning-text": { "$value": "{color.primitive.rust.800}",  "$type": "color" },
+        "warning-border":{ "$value": "{color.primitive.rust.600}", "$type": "color" },
+        "progress-bg":  { "$value": "{color.primitive.amber.50}",  "$type": "color" },
+        "progress-text":{ "$value": "{color.primitive.amber.800}", "$type": "color" }
+      }
+    }
+  },
+
+  "typography": {
+    "family": {
+      "display": { "$value": "Playfair Display", "$type": "fontFamily" },
+      "ui":      { "$value": "DM Sans",          "$type": "fontFamily" }
+    },
+    "weight": {
+      "light":    { "$value": 300, "$type": "fontWeight" },
+      "regular":  { "$value": 400, "$type": "fontWeight" },
+      "medium":   { "$value": 500, "$type": "fontWeight" },
+      "semibold": { "$value": 600, "$type": "fontWeight" }
+    },
+    "size": {
+      "10": { "$value": "10px", "$type": "fontSize" },
+      "11": { "$value": "11px", "$type": "fontSize" },
+      "12": { "$value": "12px", "$type": "fontSize" },
+      "13": { "$value": "13px", "$type": "fontSize" },
+      "15": { "$value": "15px", "$type": "fontSize" },
+      "18": { "$value": "18px", "$type": "fontSize" },
+      "20": { "$value": "20px", "$type": "fontSize" },
+      "24": { "$value": "24px", "$type": "fontSize" },
+      "28": { "$value": "28px", "$type": "fontSize" },
+      "32": { "$value": "32px", "$type": "fontSize" },
+      "36": { "$value": "36px", "$type": "fontSize" },
+      "40": { "$value": "40px", "$type": "fontSize" },
+      "52": { "$value": "52px", "$type": "fontSize" },
+      "80": { "$value": "80px", "$type": "fontSize" }
+    },
+    "lineHeight": {
+      "tight":   { "$value": 1.1,  "$type": "lineHeight" },
+      "snug":    { "$value": 1.25, "$type": "lineHeight" },
+      "normal":  { "$value": 1.5,  "$type": "lineHeight" },
+      "relaxed": { "$value": 1.7,  "$type": "lineHeight" },
+      "loose":   { "$value": 1.85, "$type": "lineHeight" }
+    },
+    "letterSpacing": {
+      "tight":  { "$value": "-0.02em", "$type": "letterSpacing" },
+      "normal": { "$value": "0",       "$type": "letterSpacing" },
+      "wide":   { "$value": "0.04em",  "$type": "letterSpacing" },
+      "wider":  { "$value": "0.10em",  "$type": "letterSpacing" },
+      "widest": { "$value": "0.30em",  "$type": "letterSpacing" }
+    },
+    "scale": {
+      "display": {
+        "$description": "Masthead hero — one per page. Playfair italic on key word.",
+        "fontFamily":    { "$value": "{typography.family.display}" },
+        "fontSize":      { "$value": "{typography.size.80}" },
+        "fontWeight":    { "$value": "{typography.weight.regular}" },
+        "lineHeight":    { "$value": "{typography.lineHeight.tight}" },
+        "letterSpacing": { "$value": "{typography.letterSpacing.tight}" }
+      },
+      "h1": {
+        "$description": "Page hero headlines",
+        "fontFamily":    { "$value": "{typography.family.display}" },
+        "fontSize":      { "$value": "{typography.size.52}" },
+        "fontWeight":    { "$value": "{typography.weight.regular}" },
+        "lineHeight":    { "$value": "{typography.lineHeight.tight}" },
+        "letterSpacing": { "$value": "{typography.letterSpacing.tight}" }
+      },
+      "h2": {
+        "$description": "Section headings — editorial asymmetric layout",
+        "fontFamily":    { "$value": "{typography.family.display}" },
+        "fontSize":      { "$value": "{typography.size.40}" },
+        "fontWeight":    { "$value": "{typography.weight.regular}" },
+        "lineHeight":    { "$value": "{typography.lineHeight.snug}" },
+        "letterSpacing": { "$value": "{typography.letterSpacing.normal}" }
+      },
+      "h3": {
+        "$description": "Card titles — DM Sans medium, NOT Playfair",
+        "fontFamily":    { "$value": "{typography.family.ui}" },
+        "fontSize":      { "$value": "{typography.size.20}" },
+        "fontWeight":    { "$value": "{typography.weight.medium}" },
+        "lineHeight":    { "$value": "{typography.lineHeight.snug}" },
+        "letterSpacing": { "$value": "{typography.letterSpacing.normal}" }
+      },
+      "h3-accent": {
+        "$description": "One italic Playfair word inside an h3 — the emotional lever",
+        "fontFamily":    { "$value": "{typography.family.display}" },
+        "fontSize":      { "$value": "{typography.size.20}" },
+        "fontWeight":    { "$value": "{typography.weight.regular}" },
+        "fontStyle":     { "$value": "italic" },
+        "color":         { "$value": "{color.semantic.text.accent}" }
+      },
+      "price-display": {
+        "$description": "Pricing values — use Playfair because prices are money moments",
+        "fontFamily":    { "$value": "{typography.family.display}" },
+        "fontSize":      { "$value": "{typography.size.32}" },
+        "fontWeight":    { "$value": "{typography.weight.regular}" },
+        "lineHeight":    { "$value": "1.0" }
+      },
+      "price-peak": {
+        "$description": "Peak / Fri-Sat pricing — SemiBold gold",
+        "fontFamily":    { "$value": "{typography.family.display}" },
+        "fontSize":      { "$value": "{typography.size.32}" },
+        "fontWeight":    { "$value": "{typography.weight.semibold}" },
+        "color":         { "$value": "{color.semantic.text.accent}" }
+      },
+      "pull-quote": {
+        "$description": "Testimonials — pure emotion, Playfair italic",
+        "fontFamily":    { "$value": "{typography.family.display}" },
+        "fontSize":      { "$value": "{typography.size.20}" },
+        "fontWeight":    { "$value": "{typography.weight.regular}" },
+        "fontStyle":     { "$value": "italic" },
+        "lineHeight":    { "$value": "{typography.lineHeight.relaxed}" }
+      },
+      "eyebrow": {
+        "$description": "Section labels — DM Sans Bold, wide tracking, ALL CAPS",
+        "fontFamily":    { "$value": "{typography.family.ui}" },
+        "fontSize":      { "$value": "{typography.size.10}" },
+        "fontWeight":    { "$value": "{typography.weight.semibold}" },
+        "lineHeight":    { "$value": "{typography.lineHeight.normal}" },
+        "letterSpacing": { "$value": "{typography.letterSpacing.widest}" },
+        "textTransform": { "$value": "uppercase" }
+      },
+      "nav": {
+        "$description": "Navigation links",
+        "fontFamily":    { "$value": "{typography.family.ui}" },
+        "fontSize":      { "$value": "{typography.size.10}" },
+        "fontWeight":    { "$value": "{typography.weight.medium}" },
+        "letterSpacing": { "$value": "0.14em" },
+        "textTransform": { "$value": "uppercase" }
+      },
+      "button": {
+        "$description": "All button labels — always DM Sans, never Playfair",
+        "fontFamily":    { "$value": "{typography.family.ui}" },
+        "fontSize":      { "$value": "{typography.size.10}" },
+        "fontWeight":    { "$value": "{typography.weight.semibold}" },
+        "letterSpacing": { "$value": "0.13em" },
+        "textTransform": { "$value": "uppercase" }
+      },
+      "body-lg": {
+        "$description": "Intro paragraphs",
+        "fontFamily":    { "$value": "{typography.family.ui}" },
+        "fontSize":      { "$value": "{typography.size.15}" },
+        "fontWeight":    { "$value": "{typography.weight.light}" },
+        "lineHeight":    { "$value": "{typography.lineHeight.relaxed}" }
+      },
+      "body": {
+        "$description": "Default body copy",
+        "fontFamily":    { "$value": "{typography.family.ui}" },
+        "fontSize":      { "$value": "{typography.size.13}" },
+        "fontWeight":    { "$value": "{typography.weight.light}" },
+        "lineHeight":    { "$value": "{typography.lineHeight.relaxed}" }
+      },
+      "body-medium": {
+        "$description": "Emphasized body — package names, contact values",
+        "fontFamily":    { "$value": "{typography.family.ui}" },
+        "fontSize":      { "$value": "{typography.size.13}" },
+        "fontWeight":    { "$value": "{typography.weight.medium}" },
+        "lineHeight":    { "$value": "{typography.lineHeight.relaxed}" }
+      },
+      "caption": {
+        "$description": "Contact info, meta, footnotes — 12px Regular for WCAG AA",
+        "fontFamily":    { "$value": "{typography.family.ui}" },
+        "fontSize":      { "$value": "{typography.size.12}" },
+        "fontWeight":    { "$value": "{typography.weight.regular}" },
+        "lineHeight":    { "$value": "{typography.lineHeight.loose}" }
+      },
+      "label": {
+        "$description": "Form labels — gold-dk color",
+        "fontFamily":    { "$value": "{typography.family.ui}" },
+        "fontSize":      { "$value": "{typography.size.10}" },
+        "fontWeight":    { "$value": "{typography.weight.semibold}" },
+        "letterSpacing": { "$value": "0.26em" },
+        "textTransform": { "$value": "uppercase" },
+        "color":         { "$value": "{color.primitive.gold.600}" }
+      },
+      "badge": {
+        "$description": "Status badges",
+        "fontFamily":    { "$value": "{typography.family.ui}" },
+        "fontSize":      { "$value": "{typography.size.10}" },
+        "fontWeight":    { "$value": "{typography.weight.semibold}" },
+        "letterSpacing": { "$value": "0.12em" },
+        "textTransform": { "$value": "uppercase" }
+      }
+    }
+  },
+
+  "spacing": {
+    "$description": "8pt grid. All spacing is a multiple of 4 or 8.",
+    "1":  { "$value": "4px",   "$type": "spacing" },
+    "2":  { "$value": "8px",   "$type": "spacing" },
+    "3":  { "$value": "12px",  "$type": "spacing" },
+    "4":  { "$value": "16px",  "$type": "spacing" },
+    "5":  { "$value": "20px",  "$type": "spacing" },
+    "6":  { "$value": "24px",  "$type": "spacing" },
+    "8":  { "$value": "32px",  "$type": "spacing" },
+    "10": { "$value": "40px",  "$type": "spacing" },
+    "12": { "$value": "48px",  "$type": "spacing" },
+    "16": { "$value": "64px",  "$type": "spacing" },
+    "20": { "$value": "80px",  "$type": "spacing" },
+    "24": { "$value": "96px",  "$type": "spacing" },
+    "section": { "$value": "96px",  "$type": "spacing", "$description": "Between major page sections" },
+    "page-x":  { "$value": "48px",  "$type": "spacing", "$description": "Horizontal page padding" },
+    "page-x-mobile": { "$value": "20px", "$type": "spacing" }
+  },
+
+  "borderRadius": {
+    "none":   { "$value": "0px",  "$type": "borderRadius" },
+    "sharp":  { "$value": "2px",  "$type": "borderRadius", "$description": "Buttons, badges — intentionally not round" },
+    "soft":   { "$value": "3px",  "$type": "borderRadius", "$description": "Cards" },
+    "medium": { "$value": "8px",  "$type": "borderRadius", "$description": "Admin inputs, admin panels" },
+    "pill":   { "$value": "9999px","$type": "borderRadius", "$description": "Never used on public site" }
+  },
+
+  "borderWidth": {
+    "thin":   { "$value": "1px", "$type": "borderWidth" },
+    "medium": { "$value": "2px", "$type": "borderWidth" },
+    "accent": { "$value": "3px", "$type": "borderWidth", "$description": "Left accent border on featured cards and flags" }
+  },
+
+  "shadow": {
+    "none":  { "$value": "none", "$type": "shadow", "$description": "No shadows on public site — space and typography do the work" },
+    "focus": { "$value": "0 0 0 3px rgba(201,160,110,0.2)", "$type": "shadow", "$description": "Gold focus ring on form inputs" }
+  },
+
+  "transition": {
+    "fast":    { "$value": "130ms ease",   "$type": "transition" },
+    "default": { "$value": "150ms ease",   "$type": "transition" },
+    "slow":    { "$value": "300ms ease",   "$type": "transition" }
+  },
+
+  "breakpoint": {
+    "mobile":  { "$value": "375px",  "$type": "dimension" },
+    "tablet":  { "$value": "768px",  "$type": "dimension" },
+    "desktop": { "$value": "1280px", "$type": "dimension" },
+    "wide":    { "$value": "1440px", "$type": "dimension" }
+  },
+
+  "maxWidth": {
+    "body-text": { "$value": "680px",  "$type": "dimension", "$description": "Max width for readable body copy" },
+    "content":   { "$value": "1280px", "$type": "dimension", "$description": "Main content container" },
+    "form":      { "$value": "600px",  "$type": "dimension", "$description": "Inquiry form max width" }
+  },
+
+  "component": {
+    "button": {
+      "gold": {
+        "$description": "Primary CTA — used sparingly: hero, closing CTA, nav Book Now",
+        "background":       { "$value": "{color.primitive.gold.400}" },
+        "background-hover": { "$value": "{color.primitive.gold.600}" },
+        "text":             { "$value": "{color.primitive.neutral.800}" },
+        "text-hover":       { "$value": "{color.primitive.neutral.50}" },
+        "border":           { "$value": "none" },
+        "border-radius":    { "$value": "{borderRadius.sharp}" },
+        "padding-sm":       { "$value": "9px 18px" },
+        "padding-md":       { "$value": "14px 28px" },
+        "padding-lg":       { "$value": "18px 40px" },
+        "font":             { "$value": "{typography.scale.button}" },
+        "font-size-sm":     { "$value": "9px" },
+        "font-size-md":     { "$value": "10px" },
+        "font-size-lg":     { "$value": "11px" }
+      },
+      "ink": {
+        "$description": "Secondary action — Check Availability, Send Inquiry",
+        "background":       { "$value": "{color.primitive.neutral.800}" },
+        "background-hover": { "$value": "{color.primitive.neutral.700}" },
+        "text":             { "$value": "{color.primitive.neutral.50}" },
+        "border":           { "$value": "none" },
+        "border-radius":    { "$value": "{borderRadius.sharp}" }
+      },
+      "outline": {
+        "$description": "Tertiary — View Pricing, See Gallery",
+        "background":       { "$value": "transparent" },
+        "background-hover": { "$value": "{color.primitive.neutral.800}" },
+        "text":             { "$value": "{color.primitive.neutral.600}" },
+        "text-hover":       { "$value": "{color.primitive.neutral.50}" },
+        "border":           { "$value": "1px solid {color.primitive.neutral.300}" },
+        "border-hover":     { "$value": "1px solid {color.primitive.neutral.800}" },
+        "border-radius":    { "$value": "{borderRadius.sharp}" }
+      },
+      "ghost": {
+        "$description": "Inline text links — Learn more, See packages",
+        "background":       { "$value": "transparent" },
+        "text":             { "$value": "{color.primitive.neutral.500}" },
+        "text-hover":       { "$value": "{color.primitive.neutral.800}" },
+        "border":           { "$value": "none" },
+        "padding":          { "$value": "0" }
+      },
+      "ghost-on-dark": {
+        "$description": "Ghost button on dark/ink surface",
+        "background":       { "$value": "transparent" },
+        "text":             { "$value": "rgba(245,240,232,0.40)" },
+        "text-hover":       { "$value": "rgba(245,240,232,0.85)" },
+        "border":           { "$value": "none" }
+      }
+    },
+
+    "input": {
+      "$description": "Public site form inputs — bottom-line style, no full border",
+      "background":        { "$value": "{color.semantic.surface.raised}" },
+      "border-bottom":     { "$value": "1px solid {color.semantic.border.default}" },
+      "border-focused":    { "$value": "2px solid {color.primitive.gold.400}" },
+      "border-error":      { "$value": "2px solid {color.primitive.rust.600}" },
+      "text":              { "$value": "{color.semantic.text.primary}" },
+      "placeholder":       { "$value": "{color.primitive.neutral.300}" },
+      "label-color":       { "$value": "{color.primitive.gold.600}" },
+      "font-size":         { "$value": "{typography.size.13}" },
+      "font-weight":       { "$value": "{typography.weight.light}" },
+      "padding":           { "$value": "11px 0" },
+      "focus-ring":        { "$value": "{shadow.focus}" }
+    },
+
+    "badge": {
+      "gold":  { "bg": "{color.primitive.gold.50}",   "border": "{color.primitive.gold.400}",   "text": "{color.primitive.gold.700}" },
+      "sage":  { "bg": "{color.primitive.sage.50}",   "border": "{color.primitive.sage.600}",   "text": "{color.primitive.sage.800}" },
+      "rust":  { "bg": "{color.primitive.rust.50}",   "border": "{color.primitive.rust.600}",   "text": "{color.primitive.rust.800}" },
+      "amber": { "bg": "{color.primitive.amber.50}",  "border": "{color.primitive.amber.400}",  "text": "{color.primitive.amber.800}" },
+      "ink":   { "bg": "{color.primitive.neutral.100}","border": "{color.primitive.neutral.200}","text": "{color.primitive.neutral.700}" }
+    },
+
+    "nav": {
+      "height":              { "$value": "64px" },
+      "background-light":    { "$value": "{color.semantic.surface.page}" },
+      "background-dark":     { "$value": "transparent" },
+      "border-bottom-light": { "$value": "1px solid {color.semantic.border.subtle}" },
+      "border-bottom-dark":  { "$value": "1px solid rgba(245,240,232,0.08)" },
+      "link-color-light":    { "$value": "{color.semantic.text.muted}" },
+      "link-color-dark":     { "$value": "rgba(245,240,232,0.5)" },
+      "link-active-light":   { "$value": "{color.semantic.text.primary}" },
+      "link-active-dark":    { "$value": "#F5F0E8" },
+      "link-active-border":  { "$value": "1px solid {color.primitive.gold.400}" }
+    },
+
+    "pricing-table": {
+      "header-bg":    { "$value": "#FAF7F2" },
+      "row-alt-bg":   { "$value": "#FDFAF6" },
+      "row-border":   { "$value": "{color.semantic.border.subtle}" },
+      "price-font":   { "$value": "{typography.family.display}" },
+      "price-size":   { "$value": "18px" },
+      "peak-size":    { "$value": "20px" },
+      "peak-color":   { "$value": "{color.primitive.gold.400}" }
+    },
+
+    "testimonial": {
+      "background":   { "$value": "{color.semantic.surface.dark}" },
+      "quote-font":   { "$value": "{typography.family.display}" },
+      "quote-style":  { "$value": "italic" },
+      "quote-color":  { "$value": "rgba(245,240,232,0.85)" },
+      "quote-size":   { "$value": "20px" },
+      "attr-color":   { "$value": "rgba(245,240,232,0.30)" },
+      "rule-color":   { "$value": "rgba(201,160,110,0.30)" }
+    },
+
+    "flag": {
+      "success": { "bg": "#F4F9F4", "border": "{color.primitive.sage.600}",  "text": "{color.primitive.sage.800}",  "border-width": "3px" },
+      "warning": { "bg": "#FBF3F0", "border": "{color.primitive.rust.600}",  "text": "{color.primitive.rust.800}",  "border-width": "3px" },
+      "info":    { "bg": "#EFF4FB", "border": "#3A7BD5",                     "text": "#1A4A8A",                      "border-width": "3px" },
+      "amber":   { "bg": "{color.primitive.amber.50}", "border": "{color.primitive.amber.400}", "text": "{color.primitive.amber.800}", "border-width": "3px" }
+    },
+
+    "admin": {
+      "$description": "Admin interface uses a separate, neutral design language",
+      "nav-height":    { "$value": "52px" },
+      "sidebar-width": { "$value": "200px" },
+      "panel-bg":      { "$value": "#FFFFFF" },
+      "panel-border":  { "$value": "1px solid #E0E0E0" },
+      "panel-radius":  { "$value": "4px" },
+      "input-radius":  { "$value": "4px" },
+      "btn-radius":    { "$value": "4px" },
+      "page-bg":       { "$value": "#F8F8F8" },
+      "text-primary":  { "$value": "#1A1A1A" },
+      "text-muted":    { "$value": "#888888" },
+      "border-color":  { "$value": "#E0E0E0" },
+      "accent":        { "$value": "{color.primitive.gold.400}", "$description": "Only gold usage in admin — badges and active states" }
+    }
+  },
+
+  "layout": {
+    "$description": "Page layout decisions — editorial, asymmetric, no equal-column grids",
+    "hero": {
+      "columns":     "1fr 320px",
+      "gap":         "72px",
+      "align":       "end",
+      "min-height":  "460px",
+      "description": "Headline left, sub-copy + CTA right. Photography fills dark surface."
+    },
+    "section-header": {
+      "columns":     "1fr 480px",
+      "gap":         "80px",
+      "description": "Playfair serif headline left, DM Sans body right. Asymmetric = editorial."
+    },
+    "event-cards": {
+      "columns":     "1.8fr 1fr",
+      "description": "Never three equal columns. Large dominant card left, two stacked right."
+    },
+    "pricing-table": {
+      "columns":     "1fr 70px 100px 100px 110px",
+      "description": "Package | Hours | Mon-Wed | Thursday | Fri-Sat"
+    },
+    "amenity-grid": {
+      "columns":     "1fr 1fr",
+      "description": "Two column, no card box, open list, gold dot accent"
+    },
+    "inquiry-form": {
+      "outer":       "1fr 1fr",
+      "inner":       "1fr 1fr",
+      "description": "Contact info left, fields right. No card wrapper — open on cream."
+    },
+    "footer": {
+      "columns":     "1.5fr 1fr 1fr 1fr",
+      "description": "Brand + tagline | Venue links | Events links | Contact"
+    }
+  },
+
+  "content": {
+    "venue": {
+      "name":      "The Vale",
+      "full-name": "The Vale at Ten Seventy-Eight",
+      "tagline":   "A modern event space at the base of the Wasatch mountains.",
+      "address":   "1078 South 250 East, Provo, Utah",
+      "phone":     "801-592-6287",
+      "email":     "bobbi@valevenue.com",
+      "hours":     "By appointment, Mon - Sat",
+      "capacity":  "100 guests",
+      "starting-price": "$300"
+    },
+    "packages": [
+      { "name": "Half Day Morning", "time": "8am - 2pm", "hours": 6, "mon-wed": 1400, "thu": 1600, "fri-sat": 1900 },
+      { "name": "Half Day Evening", "time": "3pm - 9pm", "hours": 6, "mon-wed": 2400, "thu": 2800, "fri-sat": 3400 },
+      { "name": "Full Day",         "time": "9am - 10pm","hours": 13,"mon-wed": 3000, "thu": 3400, "fri-sat": 4000, "peak": true }
+    ],
+    "amenities": [
+      "Kitchen and food prep area",
+      "Bride vanity and dressing suite",
+      "Groom suite and dressing area",
+      "Audio visual amenities",
+      "Tables and chairs for 100 guests",
+      "Ample parking on site"
+    ],
+    "event-types": ["Weddings and Receptions", "Corporate Events", "Private Celebrations"],
+    "nav-links": ["Home", "Pricing", "Gallery", "Contact"],
+    "cta-primary": "Book the Space",
+    "cta-secondary": "Check Availability",
+    "cta-nav": "Book Now"
+  }
+}
