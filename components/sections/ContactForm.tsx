@@ -9,6 +9,7 @@ interface FormData {
   full_name: string
   email: string
   event_type: string
+  guest_count: string
   desired_date: string
   message: string
 }
@@ -17,6 +18,7 @@ interface FormErrors {
   full_name?: string
   email?: string
   event_type?: string
+  guest_count?: string
   desired_date?: string
   message?: string
 }
@@ -26,6 +28,7 @@ export default function ContactForm() {
     full_name: '',
     email: '',
     event_type: '',
+    guest_count: '',
     desired_date: '',
     message: '',
   })
@@ -118,6 +121,18 @@ export default function ContactForm() {
         <option value="Corporate">Corporate</option>
         <option value="Private Celebration">Private Celebration</option>
         <option value="Other">Other</option>
+      </Select>
+      <Select
+        label="Estimated guest count"
+        value={formData.guest_count}
+        onChange={(e) => handleChange('guest_count', e.target.value)}
+        error={errors.guest_count}
+      >
+        <option value="">How many guests?</option>
+        <option value="Under 25">Under 25</option>
+        <option value="25–50">25–50</option>
+        <option value="51–75">51–75</option>
+        <option value="76–100">76–100</option>
       </Select>
       <Input
         label="Desired date"

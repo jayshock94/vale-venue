@@ -186,6 +186,24 @@ export default function PricingTable({
           All packages include full access to the venue, amenities, and
           on-site parking.
         </p>
+
+        {/* Micro-event callout */}
+        <div className="mt-8 border border-rule bg-neutral-0 rounded-soft px-6 py-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+          <div>
+            <p className="font-sans font-semibold text-sm text-neutral-800">
+              Hosting a birthday or small celebration?
+            </p>
+            <p className="font-sans font-light text-sm text-neutral-500 mt-1">
+              Short-form blocks for gatherings under 50 guests. Tell us your date and we&apos;ll find a time that works.
+            </p>
+          </div>
+          <a
+            href="/contact"
+            className="font-sans font-semibold text-xs uppercase tracking-btn text-gold-600 hover:text-gold-700 transition-colors whitespace-nowrap"
+          >
+            Ask about it →
+          </a>
+        </div>
       </div>
     </section>
   )

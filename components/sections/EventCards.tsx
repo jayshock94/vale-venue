@@ -11,10 +11,10 @@ interface EventCard {
 }
 
 const weddingCard: EventCard = {
-  eyebrow: 'Weddings',
+  eyebrow: 'Weddings & Receptions',
   titleStart: 'Weddings &',
   titleItalic: 'Receptions',
-  body: 'Dedicated bride and groom suites on-site. The ceremony and reception can both happen here — no shuttling guests between venues. The mountains behind the windows mean every photo is already halfway done.',
+  body: 'The temple ceremony is yours. The reception — where every guest celebrates together — happens here. Three miles from the Provo Temple, with dedicated bride and groom suites, mountain views, and parking for everyone who waited outside.',
   image: 'https://images.unsplash.com/photo-1519741497674-611481863552?w=800&q=80',
   imageAlt: 'Wedding reception setup at The Vale',
 }
@@ -32,7 +32,7 @@ const celebrationCard: EventCard = {
   eyebrow: 'Celebrations',
   titleStart: 'Private',
   titleItalic: 'Celebrations',
-  body: 'Every milestone deserves a space that doesn\'t feel rented. High ceilings, real kitchen, mountain view. Birthdays and anniversaries hit different here.',
+  body: 'Every milestone deserves a space that doesn\'t feel rented. High ceilings, real kitchen, mountain view. Birthdays, anniversaries, and small gatherings — ask about short-form blocks for groups under 50.',
   image: 'https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=800&q=80',
   imageAlt: 'Private celebration at The Vale',
 }
