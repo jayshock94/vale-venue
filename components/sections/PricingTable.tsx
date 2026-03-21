@@ -181,24 +181,24 @@ export default function PricingTable({
           </div>
         </div>
 
-        {/* Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {activePackages.map((pkg) => (
-            <PricingCard key={pkg.id || pkg.name} pkg={pkg} />
-          ))}
+        {/* Cards + footnote — grouped so footnote reads as a caption for the grid */}
+        <div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {activePackages.map((pkg) => (
+              <PricingCard key={pkg.id || pkg.name} pkg={pkg} />
+            ))}
+          </div>
+          <p className="font-sans font-light text-[length:var(--text-11)] text-neutral-400 border-t border-rule-light pt-3 mt-0">
+            All packages include full venue access, amenities, and parking.
+          </p>
         </div>
 
         {/* CTA */}
-        <div className="mt-8 flex justify-end">
+        <div className="mt-6 flex justify-end">
           <Button href="/contact" variant="gold" size="md">
             Reserve Your Date
           </Button>
         </div>
-
-        {/* Footnote */}
-        <p className="font-sans font-light text-[length:var(--text-11)] text-neutral-400 mt-3">
-          All packages include full venue access, amenities, and parking.
-        </p>
 
         {/* Micro-event callout */}
         <div className="mt-12 rounded-soft bg-gold-50 border border-gold-100 border-l-[length:var(--pricing-callout-accent-width)] border-l-gold-400 px-7 py-7">
