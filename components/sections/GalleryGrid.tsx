@@ -65,10 +65,11 @@ const tabs = [
 
 interface GalleryGridProps {
   images?: GalleryImage[]
+  defaultCategory?: string
 }
 
-export default function GalleryGrid({ images }: GalleryGridProps) {
-  const [activeTab, setActiveTab] = useState('all')
+export default function GalleryGrid({ images, defaultCategory = 'all' }: GalleryGridProps) {
+  const [activeTab, setActiveTab] = useState(defaultCategory)
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null)
 
   const sourceImages = (images && images.length > 0) ? images : placeholderImages

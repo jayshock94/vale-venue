@@ -12,7 +12,16 @@ export const metadata: Metadata = {
     'Photos from weddings, corporate events, and private celebrations at The Vale in Provo, Utah.',
 }
 
-export default async function GalleryPage() {
+const validCategories = ['all', 'weddings', 'corporate', 'celebrations']
+
+export default async function GalleryPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ category?: string }>
+}) {
+  const { category } = await searchParams
+  const defaultCategory = validCategories.includes(category ?? '') ? category! : 'all'
+
   let images: GalleryImage[] = []
 
   try {
@@ -50,7 +59,7 @@ export default async function GalleryPage() {
 
         <section className="bg-neutral-50 py-section px-5 md:px-page">
           <div className="max-w-content mx-auto">
-            <GalleryGrid images={images} />
+            <GalleryGrid images={images} defaultCategory={defaultCategory} />
           </div>
         </section>
 

@@ -10,6 +10,7 @@ interface EventCard {
   image: string
   imageAlt: string
   cta: string
+  href: string
 }
 
 const weddingCard: EventCard = {
@@ -19,7 +20,8 @@ const weddingCard: EventCard = {
   body: 'The temple ceremony is yours. The reception — where every guest celebrates together — happens here. Three miles from the Provo Temple, with dedicated bride and groom suites, mountain views, and parking for everyone who waited outside.',
   image: 'https://images.unsplash.com/photo-1763553113332-800519753e40?w=800&q=80',
   imageAlt: 'Wedding reception setup at The Vale',
-  cta: 'Book a reception',
+  cta: 'See wedding photos',
+  href: '/gallery?category=weddings',
 }
 
 const corporateCard: EventCard = {
@@ -29,7 +31,8 @@ const corporateCard: EventCard = {
   body: 'Clean, modern space with full AV. Comfortable for 20, manageable for 100. Half-day packages work well for retreats that don\'t need a full day.',
   image: 'https://images.unsplash.com/photo-1515187029135-18ee286d815b?w=800&q=80',
   imageAlt: 'Corporate event setup at The Vale',
-  cta: 'Book a retreat',
+  cta: 'See corporate photos',
+  href: '/gallery?category=corporate',
 }
 
 const celebrationCard: EventCard = {
@@ -39,7 +42,8 @@ const celebrationCard: EventCard = {
   body: 'Every milestone deserves a space that doesn\'t feel rented. High ceilings, real kitchen, mountain view. Birthdays, anniversaries, and small gatherings — ask about short-form blocks for groups under 50.',
   image: 'https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=800&q=80',
   imageAlt: 'Private celebration at The Vale',
-  cta: 'Book your event',
+  cta: 'See celebration photos',
+  href: '/gallery?category=celebrations',
 }
 
 function EventCardLarge({ card }: { card: EventCard }) {
@@ -74,7 +78,7 @@ function EventCardLarge({ card }: { card: EventCard }) {
       {/* component.event-card CTA row — separated by border-top rule */}
       <div className="border-t border-rule-light px-6 py-3">
         <Link
-          href="/contact"
+          href={card.href}
           className="font-sans font-semibold text-2xs uppercase tracking-btn text-gold-600 hover:text-gold-500 transition-colors duration-fast"
         >
           {card.cta} →
@@ -114,7 +118,7 @@ function EventCardSmall({ card }: { card: EventCard }) {
       {/* component.event-card CTA row */}
       <div className="mt-auto border-t border-rule-light px-6 py-3">
         <Link
-          href="/contact"
+          href={card.href}
           className="font-sans font-semibold text-2xs uppercase tracking-btn text-gold-600 hover:text-gold-500 transition-colors duration-fast"
         >
           {card.cta} →
