@@ -233,7 +233,7 @@ export default function AmenityList() {
               </div>
               <button
                 onClick={() => setActiveId(null)}
-                className="ml-auto flex-shrink-0 text-neutral-400 hover:text-neutral-600 transition-colors duration-[var(--transition-fast)] p-1 -mr-1"
+                className="ml-auto flex-shrink-0 text-neutral-400 hover:text-neutral-600 transition-colors duration-[var(--transition-fast)] w-[48px] h-[48px] -mr-3 -mt-1 flex items-center justify-center"
                 aria-label="Close"
               >
                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">

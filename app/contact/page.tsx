@@ -49,7 +49,7 @@ export default function ContactPage() {
   return (
     <>
       <Nav />
-      <main className="flex-1">
+      <main className="flex-1 pb-24 md:pb-0">
 
         {/* Hero */}
         <section className="bg-neutral-800 pt-32 pb-20 px-5 md:px-page">
@@ -162,7 +162,7 @@ export default function ContactPage() {
               </div>
 
               {/* Right — Form card */}
-              <div className="bg-neutral-0 border border-rule rounded-soft px-8 py-10">
+              <div className="bg-neutral-0 border border-rule rounded-soft px-5 py-8 md:px-8 md:py-10">
                 <ContactForm />
               </div>
 

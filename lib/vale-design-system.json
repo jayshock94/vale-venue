@@ -352,7 +352,7 @@
 
     "amenity": {
       "$description": "Chip grid — scan quickly, click for detail. Each amenity is a discrete interactive pill.",
-      "chip-height":          { "$value": "44px" },
+      "chip-height":          { "$value": "48px", "$description": "Matches --touch-target-min" },
       "chip-padding":         { "$value": "0 18px" },
       "chip-bg":              { "$value": "transparent" },
       "chip-bg-active":       { "$value": "{color.primitive.gold.50}" },

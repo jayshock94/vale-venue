@@ -188,8 +188,8 @@ export default function PricingTable({
               <PricingCard key={pkg.id || pkg.name} pkg={pkg} />
             ))}
           </div>
-          {/* Footer row — footnote + CTA on same baseline, anchored to card grid */}
-          <div className="border-t border-rule-light pt-4 mt-0 flex items-center justify-between gap-4">
+          {/* Footer row — stacks on mobile, side-by-side on sm+ */}
+          <div className="border-t border-rule-light pt-4 mt-0 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
             <p className="font-sans font-light text-[length:var(--text-11)] text-neutral-400">
               All packages include full venue access, amenities, and parking.
             </p>

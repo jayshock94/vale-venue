@@ -193,7 +193,7 @@
   --select-panel-shadow: 0 4px 20px rgba(28,25,23,0.08);
 
   /* ── Amenity chips ── */
-  --amenity-chip-height:          44px;
+  --amenity-chip-height:          48px;
   --amenity-chip-border-active:   var(--color-gold-400);
   --amenity-chip-bg-active:       var(--color-gold-50);
   --amenity-chip-icon-active:     var(--color-gold-500);
