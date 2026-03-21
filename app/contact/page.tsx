@@ -48,9 +48,9 @@ function CalendarIcon() {
 export default async function ContactPage({
   searchParams,
 }: {
-  searchParams: Promise<{ date?: string }>
+  searchParams: Promise<{ date?: string; dateTo?: string }>
 }) {
-  const { date } = await searchParams
+  const { date, dateTo } = await searchParams
   return (
     <>
       <Nav />
@@ -168,7 +168,7 @@ export default async function ContactPage({
 
               {/* Right — Form card */}
               <div className="order-1 md:order-2 bg-neutral-0 border border-rule rounded-soft px-5 py-8 md:px-8 md:py-10">
-                <ContactForm defaultDate={date} />
+                <ContactForm defaultDate={date} defaultEndDate={dateTo} />
               </div>
 
             </div>

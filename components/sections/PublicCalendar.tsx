@@ -361,7 +361,7 @@ export default function PublicCalendar({ availability = [] }: PublicCalendarProp
     : null
 
   const contactHref = hasRange
-    ? `/contact?date=${rangeStart}`
+    ? `/contact?date=${rangeStart}&dateTo=${rangeEnd}`
     : `/contact?date=${rangeStart}`
 
   const MAX_OFFSET = 22 // ~24 months total, covers most wedding planning horizons
