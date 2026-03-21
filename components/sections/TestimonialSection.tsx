@@ -30,33 +30,33 @@ const defaultTestimonials: Testimonial[] = [
 const instagramPosts = [
   {
     id: 'post-1',
-    src: '/instagram/ig-1.png',
-    alt: 'Wedding ceremony at The Vale — couple at the altar',
+    src: '/instagram/ig-1.jpg',
+    alt: 'Wedding reception at The Vale — white florals and geometric pendant lights',
   },
   {
     id: 'post-2',
-    src: '/instagram/ig-2.png',
-    alt: 'Bride portrait at The Vale — natural light through the windows',
+    src: '/instagram/ig-2.jpg',
+    alt: 'Wedding reception at The Vale — pink florals and candlelit round tables',
   },
   {
     id: 'post-3',
     src: '/instagram/ig-3.png',
-    alt: 'Wedding ceremony at The Vale — couple under floral arch',
+    alt: 'Wedding ceremony at The Vale — couple at the altar',
   },
   {
     id: 'post-4',
     src: '/instagram/ig-4.png',
-    alt: 'Birthday celebration at The Vale — balloon arch setup',
+    alt: 'Bride portrait at The Vale — natural light through the windows',
   },
   {
     id: 'post-5',
-    src: '/instagram/ig-5.png',
-    alt: 'Gender reveal party at The Vale',
+    src: '/instagram/ig-5.jpg',
+    alt: 'The Vale bar and prep area — marble counter with pendant lights',
   },
   {
     id: 'post-6',
     src: '/instagram/ig-6.png',
-    alt: 'The Vale event space — modern interior',
+    alt: 'Birthday celebration at The Vale — balloon arch setup',
   },
 ]
 
