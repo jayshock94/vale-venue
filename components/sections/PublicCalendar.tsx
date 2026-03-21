@@ -367,7 +367,7 @@ export default function PublicCalendar({ availability = [] }: PublicCalendarProp
   const MAX_OFFSET = 22 // ~24 months total, covers most wedding planning horizons
 
   return (
-    <section className="bg-neutral-0 py-section px-5 md:px-page border-t border-rule">
+    <section id="availability" className="bg-neutral-0 py-section px-5 md:px-page border-t border-rule">
       <div className="max-w-content mx-auto">
 
         {/* Header + nav */}

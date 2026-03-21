@@ -78,7 +78,7 @@ export default async function ContactPage({
             <div className="grid grid-cols-1 md:grid-cols-[1fr_1.2fr] gap-16 md:gap-20 items-start">
 
               {/* Left — Bobbi + contact details */}
-              <div>
+              <div className="order-2 md:order-1">
 
                 {/* Bobbi block */}
                 <div className="mb-10">
@@ -167,7 +167,7 @@ export default async function ContactPage({
               </div>
 
               {/* Right — Form card */}
-              <div className="bg-neutral-0 border border-rule rounded-soft px-5 py-8 md:px-8 md:py-10">
+              <div className="order-1 md:order-2 bg-neutral-0 border border-rule rounded-soft px-5 py-8 md:px-8 md:py-10">
                 <ContactForm defaultDate={date} />
               </div>
 

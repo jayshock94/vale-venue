@@ -10,6 +10,7 @@ import MobileNav from './MobileNav'
 const navLinks = [
   { href: '/', label: 'Home' },
   { href: '/pricing', label: 'Pricing' },
+  { href: '/pricing#availability', label: 'Availability' },
   { href: '/gallery', label: 'Gallery' },
   { href: '/contact', label: 'Contact' },
 ]
@@ -70,7 +71,7 @@ export default function NavClient() {
                 href={link.href}
                 className={cn(
                   'font-sans font-medium text-xs uppercase tracking-nav transition-colors',
-                  pathname === link.href
+                  pathname === link.href.split('#')[0]
                     ? isTransparent
                       ? 'text-neutral-50'
                       : 'text-neutral-800'
