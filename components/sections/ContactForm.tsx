@@ -24,26 +24,120 @@ interface FormErrors {
   message?: string
 }
 
-// Two-dot progress indicator — gold when active, neutral when pending
-function ProgressDots({ step }: { step: 1 | 2 }) {
+// Step indicator — numbered circles, no labels
+function StepIndicator({ step }: { step: 1 | 2 }) {
   return (
-    <div className="flex items-center gap-2 mb-8">
-      <div className="w-2 h-2 rounded-full bg-gold-400" />
+    <div className="flex items-center gap-3 mb-8">
+      <div className="w-5 h-5 rounded-full bg-gold-400 flex items-center justify-center flex-shrink-0">
+        <span className="font-sans font-semibold text-neutral-800" style={{ fontSize: 10 }}>1</span>
+      </div>
       <div
         className={cn(
-          'h-px w-5 transition-colors duration-default',
-          step === 2 ? 'bg-gold-400' : 'bg-neutral-300'
+          'h-px w-8 transition-colors duration-default',
+          step === 2 ? 'bg-gold-400' : 'bg-neutral-200'
         )}
       />
       <div
         className={cn(
-          'w-2 h-2 rounded-full transition-colors duration-default',
-          step === 2 ? 'bg-gold-400' : 'bg-neutral-300'
+          'w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 border transition-colors duration-default',
+          step === 2
+            ? 'bg-gold-400 border-gold-400'
+            : 'bg-transparent border-neutral-300'
         )}
+      >
+        <span
+          className={cn(
+            'font-sans font-semibold transition-colors duration-default',
+            step === 2 ? 'text-neutral-800' : 'text-neutral-400'
+          )}
+          style={{ fontSize: 10 }}
+        >
+          2
+        </span>
+      </div>
+    </div>
+  )
+}
+
+// Success state — peak-end rule: make the final moment feel great
+function SuccessView({ onReset }: { onReset: () => void }) {
+  return (
+    <div className="flex flex-col items-center text-center py-4">
+
+      {/* Animated check circle — the peak moment */}
+      <div
+        className="w-16 h-16 rounded-full bg-gold-400 flex items-center justify-center mb-6"
+        style={{ animation: 'vale-pop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards' }}
+      >
+        <svg width="26" height="26" viewBox="0 0 26 26" fill="none" aria-hidden="true">
+          <path
+            d="M5 13L10 18L21 8"
+            stroke="#1C1917"
+            strokeWidth="2.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeDasharray="24"
+            style={{
+              strokeDashoffset: 24,
+              animation: 'vale-check-draw 0.32s ease forwards 0.38s',
+            }}
+          />
+        </svg>
+      </div>
+
+      {/* Headline — warm and direct */}
+      <div
+        style={{ opacity: 0, animation: 'vale-fade-up 0.4s ease 0.52s forwards' }}
+        className="mb-7"
+      >
+        <p className="font-sans font-medium text-xs uppercase tracking-label text-gold-600 mb-2">
+          Inquiry received
+        </p>
+        <h3 className="font-serif text-3xl text-neutral-800 tracking-tightest mb-3">
+          You&apos;re all set.
+        </h3>
+        <p className="font-sans font-light text-sm text-neutral-500 leading-relaxed max-w-[230px] mx-auto">
+          Bobbi reads every inquiry personally and will be in touch within one business day.
+        </p>
+      </div>
+
+      {/* Divider */}
+      <div
+        className="w-full border-t border-rule mb-6"
+        style={{ opacity: 0, animation: 'vale-fade-up 0.3s ease 0.68s forwards' }}
       />
-      <span className="font-sans text-xs text-neutral-400 ml-1">
-        {step === 1 ? 'About you' : 'About your event'}
-      </span>
+
+      {/* Next steps */}
+      <div
+        className="w-full flex flex-col gap-4 text-left mb-8"
+        style={{ opacity: 0, animation: 'vale-fade-up 0.4s ease 0.76s forwards' }}
+      >
+        {[
+          'Bobbi reads your inquiry',
+          'Hear back within one business day',
+          'Schedule your venue tour',
+        ].map((item, i) => (
+          <div key={i} className="flex items-center gap-3">
+            <span className="w-5 h-5 rounded-full bg-gold-100 font-sans font-semibold text-xs text-gold-700 flex items-center justify-center flex-shrink-0">
+              {i + 1}
+            </span>
+            <span className="font-sans font-light text-sm text-neutral-600">{item}</span>
+          </div>
+        ))}
+      </div>
+
+      {/* Submit new request */}
+      <div
+        className="w-full"
+        style={{ opacity: 0, animation: 'vale-fade-up 0.4s ease 0.92s forwards' }}
+      >
+        <button
+          onClick={onReset}
+          className="w-full h-12 rounded-button border border-rule font-sans font-medium text-xs uppercase tracking-btn text-neutral-500 hover:text-neutral-800 hover:border-neutral-400 transition-colors duration-[var(--transition-fast)]"
+        >
+          Submit new request
+        </button>
+      </div>
     </div>
   )
 }
@@ -104,38 +198,28 @@ export default function ContactForm({ defaultDate }: { defaultDate?: string }) {
     }
   }
 
+  const handleReset = () => {
+    setSubmitted(false)
+    setStep(1)
+    setFormData({
+      full_name: '',
+      email: '',
+      event_type: '',
+      guest_count: '',
+      desired_date: defaultDate ?? '',
+      message: '',
+    })
+    setErrors({})
+    setServerError('')
+  }
+
   if (submitted) {
-    return (
-      <div className="py-12">
-        <p className="font-sans font-medium text-xs uppercase tracking-label text-gold-600 mb-3">
-          Inquiry received
-        </p>
-        <h3 className="font-serif text-3xl text-neutral-800 tracking-tightest mb-8">
-          We got it.
-        </h3>
-        <div className="flex flex-col gap-5">
-          {[
-            'Bobbi reads your inquiry',
-            'You hear back within one business day',
-            'Schedule your tour',
-          ].map((item, i) => (
-            <div key={i} className="flex items-start gap-3">
-              <span className="w-5 h-5 rounded-full bg-gold-400 font-sans font-semibold text-xs text-neutral-800 flex items-center justify-center flex-shrink-0 mt-0.5">
-                {i + 1}
-              </span>
-              <span className="font-sans font-light text-base text-neutral-600">
-                {item}
-              </span>
-            </div>
-          ))}
-        </div>
-      </div>
-    )
+    return <SuccessView onReset={handleReset} />
   }
 
   return (
     <div>
-      <ProgressDots step={step} />
+      <StepIndicator step={step} />
 
       {step === 1 ? (
         <div className="flex flex-col gap-8">
