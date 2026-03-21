@@ -17,7 +17,7 @@ const weddingCard: EventCard = {
   titleStart: 'Weddings &',
   titleItalic: 'Receptions',
   body: 'The temple ceremony is yours. The reception — where every guest celebrates together — happens here. Three miles from the Provo Temple, with dedicated bride and groom suites, mountain views, and parking for everyone who waited outside.',
-  image: 'https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=800&q=80',
+  image: 'https://images.unsplash.com/photo-1763553113332-800519753e40?w=800&q=80',
   imageAlt: 'Wedding reception setup at The Vale',
   cta: 'Book a reception',
 }
