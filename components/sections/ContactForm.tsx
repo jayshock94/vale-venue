@@ -160,15 +160,16 @@ export default function ContactForm() {
           <Select
             label="Event type"
             value={formData.event_type}
-            onChange={(e) => handleChange('event_type', e.target.value)}
+            onChange={(val) => handleChange('event_type', val)}
+            placeholder="Select event type"
             error={errors.event_type}
-          >
-            <option value="">Select event type</option>
-            <option value="Wedding">Wedding</option>
-            <option value="Corporate">Corporate</option>
-            <option value="Private Celebration">Private Celebration</option>
-            <option value="Other">Other</option>
-          </Select>
+            options={[
+              { value: 'Wedding', label: 'Wedding' },
+              { value: 'Corporate', label: 'Corporate' },
+              { value: 'Private Celebration', label: 'Private Celebration' },
+              { value: 'Other', label: 'Other' },
+            ]}
+          />
           <Button type="button" variant="gold" size="lg" onClick={handleNext}>
             Continue
           </Button>
@@ -178,15 +179,16 @@ export default function ContactForm() {
           <Select
             label="Estimated guest count"
             value={formData.guest_count}
-            onChange={(e) => handleChange('guest_count', e.target.value)}
+            onChange={(val) => handleChange('guest_count', val)}
+            placeholder="How many guests?"
             error={errors.guest_count}
-          >
-            <option value="">How many guests?</option>
-            <option value="Under 25">Under 25</option>
-            <option value="25–50">25–50</option>
-            <option value="51–75">51–75</option>
-            <option value="76–100">76–100</option>
-          </Select>
+            options={[
+              { value: 'Under 25', label: 'Under 25' },
+              { value: '25–50', label: '25–50' },
+              { value: '51–75', label: '51–75' },
+              { value: '76–100', label: '76–100' },
+            ]}
+          />
           <Input
             label="Desired date"
             type="date"

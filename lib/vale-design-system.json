@@ -335,6 +335,21 @@
       "callout-accent-width":      { "$value": "3px" }
     },
 
+    "select": {
+      "$description": "Custom dropdown — trigger matches input bottom-border style, panel is Vale-branded.",
+      "panel-bg":             { "$value": "{color.primitive.neutral.0}" },
+      "panel-border":         { "$value": "{color.semantic.border.default}" },
+      "panel-radius":         { "$value": "{borderRadius.soft}" },
+      "panel-shadow":         { "$value": "0 4px 20px rgba(28,25,23,0.08)" },
+      "option-height":        { "$value": "48px" },
+      "option-color":         { "$value": "{color.semantic.text.primary}" },
+      "option-bg-hover":      { "$value": "{color.primitive.neutral.50}" },
+      "option-bg-selected":   { "$value": "{color.primitive.gold.50}" },
+      "option-color-selected":{ "$value": "{color.semantic.text.accent}" },
+      "chevron-color":        { "$value": "{color.semantic.text.muted}" },
+      "chevron-color-open":   { "$value": "{color.primitive.gold.400}" }
+    },
+
     "amenity": {
       "$description": "Chip grid — scan quickly, click for detail. Each amenity is a discrete interactive pill.",
       "chip-height":          { "$value": "44px" },
