@@ -33,6 +33,7 @@ export default function Footer() {
               {[
                 { href: '/', label: 'Home' },
                 { href: '/pricing', label: 'Pricing' },
+                { href: '/availability', label: 'Availability' },
                 { href: '/gallery', label: 'Gallery' },
                 { href: '/contact', label: 'Contact' },
               ].map((link) => (
@@ -53,13 +54,18 @@ export default function Footer() {
               Events
             </h4>
             <nav className="flex flex-col gap-3">
-              {['Weddings', 'Corporate', 'Celebrations'].map((item) => (
-                <span
-                  key={item}
-                  className="font-sans font-light text-sm text-neutral-400"
+              {[
+                { label: 'Weddings', href: '/gallery?category=weddings' },
+                { label: 'Corporate', href: '/gallery?category=corporate' },
+                { label: 'Celebrations', href: '/gallery?category=celebrations' },
+              ].map((item) => (
+                <Link
+                  key={item.label}
+                  href={item.href}
+                  className="font-sans font-light text-sm text-neutral-400 hover:text-neutral-50 transition-colors"
                 >
-                  {item}
-                </span>
+                  {item.label}
+                </Link>
               ))}
             </nav>
           </div>

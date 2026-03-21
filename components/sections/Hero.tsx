@@ -46,7 +46,7 @@ export default function Hero() {
                 <Button href="/contact" variant="gold" size="lg">
                   Book the Space
                 </Button>
-                <Button href="/pricing#availability" variant="ink" size="lg">
+                <Button href="/availability" variant="ink" size="lg">
                   Check Availability
                 </Button>
               </div>

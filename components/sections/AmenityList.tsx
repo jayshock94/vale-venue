@@ -85,6 +85,18 @@ function ClimateIcon() {
   )
 }
 
+function DanceFloorIcon() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+      <rect x="2" y="2" width="12" height="12" rx="1" stroke="currentColor" strokeWidth="1.25" />
+      <rect x="4" y="4" width="3" height="3" rx="0.5" stroke="currentColor" strokeWidth="1" />
+      <rect x="9" y="4" width="3" height="3" rx="0.5" stroke="currentColor" strokeWidth="1" />
+      <rect x="4" y="9" width="3" height="3" rx="0.5" stroke="currentColor" strokeWidth="1" />
+      <rect x="9" y="9" width="3" height="3" rx="0.5" stroke="currentColor" strokeWidth="1" />
+    </svg>
+  )
+}
+
 const amenities: Amenity[] = [
   {
     id: 'kitchen',
@@ -112,14 +124,14 @@ const amenities: Amenity[] = [
     label: 'AV system',
     icon: <SpeakerIcon />,
     headline: 'Built-in audio + visual',
-    detail: 'In-ceiling speakers throughout, wireless microphone inputs, and HDMI display connectivity. Plug in your playlist, run a slideshow, or connect a DJ — the room is wired for it.',
+    detail: 'In-ceiling speakers throughout, drop-down projector and screen, wireless microphone, and HDMI connectivity. Plug in your playlist, run a slideshow, or connect a DJ — the room is wired for it.',
   },
   {
     id: 'tables',
     label: 'Tables & chairs',
     icon: <TableIcon />,
     headline: 'Tables & chairs for 100',
-    detail: 'Round banquet tables and cushioned chairs for up to 100 guests, included in every package. Standard layouts available — or tell us how you want the room arranged.',
+    detail: '4,200 sq ft main floor. Round banquet tables and cushioned chairs included — 100 guests seated, up to 150 for a flowing reception layout. Standard arrangements available or tell us how you want the room set.',
   },
   {
     id: 'parking',
@@ -141,6 +153,13 @@ const amenities: Amenity[] = [
     icon: <ClimateIcon />,
     headline: 'Full climate control',
     detail: 'Independent HVAC throughout the venue. Comfortable in Utah summers and winters alike. You set the temperature — no fighting with a building manager.',
+  },
+  {
+    id: 'dance-floor',
+    label: 'Dance floor',
+    icon: <DanceFloorIcon />,
+    headline: 'Open dance floor',
+    detail: 'The main floor clears easily for dancing. Tables arrange around the perimeter and the center opens up — no awkward layout compromises. Works for weddings, birthdays, and any event where the dancing matters.',
   },
 ]
 

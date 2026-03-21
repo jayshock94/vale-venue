@@ -80,6 +80,35 @@ export default function TestimonialSection({
             ))}
           </div>
         )}
+
+        {/* Recognition strip — TODO: replace with real badge images once earned */}
+        <div className="mt-16 pt-10 border-t border-white/10">
+          <p className="font-sans font-light text-[10px] uppercase tracking-eyebrow text-neutral-600 mb-6 text-center">
+            As recognized by
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-8">
+            {[
+              { name: 'Zola', award: 'Best of Zola 2025' },
+              { name: 'The Knot', award: "The Knot Best of Weddings '25" },
+              { name: 'WeddingWire', award: 'Couples\' Choice 2025' },
+            ].map(({ name, award }) => (
+              <div
+                key={name}
+                className="flex flex-col items-center gap-1.5 opacity-40"
+              >
+                <div className="w-14 h-14 rounded-full border border-white/20 flex items-center justify-center">
+                  <span className="font-serif italic text-[11px] text-neutral-50 text-center leading-tight px-1">
+                    {name}
+                  </span>
+                </div>
+                <p className="font-sans font-light text-[10px] text-neutral-400 text-center max-w-[80px] leading-snug">
+                  {award}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+
       </div>
     </section>
   )

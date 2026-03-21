@@ -56,29 +56,27 @@ export default async function ContactPage({
       <Nav />
       <main className="flex-1 pb-24 md:pb-0">
 
-        {/* Hero */}
-        <section className="bg-neutral-800 pt-32 pb-20 px-5 md:px-page">
-          <div className="max-w-content mx-auto">
-            <p className="text-xs font-semibold font-sans uppercase tracking-eyebrow text-gold-300 mb-6">
-              Get in touch
-            </p>
-            <h1 className="font-serif text-5xl text-neutral-50 tracking-tightest mb-6 max-w-xl">
-              Tell us about your{' '}
-              <em className="italic text-gold-300">event</em>.
-            </h1>
-            <p className="font-sans font-light text-md text-neutral-50 opacity-70 max-w-md">
-              No runaround. Pricing is on the site. This goes straight to Bobbi.
-            </p>
-          </div>
-        </section>
-
-        {/* Two-column body */}
-        <section className="bg-neutral-50 py-section px-5 md:px-page">
+        {/* Two-column body — form visible on load, no hero re-introduction */}
+        <section className="bg-neutral-50 pt-32 pb-section px-5 md:px-page">
           <div className="max-w-content mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-[1fr_1.2fr] gap-16 md:gap-20 items-start">
 
-              {/* Left — Bobbi + contact details */}
-              <div className="order-2 md:order-1">
+              {/* Left — heading + Bobbi + contact details */}
+              <div className="order-1 md:order-1">
+
+                {/* Page heading */}
+                <div className="mb-10">
+                  <p className="text-xs font-semibold font-sans uppercase tracking-eyebrow text-gold-600 mb-4">
+                    Get in touch
+                  </p>
+                  <h1 className="font-serif text-4xl text-neutral-800 tracking-tightest mb-3">
+                    Tell us about your{' '}
+                    <em className="italic text-gold-600">event</em>.
+                  </h1>
+                  <p className="font-sans font-light text-base text-neutral-500">
+                    No runaround. Pricing is on the site. This goes straight to Bobbi.
+                  </p>
+                </div>
 
                 {/* Bobbi block */}
                 <div className="mb-10">
@@ -167,7 +165,7 @@ export default async function ContactPage({
               </div>
 
               {/* Right — Form card */}
-              <div className="order-1 md:order-2 card-warm-glass rounded-soft px-5 py-8 md:px-8 md:py-10">
+              <div className="order-2 md:order-2 card-warm-glass rounded-soft px-5 py-8 md:px-8 md:py-10">
                 <ContactForm defaultDate={date} defaultEndDate={dateTo} />
               </div>
 

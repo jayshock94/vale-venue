@@ -1,7 +1,7 @@
 const stats = [
   { value: '100+', label: 'Events hosted', accent: false },
   { value: '5 Star', label: 'Average review', accent: false },
-  { value: '100', label: 'Guest capacity', accent: false },
+  { value: '100', label: 'Guests, seated', accent: false },
   { value: '$300', label: 'Starting price', accent: true },
 ]
 

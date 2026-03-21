@@ -10,7 +10,7 @@ import MobileNav from './MobileNav'
 const navLinks = [
   { href: '/', label: 'Home' },
   { href: '/pricing', label: 'Pricing' },
-  { href: '/pricing#availability', label: 'Availability' },
+  { href: '/availability', label: 'Availability' },
   { href: '/gallery', label: 'Gallery' },
   { href: '/contact', label: 'Contact' },
 ]
@@ -65,24 +65,24 @@ export default function NavClient() {
 
           {/* Desktop nav */}
           <nav className="hidden md:flex items-center gap-8">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className={cn(
-                  'font-sans font-medium text-xs uppercase tracking-nav transition-colors',
-                  pathname === link.href.split('#')[0]
-                    ? isTransparent
-                      ? 'text-neutral-50'
-                      : 'text-neutral-800'
-                    : isTransparent
-                    ? 'text-neutral-50/50 hover:text-neutral-50'
-                    : 'text-neutral-500 hover:text-neutral-800'
-                )}
-              >
-                {link.label}
-              </Link>
-            ))}
+            {navLinks.map((link) => {
+              const active = pathname === link.href.split('#')[0]
+              return (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className={cn(
+                    'font-sans font-medium text-xs uppercase tracking-nav transition-colors',
+                    active
+                      ? isTransparent ? 'text-neutral-50' : 'text-neutral-800'
+                      : isTransparent ? 'text-neutral-50/50 hover:text-neutral-50' : 'text-neutral-500 hover:text-neutral-800'
+                  )}
+                  style={active ? { borderBottom: '1px solid var(--color-gold-400)', paddingBottom: '2px' } : undefined}
+                >
+                  {link.label}
+                </Link>
+              )
+            })}
           </nav>
 
           <div className="flex items-center gap-3">

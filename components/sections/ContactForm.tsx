@@ -310,8 +310,8 @@ export default function ContactForm({ defaultDate, defaultEndDate }: { defaultDa
             error={errors.desired_date}
           />
           <Textarea
-            label="Anything else?"
-            placeholder="Your vision, questions, or anything Bobbi should know."
+            label="Tell us more"
+            placeholder="Guest count, questions, or anything Bobbi should know."
             value={formData.message}
             onChange={(e) => handleChange('message', e.target.value)}
             error={errors.message}

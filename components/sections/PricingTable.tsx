@@ -193,7 +193,7 @@ export default function PricingTable({
             <p className="font-sans font-light text-[length:var(--text-11)] text-neutral-400">
               All packages include full venue access, amenities, and parking.
             </p>
-            <Button href="#availability" variant="gold" size="md" className="flex-shrink-0">
+            <Button href="/availability" variant="gold" size="md" className="flex-shrink-0">
               Check Availability
             </Button>
           </div>
@@ -237,6 +237,26 @@ export default function PricingTable({
 
           </div>
         </div>
+
+        {/* Booking terms — TODO: update with real policy from Bobbi */}
+        <div className="mt-8 border-t border-rule pt-8">
+          <p className="font-sans font-semibold text-[length:var(--text-10)] uppercase tracking-eyebrow text-neutral-500 mb-4">
+            Booking terms
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+            {[
+              { term: 'Deposit', detail: '50% due at signing to secure your date.' },
+              { term: 'Balance', detail: 'Remaining 50% due 30 days before your event.' },
+              { term: 'Cancellations', detail: 'Full deposit refund if cancelled 60+ days out. Non-refundable within 60 days. Rescheduling within 12 months available at no penalty.' },
+            ].map(({ term, detail }) => (
+              <div key={term}>
+                <p className="font-sans font-medium text-[length:var(--text-12)] text-neutral-800 mb-1">{term}</p>
+                <p className="font-sans font-light text-[length:var(--text-13)] text-neutral-500 leading-relaxed">{detail}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
       </div>
     </section>
   )
