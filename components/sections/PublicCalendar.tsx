@@ -444,16 +444,29 @@ export default function PublicCalendar({ availability = [] }: PublicCalendarProp
           </>
         )}
 
-        {/* Range / date CTA */}
-        {ctaLabel && !showPicker && (
+        {/* Reserve CTA — always visible, enriched when a date is selected */}
+        {!showPicker && (
           <div className="mt-6 border-t border-rule pt-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
             <div>
-              <p className="font-sans font-semibold text-base text-neutral-800">
-                {ctaLabel}
-              </p>
-              <p className="font-sans font-light text-sm text-neutral-500 mt-1">
-                Send an inquiry and Bobbi will confirm within one business day.
-              </p>
+              {ctaLabel ? (
+                <>
+                  <p className="font-sans font-semibold text-base text-neutral-800">
+                    {ctaLabel}
+                  </p>
+                  <p className="font-sans font-light text-sm text-neutral-500 mt-1">
+                    Send an inquiry and Bobbi will confirm within one business day.
+                  </p>
+                </>
+              ) : (
+                <>
+                  <p className="font-sans font-semibold text-base text-neutral-800">
+                    Ready to reserve?
+                  </p>
+                  <p className="font-sans font-light text-sm text-neutral-500 mt-1">
+                    Select a date above or reach out and Bobbi will check availability for you.
+                  </p>
+                </>
+              )}
             </div>
             <div className="flex items-center gap-3 flex-shrink-0">
               {(rangeStart || rangeEnd) && (
@@ -466,7 +479,7 @@ export default function PublicCalendar({ availability = [] }: PublicCalendarProp
                 </button>
               )}
               <Button href={contactHref} variant="gold" size="md">
-                Reserve This Date
+                Reserve Your Date
               </Button>
             </div>
           </div>

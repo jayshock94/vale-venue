@@ -193,8 +193,8 @@ export default function PricingTable({
             <p className="font-sans font-light text-[length:var(--text-11)] text-neutral-400">
               All packages include full venue access, amenities, and parking.
             </p>
-            <Button href="/contact" variant="gold" size="md" className="flex-shrink-0">
-              Reserve Your Date
+            <Button href="#availability" variant="gold" size="md" className="flex-shrink-0">
+              Check Availability
             </Button>
           </div>
         </div>
