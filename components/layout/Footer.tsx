@@ -98,9 +98,36 @@ export default function Footer() {
           <p className="font-sans font-light text-xs text-neutral-500">
             &copy; {new Date().getFullYear()} The Vale. All rights reserved.
           </p>
-          <p className="font-sans font-light text-xs text-neutral-500">
-            Provo, Utah
-          </p>
+
+          {/* Social — TODO: swap # for real profile URLs */}
+          <div className="flex items-center gap-5">
+            {/* Instagram */}
+            <a
+              href="#"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="The Vale on Instagram"
+              className="text-neutral-500 hover:text-neutral-50 transition-colors duration-[var(--transition-fast)]"
+            >
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <rect x="2" y="2" width="20" height="20" rx="5" />
+                <circle cx="12" cy="12" r="4" />
+                <circle cx="17.5" cy="6.5" r="0.75" fill="currentColor" stroke="none" />
+              </svg>
+            </a>
+            {/* Facebook */}
+            <a
+              href="#"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="The Vale on Facebook"
+              className="text-neutral-500 hover:text-neutral-50 transition-colors duration-[var(--transition-fast)]"
+            >
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+              </svg>
+            </a>
+          </div>
         </div>
       </div>
     </footer>
