@@ -39,7 +39,7 @@ export function SectionHeader({
         </p>
         <h2
           className={cn(
-            'font-serif text-4xl tracking-tightest leading-tight',
+            'font-serif font-semibold text-4xl tracking-tightest leading-tight',
             dark ? 'text-neutral-50' : 'text-neutral-800'
           )}
         >

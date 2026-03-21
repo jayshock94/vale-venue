@@ -121,7 +121,7 @@ export default function TestimonialSection({
               <div className="border-t border-white/10 pt-8 space-y-6">
                 {secondaries.map((t, i) => (
                   <div key={i} className="opacity-45">
-                    <p className="font-serif italic text-sm text-neutral-200 leading-relaxed">
+                    <p className="font-sans italic text-sm text-neutral-200 leading-relaxed">
                       &ldquo;{t.quote}&rdquo;
                     </p>
                     <p className="font-sans text-[10px] uppercase tracking-stat text-neutral-500 mt-2">
@@ -140,7 +140,7 @@ export default function TestimonialSection({
               <div className="flex items-center gap-6 opacity-30">
                 {badges.map(({ name, award }) => (
                   <div key={name} className="flex flex-col gap-1">
-                    <span className="font-serif italic text-[11px] text-neutral-50 leading-tight">
+                    <span className="font-sans italic text-[11px] text-neutral-50 leading-tight">
                       {name}
                     </span>
                     <span className="font-sans font-regular text-[10px] text-neutral-400 leading-snug">

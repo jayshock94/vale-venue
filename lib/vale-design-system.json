@@ -11,11 +11,16 @@
       "googleFontsUrl": "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Inter:wght@400;500;600&display=swap"
     },
     "rules": {
-      "serif": "Emotion and money only — hero headline, prices, pull quotes, logo, one italic accent word per card title",
-      "sans": "Everything else — nav, buttons, body, labels, forms, amenities, badges",
-      "gold": "Appears max 3 times per page — primary CTA button, price values, one accent word",
-      "no-hardcoding": "NEVER hardcode a color, font, or spacing value. Everything must reference a token.",
-      "min-weight": "Minimum body text weight is 400 (regular). No 300 Light anywhere in the UI."
+      "serif":        "Headlines ≥ 24px only — hero h1, section h2, pull quotes, testimonials, price and stat display numbers. One italic accent word per card title at any size. Never body copy, captions, labels, or anything read as a sentence.",
+      "sans":         "Everything under 24px, without exception — nav, buttons, body copy, captions, labels, eyebrow text, amenity lists, form fields, FAQs, badges, stats labels, footer text, attribution.",
+      "size-rule":    "Under 24px = Inter. If someone reads it as a sentence = Inter. No exceptions.",
+      "gold":         "Appears max 3 times per page — primary CTA button, price values, one accent word",
+      "no-hardcoding":"NEVER hardcode a color, font, or spacing value. Everything must reference a token.",
+      "weight-body":  "Body copy: regular (400) minimum — no 300 Light anywhere",
+      "weight-nav":   "Nav links: medium (500)",
+      "weight-label": "Labels and eyebrows: semibold (600)",
+      "weight-card":  "Card titles, section subheadings: medium (500)",
+      "weight-serif": "Cormorant Garamond: semibold (600) for hero h1 and any headline on a dark surface; regular (400) for section h2 on light surfaces where the 46px scale carries the weight"
     }
   },
 
@@ -109,24 +114,24 @@
       "ui":      { "$value": "Inter",              "$type": "fontFamily" }
     },
     "weight": {
-      "regular":  { "$value": 400, "$type": "fontWeight" },
-      "medium":   { "$value": 500, "$type": "fontWeight" },
-      "semibold": { "$value": 600, "$type": "fontWeight" }
+      "regular":  { "$value": 400, "$type": "fontWeight", "$description": "Body copy, body links, captions, input text, tertiary UI text" },
+      "medium":   { "$value": 500, "$type": "fontWeight", "$description": "Nav links, card titles, section subheadings" },
+      "semibold": { "$value": 600, "$type": "fontWeight", "$description": "Labels, eyebrows, buttons, badges, hero headline, headlines on dark surfaces" }
     },
     "size": {
-      "10": { "$value": "10px", "$type": "fontSize" },
-      "11": { "$value": "11px", "$type": "fontSize" },
-      "12": { "$value": "12px", "$type": "fontSize" },
-      "13": { "$value": "13px", "$type": "fontSize" },
-      "14": { "$value": "14px", "$type": "fontSize" },
-      "15": { "$value": "15px", "$type": "fontSize" },
+      "10": { "$value": "11px", "$type": "fontSize", "$description": "Minimum for any label/eyebrow/caption — nav, eyebrows, stat labels, badge text" },
+      "11": { "$value": "12px", "$type": "fontSize", "$description": "Small UI — badge text, button sm, secondary labels" },
+      "12": { "$value": "13px", "$type": "fontSize", "$description": "Footer text, button md, secondary footnotes" },
+      "13": { "$value": "14px", "$type": "fontSize", "$description": "Body copy floor — card descriptions, FAQ answers, button lg" },
+      "14": { "$value": "15px", "$type": "fontSize", "$description": "Sub-body, form input text" },
+      "15": { "$value": "16px", "$type": "fontSize", "$description": "Section body copy, hero sub-copy" },
       "18": { "$value": "18px", "$type": "fontSize" },
       "20": { "$value": "20px", "$type": "fontSize" },
-      "24": { "$value": "24px", "$type": "fontSize" },
-      "34": { "$value": "34px", "$type": "fontSize" },
-      "40": { "$value": "40px", "$type": "fontSize" },
-      "52": { "$value": "52px", "$type": "fontSize" },
-      "80": { "$value": "80px", "$type": "fontSize" }
+      "24": { "$value": "24px", "$type": "fontSize", "$description": "Serif threshold — below this, Inter only" },
+      "34": { "$value": "34px", "$type": "fontSize", "$description": "Stats bar display numbers" },
+      "40": { "$value": "46px", "$type": "fontSize", "$description": "Section h2 — clear visual jump above stats/subheadings" },
+      "52": { "$value": "60px", "$type": "fontSize", "$description": "Hero h1 mobile — dominant at viewport entry" },
+      "80": { "$value": "80px", "$type": "fontSize", "$description": "Hero h1 desktop" }
     },
     "lineHeight": {
       "tight":   { "$value": 1.1 },

@@ -107,7 +107,7 @@ function EventCardSmall({ card }: { card: EventCard }) {
         </p>
         <h3 className="font-sans font-medium text-xl text-neutral-800">
           {card.titleStart}{' '}
-          <em className="font-serif italic text-gold-600" style={{ fontStyle: 'italic' }}>
+          <em className="font-serif italic text-gold-600">
             {card.titleItalic}
           </em>
         </h3>

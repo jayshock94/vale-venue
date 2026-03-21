@@ -36,7 +36,7 @@ export default async function AvailabilityPage() {
             <p className="text-xs font-semibold font-sans uppercase tracking-eyebrow text-gold-300 mb-6">
               Check availability
             </p>
-            <h1 className="font-serif text-5xl text-neutral-50 tracking-tightest mb-6 max-w-xl">
+            <h1 className="font-serif font-semibold text-5xl text-neutral-50 tracking-tightest mb-6 max-w-xl">
               Find your{' '}
               <em className="italic text-gold-300">date</em>.
             </h1>

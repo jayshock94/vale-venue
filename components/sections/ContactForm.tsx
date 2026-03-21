@@ -37,7 +37,7 @@ function StepIndicator({ step }: { step: 1 | 2 }) {
   return (
     <div className="flex items-center gap-3 mb-8">
       <div className="w-5 h-5 rounded-full bg-gold-400 flex items-center justify-center flex-shrink-0">
-        <span className="font-sans font-semibold text-neutral-800" style={{ fontSize: 10 }}>1</span>
+        <span className="font-sans font-semibold text-xs text-neutral-800">1</span>
       </div>
       <div
         className={cn(
@@ -55,10 +55,9 @@ function StepIndicator({ step }: { step: 1 | 2 }) {
       >
         <span
           className={cn(
-            'font-sans font-semibold transition-colors duration-default',
+            'font-sans font-semibold text-xs transition-colors duration-default',
             step === 2 ? 'text-neutral-800' : 'text-neutral-400'
           )}
-          style={{ fontSize: 10 }}
         >
           2
         </span>
