@@ -1,0 +1,40 @@
+const stats = [
+  { value: '100+', label: 'Events hosted' },
+  { value: '5 Star', label: 'Average review' },
+  { value: '100', label: 'Guest capacity' },
+  { value: '$300', label: 'Starting price' },
+]
+
+export default function StatsBar() {
+  return (
+    <section className="bg-neutral-50 border-t border-b border-rule py-8 px-5 md:px-page">
+      <div className="max-w-content mx-auto">
+        <div className="grid grid-cols-2 md:grid-cols-4">
+          {stats.map((stat, index) => (
+            <div
+              key={stat.label}
+              className={`flex flex-col items-center py-4 md:py-0 text-center ${
+                index < stats.length - 1
+                  ? 'md:border-r border-rule'
+                  : ''
+              } ${
+                index % 2 === 0 && index < stats.length - 1
+                  ? 'border-r border-rule md:border-r-0'
+                  : ''
+              } ${
+                index < 2 ? 'border-b border-rule md:border-b-0' : ''
+              }`}
+            >
+              <span className="font-serif text-3xl text-neutral-800">
+                {stat.value}
+              </span>
+              <span className="font-sans text-xs text-neutral-500 uppercase tracking-wider mt-1">
+                {stat.label}
+              </span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
