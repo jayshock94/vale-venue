@@ -301,12 +301,21 @@
       "row-border":           { "$value": "{color.semantic.border.default}",   "$description": "Upgraded from subtle — rows scannable" },
       "table-border":         { "$value": "{color.semantic.border.default}",   "$description": "Outer container edge — anchors table to page" },
       "header-border-bottom": { "$value": "{color.semantic.border.strong}",    "$description": "Heavier line separating header from data rows" },
-      "row-height":           { "$value": "56px" },
-      "header-height":        { "$value": "40px" },
-      "price-font":           { "$value": "{typography.family.display}" },
-      "price-size":           { "$value": "{typography.size.18}" },
-      "peak-size":            { "$value": "{typography.size.20}" },
-      "peak-color":           { "$value": "{color.primitive.gold.400}" }
+      "row-height":             { "$value": "56px" },
+      "header-height":          { "$value": "40px" },
+      "price-font":             { "$value": "{typography.family.display}" },
+      "price-size":             { "$value": "{typography.size.18}" },
+      "peak-size":              { "$value": "{typography.size.20}" },
+      "peak-color":             { "$value": "{color.primitive.gold.400}" },
+      "col-header-day-color":   { "$value": "{color.semantic.text.primary}",  "$description": "Mon–Wed / Thu / Fri–Sat — decision columns, command attention" },
+      "col-header-day-weight":  { "$value": "{typography.weight.semibold}" },
+      "col-header-meta-color":  { "$value": "{color.semantic.text.ghost}",    "$description": "Package / Hours — structural context, demoted" },
+      "col-header-meta-weight": { "$value": "{typography.weight.regular}" },
+      "footnote-size":          { "$value": "{typography.size.11}",           "$description": "Ghost-level — disappears behind CTA" },
+      "footnote-color":         { "$value": "{color.semantic.text.ghost}",    "$description": "neutral-400 — subordinate to the action" },
+      "callout-bg":             { "$value": "{color.primitive.gold.50}",      "$description": "Warm background — no surrounding border" },
+      "callout-accent":         { "$value": "{color.primitive.gold.400}",     "$description": "Left accent line only — invitation, not form-field border" },
+      "callout-accent-width":   { "$value": "3px" }
     },
 
     "amenity": {

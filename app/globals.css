@@ -194,6 +194,9 @@
 
   /* ── Gallery filter ── */
   --gallery-filter-tab-height: 36px;
+
+  /* ── Pricing table callout ── */
+  --pricing-callout-accent-width: 3px;
 }
 
 /* ─────────────────────────────────────────────────────────────────────────────

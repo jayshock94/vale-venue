@@ -85,32 +85,34 @@ export default function PricingTable({
           <table className="w-full min-w-[600px]">
             <thead>
               <tr className="bg-neutral-100 border-b-2 border-neutral-300">
+                {/* col-header-meta: structural context — demoted to ghost */}
                 <th
-                  className="text-left font-sans font-medium text-xs uppercase tracking-wider text-neutral-500 py-3 px-4"
+                  className="text-left font-sans font-normal text-xs uppercase tracking-wider text-neutral-400 py-3 px-4"
                   style={{ width: '1fr' }}
                 >
                   Package
                 </th>
                 <th
-                  className="text-left font-sans font-medium text-xs uppercase tracking-wider text-neutral-500 py-3 px-4"
+                  className="text-left font-sans font-normal text-xs uppercase tracking-wider text-neutral-400 py-3 px-4"
                   style={{ width: '70px' }}
                 >
                   Hours
                 </th>
+                {/* col-header-day: decision columns — promoted to primary */}
                 <th
-                  className="text-right font-sans font-medium text-xs uppercase tracking-wider text-neutral-500 py-3 px-4"
+                  className="text-right font-sans font-semibold text-xs uppercase tracking-wider text-neutral-800 py-3 px-4"
                   style={{ width: '100px' }}
                 >
                   Mon–Wed
                 </th>
                 <th
-                  className="text-right font-sans font-medium text-xs uppercase tracking-wider text-neutral-500 py-3 px-4"
+                  className="text-right font-sans font-semibold text-xs uppercase tracking-wider text-neutral-800 py-3 px-4"
                   style={{ width: '100px' }}
                 >
                   Thursday
                 </th>
                 <th
-                  className="text-right font-sans font-medium text-xs uppercase tracking-wider text-neutral-500 py-3 px-4"
+                  className="text-right font-sans font-semibold text-xs uppercase tracking-wider text-neutral-800 py-3 px-4"
                   style={{ width: '110px' }}
                 >
                   Fri–Sat
@@ -185,18 +187,20 @@ export default function PricingTable({
           </div>
         </div>
 
-        {/* Decision-moment CTA — appears right after the user has seen all prices */}
-        <div className="mt-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-          <p className="font-sans font-light text-sm text-neutral-500">
-            All packages include full venue access, amenities, and parking.
-          </p>
+        {/* CTA — standalone, commands attention alone */}
+        <div className="mt-8 flex justify-end">
           <Button href="/contact" variant="gold" size="md">
             Reserve Your Date
           </Button>
         </div>
 
-        {/* Micro-event callout — secondary audience, visually warm and distinct from the table */}
-        <div className="mt-6 border border-gold-200 bg-gold-50 rounded-soft px-6 py-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+        {/* Footnote — pricing-table.footnote-size/color: ghost, disappears behind CTA */}
+        <p className="font-sans font-light text-2xs text-neutral-400 mt-3">
+          All packages include full venue access, amenities, and parking.
+        </p>
+
+        {/* Micro-event callout — left accent only (callout-accent), no surrounding border */}
+        <div className="mt-8 border-l-[var(--pricing-callout-accent-width)] border-gold-400 bg-gold-50 pl-5 pr-6 py-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
           <div>
             <p className="font-sans font-semibold text-sm text-neutral-800">
               Hosting a birthday or small celebration?
