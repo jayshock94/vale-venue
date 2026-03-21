@@ -245,10 +245,25 @@ export default function AmenityList() {
         </div>
 
         {/* Catering note */}
-        <p className="mt-10 pt-8 border-t border-rule font-sans font-light text-sm text-neutral-500">
-          <span className="font-medium text-neutral-700">Catering:</span>{' '}
-          Your caterer, your choice. We provide the kitchen — who cooks is entirely up to you.
-        </p>
+        <div className="mt-10 pt-8 border-t border-rule flex items-start gap-4">
+          <div className="w-10 h-10 rounded-full bg-gold-50 border border-gold-100 flex items-center justify-center flex-shrink-0 mt-0.5">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+              <path d="M3 3v5a6 6 0 0 0 12 0V3" stroke="var(--color-gold-600)" strokeWidth="1.4" strokeLinecap="round"/>
+              <path d="M9 14v3M6 17h6" stroke="var(--color-gold-600)" strokeWidth="1.4" strokeLinecap="round"/>
+            </svg>
+          </div>
+          <div>
+            <p className="font-sans font-semibold text-xs uppercase tracking-label text-gold-600 mb-1">
+              Catering
+            </p>
+            <p className="font-sans text-base text-neutral-800">
+              Your caterer, your choice.{' '}
+              <span className="font-light text-neutral-500">
+                We provide the kitchen — who cooks is entirely up to you.
+              </span>
+            </p>
+          </div>
+        </div>
       </div>
     </section>
   )
