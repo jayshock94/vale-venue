@@ -336,13 +336,26 @@
     },
 
     "amenity": {
-      "$description": "Checklist-style items. Row height and separator force visual separation.",
-      "item-min-height": "48px",
-      "item-border":     { "$value": "{color.semantic.border.subtle}", "$description": "Bottom rule between items" },
-      "check-color":     { "$value": "{color.primitive.gold.400}" },
-      "label-size":      { "$value": "{typography.size.14}" },
-      "label-weight":    { "$value": "{typography.weight.regular}" },
-      "gap-x":           { "$value": "{spacing.3}", "$description": "Icon to label gap" }
+      "$description": "Chip grid — scan quickly, click for detail. Each amenity is a discrete interactive pill.",
+      "chip-height":          { "$value": "44px" },
+      "chip-padding":         { "$value": "0 18px" },
+      "chip-bg":              { "$value": "transparent" },
+      "chip-bg-active":       { "$value": "{color.primitive.gold.50}" },
+      "chip-border":          { "$value": "{color.semantic.border.default}" },
+      "chip-border-active":   { "$value": "{color.primitive.gold.400}" },
+      "chip-radius":          { "$value": "999px", "$description": "Full pill" },
+      "chip-icon-size":       { "$value": "16px" },
+      "chip-icon-color":      { "$value": "{color.semantic.text.muted}" },
+      "chip-icon-color-active": { "$value": "{color.primitive.gold.500}" },
+      "chip-label-size":      { "$value": "{typography.size.13}" },
+      "chip-label-weight":    { "$value": "{typography.weight.medium}" },
+      "chip-label-color":     { "$value": "{color.semantic.text.secondary}" },
+      "chip-label-color-active": { "$value": "{color.semantic.text.primary}" },
+      "detail-bg":            { "$value": "{color.primitive.neutral.0}" },
+      "detail-border":        { "$value": "{color.semantic.border.subtle}" },
+      "detail-radius":        { "$value": "{borderRadius.soft}" },
+      "detail-headline-size": { "$value": "{typography.size.15}" },
+      "detail-body-size":     { "$value": "{typography.size.14}" }
     },
 
     "gallery-filter": {

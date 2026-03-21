@@ -189,8 +189,11 @@
   /* ── Button ghost arrow nudge ── */
   --btn-ghost-arrow-nudge: 3px;
 
-  /* ── Amenity list ── */
-  --amenity-item-min-height: 48px;
+  /* ── Amenity chips ── */
+  --amenity-chip-height:          44px;
+  --amenity-chip-border-active:   var(--color-gold-400);
+  --amenity-chip-bg-active:       var(--color-gold-50);
+  --amenity-chip-icon-active:     var(--color-gold-500);
 
   /* ── Gallery filter ── */
   --gallery-filter-tab-height: 36px;
