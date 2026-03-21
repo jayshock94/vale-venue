@@ -36,7 +36,7 @@ export default async function AvailabilityPage() {
           Click dates to cycle through: available → booked → blocked.
         </p>
       </div>
-      <div className="bg-white border border-[#E0E0E0] rounded-admin p-6">
+      <div className="bg-white border border-admin-border rounded-admin p-6">
         <AvailabilityCalendar initialData={availability} />
       </div>
     </div>

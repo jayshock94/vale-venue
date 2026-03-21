@@ -84,7 +84,7 @@ export default function PricingAdminPage() {
   }
 
   const inputClass =
-    'w-full bg-[#F8F8F8] border border-[#E0E0E0] rounded-sharp px-2 py-1.5 font-sans text-xs text-neutral-800 focus:outline-none focus:border-neutral-400'
+    'w-full bg-admin-page border border-admin-border rounded-sharp px-2 py-1.5 font-sans text-xs text-neutral-800 focus:outline-none focus:border-neutral-400'
 
   return (
     <div className="max-w-5xl">
@@ -124,9 +124,9 @@ export default function PricingAdminPage() {
         </div>
       )}
 
-      <div className="bg-white border border-[#E0E0E0] rounded-admin overflow-hidden">
+      <div className="bg-white border border-admin-border rounded-admin overflow-hidden">
         <table className="w-full">
-          <thead className="bg-[#F8F8F8] border-b border-[#E0E0E0]">
+          <thead className="bg-admin-page border-b border-admin-border">
             <tr>
               {['Package name', 'Time range', 'Hrs', 'Mon–Wed', 'Thu', 'Fri–Sat', 'Peak', 'Featured', 'Active', ''].map((h) => (
                 <th
@@ -138,7 +138,7 @@ export default function PricingAdminPage() {
               ))}
             </tr>
           </thead>
-          <tbody className="divide-y divide-[#F0F0F0]">
+          <tbody className="divide-y divide-admin-divider">
             {packages.map((pkg, index) => (
               <tr key={pkg.id || index} className={pkg.active ? '' : 'opacity-50'}>
                 <td className="py-3 px-3">

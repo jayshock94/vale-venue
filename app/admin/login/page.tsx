@@ -33,10 +33,10 @@ export default function AdminLoginPage() {
   }
 
   return (
-    <div className="min-h-screen bg-[#F8F8F8] flex items-center justify-center px-4">
+    <div className="min-h-screen bg-admin-page flex items-center justify-center px-4">
       <div className="w-full max-w-[380px]">
         {/* Card */}
-        <div className="bg-white border border-[#E0E0E0] rounded-admin p-8">
+        <div className="bg-white border border-admin-border rounded-admin p-8">
           {/* Logo */}
           <div className="text-center mb-8">
             <p className="font-sans font-medium text-sm text-neutral-800 mb-0.5">
@@ -57,7 +57,7 @@ export default function AdminLoginPage() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
-                className="w-full bg-[#F8F8F8] border border-[#E0E0E0] rounded-admin px-3 py-2 font-sans text-sm text-neutral-800 placeholder-neutral-300 focus:outline-none focus:border-neutral-400"
+                className="w-full bg-admin-page border border-admin-border rounded-admin px-3 py-2 font-sans text-sm text-neutral-800 placeholder-neutral-300 focus:outline-none focus:border-neutral-400"
                 placeholder="admin@valevenue.com"
                 autoComplete="email"
               />
@@ -72,7 +72,7 @@ export default function AdminLoginPage() {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
-                className="w-full bg-[#F8F8F8] border border-[#E0E0E0] rounded-admin px-3 py-2 font-sans text-sm text-neutral-800 placeholder-neutral-300 focus:outline-none focus:border-neutral-400"
+                className="w-full bg-admin-page border border-admin-border rounded-admin px-3 py-2 font-sans text-sm text-neutral-800 placeholder-neutral-300 focus:outline-none focus:border-neutral-400"
                 placeholder="••••••••"
                 autoComplete="current-password"
               />

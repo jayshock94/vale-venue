@@ -175,6 +175,11 @@
   --faq-row-min-height: 56px;
   --touch-target-min:   48px;
 
+  /* ── Card warm glass surface ── */
+  --surface-card:         #FAF8F5;
+  --card-border-color:    rgba(192, 136, 64, 0.40);
+  --card-shadow:          rgba(26, 23, 20, 0.06);
+
   /* ── Admin component values (separate design language) ── */
   --admin-nav-height:   52px;
   --admin-sidebar-width: 200px;
@@ -241,9 +246,9 @@ body {
    ───────────────────────────────────────────────────────────────────────────── */
 /* warm off-white — lighter than the neutral-50 page bg (#F5F0E8), not pure white */
 .card-warm-glass {
-  background: #FAF8F5;
-  border: 1px solid rgba(201, 160, 110, 0.40);
-  box-shadow: 0 1px 10px rgba(28, 25, 23, 0.06);
+  background: var(--surface-card);
+  border: 1px solid var(--card-border-color);
+  box-shadow: 0 1px 10px var(--card-shadow);
 }
 
 .card-dark-glass {

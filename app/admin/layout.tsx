@@ -24,7 +24,7 @@ export default async function AdminLayout({
   }
 
   return (
-    <div className="min-h-screen bg-[#F8F8F8] flex flex-col font-sans">
+    <div className="min-h-screen bg-admin-page flex flex-col font-sans">
       <AdminNav userEmail={userEmail} />
       <div className="flex flex-1 overflow-hidden">
         <AdminSidebar />

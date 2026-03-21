@@ -23,7 +23,7 @@ function StatCard({ label, value, href }: StatCardProps) {
   return (
     <Link
       href={href}
-      className="bg-white border border-[#E0E0E0] rounded-admin p-5 hover:border-neutral-400 transition-colors block"
+      className="bg-white border border-admin-border rounded-admin p-5 hover:border-neutral-400 transition-colors block"
     >
       <p className="font-sans font-semibold text-xs uppercase tracking-label text-neutral-400 mb-2">
         {label}
@@ -100,8 +100,8 @@ export default async function AdminDashboard() {
       </div>
 
       {/* Recent inquiries */}
-      <div className="bg-white border border-[#E0E0E0] rounded-admin overflow-hidden mb-10">
-        <div className="flex items-center justify-between px-5 py-4 border-b border-[#E0E0E0]">
+      <div className="bg-white border border-admin-border rounded-admin overflow-hidden mb-10">
+        <div className="flex items-center justify-between px-5 py-4 border-b border-admin-border">
           <h2 className="font-sans font-medium text-sm text-neutral-800">
             Recent Inquiries
           </h2>
@@ -113,7 +113,7 @@ export default async function AdminDashboard() {
           </Link>
         </div>
         <table className="w-full">
-          <thead className="bg-[#F8F8F8]">
+          <thead className="bg-admin-page">
             <tr>
               {['Name', 'Event', 'Desired Date', 'Submitted', 'Status'].map((h) => (
                 <th
@@ -125,7 +125,7 @@ export default async function AdminDashboard() {
               ))}
             </tr>
           </thead>
-          <tbody className="divide-y divide-[#F0F0F0]">
+          <tbody className="divide-y divide-admin-divider">
             {recentInquiries.length === 0 ? (
               <tr>
                 <td colSpan={5} className="py-8 text-center font-sans text-sm text-neutral-400">
@@ -134,7 +134,7 @@ export default async function AdminDashboard() {
               </tr>
             ) : (
               recentInquiries.map((inq) => (
-                <tr key={inq.id} className="hover:bg-[#FAFAFA]">
+                <tr key={inq.id} className="hover:bg-admin-alt">
                   <td className="py-3 px-4 font-sans text-sm text-neutral-800">
                     {inq.full_name}
                   </td>
@@ -167,7 +167,7 @@ export default async function AdminDashboard() {
             <Link
               key={action.href}
               href={action.href}
-              className="bg-white border border-[#E0E0E0] rounded-admin p-4 hover:border-neutral-400 transition-colors"
+              className="bg-white border border-admin-border rounded-admin p-4 hover:border-neutral-400 transition-colors"
             >
               <p className="font-sans font-medium text-sm text-neutral-800 mb-1">
                 {action.label}

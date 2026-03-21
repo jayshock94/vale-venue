@@ -100,7 +100,7 @@ export default function GalleryAdminPage() {
 
       {/* Upload area */}
       <div
-        className="bg-white border-2 border-dashed border-[#E0E0E0] rounded-admin p-10 text-center mb-8 hover:border-neutral-400 transition-colors cursor-pointer"
+        className="bg-white border-2 border-dashed border-admin-border rounded-admin p-10 text-center mb-8 hover:border-neutral-400 transition-colors cursor-pointer"
         onClick={() => fileInputRef.current?.click()}
         onDragOver={(e) => e.preventDefault()}
         onDrop={(e) => {
@@ -135,7 +135,7 @@ export default function GalleryAdminPage() {
             <div
               key={img.id}
               className={`bg-white border rounded-admin overflow-hidden ${
-                index === 0 ? 'border-gold-400' : 'border-[#E0E0E0]'
+                index === 0 ? 'border-gold-400' : 'border-admin-border'
               }`}
             >
               <div className="relative aspect-video bg-neutral-100">
@@ -158,12 +158,12 @@ export default function GalleryAdminPage() {
                   value={img.caption || ''}
                   onChange={(e) => updateImage(img.id, { caption: e.target.value })}
                   placeholder="Caption"
-                  className="w-full font-sans text-xs bg-[#F8F8F8] border border-[#E0E0E0] rounded-sharp px-2 py-1 focus:outline-none focus:border-neutral-400"
+                  className="w-full font-sans text-xs bg-admin-page border border-admin-border rounded-sharp px-2 py-1 focus:outline-none focus:border-neutral-400"
                 />
                 <select
                   value={img.category || 'weddings'}
                   onChange={(e) => updateImage(img.id, { category: e.target.value })}
-                  className="w-full font-sans text-xs bg-[#F8F8F8] border border-[#E0E0E0] rounded-sharp px-2 py-1 focus:outline-none"
+                  className="w-full font-sans text-xs bg-admin-page border border-admin-border rounded-sharp px-2 py-1 focus:outline-none"
                 >
                   {CATEGORY_OPTIONS.slice(1).map((c) => (
                     <option key={c} value={c}>{c}</option>

@@ -80,7 +80,7 @@ function SuccessView({ onReset }: { onReset: () => void }) {
         <svg width="26" height="26" viewBox="0 0 26 26" fill="none" aria-hidden="true">
           <path
             d="M5 13L10 18L21 8"
-            stroke="#1C1917"
+            stroke="currentColor"
             strokeWidth="2.5"
             strokeLinecap="round"
             strokeLinejoin="round"

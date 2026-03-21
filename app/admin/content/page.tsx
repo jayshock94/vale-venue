@@ -26,8 +26,8 @@ interface PanelProps {
 
 function Panel({ title, children }: PanelProps) {
   return (
-    <div className="bg-white border border-[#E0E0E0] rounded-admin p-6 mb-4">
-      <h3 className="font-sans font-medium text-sm text-neutral-800 mb-4 pb-3 border-b border-[#E0E0E0]">
+    <div className="bg-white border border-admin-border rounded-admin p-6 mb-4">
+      <h3 className="font-sans font-medium text-sm text-neutral-800 mb-4 pb-3 border-b border-admin-border">
         {title}
       </h3>
       {children}
@@ -80,7 +80,7 @@ export default function ContentPage() {
   }
 
   const inputClass =
-    'w-full bg-[#F8F8F8] border border-[#E0E0E0] rounded-admin px-3 py-2 font-sans text-sm text-neutral-800 focus:outline-none focus:border-neutral-400'
+    'w-full bg-admin-page border border-admin-border rounded-admin px-3 py-2 font-sans text-sm text-neutral-800 focus:outline-none focus:border-neutral-400'
   const labelClass =
     'block font-sans font-semibold text-xs uppercase tracking-label text-neutral-400 mb-1'
 
