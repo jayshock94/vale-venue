@@ -200,22 +200,44 @@ export default function PricingTable({
           All packages include full venue access, amenities, and parking.
         </p>
 
-        {/* Micro-event callout — left accent only */}
-        <div className="mt-8 border-l-[var(--pricing-callout-accent-width)] border-gold-400 bg-gold-50 pl-5 pr-6 py-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-          <div>
-            <p className="font-sans font-semibold text-sm text-neutral-800">
-              Hosting a birthday or small celebration?
-            </p>
-            <p className="font-sans font-light text-sm text-neutral-500 mt-1">
-              Short-form blocks for gatherings under 50 guests. Tell us your date and we&apos;ll find a time that works.
-            </p>
+        {/* Micro-event callout */}
+        <div className="mt-12 rounded-soft bg-gold-50 border border-gold-100 border-l-[length:var(--pricing-callout-accent-width)] border-l-gold-400 px-7 py-7">
+          <div className="flex flex-col sm:flex-row sm:items-center gap-6 sm:gap-10">
+
+            {/* Content */}
+            <div className="flex-1">
+              <p className="font-sans font-semibold text-[length:var(--text-10)] uppercase tracking-eyebrow text-gold-600 mb-3">
+                Small gatherings
+              </p>
+              <h3 className="font-serif text-[length:var(--text-24)] text-neutral-800 mb-4 leading-snug">
+                Hosting under 50 guests?
+              </h3>
+
+              {/* Event type tags — help visitors self-identify instantly */}
+              <div className="flex flex-wrap gap-2 mb-4">
+                {['Birthdays', 'Anniversaries', 'Bridal showers', 'Graduations', 'Baby showers'].map((tag) => (
+                  <span
+                    key={tag}
+                    className="font-sans font-medium text-[length:var(--text-11)] text-gold-700 bg-gold-100 px-3 h-7 inline-flex items-center rounded-full"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+
+              <p className="font-sans font-light text-[length:var(--text-14)] text-neutral-500">
+                2–4 hour blocks available outside peak windows. Tell us your date and we&apos;ll find something that fits.
+              </p>
+            </div>
+
+            {/* CTA */}
+            <div className="flex-shrink-0">
+              <Button href="/contact" variant="ink" size="md">
+                Ask about it
+              </Button>
+            </div>
+
           </div>
-          <a
-            href="/contact"
-            className="font-sans font-semibold text-xs uppercase tracking-btn text-gold-600 hover:text-gold-700 transition-colors whitespace-nowrap"
-          >
-            Ask about it →
-          </a>
         </div>
       </div>
     </section>
