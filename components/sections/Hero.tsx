@@ -5,10 +5,9 @@ export default function Hero() {
   return (
     <section className="relative min-h-screen bg-neutral-800 flex items-end">
       {/* Background image */}
-      {/* TODO: Replace with real venue photo from Supabase storage */}
       <Image
-        src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=1920&q=80"
-        alt="The Vale event space interior"
+        src="/photos/hero.jpg"
+        alt="Wedding reception at The Vale — white florals and geometric pendant lights"
         fill
         priority
         className="object-cover opacity-30"
@@ -46,7 +45,7 @@ export default function Hero() {
                 <Button href="/contact" variant="gold" size="lg">
                   Book the Space
                 </Button>
-                <Button href="/contact" variant="ink" size="lg">
+                <Button href="/availability" variant="ink" size="lg">
                   Check Availability
                 </Button>
               </div>

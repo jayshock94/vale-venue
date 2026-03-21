@@ -15,43 +15,58 @@ export interface GalleryImage {
 
 const placeholderImages: GalleryImage[] = [
   {
-    public_url: 'https://images.unsplash.com/photo-1519741497674-611481863552?w=800&q=80',
-    caption: 'Wedding reception',
+    public_url: '/photos/gallery/weddings-1.jpg',
+    caption: 'Wedding reception — white florals and geometric pendant lights',
     category: 'weddings',
   },
   {
-    public_url: 'https://images.unsplash.com/photo-1515187029135-18ee286d815b?w=800&q=80',
-    caption: 'Corporate event',
+    public_url: '/photos/gallery/weddings-2.jpg',
+    caption: 'Wedding reception — candlelit round tables',
+    category: 'weddings',
+  },
+  {
+    public_url: '/photos/gallery/weddings-3.png',
+    caption: 'Wedding ceremony at The Vale',
+    category: 'weddings',
+  },
+  {
+    public_url: '/photos/gallery/weddings-4.png',
+    caption: 'Ceremony under floral arch',
+    category: 'weddings',
+  },
+  {
+    public_url: '/photos/gallery/weddings-5.png',
+    caption: 'Bridal portrait',
+    category: 'weddings',
+  },
+  {
+    public_url: '/photos/gallery/weddings-6.png',
+    caption: 'Bridal portrait — natural window light',
+    category: 'weddings',
+  },
+  {
+    public_url: '/photos/gallery/corporate-1.jpg',
+    caption: 'The Vale main floor — evening',
     category: 'corporate',
   },
   {
-    public_url: 'https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=800&q=80',
-    caption: 'Private celebration',
-    category: 'celebrations',
-  },
-  {
-    public_url: 'https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=800&q=80',
-    caption: 'Ceremony setup',
-    category: 'weddings',
-  },
-  {
-    public_url: 'https://images.unsplash.com/photo-1511578314322-379afb476865?w=800&q=80',
-    caption: 'Banquet hall',
-    category: 'celebrations',
-  },
-  {
-    public_url: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&q=80',
-    caption: 'Conference setup',
+    public_url: '/photos/gallery/corporate-2.jpg',
+    caption: 'The Vale main floor — full capacity layout',
     category: 'corporate',
   },
   {
-    public_url: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80',
-    caption: 'Mountain view windows',
-    category: 'weddings',
+    public_url: '/photos/gallery/celebrations-1.png',
+    caption: 'Birthday celebration — balloon arch',
+    category: 'celebrations',
   },
   {
-    public_url: 'https://images.unsplash.com/photo-1502635385003-ee1e6a1a742d?w=800&q=80',
-    caption: 'Anniversary dinner',
+    public_url: '/photos/gallery/celebrations-2.png',
+    caption: 'Gender reveal party at The Vale',
+    category: 'celebrations',
+  },
+  {
+    public_url: '/photos/gallery/celebrations-3.jpg',
+    caption: 'Bar and prep area',
     category: 'celebrations',
   },
 ]
@@ -65,10 +80,11 @@ const tabs = [
 
 interface GalleryGridProps {
   images?: GalleryImage[]
+  defaultCategory?: string
 }
 
-export default function GalleryGrid({ images }: GalleryGridProps) {
-  const [activeTab, setActiveTab] = useState('all')
+export default function GalleryGrid({ images, defaultCategory = 'all' }: GalleryGridProps) {
+  const [activeTab, setActiveTab] = useState(defaultCategory)
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null)
 
   const sourceImages = (images && images.length > 0) ? images : placeholderImages
@@ -80,17 +96,19 @@ export default function GalleryGrid({ images }: GalleryGridProps) {
 
   return (
     <>
-      {/* Filter tabs */}
-      <div className="flex items-center gap-6 mb-8 border-b border-rule pb-4 overflow-x-auto">
+      {/* Filter tabs — component.gallery-filter: bordered controls, filled active state */}
+      <div className="flex items-center gap-2 mb-8 overflow-x-auto">
         {tabs.map((tab) => (
           <button
             key={tab.value}
             onClick={() => setActiveTab(tab.value)}
             className={cn(
-              'font-sans font-medium text-xs uppercase tracking-nav whitespace-nowrap pb-4 -mb-4 border-b-2 transition-colors',
+              'h-12 sm:h-[var(--gallery-filter-tab-height)] px-4 border rounded-button',
+              'font-sans font-semibold text-2xs uppercase tracking-btn',
+              'whitespace-nowrap flex-shrink-0 transition-colors duration-fast',
               activeTab === tab.value
-                ? 'text-neutral-800 border-neutral-800'
-                : 'text-neutral-400 border-transparent hover:text-neutral-600'
+                ? 'bg-neutral-800 border-neutral-800 text-neutral-50'
+                : 'bg-transparent border-rule text-neutral-500 hover:border-neutral-800 hover:text-neutral-800'
             )}
           >
             {tab.label}

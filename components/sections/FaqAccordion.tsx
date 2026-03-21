@@ -24,7 +24,7 @@ const defaultFaqs: Faq[] = [
   {
     question: 'Can we do both the ceremony and reception here?',
     answer:
-      'Yes. The space is set up to handle both. No shuttling guests between venues.',
+      'Yes — for non-LDS events, the ceremony and reception can both happen here with no venue change. For LDS couples, the temple ceremony is separate; we\'re three miles from the Provo Temple and set up specifically for receptions.',
   },
   {
     question: 'Is parking on-site?',

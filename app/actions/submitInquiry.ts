@@ -7,6 +7,7 @@ interface InquiryData {
   full_name: string
   email: string
   event_type: string
+  guest_count: string
   desired_date: string
   message: string
 }
@@ -46,6 +47,7 @@ export async function submitInquiry(data: InquiryData): Promise<SubmitResult> {
       full_name: data.full_name.trim(),
       email: data.email.trim().toLowerCase(),
       event_type: data.event_type,
+      guest_count: data.guest_count || null,
       desired_date: data.desired_date || null,
       message: data.message.trim(),
       status: 'new',

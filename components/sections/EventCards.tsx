@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import { SectionHeader } from '@/components/ui/SectionHeader'
 
 interface EventCard {
@@ -8,15 +9,19 @@ interface EventCard {
   body: string
   image: string
   imageAlt: string
+  cta: string
+  href: string
 }
 
 const weddingCard: EventCard = {
-  eyebrow: 'Weddings',
+  eyebrow: 'Weddings & Receptions',
   titleStart: 'Weddings &',
   titleItalic: 'Receptions',
-  body: 'Dedicated bride and groom suites on-site. The ceremony and reception can both happen here — no shuttling guests between venues. The mountains behind the windows mean every photo is already halfway done.',
-  image: 'https://images.unsplash.com/photo-1519741497674-611481863552?w=800&q=80',
-  imageAlt: 'Wedding reception setup at The Vale',
+  body: 'The temple ceremony is yours. The reception — where every guest celebrates together — happens here. Three miles from the Provo City Center Temple, with dedicated bride and groom suites, mountain views, and parking for everyone who waited outside.',
+  image: '/photos/events-wedding.png',
+  imageAlt: 'Wedding ceremony at The Vale — couple at the altar',
+  cta: 'See wedding photos',
+  href: '/gallery?category=weddings',
 }
 
 const corporateCard: EventCard = {
@@ -24,23 +29,27 @@ const corporateCard: EventCard = {
   titleStart: 'Corporate',
   titleItalic: 'Events',
   body: 'Clean, modern space with full AV. Comfortable for 20, manageable for 100. Half-day packages work well for retreats that don\'t need a full day.',
-  image: 'https://images.unsplash.com/photo-1515187029135-18ee286d815b?w=800&q=80',
-  imageAlt: 'Corporate event setup at The Vale',
+  image: '/photos/events-corporate.jpg',
+  imageAlt: 'The Vale main floor — open modern event space',
+  cta: 'See corporate photos',
+  href: '/gallery?category=corporate',
 }
 
 const celebrationCard: EventCard = {
   eyebrow: 'Celebrations',
   titleStart: 'Private',
   titleItalic: 'Celebrations',
-  body: 'Every milestone deserves a space that doesn\'t feel rented. High ceilings, real kitchen, mountain view. Birthdays and anniversaries hit different here.',
-  image: 'https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=800&q=80',
-  imageAlt: 'Private celebration at The Vale',
+  body: 'Every milestone deserves a space that doesn\'t feel rented. High ceilings, real kitchen, open dance floor, mountain view. Birthdays and anniversaries for groups under 50 — short blocks starting at $300.',
+  image: '/photos/events-celebration.png',
+  imageAlt: 'Birthday celebration at The Vale — balloon arch setup',
+  cta: 'See celebration photos',
+  href: '/gallery?category=celebrations',
 }
 
 function EventCardLarge({ card }: { card: EventCard }) {
   return (
     // h-full fills the grid cell — matches the combined height of the two stacked right cards
-    <div className="bg-neutral-0 rounded-soft overflow-hidden flex flex-col h-full">
+    <div className="card-warm-glass rounded-soft overflow-hidden flex flex-col h-full">
       {/* TODO: Replace with real venue photo from Supabase storage */}
       {/* flex-1 lets the image grow to fill remaining space after the content area */}
       <div className="relative flex-1 overflow-hidden">
@@ -66,13 +75,22 @@ function EventCardLarge({ card }: { card: EventCard }) {
           {card.body}
         </p>
       </div>
+      {/* component.event-card CTA row — separated by border-top rule */}
+      <div className="border-t border-rule-light px-6 py-3">
+        <Link
+          href={card.href}
+          className="font-sans font-semibold text-2xs uppercase tracking-btn text-gold-600 hover:text-gold-500 transition-colors duration-fast"
+        >
+          {card.cta} →
+        </Link>
+      </div>
     </div>
   )
 }
 
 function EventCardSmall({ card }: { card: EventCard }) {
   return (
-    <div className="bg-neutral-0 rounded-soft overflow-hidden flex flex-col">
+    <div className="card-warm-glass rounded-soft overflow-hidden flex flex-col">
       {/* TODO: Replace with real venue photo from Supabase storage */}
       <div className="relative h-44 overflow-hidden">
         <Image
@@ -97,6 +115,15 @@ function EventCardSmall({ card }: { card: EventCard }) {
           {card.body}
         </p>
       </div>
+      {/* component.event-card CTA row */}
+      <div className="mt-auto border-t border-rule-light px-6 py-3">
+        <Link
+          href={card.href}
+          className="font-sans font-semibold text-2xs uppercase tracking-btn text-gold-600 hover:text-gold-500 transition-colors duration-fast"
+        >
+          {card.cta} →
+        </Link>
+      </div>
     </div>
   )
 }
@@ -106,7 +133,7 @@ export default function EventCards() {
     <section className="bg-neutral-50 py-section px-5 md:px-page">
       <div className="max-w-content mx-auto">
         <SectionHeader
-          eyebrow="Provo, Utah · Wasatch Mountains"
+          eyebrow="Weddings · Corporate · Celebrations"
           headline={
             <>
               Every kind of{' '}

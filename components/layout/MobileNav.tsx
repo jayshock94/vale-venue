@@ -83,7 +83,7 @@ export default function MobileNav({
               onClick={onClose}
               className={cn(
                 'font-sans font-medium text-sm uppercase tracking-nav py-3 border-b border-white/10 transition-colors',
-                pathname === link.href
+                pathname === link.href.split('#')[0]
                   ? 'text-neutral-50'
                   : 'text-neutral-400 hover:text-neutral-50'
               )}
