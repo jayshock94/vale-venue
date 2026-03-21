@@ -225,15 +225,11 @@ export default function PricingTable({
               </div>
 
               <p className="font-sans font-light text-[length:var(--text-14)] text-neutral-500">
-                2–4 hour blocks available outside peak windows. Tell us your date and we&apos;ll find something that fits.
+                2–4 hour blocks available outside peak windows.{' '}
+                <a href="/contact" className="font-medium text-gold-600 hover:text-gold-700 transition-colors duration-[var(--transition-fast)]">
+                  Tell us your date →
+                </a>
               </p>
-            </div>
-
-            {/* CTA */}
-            <div className="flex-shrink-0">
-              <Button href="/contact" variant="ink" size="md">
-                Ask about it
-              </Button>
             </div>
 
           </div>
