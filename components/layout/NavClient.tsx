@@ -54,7 +54,7 @@ export default function NavClient() {
             </span>
             <span
               className={cn(
-                'font-sans font-light text-2xs uppercase tracking-[0.18em] transition-colors',
+                'font-sans font-light text-2xs uppercase tracking-nav transition-colors',
                 isTransparent ? 'text-neutral-300' : 'text-neutral-400'
               )}
             >

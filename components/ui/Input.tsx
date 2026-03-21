@@ -26,8 +26,10 @@ interface SelectProps extends React.SelectHTMLAttributes<HTMLSelectElement> {
 const labelClass =
   'block text-xs font-semibold font-sans uppercase tracking-label text-gold-600 mb-1'
 
+// component.input from vale-design-system.json
+// height-public=56px, padding=16px all sides, bg=raised(white), bottom-line style
 const inputBase =
-  'w-full bg-white border-b border-rule text-base font-light font-sans text-neutral-800 placeholder-neutral-300 py-2 px-0 outline-none transition-all duration-default focus:border-b-2 focus:border-gold-400 focus:shadow-focus-gold'
+  'w-full h-[var(--input-height-public)] bg-neutral-0 border-b border-rule text-base font-light font-sans text-neutral-800 placeholder-neutral-400 py-4 px-4 outline-none transition-all duration-default focus:border-b-2 focus:border-gold-400 focus:shadow-focus-gold'
 
 export function Input({ label, error, className, ...props }: InputProps) {
   return (
@@ -60,7 +62,7 @@ export function Textarea({
       <textarea
         className={cn(
           inputBase,
-          'resize-none min-h-[120px]',
+          'resize-none min-h-[var(--input-textarea-min)] h-auto',
           error ? 'border-rust-600 focus:border-rust-600' : '',
           className
         )}

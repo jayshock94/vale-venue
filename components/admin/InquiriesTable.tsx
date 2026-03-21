@@ -106,9 +106,9 @@ export default function InquiriesTable({ initialInquiries }: InquiriesTableProps
       </div>
 
       {/* Table */}
-      <div className="bg-white border border-[#E0E0E0] rounded-admin overflow-hidden">
+      <div className="bg-neutral-0 border border-admin-border rounded-admin overflow-hidden">
         <table className="w-full">
-          <thead className="bg-[#F8F8F8] border-b border-[#E0E0E0]">
+          <thead className="bg-admin-page border-b border-admin-border">
             <tr>
               {(
                 [
@@ -131,7 +131,7 @@ export default function InquiriesTable({ initialInquiries }: InquiriesTableProps
               <th className="py-3 px-4" />
             </tr>
           </thead>
-          <tbody className="divide-y divide-[#F0F0F0]">
+          <tbody className="divide-y divide-admin-divider">
             {sorted.map((inq) => (
               <>
                 <tr
@@ -139,7 +139,7 @@ export default function InquiriesTable({ initialInquiries }: InquiriesTableProps
                   onClick={() =>
                     setExpandedId(expandedId === inq.id ? null : inq.id)
                   }
-                  className="cursor-pointer hover:bg-[#FAFAFA] transition-colors"
+                  className="cursor-pointer hover:bg-admin-alt transition-colors"
                 >
                   <td className="py-3 px-4">
                     <div>
@@ -171,7 +171,7 @@ export default function InquiriesTable({ initialInquiries }: InquiriesTableProps
                 </tr>
                 {expandedId === inq.id && (
                   <tr key={`${inq.id}-expanded`}>
-                    <td colSpan={6} className="px-4 py-4 bg-[#FAFAFA] border-b border-[#E0E0E0]">
+                    <td colSpan={6} className="px-4 py-4 bg-admin-alt border-b border-admin-border">
                       <div className="flex flex-col gap-4">
                         {inq.message && (
                           <div>

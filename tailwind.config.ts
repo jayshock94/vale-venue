@@ -1,8 +1,7 @@
-// vale-tailwind.config.js
-// Copy this content into tailwind.config.ts in the Next.js project root
-// This wires the Vale design system tokens directly into Tailwind
-
+// Token pipeline: vale-design-system.json → lib/tokens.ts → here
+// Zero hardcoded hex values. All primitives imported from tokens.ts.
 import type { Config } from 'tailwindcss'
+import { color, typography, spacing, borderRadius, shadow, maxWidth, adminColor } from './lib/tokens'
 
 const config: Config = {
   content: [
@@ -11,143 +10,114 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      // ── COLORS ──────────────────────────────────────────────
+      // ── COLORS ────────────────────────────────────────────────
       colors: {
-        gold: {
-          50:  '#FAF5EE',
-          100: '#F2E6D4',
-          200: '#E5CBA8',
-          300: '#D9B082',
-          400: '#C9A06E', // brand primary
-          500: '#B8892F',
-          600: '#9A7128',
-          700: '#7A5920',
-          800: '#5A4118',
-          900: '#3A290F',
-        },
-        neutral: {
-          0:   '#FFFFFF',
-          50:  '#F5F0E8', // cream - page bg
-          100: '#EDE7D9',
-          150: '#E5DDD0',
-          200: '#DDD6CA',
-          300: '#C8BFAF', // stone
-          400: '#A09890', // ghost
-          500: '#7C7469', // muted
-          600: '#4A4641', // slate
-          700: '#2E2B27', // charcoal
-          800: '#1C1917', // ink - primary dark
-          900: '#0E0C0A',
-        },
-        rule: {
-          DEFAULT: '#D9D2C5',
-          light:   '#EDE7D9',
-        },
-        sage: {
-          50:  '#EAF0EA',
-          600: '#5A6B5A',
-          800: '#3D4D3D',
-        },
-        rust: {
-          50:  '#F5EDEA',
-          600: '#9C4A2A',
-          800: '#6B3020',
-        },
-        amber: {
-          50:  '#FBF1E4',
-          400: '#C17B2A',
-          800: '#5A3810',
-        },
+        gold:    color.gold,
+        neutral: color.neutral,
+        rule:    color.rule,
+        sage:    color.sage,
+        rust:    color.rust,
+        amber:   color.amber,
+        // Admin palette — functional/neutral, not warm
+        admin: adminColor,
       },
 
-      // ── TYPOGRAPHY ─────────────────────────────────────────
+      // ── TYPOGRAPHY ────────────────────────────────────────────
       fontFamily: {
-        serif: ['Playfair Display', 'Georgia', 'serif'],
-        sans:  ['DM Sans', 'system-ui', 'sans-serif'],
+        serif: [typography.family.display, 'Georgia', 'serif'],
+        sans:  [typography.family.ui, 'system-ui', 'sans-serif'],
       },
+      // Font sizes aligned exactly to vale-design-system.json typography.size
       fontSize: {
-        '2xs': ['9px',  { lineHeight: '1.4' }],
-        xs:    ['10px', { lineHeight: '1.4' }],
-        sm:    ['12px', { lineHeight: '1.6' }],
-        base:  ['13px', { lineHeight: '1.85' }],
-        md:    ['15px', { lineHeight: '1.7' }],
-        lg:    ['18px', { lineHeight: '1.4' }],
-        xl:    ['20px', { lineHeight: '1.35' }],
-        '2xl': ['24px', { lineHeight: '1.25' }],
-        '3xl': ['32px', { lineHeight: '1.2' }],
-        '4xl': ['40px', { lineHeight: '1.15' }],
-        '5xl': ['52px', { lineHeight: '1.1' }],
-        '6xl': ['80px', { lineHeight: '1.0' }],
+        'xs':    [typography.size['10'], { lineHeight: typography.lineHeight.relaxed }],
+        '2xs':   [typography.size['11'], { lineHeight: typography.lineHeight.normal }],
+        'sm':    [typography.size['12'], { lineHeight: typography.lineHeight.relaxed }],
+        'base':  [typography.size['13'], { lineHeight: typography.lineHeight.loose }],
+        'input': [typography.size['14'], { lineHeight: typography.lineHeight.normal }],
+        'md':    [typography.size['15'], { lineHeight: typography.lineHeight.relaxed }],
+        'lg':    [typography.size['18'], { lineHeight: typography.lineHeight.snug }],
+        'xl':    [typography.size['20'], { lineHeight: typography.lineHeight.snug }],
+        '2xl':   [typography.size['24'], { lineHeight: typography.lineHeight.snug }],
+        '3xl':   [typography.size['34'], { lineHeight: typography.lineHeight.tight }],
+        '4xl':   [typography.size['40'], { lineHeight: typography.lineHeight.tight }],
+        '5xl':   [typography.size['52'], { lineHeight: typography.lineHeight.tight }],
+        '6xl':   [typography.size['80'], { lineHeight: typography.lineHeight.tight }],
       },
       fontWeight: {
-        light:    '300',
-        regular:  '400',
-        medium:   '500',
-        semibold: '600',
+        light:    typography.weight.light,
+        regular:  typography.weight.regular,
+        medium:   typography.weight.medium,
+        semibold: typography.weight.semibold,
       },
       letterSpacing: {
-        tightest: '-0.02em',
-        tight:    '-0.01em',
-        normal:   '0em',
-        wide:     '0.04em',
-        wider:    '0.10em',
-        nav:      '0.14em',
-        btn:      '0.13em',
-        label:    '0.26em',
-        eyebrow:  '0.30em',
-        widest:   '0.30em',
+        tightest: typography.letterSpacing.tight,
+        normal:   typography.letterSpacing.normal,
+        btn:      typography.letterSpacing.btn,
+        label:    typography.letterSpacing.label,
+        nav:      typography.letterSpacing.nav,
+        eyebrow:  typography.letterSpacing.eyebrow,
+        badge:    typography.letterSpacing.badge,
+        stat:     typography.letterSpacing.stat,
       },
 
-      // ── SPACING ─────────────────────────────────────────────
-      // Uses 8pt grid - all spacing is a multiple of 4 or 8
+      // ── SPACING ───────────────────────────────────────────────
+      // Named tokens from the JSON; numeric aliases kept for existing classes
       spacing: {
-        '4.5':  '18px',
-        '13':   '52px',
-        '15':   '60px',
-        '18':   '72px',
-        '22':   '88px',
-        '25':   '100px',
-        'page': '48px',   // horizontal page padding desktop
-        'section': '96px', // between major page sections
+        'page':          spacing['page-x'],
+        'page-tablet':   spacing['page-x-tablet'],
+        'page-mobile':   spacing['page-x-mobile'],
+        'section':       spacing['section'],
+        'section-tight': spacing['section-tight'],
+        'nav-height':    spacing['nav-height'],
+        'nav-mobile':    spacing['nav-height-mobile'],
+        // Numeric shorthands — values trace to 4px-grid multiples
+        '4.5': '18px',   // 4.5 × 4px
+        '13':  '52px',   // 13 × 4px
+        '15':  '60px',   // 15 × 4px
+        '18':  '72px',   // 18 × 4px  (layout.hero.gap)
+        '22':  '88px',   // 22 × 4px  (component.stats-bar.height)
+        '25':  '100px',  // 25 × 4px
       },
 
-      // ── BORDER RADIUS ───────────────────────────────────────
+      // ── BORDER RADIUS ─────────────────────────────────────────
       borderRadius: {
-        'none':   '0px',
-        'sharp':  '2px',  // buttons, badges
-        'soft':   '3px',  // cards
-        'admin':  '4px',  // admin panels and inputs
-        'DEFAULT':'2px',
+        'none':    borderRadius.none,
+        'sharp':   borderRadius.sharp,
+        'button':  borderRadius.button,
+        'soft':    borderRadius.soft,
+        'admin':   borderRadius.admin,
+        'DEFAULT': borderRadius.sharp,
       },
 
-      // ── MAX WIDTH ───────────────────────────────────────────
+      // ── MAX WIDTH ─────────────────────────────────────────────
       maxWidth: {
-        'body':    '680px',   // readable body copy
-        'content': '1280px',  // main content container
-        'form':    '600px',   // inquiry form
+        'body':    maxWidth.body,
+        'content': maxWidth.content,
+        'form':    maxWidth.form,
+        'pricing': maxWidth.pricing,
       },
 
-      // ── TRANSITIONS ─────────────────────────────────────────
+      // ── TRANSITIONS ───────────────────────────────────────────
       transitionDuration: {
         'fast':    '130ms',
         'default': '150ms',
         'slow':    '300ms',
       },
       transitionTimingFunction: {
-        'DEFAULT': 'ease',
+        DEFAULT: 'ease',
       },
 
-      // ── BOX SHADOW ──────────────────────────────────────────
-      // No decorative shadows. Only focus rings.
+      // ── BOX SHADOW ────────────────────────────────────────────
+      // No decorative shadows — focus rings only
       boxShadow: {
-        'focus-gold': '0 0 0 3px rgba(201, 160, 110, 0.20)',
-        'focus-ink':  '0 0 0 3px rgba(28, 25, 23, 0.15)',
-        'none':       'none',
+        'focus-gold': shadow['focus-gold'],
+        'focus-ink':  shadow['focus-ink'],
+        'none':       shadow.none,
       },
 
-      // ── BACKGROUND IMAGE ─────────────────────────────────────
+      // ── BACKGROUND IMAGE ──────────────────────────────────────
       backgroundImage: {
-        'none': 'none', // explicitly no gradients on this site
+        'none': 'none', // no gradients on this site
       },
     },
   },

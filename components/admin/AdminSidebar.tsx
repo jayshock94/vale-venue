@@ -56,7 +56,7 @@ export default function AdminSidebar() {
   const pathname = usePathname()
 
   return (
-    <aside className="w-[200px] flex-shrink-0 bg-white border-r border-[#E0E0E0] flex flex-col overflow-y-auto">
+    <aside className="w-[var(--admin-sidebar-width)] flex-shrink-0 bg-neutral-0 border-r border-admin-border flex flex-col overflow-y-auto">
       <div className="flex flex-col py-4 flex-1">
         {sections.map((section) => (
           <div key={section.label} className="mb-4">

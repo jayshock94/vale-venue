@@ -15,7 +15,7 @@ export default function Footer() {
               <span className="font-serif italic text-xl text-neutral-50">
                 The Vale
               </span>
-              <span className="font-sans font-light text-2xs uppercase tracking-[0.18em] text-neutral-400 mt-1">
+              <span className="font-sans font-light text-2xs uppercase tracking-nav text-neutral-400 mt-1">
                 at ten seventy-eight
               </span>
             </div>

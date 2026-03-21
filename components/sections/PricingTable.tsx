@@ -120,7 +120,7 @@ export default function PricingTable({
                 <tr
                   key={pkg.id || pkg.name}
                   className={`border-b border-rule ${
-                    index % 2 === 0 ? 'bg-white' : 'bg-neutral-50'
+                    index % 2 === 0 ? 'bg-neutral-0' : 'bg-neutral-50'
                   } ${pkg.is_peak ? 'relative' : ''}`}
                 >
                   <td className="py-4 px-4">

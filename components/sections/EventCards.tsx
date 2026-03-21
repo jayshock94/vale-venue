@@ -39,9 +39,11 @@ const celebrationCard: EventCard = {
 
 function EventCardLarge({ card }: { card: EventCard }) {
   return (
-    <div className="bg-white rounded-soft overflow-hidden flex flex-col">
+    // h-full fills the grid cell — matches the combined height of the two stacked right cards
+    <div className="bg-neutral-0 rounded-soft overflow-hidden flex flex-col h-full">
       {/* TODO: Replace with real venue photo from Supabase storage */}
-      <div className="relative h-96 overflow-hidden">
+      {/* flex-1 lets the image grow to fill remaining space after the content area */}
+      <div className="relative flex-1 overflow-hidden">
         <Image
           src={card.image}
           alt={card.imageAlt}
@@ -70,7 +72,7 @@ function EventCardLarge({ card }: { card: EventCard }) {
 
 function EventCardSmall({ card }: { card: EventCard }) {
   return (
-    <div className="bg-white rounded-soft overflow-hidden flex flex-col">
+    <div className="bg-neutral-0 rounded-soft overflow-hidden flex flex-col">
       {/* TODO: Replace with real venue photo from Supabase storage */}
       <div className="relative h-44 overflow-hidden">
         <Image

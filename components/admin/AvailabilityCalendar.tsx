@@ -193,7 +193,7 @@ export default function AvailabilityCalendar({ initialData }: AvailabilityCalend
         className={cn(
           'font-sans font-semibold text-xs uppercase tracking-btn px-6 py-3 rounded-sharp transition-colors',
           saved
-            ? 'bg-sage-600 text-white'
+            ? 'bg-sage-600 text-neutral-50'
             : 'bg-neutral-800 text-neutral-50 hover:bg-neutral-700',
           saving ? 'opacity-60 cursor-not-allowed' : ''
         )}

@@ -54,7 +54,7 @@ export default function TestimonialSection({
             <blockquote className="font-serif italic text-xl text-neutral-50 opacity-85 max-w-3xl">
               {featured.quote}
             </blockquote>
-            <p className="font-sans text-xs uppercase tracking-widest text-neutral-400 mt-4">
+            <p className="font-sans text-xs uppercase tracking-stat text-neutral-400 mt-4">
               — {featured.attribution}
             </p>
           </div>

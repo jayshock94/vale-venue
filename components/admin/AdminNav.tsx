@@ -9,7 +9,7 @@ interface AdminNavProps {
 
 export default function AdminNav({ pageTitle, userEmail }: AdminNavProps) {
   return (
-    <header className="h-[52px] bg-white border-b border-[#E0E0E0] flex items-center justify-between px-6 flex-shrink-0">
+    <header className="h-[var(--admin-nav-height)] bg-neutral-0 border-b border-admin-border flex items-center justify-between px-6 flex-shrink-0">
       {/* Left: logo */}
       <div className="flex items-center gap-2">
         <span className="font-sans font-medium text-sm text-neutral-800">
