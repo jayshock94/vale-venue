@@ -225,11 +225,14 @@ export default function PricingTable({
               </div>
 
               <p className="font-sans font-light text-[length:var(--text-14)] text-neutral-500">
-                2–4 hour blocks available outside peak windows.{' '}
-                <a href="/contact" className="font-medium text-gold-600 hover:text-gold-700 transition-colors duration-[var(--transition-fast)]">
-                  Tell us your date →
-                </a>
+                2–4 hour blocks available outside peak windows.
               </p>
+              <a
+                href="/contact"
+                className="mt-3 inline-block font-sans font-semibold text-[length:var(--text-11)] uppercase tracking-btn text-gold-600 hover:text-gold-700 transition-colors duration-[var(--transition-fast)]"
+              >
+                Tell us your date →
+              </a>
             </div>
 
           </div>
