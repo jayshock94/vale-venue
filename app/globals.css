@@ -195,8 +195,11 @@
   /* ── Gallery filter ── */
   --gallery-filter-tab-height: 36px;
 
-  /* ── Pricing table callout ── */
-  --pricing-callout-accent-width: 3px;
+  /* ── Pricing cards ── */
+  --pricing-card-featured-bg:         var(--surface-dark);
+  --pricing-card-rule-color:          var(--color-gold-400);
+  --pricing-card-rule-color-featured: var(--color-gold-300);
+  --pricing-callout-accent-width:     3px;
 }
 
 /* ─────────────────────────────────────────────────────────────────────────────

@@ -1,5 +1,6 @@
 import { Badge } from '@/components/ui/Badge'
 import { Button } from '@/components/ui/Button'
+import { cn } from '@/lib/utils'
 import { formatPrice } from '@/lib/utils'
 
 export interface PricingPackage {
@@ -53,11 +54,112 @@ interface PricingTableProps {
   packages?: PricingPackage[]
 }
 
+const dayRows = [
+  { label: 'Mon – Wed', key: 'price_mon_wed' as const },
+  { label: 'Thursday',  key: 'price_thursday' as const },
+  { label: 'Fri – Sat', key: 'price_fri_sat' as const },
+]
+
+function PricingCard({ pkg }: { pkg: PricingPackage }) {
+  const featured = !!pkg.is_featured
+
+  return (
+    <div
+      className={cn(
+        'rounded-soft border flex flex-col',
+        featured
+          ? 'bg-[var(--pricing-card-featured-bg)] border-[var(--pricing-card-featured-bg)]'
+          : 'bg-neutral-0 border-rule'
+      )}
+    >
+      {/* Header block */}
+      <div className="px-8 pt-8 pb-6">
+        <div className="flex items-center justify-between mb-3">
+          <p
+            className={cn(
+              'font-sans font-semibold uppercase tracking-eyebrow',
+              'text-[length:var(--text-10)]',
+              featured ? 'text-gold-300' : 'text-gold-600'
+            )}
+          >
+            {pkg.name}
+          </p>
+          {pkg.is_featured && (
+            <Badge variant="gold">Best value</Badge>
+          )}
+        </div>
+
+        <p
+          className={cn(
+            'font-serif text-[length:var(--text-24)]',
+            featured ? 'text-neutral-50' : 'text-neutral-800'
+          )}
+        >
+          {pkg.time_range}
+        </p>
+
+        <p
+          className={cn(
+            'font-sans font-light text-[length:var(--text-12)] mt-1',
+            featured ? 'text-[rgba(245,240,232,0.45)]' : 'text-neutral-500'
+          )}
+        >
+          {pkg.hours} hours
+        </p>
+      </div>
+
+      {/* Gold rule */}
+      <div
+        className="mx-8 border-t"
+        style={{
+          borderColor: featured
+            ? 'var(--pricing-card-rule-color-featured)'
+            : 'var(--pricing-card-rule-color)',
+        }}
+      />
+
+      {/* Price rows */}
+      <div className="px-8 py-6 flex flex-col gap-0 flex-1">
+        {dayRows.map((row, i) => (
+          <div
+            key={row.key}
+            className={cn(
+              'flex items-center justify-between py-3',
+              i < dayRows.length - 1 ? 'border-b' : ''
+            )}
+            style={{
+              borderColor: featured
+                ? 'rgba(245,240,232,0.10)'
+                : 'var(--border-subtle)',
+            }}
+          >
+            <span
+              className={cn(
+                'font-sans text-[length:var(--text-11)]',
+                featured ? 'text-[rgba(245,240,232,0.50)]' : 'text-neutral-500'
+              )}
+            >
+              {row.label}
+            </span>
+            <span
+              className={cn(
+                'font-serif text-[length:var(--text-18)]',
+                featured ? 'text-neutral-50' : 'text-neutral-800'
+              )}
+            >
+              {formatPrice(pkg[row.key])}
+            </span>
+          </div>
+        ))}
+      </div>
+    </div>
+  )
+}
+
 export default function PricingTable({
   packages = defaultPackages,
 }: PricingTableProps) {
-  const activePackages =
-    packages.length > 0 ? packages : defaultPackages
+  const activePackages = packages.length > 0 ? packages : defaultPackages
 
   return (
     <section className="bg-neutral-50 py-section px-5 md:px-page">
@@ -79,127 +181,26 @@ export default function PricingTable({
           </div>
         </div>
 
-        {/* Table — bordered container anchors it to the page */}
-        <div className="w-full border border-rule rounded-soft overflow-hidden">
-          <div className="w-full overflow-x-auto">
-          <table className="w-full min-w-[600px]">
-            <thead>
-              <tr className="bg-neutral-100 border-b-2 border-neutral-300">
-                {/* col-header-meta: structural context — demoted to ghost */}
-                <th
-                  className="text-left font-sans font-normal text-xs uppercase tracking-wider text-neutral-400 py-3 px-4"
-                  style={{ width: '1fr' }}
-                >
-                  Package
-                </th>
-                <th
-                  className="text-left font-sans font-normal text-xs uppercase tracking-wider text-neutral-400 py-3 px-4"
-                  style={{ width: '70px' }}
-                >
-                  Hours
-                </th>
-                {/* col-header-day: decision columns — promoted to primary */}
-                <th
-                  className="text-right font-sans font-semibold text-xs uppercase tracking-wider text-neutral-800 py-3 px-4"
-                  style={{ width: '100px' }}
-                >
-                  Mon–Wed
-                </th>
-                <th
-                  className="text-right font-sans font-semibold text-xs uppercase tracking-wider text-neutral-800 py-3 px-4"
-                  style={{ width: '100px' }}
-                >
-                  Thursday
-                </th>
-                <th
-                  className="text-right font-sans font-semibold text-xs uppercase tracking-wider text-neutral-800 py-3 px-4"
-                  style={{ width: '110px' }}
-                >
-                  Fri–Sat
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              {activePackages.map((pkg, index) => (
-                <tr
-                  key={pkg.id || pkg.name}
-                  className={`border-b border-rule ${
-                    index % 2 === 0 ? 'bg-neutral-0' : 'bg-neutral-50'
-                  } ${pkg.is_peak ? 'relative' : ''}`}
-                >
-                  <td className="py-4 px-4">
-                    <div className="flex flex-col gap-1">
-                      <div className="flex items-center gap-2">
-                        <span className="font-sans font-medium text-base text-neutral-800">
-                          {pkg.name}
-                        </span>
-                        {pkg.is_featured && (
-                          <Badge variant="gold">Best value</Badge>
-                        )}
-                      </div>
-                      <span className="font-sans font-light text-sm text-neutral-400">
-                        {pkg.time_range}
-                      </span>
-                    </div>
-                  </td>
-                  <td className="py-4 px-4">
-                    <span className="font-sans text-sm text-neutral-500">
-                      {pkg.hours} hrs
-                    </span>
-                  </td>
-                  <td className="py-4 px-4 text-right">
-                    <span
-                      className={`font-serif ${
-                        pkg.is_peak
-                          ? 'font-semibold text-xl text-gold-400'
-                          : 'text-lg text-neutral-800'
-                      }`}
-                    >
-                      {formatPrice(pkg.price_mon_wed)}
-                    </span>
-                  </td>
-                  <td className="py-4 px-4 text-right">
-                    <span
-                      className={`font-serif ${
-                        pkg.is_peak
-                          ? 'font-semibold text-xl text-gold-400'
-                          : 'text-lg text-neutral-800'
-                      }`}
-                    >
-                      {formatPrice(pkg.price_thursday)}
-                    </span>
-                  </td>
-                  <td className="py-4 px-4 text-right">
-                    <span
-                      className={`font-serif ${
-                        pkg.is_peak
-                          ? 'font-semibold text-xl text-gold-400'
-                          : 'text-lg text-neutral-800'
-                      }`}
-                    >
-                      {formatPrice(pkg.price_fri_sat)}
-                    </span>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-          </div>
+        {/* Cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          {activePackages.map((pkg) => (
+            <PricingCard key={pkg.id || pkg.name} pkg={pkg} />
+          ))}
         </div>
 
-        {/* CTA — standalone, commands attention alone */}
+        {/* CTA */}
         <div className="mt-8 flex justify-end">
           <Button href="/contact" variant="gold" size="md">
             Reserve Your Date
           </Button>
         </div>
 
-        {/* Footnote — pricing-table.footnote-size/color: ghost, disappears behind CTA */}
-        <p className="font-sans font-light text-2xs text-neutral-400 mt-3">
+        {/* Footnote */}
+        <p className="font-sans font-light text-[length:var(--text-11)] text-neutral-400 mt-3">
           All packages include full venue access, amenities, and parking.
         </p>
 
-        {/* Micro-event callout — left accent only (callout-accent), no surrounding border */}
+        {/* Micro-event callout — left accent only */}
         <div className="mt-8 border-l-[var(--pricing-callout-accent-width)] border-gold-400 bg-gold-50 pl-5 pr-6 py-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
           <div>
             <p className="font-sans font-semibold text-sm text-neutral-800">
