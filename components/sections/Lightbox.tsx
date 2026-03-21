@@ -85,7 +85,7 @@ export default function Lightbox({
           />
         </div>
         {current.caption && (
-          <p className="font-sans font-light text-sm text-neutral-400 text-center">
+          <p className="font-sans font-regular text-sm text-neutral-400 text-center">
             {current.caption}
           </p>
         )}

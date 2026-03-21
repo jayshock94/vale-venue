@@ -178,7 +178,7 @@ export default function InquiriesTable({ initialInquiries }: InquiriesTableProps
                             <p className="font-sans font-semibold text-xs uppercase tracking-label text-neutral-400 mb-1">
                               Message
                             </p>
-                            <p className="font-sans font-light text-sm text-neutral-700">
+                            <p className="font-sans font-regular text-sm text-neutral-700">
                               {inq.message}
                             </p>
                           </div>

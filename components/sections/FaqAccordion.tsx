@@ -90,7 +90,7 @@ export default function FaqAccordion({ faqs = defaultFaqs }: FaqAccordionProps) 
           </button>
           {openIndex === index && (
             <div className="pb-5">
-              <p className="font-sans font-light text-base text-neutral-500 leading-relaxed">
+              <p className="font-sans font-regular text-base text-neutral-500 leading-relaxed">
                 {faq.answer}
               </p>
             </div>

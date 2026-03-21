@@ -53,7 +53,7 @@ export default async function PricingPage() {
               Pricing that makes{' '}
               <em className="italic text-gold-300">sense</em>.
             </h1>
-            <p className="font-sans font-light text-md text-neutral-50 opacity-70 max-w-md">
+            <p className="font-sans font-regular text-md text-neutral-50 opacity-70 max-w-md">
               Half-day and full-day packages. Every price is here — no quote
               requests.
             </p>

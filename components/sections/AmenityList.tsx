@@ -246,7 +246,7 @@ export default function AmenityList() {
                 <p className="font-sans font-semibold text-[length:var(--text-15)] text-neutral-800">
                   {amenity.headline}
                 </p>
-                <p className="font-sans font-light text-[length:var(--text-14)] text-neutral-500 mt-1 leading-relaxed">
+                <p className="font-sans font-regular text-[length:var(--text-14)] text-neutral-500 mt-1 leading-relaxed">
                   {amenity.detail}
                 </p>
               </div>
@@ -277,7 +277,7 @@ export default function AmenityList() {
             </p>
             <p className="font-sans text-base text-neutral-800">
               Your caterer, your choice.{' '}
-              <span className="font-light text-neutral-500">
+              <span className="font-regular text-neutral-500">
                 We provide the kitchen — who cooks is entirely up to you.
               </span>
             </p>

@@ -134,7 +134,7 @@ export default function TestimonialSection({
 
             {/* Recognition strip — TODO: replace with real badge images once earned */}
             <div className="border-t border-white/10 mt-10 pt-8">
-              <p className="font-sans font-light text-[10px] uppercase tracking-eyebrow text-neutral-600 mb-5">
+              <p className="font-sans font-regular text-[10px] uppercase tracking-eyebrow text-neutral-600 mb-5">
                 As recognized by
               </p>
               <div className="flex items-center gap-6 opacity-30">
@@ -143,7 +143,7 @@ export default function TestimonialSection({
                     <span className="font-serif italic text-[11px] text-neutral-50 leading-tight">
                       {name}
                     </span>
-                    <span className="font-sans font-light text-[10px] text-neutral-400 leading-snug">
+                    <span className="font-sans font-regular text-[10px] text-neutral-400 leading-snug">
                       {award}
                     </span>
                   </div>

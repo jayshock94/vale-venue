@@ -15,11 +15,11 @@ export default function Footer() {
               <span className="font-serif italic text-xl text-neutral-50">
                 The Vale
               </span>
-              <span className="font-sans font-light text-2xs uppercase tracking-nav text-neutral-400 mt-1">
+              <span className="font-sans font-regular text-2xs uppercase tracking-nav text-neutral-400 mt-1">
                 at ten seventy-eight
               </span>
             </div>
-            <p className="font-sans font-light text-sm text-neutral-400 max-w-[260px]">
+            <p className="font-sans font-regular text-sm text-neutral-400 max-w-[260px]">
               A modern event space at the base of the Wasatch mountains. Provo, Utah.
             </p>
           </div>
@@ -40,7 +40,7 @@ export default function Footer() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="font-sans font-light text-sm text-neutral-400 hover:text-neutral-50 transition-colors"
+                  className="font-sans font-regular text-sm text-neutral-400 hover:text-neutral-50 transition-colors"
                 >
                   {link.label}
                 </Link>
@@ -62,7 +62,7 @@ export default function Footer() {
                 <Link
                   key={item.label}
                   href={item.href}
-                  className="font-sans font-light text-sm text-neutral-400 hover:text-neutral-50 transition-colors"
+                  className="font-sans font-regular text-sm text-neutral-400 hover:text-neutral-50 transition-colors"
                 >
                   {item.label}
                 </Link>
@@ -76,20 +76,20 @@ export default function Footer() {
               Contact
             </h4>
             <div className="flex flex-col gap-3">
-              <address className="not-italic font-sans font-light text-sm text-neutral-400">
+              <address className="not-italic font-sans font-regular text-sm text-neutral-400">
                 1078 South 250 East
                 <br />
                 Provo, Utah
               </address>
               <a
                 href="tel:8015926287"
-                className="font-sans font-light text-sm text-neutral-400 hover:text-neutral-50 transition-colors"
+                className="font-sans font-regular text-sm text-neutral-400 hover:text-neutral-50 transition-colors"
               >
                 801-592-6287
               </a>
               <a
                 href="mailto:bobbi@valevenue.com"
-                className="font-sans font-light text-sm text-neutral-400 hover:text-neutral-50 transition-colors"
+                className="font-sans font-regular text-sm text-neutral-400 hover:text-neutral-50 transition-colors"
               >
                 bobbi@valevenue.com
               </a>
@@ -101,11 +101,11 @@ export default function Footer() {
       {/* Bottom bar */}
       <div className="border-t border-white/10">
         <div className="max-w-content mx-auto px-5 md:px-page py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p className="font-sans font-light text-xs text-neutral-500">
+          <p className="font-sans font-regular text-xs text-neutral-500">
             &copy; {new Date().getFullYear()} The Vale. All rights reserved.
           </p>
 
-          <p className="font-sans font-light text-xs text-neutral-500">
+          <p className="font-sans font-regular text-xs text-neutral-500">
             Provo, Utah
           </p>
         </div>

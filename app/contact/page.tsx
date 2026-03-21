@@ -73,7 +73,7 @@ export default async function ContactPage({
                     Tell us about your{' '}
                     <em className="italic text-gold-600">event</em>.
                   </h1>
-                  <p className="font-sans font-light text-base text-neutral-500">
+                  <p className="font-sans font-regular text-base text-neutral-500">
                     No runaround. Pricing is on the site. This goes straight to Bobbi.
                   </p>
                 </div>
@@ -87,11 +87,11 @@ export default async function ContactPage({
                     </div>
                     <div>
                       <p className="font-sans font-semibold text-base text-neutral-800">Bobbi</p>
-                      <p className="font-sans font-light text-sm text-neutral-500">Owner · The Vale</p>
+                      <p className="font-sans font-regular text-sm text-neutral-500">Owner · The Vale</p>
                     </div>
                   </div>
 
-                  <p className="font-sans font-light text-base text-neutral-600 leading-relaxed mb-4">
+                  <p className="font-sans font-regular text-base text-neutral-600 leading-relaxed mb-4">
                     Every inquiry comes directly to me. I&apos;ll read what you send, check the date,
                     and give you a real answer — not a form reply.
                   </p>
@@ -110,7 +110,7 @@ export default async function ContactPage({
                       <p className="font-sans font-semibold text-xs uppercase tracking-label text-gold-600 mb-1">
                         Address
                       </p>
-                      <address className="not-italic font-sans font-light text-base text-neutral-800 leading-relaxed">
+                      <address className="not-italic font-sans font-regular text-base text-neutral-800 leading-relaxed">
                         1078 South 250 East<br />
                         Provo, Utah 84606
                       </address>
@@ -125,7 +125,7 @@ export default async function ContactPage({
                       </p>
                       <a
                         href="tel:8015926287"
-                        className="font-sans font-light text-base text-neutral-800 hover:text-gold-600 transition-colors duration-[var(--transition-fast)]"
+                        className="font-sans font-regular text-base text-neutral-800 hover:text-gold-600 transition-colors duration-[var(--transition-fast)]"
                       >
                         801-592-6287
                       </a>
@@ -140,7 +140,7 @@ export default async function ContactPage({
                       </p>
                       <a
                         href="mailto:bobbi@valevenue.com"
-                        className="font-sans font-light text-base text-neutral-800 hover:text-gold-600 transition-colors duration-[var(--transition-fast)]"
+                        className="font-sans font-regular text-base text-neutral-800 hover:text-gold-600 transition-colors duration-[var(--transition-fast)]"
                       >
                         bobbi@valevenue.com
                       </a>
@@ -153,7 +153,7 @@ export default async function ContactPage({
                       <p className="font-sans font-semibold text-xs uppercase tracking-label text-gold-600 mb-1">
                         Tours
                       </p>
-                      <p className="font-sans font-light text-base text-neutral-800 leading-relaxed">
+                      <p className="font-sans font-regular text-base text-neutral-800 leading-relaxed">
                         By appointment<br />
                         Monday through Saturday
                       </p>
@@ -179,7 +179,7 @@ export default async function ContactPage({
       <div className="md:hidden fixed bottom-0 left-0 right-0 bg-neutral-800 border-t border-white/10 px-5 py-3 z-50">
         <Link
           href="tel:8015926287"
-          className="flex items-center justify-center gap-3 w-full h-12 bg-gold-400 rounded-button font-sans font-semibold text-sm uppercase tracking-btn text-neutral-800"
+          className="flex items-center justify-center gap-3 w-full h-12 bg-gold-400 rounded-sharp font-sans font-semibold text-sm uppercase tracking-btn text-neutral-800"
         >
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
             <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .84h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" />

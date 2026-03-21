@@ -1,7 +1,44 @@
 {
   "permissions": {
     "allow": [
-      "Bash(npx create-next-app@latest . --typescript --tailwind --eslint --app --src-dir=false --import-alias=\"@/*\" --yes)"
+      "Bash(npx create-next-app@latest . --typescript --tailwind --eslint --app --src-dir=false --import-alias=\"@/*\" --yes)",
+      "Bash(npm uninstall:*)",
+      "Bash(npm install:*)",
+      "Bash(npx tsc:*)",
+      "Bash(npx next:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "WebFetch(domain:unsplash.com)",
+      "WebFetch(domain:images.unsplash.com)",
+      "WebFetch(domain:api.unsplash.com)",
+      "WebFetch(domain:www.brides.com)",
+      "Bash(npm run:*)",
+      "mcp__claude_ai_Vercel__list_deployments",
+      "mcp__claude_ai_Vercel__list_projects",
+      "mcp__claude_ai_Vercel__list_teams",
+      "Read(//c/Users/jaysh/Downloads/**)",
+      "Bash(unzip -o files.zip -d vale-files/)",
+      "Bash(cp C:/Users/jaysh/Downloads/vale-files/vale-ux-research.md C:/Users/jaysh/Desktop/vale-venue/vale-ux-research.md)",
+      "Bash(cp C:/Users/jaysh/Downloads/vale-files/vale-brand-guidelines.md C:/Users/jaysh/Desktop/vale-venue/vale-brand-guidelines.md)",
+      "Bash(cp C:/Users/jaysh/Downloads/vale-files/vale-copy-guidelines.md C:/Users/jaysh/Desktop/vale-venue/vale-copy-guidelines.md)",
+      "Bash(cp C:/Users/jaysh/Downloads/vale-files/vale-design-system.json C:/Users/jaysh/Desktop/vale-venue/public/vale-design-system.json)",
+      "Bash(ls:*)",
+      "Bash(python3 -c \"import json,sys; data=json.load\\(sys.stdin\\); print\\(data[0][''''text'''']\\)\")",
+      "Bash(grep -l \"redirect\\\\|availability\" C:/Users/jaysh/Desktop/vale-venue/app/**/*.ts)",
+      "Bash(git push:*)",
+      "Bash(cp \"C:\\\\Users\\\\jaysh\\\\Desktop\\\\Design Stuff\\\\the vale screenshot photos\\\\Screenshot 2026-03-21 142507.png\" \"C:\\\\Users\\\\jaysh\\\\Desktop\\\\vale-venue\\\\public\\\\instagram\\\\ig-1.png\")",
+      "Bash(cp \"C:\\\\Users\\\\jaysh\\\\Desktop\\\\Design Stuff\\\\the vale screenshot photos\\\\Screenshot 2026-03-21 142931.png\" \"C:\\\\Users\\\\jaysh\\\\Desktop\\\\vale-venue\\\\public\\\\instagram\\\\ig-2.png\")",
+      "Bash(cp \"C:\\\\Users\\\\jaysh\\\\Desktop\\\\Design Stuff\\\\the vale screenshot photos\\\\Screenshot 2026-03-21 142723.png\" \"C:\\\\Users\\\\jaysh\\\\Desktop\\\\vale-venue\\\\public\\\\instagram\\\\ig-3.png\")",
+      "Bash(cp \"C:\\\\Users\\\\jaysh\\\\Desktop\\\\Design Stuff\\\\the vale screenshot photos\\\\Screenshot 2026-03-21 143011.png\" \"C:\\\\Users\\\\jaysh\\\\Desktop\\\\vale-venue\\\\public\\\\instagram\\\\ig-4.png\")",
+      "Bash(cp \"C:\\\\Users\\\\jaysh\\\\Desktop\\\\Design Stuff\\\\the vale screenshot photos\\\\Screenshot 2026-03-21 143238.png\" \"C:\\\\Users\\\\jaysh\\\\Desktop\\\\vale-venue\\\\public\\\\instagram\\\\ig-5.png\")",
+      "Bash(cp \"C:\\\\Users\\\\jaysh\\\\Desktop\\\\Design Stuff\\\\the vale screenshot photos\\\\4468016_lg.jpg\" \"C:\\\\Users\\\\jaysh\\\\Desktop\\\\vale-venue\\\\public\\\\instagram\\\\ig-1.jpg\")",
+      "Bash(cp \"C:\\\\Users\\\\jaysh\\\\Desktop\\\\Design Stuff\\\\the vale screenshot photos\\\\4468017_lg.jpg\" \"C:\\\\Users\\\\jaysh\\\\Desktop\\\\vale-venue\\\\public\\\\instagram\\\\ig-2.jpg\")",
+      "Bash(cp \"C:\\\\Users\\\\jaysh\\\\Desktop\\\\Design Stuff\\\\the vale screenshot photos\\\\4467802_lg.jpg\" \"C:\\\\Users\\\\jaysh\\\\Desktop\\\\vale-venue\\\\public\\\\instagram\\\\ig-5.jpg\")",
+      "Bash(cp \"C:\\\\Users\\\\jaysh\\\\Desktop\\\\Design Stuff\\\\the vale screenshot photos\\\\Screenshot 2026-03-21 142507.png\" \"C:\\\\Users\\\\jaysh\\\\Desktop\\\\vale-venue\\\\public\\\\instagram\\\\ig-3.png\")",
+      "Bash(cp \"C:\\\\Users\\\\jaysh\\\\Desktop\\\\Design Stuff\\\\the vale screenshot photos\\\\Screenshot 2026-03-21 142931.png\" \"C:\\\\Users\\\\jaysh\\\\Desktop\\\\vale-venue\\\\public\\\\instagram\\\\ig-4.png\")",
+      "Bash(cp \"C:\\\\Users\\\\jaysh\\\\Desktop\\\\Design Stuff\\\\the vale screenshot photos\\\\Screenshot 2026-03-21 143011.png\" \"C:\\\\Users\\\\jaysh\\\\Desktop\\\\vale-venue\\\\public\\\\instagram\\\\ig-6.png\")",
+      "Bash(xargs grep:*)",
+      "Bash(xargs sed:*)"
     ]
   }
 }

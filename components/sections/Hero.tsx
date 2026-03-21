@@ -36,7 +36,7 @@ export default function Hero() {
 
             {/* Right: sub-copy + CTAs */}
             <div className="flex flex-col justify-end gap-8 mt-10 md:mt-0">
-              <p className="font-sans font-light text-md text-neutral-50 opacity-80">
+              <p className="font-sans font-regular text-md text-neutral-50 opacity-80">
                 Floor-to-ceiling windows. A modern building set against the
                 Wasatch mountains. Weddings, corporate events, and private
                 celebrations.

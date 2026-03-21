@@ -9,36 +9,36 @@
    ───────────────────────────────────────────────────────────────────────────── */
 :root {
   /* ── Fonts (fallbacks; overridden by next/font on <html>) ── */
-  --font-serif: 'Playfair Display', Georgia, serif;
-  --font-sans:  'DM Sans', system-ui, sans-serif;
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-sans:  'Inter', system-ui, sans-serif;
 
   /* ── Color primitives ── */
-  --color-gold-50:       #FAF5EA;
-  --color-gold-100:      #F2E4C8;
-  --color-gold-200:      #E6C99A;
-  --color-gold-300:      #D8AB68;
-  --color-gold-400:      #C08840;
-  --color-gold-500:      #A87030;
-  --color-gold-600:      #8A5820;
-  --color-gold-700:      #6A4218;
-  --color-gold-800:      #4C2E10;
-  --color-gold-900:      #301A08;
+  --color-gold-50:       #FBF7F0;
+  --color-gold-100:      #F3E8D4;
+  --color-gold-200:      #E6CFA8;
+  --color-gold-300:      #D4AF78;
+  --color-gold-400:      #B8893E;
+  --color-gold-500:      #9A7030;
+  --color-gold-600:      #7C5924;
+  --color-gold-700:      #5C4018;
+  --color-gold-800:      #3C280E;
+  --color-gold-900:      #201508;
 
   --color-neutral-0:     #FFFFFF;
-  --color-neutral-50:    #EEEAE3;
-  --color-neutral-100:   #E5E1D8;
-  --color-neutral-150:   #DDD8CF;
-  --color-neutral-200:   #D4CFC6;
-  --color-neutral-300:   #BFB8AE;
-  --color-neutral-400:   #8A8078;
-  --color-neutral-500:   #6E6459;
-  --color-neutral-600:   #48423C;
-  --color-neutral-700:   #2C2824;
-  --color-neutral-800:   #1A1714;
-  --color-neutral-900:   #0D0B09;
+  --color-neutral-50:    #F2EFE9;
+  --color-neutral-100:   #E8E4DD;
+  --color-neutral-150:   #DEDAD2;
+  --color-neutral-200:   #D0CBC2;
+  --color-neutral-300:   #B8B2A8;
+  --color-neutral-400:   #8C8680;
+  --color-neutral-500:   #6A6460;
+  --color-neutral-600:   #464240;
+  --color-neutral-700:   #2A2826;
+  --color-neutral-800:   #181614;
+  --color-neutral-900:   #0C0B0A;
 
-  --color-rule:          #CEC8C0;
-  --color-rule-light:    #E5E1D8;
+  --color-rule:          #CAC4BB;
+  --color-rule-light:    #E0DBD4;
 
   --color-sage-50:       #EAF0EA;
   --color-sage-600:      #5A6B5A;
@@ -104,14 +104,13 @@
 
   /* ── Border radius ── */
   --radius-none:   0px;
-  --radius-sharp:  2px;
-  --radius-button: 6px;
-  --radius-soft:   3px;
+  --radius-sharp:  0px;
+  --radius-soft:   2px;
   --radius-admin:  4px;
 
   /* ── Shadows ── */
-  --shadow-focus-gold: 0 0 0 3px rgba(192, 136, 64, 0.20);
-  --shadow-focus-ink:  0 0 0 3px rgba(26, 23, 20, 0.15);
+  --shadow-focus-gold: 0 0 0 3px rgba(184, 137, 62, 0.22);
+  --shadow-focus-ink:  0 0 0 3px rgba(24, 22, 20, 0.15);
 
   /* ── Transitions ── */
   --transition-fast:    130ms ease;
@@ -150,7 +149,7 @@
   --btn-padding-sm:    0 20px;
   --btn-padding-md:    0 32px;
   --btn-padding-lg:    0 40px;
-  --btn-radius:        var(--radius-button);
+  --btn-radius:        var(--radius-sharp);
   --btn-transition:    var(--transition-fast);
   --btn-sl-hover-light: rgba(255, 255, 255, 0.12);
   --btn-sl-hover-dark:  rgba(255, 255, 255, 0.08);
@@ -177,8 +176,8 @@
 
   /* ── Card warm glass surface ── */
   --surface-card:         #FAF8F5;
-  --card-border-color:    rgba(192, 136, 64, 0.40);
-  --card-shadow:          rgba(26, 23, 20, 0.06);
+  --card-border-color:    rgba(184, 137, 62, 0.40);
+  --card-shadow:          rgba(24, 22, 20, 0.06);
 
   /* ── Admin component values (separate design language) ── */
   --admin-nav-height:   52px;
@@ -198,7 +197,7 @@
   --calendar-day-radius: var(--radius-sharp);
 
   /* ── Select dropdown ── */
-  --select-panel-shadow: 0 4px 20px rgba(28,25,23,0.08);
+  --select-panel-shadow: 0 4px 20px rgba(24,22,20,0.08);
 
   /* ── Amenity chips ── */
   --amenity-chip-height:          48px;

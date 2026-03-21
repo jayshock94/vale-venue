@@ -53,7 +53,7 @@ export default function MobileNav({
             <span className="font-serif italic text-xl text-neutral-50">
               The Vale
             </span>
-            <span className="font-sans font-light text-2xs uppercase tracking-nav text-neutral-400">
+            <span className="font-sans font-regular text-2xs uppercase tracking-nav text-neutral-400">
               at ten seventy-eight
             </span>
           </Link>

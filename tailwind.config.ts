@@ -44,7 +44,6 @@ const config: Config = {
         '6xl':   [typography.size['80'], { lineHeight: typography.lineHeight.tight }],
       },
       fontWeight: {
-        light:    typography.weight.light,
         regular:  typography.weight.regular,
         medium:   typography.weight.medium,
         semibold: typography.weight.semibold,
@@ -83,7 +82,6 @@ const config: Config = {
       borderRadius: {
         'none':    borderRadius.none,
         'sharp':   borderRadius.sharp,
-        'button':  borderRadius.button,
         'soft':    borderRadius.soft,
         'admin':   borderRadius.admin,
         'DEFAULT': borderRadius.sharp,

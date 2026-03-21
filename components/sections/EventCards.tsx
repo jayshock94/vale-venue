@@ -24,17 +24,6 @@ const weddingCard: EventCard = {
   href: '/gallery?category=weddings',
 }
 
-const corporateCard: EventCard = {
-  eyebrow: 'Corporate',
-  titleStart: 'Corporate',
-  titleItalic: 'Events',
-  body: 'Clean, modern space with full AV. Comfortable for 20, manageable for 100. Half-day packages work well for retreats that don\'t need a full day.',
-  image: '/photos/events-corporate.jpg',
-  imageAlt: 'The Vale main floor — open modern event space',
-  cta: 'See corporate photos',
-  href: '/gallery?category=corporate',
-}
-
 const celebrationCard: EventCard = {
   eyebrow: 'Celebrations',
   titleStart: 'Private',
@@ -44,6 +33,17 @@ const celebrationCard: EventCard = {
   imageAlt: 'Birthday celebration at The Vale — balloon arch setup',
   cta: 'See celebration photos',
   href: '/gallery?category=celebrations',
+}
+
+const communityCard: EventCard = {
+  eyebrow: 'Community & Social',
+  titleStart: 'Community &',
+  titleItalic: 'Social Events',
+  body: 'Room for 100 people, or 20 vendor booths around the perimeter. Polished concrete floors and 18-foot ceilings. The space has hosted ClubMommy Utah, Dizzy Disco, and pop-up markets. Evening half-day blocks work for ticketed experiences.',
+  image: '/photos/events-corporate.jpg',
+  imageAlt: 'The Vale main floor — open floor plan for any layout',
+  cta: 'See community photos',
+  href: '/gallery?category=community-social',
 }
 
 function EventCardLarge({ card }: { card: EventCard }) {
@@ -71,7 +71,7 @@ function EventCardLarge({ card }: { card: EventCard }) {
             {card.titleItalic}
           </em>
         </h3>
-        <p className="font-sans font-light text-base text-neutral-500">
+        <p className="font-sans font-regular text-base text-neutral-500">
           {card.body}
         </p>
       </div>
@@ -111,7 +111,7 @@ function EventCardSmall({ card }: { card: EventCard }) {
             {card.titleItalic}
           </em>
         </h3>
-        <p className="font-sans font-light text-base text-neutral-500">
+        <p className="font-sans font-regular text-base text-neutral-500">
           {card.body}
         </p>
       </div>
@@ -133,21 +133,21 @@ export default function EventCards() {
     <section className="bg-neutral-50 py-section px-5 md:px-page">
       <div className="max-w-content mx-auto">
         <SectionHeader
-          eyebrow="Weddings · Corporate · Celebrations"
+          eyebrow="Weddings · Celebrations · Community & Social"
           headline={
             <>
               Every kind of{' '}
               <em className="italic text-gold-600">occasion</em>.
             </>
           }
-          body="From weddings to corporate retreats. The space works because it gets out of the way."
+          body="From weddings to silent discos. The space works because it gets out of the way."
         />
 
         {/* Mobile layout */}
         <div className="flex flex-col gap-4 md:hidden">
           <EventCardLarge card={weddingCard} />
-          <EventCardSmall card={corporateCard} />
           <EventCardSmall card={celebrationCard} />
+          <EventCardSmall card={communityCard} />
         </div>
 
         {/* Desktop layout: asymmetric 1.8fr 1fr */}
@@ -157,8 +157,8 @@ export default function EventCards() {
         >
           <EventCardLarge card={weddingCard} />
           <div className="flex flex-col gap-4">
-            <EventCardSmall card={corporateCard} />
             <EventCardSmall card={celebrationCard} />
+            <EventCardSmall card={communityCard} />
           </div>
         </div>
       </div>

@@ -84,7 +84,7 @@ function NavBtn({
       disabled={disabled}
       aria-label={label}
       className={cn(
-        'h-9 w-9 flex items-center justify-center border rounded-button',
+        'h-9 w-9 flex items-center justify-center border rounded-sharp',
         'transition-colors duration-[var(--transition-fast)]',
         disabled
           ? 'border-rule text-neutral-300 cursor-not-allowed'
@@ -148,7 +148,7 @@ function MonthYearPicker({ currentYear, currentMonth, today, onSelect, onClose }
               disabled={isPast}
               onClick={() => { onSelect(pickerYear, i); onClose() }}
               className={cn(
-                'h-10 rounded-button font-sans font-semibold text-[length:var(--text-11)] uppercase tracking-btn',
+                'h-10 rounded-sharp font-sans font-semibold text-[length:var(--text-11)] uppercase tracking-btn',
                 'transition-colors duration-[var(--transition-fast)]',
                 isActive
                   ? 'bg-gold-400 text-neutral-800'
@@ -293,7 +293,7 @@ function LegendSwatch({ className, label }: { className: string; label: string }
   return (
     <div className="flex items-center gap-2">
       <div className={cn('w-5 h-5 rounded-[var(--calendar-day-radius)] flex-shrink-0', className)} />
-      <span className="font-sans font-light text-[length:var(--text-12)] text-neutral-500">{label}</span>
+      <span className="font-sans font-regular text-[length:var(--text-12)] text-neutral-500">{label}</span>
     </div>
   )
 }
@@ -379,7 +379,7 @@ export default function PublicCalendar({ availability = [] }: PublicCalendarProp
             <h2 className="font-serif text-4xl text-neutral-800 tracking-tightest">
               Find your <em className="italic text-gold-600">date</em>.
             </h2>
-            <p className="font-sans font-light text-sm text-neutral-500 mt-3">
+            <p className="font-sans font-regular text-sm text-neutral-500 mt-3">
               Tap a date to start — tap a second date to mark a range.
             </p>
           </div>
@@ -453,7 +453,7 @@ export default function PublicCalendar({ availability = [] }: PublicCalendarProp
                   <p className="font-sans font-semibold text-base text-neutral-800">
                     {ctaLabel}
                   </p>
-                  <p className="font-sans font-light text-sm text-neutral-500 mt-1">
+                  <p className="font-sans font-regular text-sm text-neutral-500 mt-1">
                     Send an inquiry and Bobbi will confirm within one business day.
                   </p>
                 </>
@@ -462,7 +462,7 @@ export default function PublicCalendar({ availability = [] }: PublicCalendarProp
                   <p className="font-sans font-semibold text-base text-neutral-800">
                     Ready to reserve?
                   </p>
-                  <p className="font-sans font-light text-sm text-neutral-500 mt-1">
+                  <p className="font-sans font-regular text-sm text-neutral-500 mt-1">
                     Select a date above or reach out and Bobbi will check availability for you.
                   </p>
                 </>

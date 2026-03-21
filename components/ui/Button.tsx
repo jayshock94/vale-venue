@@ -29,7 +29,7 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 const base = [
   'relative overflow-hidden',
   'inline-flex items-center justify-center whitespace-nowrap',
-  'font-sans font-semibold uppercase tracking-btn rounded-button',
+  'font-sans font-semibold uppercase tracking-btn rounded-sharp',
   'transition-all duration-fast active:scale-[0.97] select-none',
   // ::before state layer overlay
   "before:content-[''] before:absolute before:inset-0",

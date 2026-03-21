@@ -77,7 +77,6 @@ export const typography = {
     '80': ts.size['80'].$value,
   },
   weight: {
-    light:    String(ts.weight.light.$value),
     regular:  String(ts.weight.regular.$value),
     medium:   String(ts.weight.medium.$value),
     semibold: String(ts.weight.semibold.$value),
@@ -128,20 +127,10 @@ export const spacing = {
 
 // ── BORDER RADIUS ────────────────────────────────────────────────────────────
 export const borderRadius = {
-  none:   ds.borderRadius.none.$value,
-  sharp:  ds.borderRadius.sharp.$value,
-  button: ds.borderRadius.button.$value,
-  soft:   ds.borderRadius.soft.$value,
-  admin:  ds.borderRadius.admin.$value,
-} as const
-
-// ── BUTTON STATE LAYERS ───────────────────────────────────────────────────────
-const btn = ds.component.button
-
-export const buttonStateLayer = {
-  hoverLight: btn['state-layer-hover-light'].$value,
-  hoverDark:  btn['state-layer-hover-dark'].$value,
-  active:     btn['state-layer-active'].$value,
+  none:  ds.borderRadius.none.$value,
+  sharp: ds.borderRadius.sharp.$value,
+  soft:  ds.borderRadius.soft.$value,
+  admin: ds.borderRadius.admin.$value,
 } as const
 
 // ── SHADOW ───────────────────────────────────────────────────────────────────

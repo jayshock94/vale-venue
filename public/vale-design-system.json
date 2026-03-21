@@ -6,49 +6,50 @@
     "version": "2.0.0",
     "description": "Single source of truth. No hardcoded values anywhere in the codebase. Everything traces back here.",
     "fonts": {
-      "display": "Playfair Display",
-      "ui": "DM Sans",
-      "googleFontsUrl": "https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap"
+      "display": "Cormorant Garamond",
+      "ui": "Inter",
+      "googleFontsUrl": "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Inter:wght@400;500;600&display=swap"
     },
     "rules": {
       "serif": "Emotion and money only — hero headline, prices, pull quotes, logo, one italic accent word per card title",
       "sans": "Everything else — nav, buttons, body, labels, forms, amenities, badges",
       "gold": "Appears max 3 times per page — primary CTA button, price values, one accent word",
-      "no-hardcoding": "NEVER hardcode a color, font, or spacing value. Everything must reference a token."
+      "no-hardcoding": "NEVER hardcode a color, font, or spacing value. Everything must reference a token.",
+      "min-weight": "Minimum body text weight is 400 (regular). No 300 Light anywhere in the UI."
     }
   },
 
   "color": {
     "primitive": {
       "gold": {
-        "50":  { "$value": "#FAF5EA", "$type": "color" },
-        "100": { "$value": "#F2E4C8", "$type": "color" },
-        "200": { "$value": "#E6C99A", "$type": "color" },
-        "300": { "$value": "#D8AB68", "$type": "color", "$description": "Wood highlights — sunlit grain" },
-        "400": { "$value": "#C08840", "$type": "color", "$description": "Brand primary — honey-amber wood slat panels" },
-        "500": { "$value": "#A87030", "$type": "color" },
-        "600": { "$value": "#8A5820", "$type": "color" },
-        "700": { "$value": "#6A4218", "$type": "color" },
-        "800": { "$value": "#4C2E10", "$type": "color" },
-        "900": { "$value": "#301A08", "$type": "color" }
+        "50":  { "$value": "#FBF7F0", "$type": "color" },
+        "100": { "$value": "#F3E8D4", "$type": "color" },
+        "200": { "$value": "#E6CFA8", "$type": "color" },
+        "300": { "$value": "#D4AF78", "$type": "color", "$description": "Sunlit wood grain highlight" },
+        "400": { "$value": "#B8893E", "$type": "color", "$description": "Brand primary — mezzanine wood slat panels, mid-tone amber" },
+        "500": { "$value": "#9A7030", "$type": "color" },
+        "600": { "$value": "#7C5924", "$type": "color", "$description": "Text accent — dark enough for contrast on cream" },
+        "700": { "$value": "#5C4018", "$type": "color" },
+        "800": { "$value": "#3C280E", "$type": "color" },
+        "900": { "$value": "#201508", "$type": "color" }
       },
       "neutral": {
         "0":   { "$value": "#FFFFFF", "$type": "color" },
-        "50":  { "$value": "#EEEAE3", "$type": "color", "$description": "Soft warm white — kitchen and main hall walls" },
-        "100": { "$value": "#E5E1D8", "$type": "color" },
-        "150": { "$value": "#DDD8CF", "$type": "color" },
-        "200": { "$value": "#D4CFC6", "$type": "color" },
-        "300": { "$value": "#BFB8AE", "$type": "color", "$description": "Stone — concrete mid-tone, borders" },
-        "400": { "$value": "#8A8078", "$type": "color", "$description": "Ghost — placeholders" },
-        "500": { "$value": "#6E6459", "$type": "color", "$description": "Muted — body copy, cabinetry taupe" },
-        "600": { "$value": "#48423C", "$type": "color" },
-        "700": { "$value": "#2C2824", "$type": "color" },
-        "800": { "$value": "#1A1714", "$type": "color", "$description": "Ink — near-black metal frames and pendant hardware" },
-        "900": { "$value": "#0D0B09", "$type": "color" }
+        "50":  { "$value": "#F2EFE9", "$type": "color", "$description": "Page background — warm white walls of the main hall" },
+        "100": { "$value": "#E8E4DD", "$type": "color" },
+        "150": { "$value": "#DEDAD2", "$type": "color" },
+        "200": { "$value": "#D0CBC2", "$type": "color", "$description": "Concrete floor mid-tone" },
+        "300": { "$value": "#B8B2A8", "$type": "color", "$description": "Stone — border color, dividers" },
+        "400": { "$value": "#8C8680", "$type": "color", "$description": "Ghost — placeholder text, secondary labels" },
+        "500": { "$value": "#6A6460", "$type": "color", "$description": "Muted — body copy" },
+        "600": { "$value": "#464240", "$type": "color" },
+        "700": { "$value": "#2A2826", "$type": "color" },
+        "800": { "$value": "#181614", "$type": "color", "$description": "Ink — black metal mezzanine frame and railing" },
+        "900": { "$value": "#0C0B0A", "$type": "color" }
       },
       "rule": {
-        "default": { "$value": "#CEC8C0", "$type": "color" },
-        "light":   { "$value": "#E5E1D8", "$type": "color" }
+        "default": { "$value": "#CAC4BB", "$type": "color" },
+        "light":   { "$value": "#E0DBD4", "$type": "color" }
       },
       "sage": {
         "50":  { "$value": "#EAF0EA", "$type": "color" },
@@ -104,11 +105,10 @@
 
   "typography": {
     "family": {
-      "display": { "$value": "Playfair Display", "$type": "fontFamily" },
-      "ui":      { "$value": "DM Sans",          "$type": "fontFamily" }
+      "display": { "$value": "Cormorant Garamond", "$type": "fontFamily" },
+      "ui":      { "$value": "Inter",              "$type": "fontFamily" }
     },
     "weight": {
-      "light":    { "$value": 300, "$type": "fontWeight" },
       "regular":  { "$value": 400, "$type": "fontWeight" },
       "medium":   { "$value": 500, "$type": "fontWeight" },
       "semibold": { "$value": 600, "$type": "fontWeight" }
@@ -172,15 +172,15 @@
 
   "borderRadius": {
     "none":  { "$value": "0px" },
-    "sharp": { "$value": "2px", "$description": "Buttons, badges — never pill-shaped" },
-    "soft":  { "$value": "3px", "$description": "Cards" },
-    "admin": { "$value": "4px", "$description": "Admin panels and inputs" }
+    "sharp": { "$value": "0px", "$description": "Buttons, badges — zero radius, matches the black metal frame lines of the building" },
+    "soft":  { "$value": "2px", "$description": "Cards — barely perceptible, reads as designed not browser-default" },
+    "admin": { "$value": "4px", "$description": "Admin panels and inputs only" }
   },
 
   "shadow": {
     "none":       { "$value": "none" },
-    "focus-gold": { "$value": "0 0 0 3px rgba(201,160,110,0.20)", "$description": "Gold focus ring" },
-    "focus-ink":  { "$value": "0 0 0 3px rgba(28,25,23,0.15)" }
+    "focus-gold": { "$value": "0 0 0 3px rgba(184,137,62,0.22)", "$description": "Gold focus ring — matches gold-400" },
+    "focus-ink":  { "$value": "0 0 0 3px rgba(24,22,20,0.15)",  "$description": "Ink focus ring — matches neutral-800" }
   },
 
   "transition": {
@@ -247,7 +247,7 @@
       "textarea-min-height": { "$value": "120px" },
       "padding":             { "$value": "16px 0" },
       "font-size":           { "$value": "{typography.size.14}" },
-      "font-weight":         { "$value": "{typography.weight.light}" },
+      "font-weight":         { "$value": "{typography.weight.regular}" },
       "label-font-size":     { "$value": "{typography.size.11}" },
       "label-font-weight":   { "$value": "{typography.weight.semibold}" },
       "label-spacing":       { "$value": "{typography.letterSpacing.label}" },
@@ -333,7 +333,7 @@
       "border-radius": { "$value": "0" },
       "padding":       { "$value": "12px 16px" },
       "font-size":     { "$value": "{typography.size.12}" },
-      "font-weight":   { "$value": "{typography.weight.light}" }
+      "font-weight":   { "$value": "{typography.weight.regular}" }
     },
 
     "faq": {
@@ -342,7 +342,7 @@
       "question-size":   { "$value": "{typography.size.14}" },
       "question-weight": { "$value": "{typography.weight.medium}" },
       "answer-size":     { "$value": "{typography.size.13}" },
-      "answer-weight":   { "$value": "{typography.weight.light}" }
+      "answer-weight":   { "$value": "{typography.weight.regular}" }
     },
 
     "touch-target": {

@@ -53,7 +53,7 @@ export function SectionHeader({
           {body && (
             <p
               className={cn(
-                'font-sans font-light text-md leading-relaxed',
+                'font-sans font-regular text-md leading-relaxed',
                 dark ? 'text-neutral-50 opacity-70' : 'text-neutral-500'
               )}
             >

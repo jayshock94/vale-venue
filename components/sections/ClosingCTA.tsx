@@ -11,7 +11,7 @@ export default function ClosingCTA() {
           You know the price. Come see the{' '}
           <em className="italic text-gold-300">space</em>.
         </h2>
-        <p className="font-sans font-light text-md text-neutral-50 opacity-70 max-w-md mx-auto mb-10">
+        <p className="font-sans font-regular text-md text-neutral-50 opacity-70 max-w-md mx-auto mb-10">
           Tours by appointment, Monday through Saturday. Bobbi will walk you
           through — no pressure, no sales pitch.
         </p>
@@ -21,7 +21,7 @@ export default function ClosingCTA() {
           <div className="w-9 h-9 rounded-full ring-1 ring-gold-400/40 bg-neutral-700 flex items-center justify-center flex-shrink-0">
             <span className="font-serif text-base text-gold-300 select-none">B</span>
           </div>
-          <p className="font-sans font-light text-sm text-neutral-50 opacity-50">
+          <p className="font-sans font-regular text-sm text-neutral-50 opacity-50">
             Every inquiry goes directly to Bobbi. Typical reply: same day.
           </p>
         </div>

@@ -100,7 +100,7 @@ function PricingCard({ pkg }: { pkg: PricingPackage }) {
 
         <p
           className={cn(
-            'font-sans font-light text-[length:var(--text-12)] mt-1',
+            'font-sans font-regular text-[length:var(--text-12)] mt-1',
             featured ? 'text-[rgba(245,240,232,0.45)]' : 'text-neutral-500'
           )}
         >
@@ -174,7 +174,7 @@ export default function PricingTable({
               No mystery. No{' '}
               <em className="italic text-gold-600">runaround</em>.
             </h2>
-            <p className="font-sans font-light text-md text-neutral-500 mt-4 md:mt-0 flex items-end">
+            <p className="font-sans font-regular text-md text-neutral-500 mt-4 md:mt-0 flex items-end">
               Every package and price is here because your time matters. No
               quote requests.
             </p>
@@ -190,7 +190,7 @@ export default function PricingTable({
           </div>
           {/* Footer row — stacks on mobile, side-by-side on sm+ */}
           <div className="border-t border-rule-light pt-4 mt-0 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-            <p className="font-sans font-light text-[length:var(--text-11)] text-neutral-400">
+            <p className="font-sans font-regular text-[length:var(--text-11)] text-neutral-400">
               All packages include full venue access, amenities, and parking.
             </p>
             <Button href="/availability" variant="gold" size="md" className="flex-shrink-0">
@@ -224,7 +224,7 @@ export default function PricingTable({
                 ))}
               </div>
 
-              <p className="font-sans font-light text-[length:var(--text-14)] text-neutral-500">
+              <p className="font-sans font-regular text-[length:var(--text-14)] text-neutral-500">
                 2–4 hour blocks available outside peak windows.
               </p>
               <a
@@ -251,7 +251,7 @@ export default function PricingTable({
             ].map(({ term, detail }) => (
               <div key={term}>
                 <p className="font-sans font-medium text-[length:var(--text-12)] text-neutral-800 mb-1">{term}</p>
-                <p className="font-sans font-light text-[length:var(--text-13)] text-neutral-500 leading-relaxed">{detail}</p>
+                <p className="font-sans font-regular text-[length:var(--text-13)] text-neutral-500 leading-relaxed">{detail}</p>
               </div>
             ))}
           </div>

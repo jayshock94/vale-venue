@@ -84,7 +84,7 @@ export default async function Home() {
                   Good <em className="italic text-gold-600">questions</em>.
                 </h2>
               </div>
-              <p className="font-sans font-light text-md text-neutral-500 mt-4 md:mt-0 flex items-end">
+              <p className="font-sans font-regular text-md text-neutral-500 mt-4 md:mt-0 flex items-end">
                 The answers people want before they pick up the phone.
               </p>
             </div>

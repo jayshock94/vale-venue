@@ -59,7 +59,7 @@ export default function VendorList() {
               <em className="italic text-gold-600">space</em>.
             </h2>
           </div>
-          <p className="font-sans font-light text-md text-neutral-500 mt-4 md:mt-0 flex items-end">
+          <p className="font-sans font-regular text-md text-neutral-500 mt-4 md:mt-0 flex items-end">
             We don&apos;t require you to use anyone on this list — but these vendors have worked here and know the room.
           </p>
         </div>
@@ -88,7 +88,7 @@ export default function VendorList() {
                         {vendor.name}
                       </p>
                     )}
-                    <p className="font-sans font-light text-[length:var(--text-12)] text-neutral-400">
+                    <p className="font-sans font-regular text-[length:var(--text-12)] text-neutral-400">
                       {vendor.note}
                     </p>
                   </div>
@@ -99,7 +99,7 @@ export default function VendorList() {
         </div>
 
         {/* Footnote */}
-        <p className="font-sans font-light text-[length:var(--text-12)] text-neutral-400 mt-10 pt-8 border-t border-rule-light">
+        <p className="font-sans font-regular text-[length:var(--text-12)] text-neutral-400 mt-10 pt-8 border-t border-rule-light">
           Have a vendor you love? Bring them. The kitchen is open to any licensed caterer.
         </p>
 

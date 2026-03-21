@@ -104,7 +104,7 @@ function SuccessView({ onReset }: { onReset: () => void }) {
         <h3 className="font-serif text-3xl text-neutral-800 tracking-tightest mb-3">
           You&apos;re all set.
         </h3>
-        <p className="font-sans font-light text-sm text-neutral-500 leading-relaxed max-w-[230px] mx-auto">
+        <p className="font-sans font-regular text-sm text-neutral-500 leading-relaxed max-w-[230px] mx-auto">
           Bobbi reads every inquiry personally and will be in touch within one business day.
         </p>
       </div>
@@ -129,7 +129,7 @@ function SuccessView({ onReset }: { onReset: () => void }) {
             <span className="w-5 h-5 rounded-full bg-gold-100 font-sans font-semibold text-xs text-gold-700 flex items-center justify-center flex-shrink-0">
               {i + 1}
             </span>
-            <span className="font-sans font-light text-sm text-neutral-600">{item}</span>
+            <span className="font-sans font-regular text-sm text-neutral-600">{item}</span>
           </div>
         ))}
       </div>
@@ -141,7 +141,7 @@ function SuccessView({ onReset }: { onReset: () => void }) {
       >
         <button
           onClick={onReset}
-          className="w-full h-12 rounded-button border border-rule font-sans font-medium text-xs uppercase tracking-btn text-neutral-500 hover:text-neutral-800 hover:border-neutral-400 transition-colors duration-[var(--transition-fast)]"
+          className="w-full h-12 rounded-sharp border border-rule font-sans font-medium text-xs uppercase tracking-btn text-neutral-500 hover:text-neutral-800 hover:border-neutral-400 transition-colors duration-[var(--transition-fast)]"
         >
           Submit new request
         </button>
@@ -227,7 +227,7 @@ export default function ContactForm({ defaultDate, defaultEndDate }: { defaultDa
 
   // Date confirmation notice — only shown on step 1 when dates came from the calendar
   const dateNotice = defaultDate ? (
-    <div className="flex items-center gap-2 mb-6 px-3 py-2.5 bg-gold-50 border border-gold-100 rounded-button">
+    <div className="flex items-center gap-2 mb-6 px-3 py-2.5 bg-gold-50 border border-gold-100 rounded-sharp">
       <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="flex-shrink-0 text-gold-600" aria-hidden="true">
         <rect x="1" y="2.5" width="12" height="10" rx="1" stroke="currentColor" strokeWidth="1.25" />
         <path d="M1 6h12M4.5 1v2.5M9.5 1v2.5" stroke="currentColor" strokeWidth="1.25" strokeLinecap="round" />

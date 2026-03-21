@@ -37,7 +37,7 @@ const labelClass =
 // component.input from vale-design-system.json
 // height-public=56px, padding=16px all sides, bg=raised(white), bottom-line style
 const inputBase =
-  'w-full h-[var(--input-height-public)] bg-neutral-0 border-b border-rule text-base font-light font-sans text-neutral-800 placeholder-neutral-400 py-4 px-4 outline-none transition-all duration-default focus:border-b-2 focus:border-gold-400 focus:shadow-focus-gold'
+  'w-full h-[var(--input-height-public)] bg-neutral-0 border-b border-rule text-base font-regular font-sans text-neutral-800 placeholder-neutral-400 py-4 px-4 outline-none transition-all duration-default focus:border-b-2 focus:border-gold-400 focus:shadow-focus-gold'
 
 export function Input({ label, error, className, ...props }: InputProps) {
   return (
@@ -142,7 +142,7 @@ export function Select({
         className={cn(
           'w-full h-[var(--input-height-public)] bg-neutral-0 text-left',
           'flex items-center justify-between gap-2 px-4',
-          'font-sans font-light text-base outline-none',
+          'font-sans font-regular text-base outline-none',
           'border-b transition-all duration-default',
           open
             ? 'border-b-2 border-gold-400 shadow-focus-gold'
@@ -193,7 +193,7 @@ export function Select({
                   'font-sans text-base transition-colors duration-fast',
                   option.value === value
                     ? 'bg-gold-50 text-gold-600 font-medium'
-                    : 'font-light text-neutral-800 hover:bg-neutral-50'
+                    : 'font-regular text-neutral-800 hover:bg-neutral-50'
                 )}
               >
                 {option.label}

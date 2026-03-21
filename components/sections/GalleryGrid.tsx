@@ -47,12 +47,12 @@ const placeholderImages: GalleryImage[] = [
   {
     public_url: '/photos/gallery/corporate-1.jpg',
     caption: 'The Vale main floor — evening',
-    category: 'corporate',
+    category: 'community-social',
   },
   {
     public_url: '/photos/gallery/corporate-2.jpg',
     caption: 'The Vale main floor — full capacity layout',
-    category: 'corporate',
+    category: 'community-social',
   },
   {
     public_url: '/photos/gallery/celebrations-1.png',
@@ -72,10 +72,10 @@ const placeholderImages: GalleryImage[] = [
 ]
 
 const tabs = [
-  { value: 'all', label: 'All' },
-  { value: 'weddings', label: 'Weddings' },
-  { value: 'corporate', label: 'Corporate' },
-  { value: 'celebrations', label: 'Celebrations' },
+  { value: 'all',            label: 'All' },
+  { value: 'weddings',       label: 'Weddings' },
+  { value: 'celebrations',   label: 'Celebrations' },
+  { value: 'community-social', label: 'Community & Social' },
 ]
 
 interface GalleryGridProps {
@@ -103,7 +103,7 @@ export default function GalleryGrid({ images, defaultCategory = 'all' }: Gallery
             key={tab.value}
             onClick={() => setActiveTab(tab.value)}
             className={cn(
-              'h-12 sm:h-[var(--gallery-filter-tab-height)] px-4 border rounded-button',
+              'h-12 sm:h-[var(--gallery-filter-tab-height)] px-4 border rounded-sharp',
               'font-sans font-semibold text-2xs uppercase tracking-btn',
               'whitespace-nowrap flex-shrink-0 transition-colors duration-fast',
               activeTab === tab.value
@@ -135,7 +135,7 @@ export default function GalleryGrid({ images, defaultCategory = 'all' }: Gallery
             />
             {img.caption && (
               <div className="absolute inset-0 bg-neutral-800/0 group-hover:bg-neutral-800/40 transition-all duration-slow flex items-end p-4 opacity-0 group-hover:opacity-100">
-                <span className="font-sans font-light text-sm text-neutral-50">
+                <span className="font-sans font-regular text-sm text-neutral-50">
                   {img.caption}
                 </span>
               </div>
@@ -146,7 +146,7 @@ export default function GalleryGrid({ images, defaultCategory = 'all' }: Gallery
 
       {filtered.length === 0 && (
         <div className="text-center py-20">
-          <p className="font-sans font-light text-base text-neutral-400">
+          <p className="font-sans font-regular text-base text-neutral-400">
             No photos in this category yet.
           </p>
         </div>

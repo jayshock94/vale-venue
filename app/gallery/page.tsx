@@ -50,7 +50,7 @@ export default async function GalleryPage({
               The space,{' '}
               <em className="italic text-gold-300">photographed</em>.
             </h1>
-            <p className="font-sans font-light text-md text-neutral-50 opacity-70 max-w-md">
+            <p className="font-sans font-regular text-md text-neutral-50 opacity-70 max-w-md">
               Weddings, corporate events, and private celebrations. Floor-to-ceiling
               windows and the Wasatch mountains behind every shot.
             </p>
