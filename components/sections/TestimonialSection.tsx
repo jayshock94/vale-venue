@@ -26,38 +26,37 @@ const defaultTestimonials: Testimonial[] = [
   },
 ]
 
-// TODO: Replace src values with real Instagram post image URLs
 // TODO: Replace href values with direct links to each individual Instagram post
 const instagramPosts = [
   {
     id: 'post-1',
-    src: 'https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=600&q=80',
-    alt: 'Wedding reception at The Vale',
+    src: '/instagram/ig-1.png',
+    alt: 'Wedding ceremony at The Vale — couple at the altar',
   },
   {
     id: 'post-2',
-    src: 'https://images.unsplash.com/photo-1544078751-58fee2d8a03b?w=600&q=80',
-    alt: 'Event setup at The Vale',
+    src: '/instagram/ig-2.png',
+    alt: 'Bride portrait at The Vale — natural light through the windows',
   },
   {
     id: 'post-3',
-    src: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=600&q=80',
-    alt: 'Wasatch mountain views from The Vale',
+    src: '/instagram/ig-3.png',
+    alt: 'Wedding ceremony at The Vale — couple under floral arch',
   },
   {
     id: 'post-4',
-    src: 'https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=600&q=80',
-    alt: 'Celebration at The Vale',
+    src: '/instagram/ig-4.png',
+    alt: 'Birthday celebration at The Vale — balloon arch setup',
   },
   {
     id: 'post-5',
-    src: 'https://images.unsplash.com/photo-1478146059778-26028b07395a?w=600&q=80',
-    alt: 'Reception details at The Vale',
+    src: '/instagram/ig-5.png',
+    alt: 'Gender reveal party at The Vale',
   },
   {
     id: 'post-6',
-    src: 'https://images.unsplash.com/photo-1515187029135-18ee286d815b?w=600&q=80',
-    alt: 'Corporate event at The Vale',
+    src: '/instagram/ig-6.png',
+    alt: 'The Vale event space — modern interior',
   },
 ]
 
