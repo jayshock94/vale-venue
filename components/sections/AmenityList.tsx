@@ -34,6 +34,11 @@ export default function AmenityList() {
             </div>
           ))}
         </div>
+
+        <p className="mt-10 pt-8 border-t border-rule font-sans font-light text-sm text-neutral-500">
+          <span className="font-medium text-neutral-700">Catering:</span> Your caterer, your choice.
+          We provide the kitchen and food prep area — who cooks is entirely up to you.
+        </p>
       </div>
     </section>
   )

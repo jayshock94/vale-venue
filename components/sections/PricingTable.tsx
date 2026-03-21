@@ -1,4 +1,5 @@
 import { Badge } from '@/components/ui/Badge'
+import { Button } from '@/components/ui/Button'
 import { formatPrice } from '@/lib/utils'
 
 export interface PricingPackage {
@@ -182,13 +183,18 @@ export default function PricingTable({
           </table>
         </div>
 
-        <p className="font-sans font-light text-sm text-neutral-400 mt-6">
-          All packages include full access to the venue, amenities, and
-          on-site parking.
-        </p>
+        {/* Decision-moment CTA — appears right after the user has seen all prices */}
+        <div className="mt-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+          <p className="font-sans font-light text-sm text-neutral-500">
+            All packages include full venue access, amenities, and parking.
+          </p>
+          <Button href="/contact" variant="gold" size="md">
+            Reserve Your Date
+          </Button>
+        </div>
 
-        {/* Micro-event callout */}
-        <div className="mt-8 border border-rule bg-neutral-0 rounded-soft px-6 py-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+        {/* Micro-event callout — secondary audience, visually warm and distinct from the table */}
+        <div className="mt-6 border border-gold-200 bg-gold-50 rounded-soft px-6 py-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
           <div>
             <p className="font-sans font-semibold text-sm text-neutral-800">
               Hosting a birthday or small celebration?

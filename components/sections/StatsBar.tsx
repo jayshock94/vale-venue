@@ -1,8 +1,8 @@
 const stats = [
-  { value: '100+', label: 'Events hosted' },
-  { value: '5 Star', label: 'Average review' },
-  { value: '100', label: 'Guest capacity' },
-  { value: '$300', label: 'Starting price' },
+  { value: '100+', label: 'Events hosted', accent: false },
+  { value: '5 Star', label: 'Average review', accent: false },
+  { value: '100', label: 'Guest capacity', accent: false },
+  { value: '$300', label: 'Starting price', accent: true },
 ]
 
 export default function StatsBar() {
@@ -25,7 +25,7 @@ export default function StatsBar() {
                 index < 2 ? 'border-b border-rule md:border-b-0' : ''
               }`}
             >
-              <span className="font-serif text-3xl text-neutral-800">
+              <span className={`font-serif text-3xl ${stat.accent ? 'text-gold-600' : 'text-neutral-800'}`}>
                 {stat.value}
               </span>
               <span className="font-sans text-xs text-neutral-500 uppercase tracking-stat mt-1">
