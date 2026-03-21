@@ -15,43 +15,58 @@ export interface GalleryImage {
 
 const placeholderImages: GalleryImage[] = [
   {
-    public_url: 'https://images.unsplash.com/photo-1519741497674-611481863552?w=800&q=80',
-    caption: 'Wedding reception',
+    public_url: '/photos/gallery/weddings-1.jpg',
+    caption: 'Wedding reception — white florals and geometric pendant lights',
     category: 'weddings',
   },
   {
-    public_url: 'https://images.unsplash.com/photo-1515187029135-18ee286d815b?w=800&q=80',
-    caption: 'Corporate event',
+    public_url: '/photos/gallery/weddings-2.jpg',
+    caption: 'Wedding reception — candlelit round tables',
+    category: 'weddings',
+  },
+  {
+    public_url: '/photos/gallery/weddings-3.png',
+    caption: 'Wedding ceremony at The Vale',
+    category: 'weddings',
+  },
+  {
+    public_url: '/photos/gallery/weddings-4.png',
+    caption: 'Ceremony under floral arch',
+    category: 'weddings',
+  },
+  {
+    public_url: '/photos/gallery/weddings-5.png',
+    caption: 'Bridal portrait',
+    category: 'weddings',
+  },
+  {
+    public_url: '/photos/gallery/weddings-6.png',
+    caption: 'Bridal portrait — natural window light',
+    category: 'weddings',
+  },
+  {
+    public_url: '/photos/gallery/corporate-1.jpg',
+    caption: 'The Vale main floor — evening',
     category: 'corporate',
   },
   {
-    public_url: 'https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=800&q=80',
-    caption: 'Private celebration',
-    category: 'celebrations',
-  },
-  {
-    public_url: 'https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=800&q=80',
-    caption: 'Ceremony setup',
-    category: 'weddings',
-  },
-  {
-    public_url: 'https://images.unsplash.com/photo-1511578314322-379afb476865?w=800&q=80',
-    caption: 'Banquet hall',
-    category: 'celebrations',
-  },
-  {
-    public_url: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&q=80',
-    caption: 'Conference setup',
+    public_url: '/photos/gallery/corporate-2.jpg',
+    caption: 'The Vale main floor — full capacity layout',
     category: 'corporate',
   },
   {
-    public_url: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80',
-    caption: 'Mountain view windows',
-    category: 'weddings',
+    public_url: '/photos/gallery/celebrations-1.png',
+    caption: 'Birthday celebration — balloon arch',
+    category: 'celebrations',
   },
   {
-    public_url: 'https://images.unsplash.com/photo-1502635385003-ee1e6a1a742d?w=800&q=80',
-    caption: 'Anniversary dinner',
+    public_url: '/photos/gallery/celebrations-2.png',
+    caption: 'Gender reveal party at The Vale',
+    category: 'celebrations',
+  },
+  {
+    public_url: '/photos/gallery/celebrations-3.jpg',
+    caption: 'Bar and prep area',
     category: 'celebrations',
   },
 ]
