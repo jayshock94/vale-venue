@@ -48,14 +48,14 @@ function ProgressDots({ step }: { step: 1 | 2 }) {
   )
 }
 
-export default function ContactForm() {
+export default function ContactForm({ defaultDate }: { defaultDate?: string }) {
   const [step, setStep] = useState<1 | 2>(1)
   const [formData, setFormData] = useState<FormData>({
     full_name: '',
     email: '',
     event_type: '',
     guest_count: '',
-    desired_date: '',
+    desired_date: defaultDate ?? '',
     message: '',
   })
   const [errors, setErrors] = useState<FormErrors>({})

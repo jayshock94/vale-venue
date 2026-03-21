@@ -3,10 +3,12 @@ import { createClient } from '@/lib/supabase/server'
 import Nav from '@/components/layout/Nav'
 import Footer from '@/components/layout/Footer'
 import PricingTable from '@/components/sections/PricingTable'
+import PublicCalendar from '@/components/sections/PublicCalendar'
 import AmenityList from '@/components/sections/AmenityList'
 import FaqAccordion from '@/components/sections/FaqAccordion'
 import ClosingCTA from '@/components/sections/ClosingCTA'
 import type { PricingPackage } from '@/components/sections/PricingTable'
+import type { CalendarAvailability } from '@/components/sections/PublicCalendar'
 import type { Faq } from '@/components/sections/FaqAccordion'
 
 export const metadata: Metadata = {
@@ -18,10 +20,11 @@ export const metadata: Metadata = {
 export default async function PricingPage() {
   let packages: PricingPackage[] = []
   let faqs: Faq[] = []
+  let availability: CalendarAvailability[] = []
 
   try {
     const supabase = await createClient()
-    const [packagesResult, faqsResult] = await Promise.all([
+    const [packagesResult, faqsResult, availabilityResult] = await Promise.all([
       supabase
         .from('pricing_packages')
         .select('*')
@@ -32,9 +35,14 @@ export default async function PricingPage() {
         .select('*')
         .eq('active', true)
         .order('sort_order'),
+      supabase
+        .from('availability')
+        .select('date, status')
+        .order('date'),
     ])
     if (packagesResult.data) packages = packagesResult.data
     if (faqsResult.data) faqs = faqsResult.data
+    if (availabilityResult.data) availability = availabilityResult.data
   } catch {
     // Fall through to defaults
   }
@@ -61,6 +69,7 @@ export default async function PricingPage() {
         </section>
 
         <PricingTable packages={packages} />
+        <PublicCalendar availability={availability} />
         <AmenityList />
 
         {/* FAQ section */}

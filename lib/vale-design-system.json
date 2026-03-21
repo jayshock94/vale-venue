@@ -335,6 +335,24 @@
       "callout-accent-width":      { "$value": "3px" }
     },
 
+    "calendar": {
+      "$description": "Public read-only availability calendar — shows open/booked dates before inquiry.",
+      "day-radius":          { "$value": "{borderRadius.sharp}" },
+      "day-bg":              { "$value": "{color.primitive.neutral.0}" },
+      "day-border":          { "$value": "{color.semantic.border.default}" },
+      "day-color":           { "$value": "{color.semantic.text.primary}" },
+      "day-hover-border":    { "$value": "{color.primitive.gold.400}" },
+      "day-hover-color":     { "$value": "{color.primitive.gold.600}" },
+      "day-bg-booked":       { "$value": "{color.primitive.neutral.100}" },
+      "day-color-booked":    { "$value": "{color.primitive.neutral.300}" },
+      "day-color-past":      { "$value": "{color.primitive.neutral.300}" },
+      "day-today-border":    { "$value": "{color.primitive.gold.400}" },
+      "day-bg-selected":     { "$value": "{color.primitive.gold.400}" },
+      "day-color-selected":  { "$value": "{color.semantic.text.primary}" },
+      "nav-color":           { "$value": "{color.semantic.text.muted}" },
+      "nav-color-hover":     { "$value": "{color.semantic.text.primary}" }
+    },
+
     "select": {
       "$description": "Custom dropdown — trigger matches input bottom-border style, panel is Vale-branded.",
       "panel-bg":             { "$value": "{color.primitive.neutral.0}" },

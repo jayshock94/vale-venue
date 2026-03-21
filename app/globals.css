@@ -189,6 +189,9 @@
   /* ── Button ghost arrow nudge ── */
   --btn-ghost-arrow-nudge: 3px;
 
+  /* ── Availability calendar ── */
+  --calendar-day-radius: var(--radius-sharp);
+
   /* ── Select dropdown ── */
   --select-panel-shadow: 0 4px 20px rgba(28,25,23,0.08);
 
