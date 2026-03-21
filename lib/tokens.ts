@@ -127,10 +127,12 @@ export const spacing = {
 
 // ── BORDER RADIUS ────────────────────────────────────────────────────────────
 export const borderRadius = {
-  none:  ds.borderRadius.none.$value,
-  sharp: ds.borderRadius.sharp.$value,
-  soft:  ds.borderRadius.soft.$value,
-  admin: ds.borderRadius.admin.$value,
+  none:   ds.borderRadius.none.$value,
+  sharp:  ds.borderRadius.sharp.$value,
+  soft:   ds.borderRadius.soft.$value,
+  action: ds.borderRadius.action.$value,
+  admin:  ds.borderRadius.admin.$value,
+  pill:   ds.borderRadius.pill.$value,
 } as const
 
 // ── SHADOW ───────────────────────────────────────────────────────────────────
@@ -138,6 +140,7 @@ export const shadow = {
   none:          ds.shadow.none.$value,
   'focus-gold':  ds.shadow['focus-gold'].$value,
   'focus-ink':   ds.shadow['focus-ink'].$value,
+  'hover':       ds.shadow['hover'].$value,
 } as const
 
 // ── TRANSITION ───────────────────────────────────────────────────────────────

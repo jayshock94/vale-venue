@@ -18,46 +18,51 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 
 // component.button — vale-design-system.json
 //
-// State layer pattern (Material 3):
-//   overflow-hidden clips the ::before overlay to the button's rounded corners.
-//   The overlay is opacity-0 by default and fades in on hover/active.
-//   Each variant sets --btn-sl to the correct hover state layer via an
-//   arbitrary Tailwind property class, e.g. [--btn-sl:var(--btn-sl-hover-light)].
-//   The active state always uses var(--btn-sl-active) regardless of variant.
-//   Base background-color never changes — only the overlay changes.
-//   No rgba values in this file — all values reference CSS vars from globals.css.
+// Hover model (gold / ink / outline): translateY(-1px) + box-shadow lift.
+//   No ::before state layer — color and elevation are the only signals.
+// Active model: translateY(0) + shadow removed. Ink resets to base bg.
+// Ghost: text color change + arrow nudge only. No lift, no shadow.
+// Arrow nudge requires `group` on the root element — included in base.
 const base = [
-  'relative overflow-hidden',
+  'group relative',
   'inline-flex items-center justify-center whitespace-nowrap',
-  'font-sans font-semibold uppercase tracking-btn rounded-sharp',
-  'transition-all duration-fast active:scale-[0.97] select-none',
-  // ::before state layer overlay
-  "before:content-[''] before:absolute before:inset-0",
-  'before:bg-[var(--btn-sl)] before:opacity-0 before:pointer-events-none',
-  'before:transition-opacity before:duration-fast',
-  'hover:before:opacity-100',
-  'active:before:opacity-100 active:before:bg-[var(--btn-sl-active)]',
+  'font-sans font-semibold uppercase tracking-btn',
+  'transition-all duration-fast select-none',
 ].join(' ')
 
 const variants: Record<Variant, string> = {
-  // hover overlay: white 12% over gold
-  gold: '[--btn-sl:var(--btn-sl-hover-light)] bg-gold-400 text-neutral-800',
-  // hover overlay: white 8% over ink
-  ink: '[--btn-sl:var(--btn-sl-hover-dark)] bg-neutral-800 text-neutral-50',
-  // hover overlay: white 12% over transparent; border darkens
-  outline:
-    '[--btn-sl:var(--btn-sl-hover-light)] bg-transparent border border-neutral-300 text-neutral-600 hover:border-neutral-800',
-  // no hover overlay — text color is the sole hover signal
+  // Pill (100px). Warm champagne on cream. Elevation is the hover signal — no color change.
+  gold: [
+    'rounded-pill bg-gold-400 text-neutral-800',
+    'hover:shadow-hover hover:-translate-y-px',
+    'active:translate-y-0 active:shadow-none',
+  ].join(' '),
+
+  // 8px radius. Ink fill, cream text. Lightens on hover, resets on press.
+  ink: [
+    'rounded-action bg-neutral-800 text-neutral-50',
+    'hover:bg-neutral-700 hover:shadow-hover hover:-translate-y-px',
+    'active:bg-neutral-800 active:translate-y-0 active:shadow-none',
+  ].join(' '),
+
+  // 8px radius. Transparent + stone border by default. Solidifies to ink on hover.
+  outline: [
+    'rounded-action bg-transparent border border-neutral-300 text-neutral-600',
+    'hover:bg-neutral-800 hover:border-neutral-800 hover:text-neutral-50 hover:shadow-hover hover:-translate-y-px',
+    'active:translate-y-0 active:shadow-none',
+  ].join(' '),
+
+  // No bg, no border. Muted text snaps to ink on hover. No lift.
   ghost: 'bg-transparent text-neutral-500 hover:text-neutral-800',
 }
 
-// Heights: sm=36px(h-9), md=40px(h-10), lg=48px(h-12)
-// Padding: sm=0 20px(px-5), md=0 32px(px-8), lg=0 40px(px-10)
+// Heights: sm=40px(h-10), md=48px(h-12), lg=56px(h-14)
+// Padding: sm=0 20px(px-5), md=0 28px(px-7), lg=0 36px(px-9)
 // Font:    sm=11px(text-2xs), md=12px(text-sm), lg=13px(text-base)
 const sizes: Record<Size, string> = {
-  sm: 'h-9  px-5  text-2xs  gap-2',
-  md: 'h-10 px-8  text-sm   gap-2',
-  lg: 'h-12 px-10 text-base gap-2',
+  sm: 'h-10 px-5 text-2xs gap-2',
+  md: 'h-12 px-7 text-sm  gap-2',
+  lg: 'h-14 px-9 text-base gap-2',
 }
 
 export function Button({
@@ -77,7 +82,7 @@ export function Button({
     <>
       {children}
       {arrow && variant === 'ghost' && (
-        <span className="transition-transform duration-fast group-hover:translate-x-[var(--btn-ghost-arrow-nudge)]">
+        <span className="transition-transform duration-fast group-hover:translate-x-1">
           →
         </span>
       )}

@@ -27,7 +27,7 @@ export default function Hero() {
               <p className="text-xs font-semibold font-sans uppercase tracking-eyebrow text-gold-300 mb-6">
                 Provo, Utah · Wasatch Mountains
               </p>
-              <h1 className="font-serif text-5xl md:text-6xl text-neutral-50 tracking-tightest leading-tight">
+              <h1 className="font-serif font-semibold text-5xl md:text-6xl text-neutral-50 tracking-tightest leading-tight">
                 Clean lines. Mountain{' '}
                 <em className="italic text-gold-300">backdrop</em>. Everything
                 else is yours.
@@ -38,10 +38,10 @@ export default function Hero() {
             <div className="flex flex-col justify-end gap-8 mt-10 md:mt-0">
               <p className="font-sans font-regular text-md text-neutral-50 opacity-80">
                 Floor-to-ceiling windows. A modern building set against the
-                Wasatch mountains. Weddings, corporate events, and private
+                Wasatch mountains. Weddings, community events, and private
                 celebrations.
               </p>
-              <div className="flex flex-col sm:flex-row gap-3">
+              <div className="flex flex-col sm:flex-row md:flex-col gap-3">
                 <Button href="/contact" variant="gold" size="lg">
                   Book the Space
                 </Button>

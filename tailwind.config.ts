@@ -83,7 +83,9 @@ const config: Config = {
         'none':    borderRadius.none,
         'sharp':   borderRadius.sharp,
         'soft':    borderRadius.soft,
+        'action':  borderRadius.action,
         'admin':   borderRadius.admin,
+        'pill':    borderRadius.pill,
         'DEFAULT': borderRadius.sharp,
       },
 
@@ -110,6 +112,7 @@ const config: Config = {
       boxShadow: {
         'focus-gold': shadow['focus-gold'],
         'focus-ink':  shadow['focus-ink'],
+        'hover':      shadow['hover'],
         'none':       shadow.none,
       },
 

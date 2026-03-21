@@ -26,7 +26,7 @@
         "100": { "$value": "#F3E8D4", "$type": "color" },
         "200": { "$value": "#E6CFA8", "$type": "color" },
         "300": { "$value": "#D4AF78", "$type": "color", "$description": "Sunlit wood grain highlight" },
-        "400": { "$value": "#B8893E", "$type": "color", "$description": "Brand primary — mezzanine wood slat panels, mid-tone amber" },
+        "400": { "$value": "#C9A06E", "$type": "color", "$description": "Brand primary — warm champagne gold" },
         "500": { "$value": "#9A7030", "$type": "color" },
         "600": { "$value": "#7C5924", "$type": "color", "$description": "Text accent — dark enough for contrast on cream" },
         "700": { "$value": "#5C4018", "$type": "color" },
@@ -138,7 +138,7 @@
     "letterSpacing": {
       "tight":   { "$value": "-0.02em" },
       "normal":  { "$value": "0" },
-      "btn":     { "$value": "0.08em",  "$description": "All button labels" },
+      "btn":     { "$value": "0.06em",  "$description": "All button labels" },
       "label":   { "$value": "0.22em",  "$description": "Form labels" },
       "nav":     { "$value": "0.14em",  "$description": "Nav links" },
       "eyebrow": { "$value": "0.30em",  "$description": "Section eyebrow labels" },
@@ -171,16 +171,19 @@
   },
 
   "borderRadius": {
-    "none":  { "$value": "0px" },
-    "sharp": { "$value": "0px", "$description": "Buttons, badges — zero radius, matches the black metal frame lines of the building" },
-    "soft":  { "$value": "2px", "$description": "Cards — barely perceptible, reads as designed not browser-default" },
-    "admin": { "$value": "4px", "$description": "Admin panels and inputs only" }
+    "none":   { "$value": "0px" },
+    "sharp":  { "$value": "0px",   "$description": "Badges, tags, status flags — zero radius" },
+    "soft":   { "$value": "2px",   "$description": "Cards — barely perceptible, reads as designed not browser-default" },
+    "action": { "$value": "8px",   "$description": "Secondary and outline buttons, modal actions" },
+    "admin":  { "$value": "4px",   "$description": "Admin panels and inputs only" },
+    "pill":   { "$value": "100px", "$description": "Primary CTA buttons only — pill shape for maximum distinctiveness" }
   },
 
   "shadow": {
     "none":       { "$value": "none" },
     "focus-gold": { "$value": "0 0 0 3px rgba(184,137,62,0.22)", "$description": "Gold focus ring — matches gold-400" },
-    "focus-ink":  { "$value": "0 0 0 3px rgba(24,22,20,0.15)",  "$description": "Ink focus ring — matches neutral-800" }
+    "focus-ink":  { "$value": "0 0 0 3px rgba(24,22,20,0.15)",  "$description": "Ink focus ring — matches neutral-800" },
+    "hover":      { "$value": "0 4px 12px rgba(0,0,0,0.12)",    "$description": "Button lift shadow on hover — applies to gold, ink, outline" }
   },
 
   "transition": {
@@ -191,50 +194,74 @@
 
   "component": {
     "button": {
-      "$description": "Material 3 sizing specs. Vale aesthetic. All colors are token references.",
-      "height-sm":       { "$value": "36px" },
-      "height-md":       { "$value": "40px" },
-      "height-lg":       { "$value": "48px" },
-      "height-mobile":   { "$value": "48px", "$description": "Minimum touch target" },
-      "padding-sm":      { "$value": "0 16px" },
-      "padding-md":      { "$value": "0 24px" },
-      "padding-lg":      { "$value": "0 32px" },
-      "font-size-sm":    { "$value": "{typography.size.11}" },
-      "font-size-md":    { "$value": "{typography.size.12}" },
-      "font-size-lg":    { "$value": "{typography.size.13}" },
-      "font-weight":     { "$value": "{typography.weight.semibold}" },
-      "letter-spacing":  { "$value": "{typography.letterSpacing.btn}" },
-      "text-transform":  { "$value": "uppercase" },
-      "border-radius":   { "$value": "{borderRadius.sharp}" },
-      "gap":             { "$value": "{spacing.2}" },
-      "group-gap":       { "$value": "{spacing.3}" },
-      "transition":      { "$value": "{transition.fast}" },
+      "$description": "Vale button system. Pill primary, 8px secondary/outline, borderless ghost. Hover: translateY(-1px) + shadow. Active: translateY(0). Ghost only changes text color + arrow nudge.",
+      "height-sm":     { "$value": "40px" },
+      "height-md":     { "$value": "48px" },
+      "height-lg":     { "$value": "56px" },
+      "height-mobile": { "$value": "48px", "$description": "Minimum touch target" },
+
+      "padding-sm":    { "$value": "0 20px" },
+      "padding-md":    { "$value": "0 28px" },
+      "padding-lg":    { "$value": "0 36px" },
+
+      "font-size-sm":   { "$value": "{typography.size.11}" },
+      "font-size-md":   { "$value": "{typography.size.12}" },
+      "font-size-lg":   { "$value": "{typography.size.13}" },
+      "font-weight":    { "$value": "{typography.weight.semibold}" },
+      "letter-spacing": { "$value": "{typography.letterSpacing.btn}" },
+      "text-transform": { "$value": "uppercase" },
+
+      "radius-primary":   { "$value": "{borderRadius.pill}",   "$description": "Gold CTA only — pill differentiates primary from all other actions on screen" },
+      "radius-secondary": { "$value": "{borderRadius.action}", "$description": "Ink and outline — 8px, clearly rounded but not pill" },
+      "radius-ghost":     { "$value": "{borderRadius.none}",   "$description": "Ghost has no visible boundary" },
+
+      "hover-translate-y":  { "$value": "-1px" },
+      "hover-shadow":       { "$value": "{shadow.hover}" },
+      "active-translate-y": { "$value": "0px" },
+      "transition":         { "$value": "{transition.fast}" },
+
+      "gap":       { "$value": "{spacing.2}" },
+      "group-gap": { "$value": "{spacing.3}" },
+
       "gold": {
+        "$description": "Primary CTA — pill, one per screen view. The action the whole page leads toward. Warm champagne on cream. Elevation is the hover signal — no color change.",
+        "radius":     { "$value": "{borderRadius.pill}" },
         "bg":         { "$value": "{color.primitive.gold.400}" },
-        "bg-hover":   { "$value": "{color.primitive.gold.500}" },
-        "text":       { "$value": "{color.primitive.neutral.800}" },
+        "text":       { "$value": "{color.primitive.neutral.800}", "$description": "Ink on gold — 7.3:1 AAA contrast" },
+        "bg-hover":   { "$value": "{color.primitive.gold.400}",   "$description": "No color change on hover — translateY + shadow is the signal" },
+        "text-hover": { "$value": "{color.primitive.neutral.800}" }
+      },
+
+      "ink": {
+        "$description": "Secondary action — 8px radius, near-black fill. Same ink as the wordmark and building frame. Check Availability lives here.",
+        "radius":     { "$value": "{borderRadius.action}" },
+        "bg":         { "$value": "{color.primitive.neutral.800}" },
+        "text":       { "$value": "{color.primitive.neutral.50}", "$description": "Cream on dark — never white per brand rule" },
+        "bg-hover":   { "$value": "{color.primitive.neutral.700}", "$description": "Lightens slightly; lift + shadow is the primary hover signal" },
         "text-hover": { "$value": "{color.primitive.neutral.50}" }
       },
-      "ink": {
-        "bg":         { "$value": "{color.primitive.neutral.800}" },
-        "bg-hover":   { "$value": "{color.primitive.neutral.700}" },
-        "text":       { "$value": "{color.primitive.neutral.50}" }
-      },
+
       "outline": {
+        "$description": "Tertiary browse action — 8px radius, transparent until hovered. Stone border, secondary text. Solidifies to ink on hover to confirm action.",
+        "radius":       { "$value": "{borderRadius.action}" },
         "bg":           { "$value": "transparent" },
-        "bg-hover":     { "$value": "{color.primitive.neutral.800}" },
-        "text":         { "$value": "{color.primitive.neutral.600}" },
-        "text-hover":   { "$value": "{color.primitive.neutral.50}" },
-        "border":       { "$value": "{color.primitive.neutral.300}" },
-        "border-hover": { "$value": "{color.primitive.neutral.800}" }
+        "text":         { "$value": "{color.primitive.neutral.600}", "$description": "Secondary text — below ink in hierarchy, above muted" },
+        "border":       { "$value": "{color.primitive.neutral.300}", "$description": "Stone — visible but quiet, matches system dividers" },
+        "bg-hover":     { "$value": "{color.primitive.neutral.800}", "$description": "Fills solid on hover — button solidifies like an ink button, confirms action" },
+        "border-hover": { "$value": "{color.primitive.neutral.800}" },
+        "text-hover":   { "$value": "{color.primitive.neutral.50}", "$description": "Cream — consistent with ink variant when filled" }
       },
+
       "ghost": {
+        "$description": "Inline wayfinding — no bg, no border. Muted text snaps to ink on hover. No lift or shadow — ghost stays grounded.",
         "bg":          { "$value": "transparent" },
-        "text":        { "$value": "{color.primitive.neutral.500}" },
+        "text":        { "$value": "{color.primitive.neutral.500}", "$description": "Muted — lowest in hierarchy, reads as linked text not button" },
         "text-hover":  { "$value": "{color.primitive.neutral.800}" },
-        "arrow-nudge": { "$value": "3px" }
+        "arrow-nudge": { "$value": "4px" }
       },
+
       "ghost-dark": {
+        "$description": "Ghost on dark surfaces (hero, testimonial, footer). Dimmed cream brightens on hover.",
         "text":       { "$value": "rgba(245,240,232,0.40)" },
         "text-hover": { "$value": "rgba(245,240,232,0.85)" }
       }

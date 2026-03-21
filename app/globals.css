@@ -17,7 +17,7 @@
   --color-gold-100:      #F3E8D4;
   --color-gold-200:      #E6CFA8;
   --color-gold-300:      #D4AF78;
-  --color-gold-400:      #B8893E;
+  --color-gold-400:      #C9A06E;
   --color-gold-500:      #9A7030;
   --color-gold-600:      #7C5924;
   --color-gold-700:      #5C4018;
@@ -109,7 +109,7 @@
   --radius-admin:  4px;
 
   /* ── Shadows ── */
-  --shadow-focus-gold: 0 0 0 3px rgba(184, 137, 62, 0.22);
+  --shadow-focus-gold: 0 0 0 3px rgba(201, 160, 110, 0.22);
   --shadow-focus-ink:  0 0 0 3px rgba(24, 22, 20, 0.15);
 
   /* ── Transitions ── */
@@ -142,18 +142,45 @@
   --tracking-stat:    0.12em;
 
   /* ── Component tokens ── */
-  --btn-height-sm:     36px;
-  --btn-height-md:     40px;
-  --btn-height-lg:     48px;
+  --btn-height-sm:     40px;
+  --btn-height-md:     48px;
+  --btn-height-lg:     56px;
   --btn-height-mobile: 48px;
   --btn-padding-sm:    0 20px;
-  --btn-padding-md:    0 32px;
-  --btn-padding-lg:    0 40px;
-  --btn-radius:        var(--radius-sharp);
+  --btn-padding-md:    0 28px;
+  --btn-padding-lg:    0 36px;
   --btn-transition:    var(--transition-fast);
-  --btn-sl-hover-light: rgba(255, 255, 255, 0.12);
-  --btn-sl-hover-dark:  rgba(255, 255, 255, 0.08);
-  --btn-sl-active:      rgba(0, 0, 0, 0.10);
+
+  /* Per-variant radius */
+  --btn-radius-primary:   100px;  /* Gold CTA pill */
+  --btn-radius-secondary: 8px;    /* Ink and outline */
+  --btn-radius-ghost:     0px;    /* Ghost has no boundary */
+
+  /* Hover + active behavior */
+  --btn-hover-shadow:      0 4px 12px rgba(0, 0, 0, 0.12);
+  --btn-hover-translate-y: -1px;
+  --btn-active-translate-y: 0px;
+
+  /* Per-variant colors */
+  --btn-gold-bg:          var(--color-gold-400);
+  --btn-gold-text:        var(--color-neutral-800);
+  --btn-gold-bg-hover:    var(--color-gold-400);   /* No color change — elevation is the signal */
+  --btn-gold-text-hover:  var(--color-neutral-800);
+
+  --btn-ink-bg:           var(--color-neutral-800);
+  --btn-ink-text:         var(--color-neutral-50);
+  --btn-ink-bg-hover:     var(--color-neutral-700);
+  --btn-ink-text-hover:   var(--color-neutral-50);
+
+  --btn-outline-bg:           transparent;
+  --btn-outline-text:         var(--color-neutral-600);
+  --btn-outline-border:       var(--color-neutral-300);
+  --btn-outline-bg-hover:     var(--color-neutral-800);
+  --btn-outline-border-hover: var(--color-neutral-800);
+  --btn-outline-text-hover:   var(--color-neutral-50);
+
+  --btn-ghost-text:       var(--color-neutral-500);
+  --btn-ghost-text-hover: var(--color-neutral-800);
 
   --input-height-public:  56px;
   --input-height-admin:   40px;
@@ -176,7 +203,7 @@
 
   /* ── Card warm glass surface ── */
   --surface-card:         #FAF8F5;
-  --card-border-color:    rgba(184, 137, 62, 0.40);
+  --card-border-color:    rgba(201, 160, 110, 0.40);
   --card-shadow:          rgba(24, 22, 20, 0.06);
 
   /* ── Admin component values (separate design language) ── */
@@ -191,7 +218,7 @@
   --admin-text-muted:   #888888;
 
   /* ── Button ghost arrow nudge ── */
-  --btn-ghost-arrow-nudge: 3px;
+  --btn-ghost-arrow-nudge: 4px;
 
   /* ── Availability calendar ── */
   --calendar-day-radius: var(--radius-sharp);
