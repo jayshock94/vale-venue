@@ -79,11 +79,12 @@ export default function PricingTable({
           </div>
         </div>
 
-        {/* Table */}
-        <div className="w-full overflow-x-auto">
+        {/* Table — bordered container anchors it to the page */}
+        <div className="w-full border border-rule rounded-soft overflow-hidden">
+          <div className="w-full overflow-x-auto">
           <table className="w-full min-w-[600px]">
             <thead>
-              <tr className="bg-neutral-100">
+              <tr className="bg-neutral-100 border-b-2 border-neutral-300">
                 <th
                   className="text-left font-sans font-medium text-xs uppercase tracking-wider text-neutral-500 py-3 px-4"
                   style={{ width: '1fr' }}
@@ -181,6 +182,7 @@ export default function PricingTable({
               ))}
             </tbody>
           </table>
+          </div>
         </div>
 
         {/* Decision-moment CTA — appears right after the user has seen all prices */}

@@ -22,18 +22,35 @@ export default function AmenityList() {
           }
         />
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-5 gap-x-16">
+        {/* component.amenity — divide-rule-light creates bottom rule on each row */}
+        <ul className="divide-y divide-rule-light">
           {amenities.map((item) => (
-            <div key={item} className="flex items-start gap-3">
-              <span className="text-gold-400 mt-1 leading-none flex-shrink-0">
-                ●
-              </span>
-              <span className="font-sans font-light text-base text-neutral-800">
+            <li
+              key={item}
+              className="flex items-center gap-3 min-h-[var(--amenity-item-min-height)] py-3"
+            >
+              {/* Checkmark — component.amenity.check-color */}
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 16 16"
+                fill="none"
+                className="flex-shrink-0 text-gold-400 stroke-current"
+                aria-hidden="true"
+              >
+                <path
+                  d="M2.5 8.5l3.5 3.5 7.5-8"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+              <span className="font-sans font-normal text-sm text-neutral-800">
                 {item}
               </span>
-            </div>
+            </li>
           ))}
-        </div>
+        </ul>
 
         <p className="mt-10 pt-8 border-t border-rule font-sans font-light text-sm text-neutral-500">
           <span className="font-medium text-neutral-700">Catering:</span> Your caterer, your choice.

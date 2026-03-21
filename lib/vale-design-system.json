@@ -295,15 +295,56 @@
     },
 
     "pricing-table": {
-      "header-bg":       { "$value": "#FAF7F2" },
-      "row-alt-bg":      { "$value": "#FDFAF6" },
-      "row-border":      { "$value": "{color.semantic.border.subtle}" },
-      "row-height":      { "$value": "56px" },
-      "header-height":   { "$value": "40px" },
-      "price-font":      { "$value": "{typography.family.display}" },
-      "price-size":      { "$value": "{typography.size.18}" },
-      "peak-size":       { "$value": "{typography.size.20}" },
-      "peak-color":      { "$value": "{color.primitive.gold.400}" }
+      "header-bg":            { "$value": "{color.primitive.neutral.100}",     "$description": "Distinct from page bg (neutral.50)" },
+      "row-bg":               { "$value": "{color.primitive.neutral.0}",       "$description": "White — explicit contrast with alt rows" },
+      "row-alt-bg":           { "$value": "{color.primitive.neutral.50}",      "$description": "Cream — alternates with white rows" },
+      "row-border":           { "$value": "{color.semantic.border.default}",   "$description": "Upgraded from subtle — rows scannable" },
+      "table-border":         { "$value": "{color.semantic.border.default}",   "$description": "Outer container edge — anchors table to page" },
+      "header-border-bottom": { "$value": "{color.semantic.border.strong}",    "$description": "Heavier line separating header from data rows" },
+      "row-height":           { "$value": "56px" },
+      "header-height":        { "$value": "40px" },
+      "price-font":           { "$value": "{typography.family.display}" },
+      "price-size":           { "$value": "{typography.size.18}" },
+      "peak-size":            { "$value": "{typography.size.20}" },
+      "peak-color":           { "$value": "{color.primitive.gold.400}" }
+    },
+
+    "amenity": {
+      "$description": "Checklist-style items. Row height and separator force visual separation.",
+      "item-min-height": "48px",
+      "item-border":     { "$value": "{color.semantic.border.subtle}", "$description": "Bottom rule between items" },
+      "check-color":     { "$value": "{color.primitive.gold.400}" },
+      "label-size":      { "$value": "{typography.size.14}" },
+      "label-weight":    { "$value": "{typography.weight.regular}" },
+      "gap-x":           { "$value": "{spacing.3}", "$description": "Icon to label gap" }
+    },
+
+    "gallery-filter": {
+      "$description": "Filter tabs styled as controls — bordered, filled active state.",
+      "tab-height":         "36px",
+      "tab-padding":        "0 16px",
+      "tab-radius":         { "$value": "{borderRadius.button}" },
+      "tab-bg":             { "$value": "transparent" },
+      "tab-bg-active":      { "$value": "{color.semantic.surface.dark}" },
+      "tab-border":         { "$value": "{color.semantic.border.default}" },
+      "tab-border-active":  { "$value": "{color.semantic.surface.dark}" },
+      "tab-color":          { "$value": "{color.semantic.text.secondary}" },
+      "tab-color-active":   { "$value": "{color.semantic.text.inverse}" },
+      "tab-font-size":      { "$value": "{typography.size.11}" },
+      "tab-font-weight":    { "$value": "{typography.weight.semibold}" },
+      "tab-letter-spacing": { "$value": "{typography.letterSpacing.btn}" }
+    },
+
+    "event-card": {
+      "$description": "CTA row is structurally defined — separated from body by a rule.",
+      "radius":             { "$value": "{borderRadius.soft}" },
+      "content-padding":    "20px 24px",
+      "cta-font-size":      { "$value": "{typography.size.11}" },
+      "cta-letter-spacing": { "$value": "{typography.letterSpacing.btn}" },
+      "cta-color":          { "$value": "{color.primitive.gold.600}" },
+      "cta-color-hover":    { "$value": "{color.primitive.gold.500}" },
+      "cta-border-top":     { "$value": "{color.semantic.border.subtle}" },
+      "cta-padding":        "12px 24px"
     },
 
     "testimonial": {

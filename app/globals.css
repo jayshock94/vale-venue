@@ -188,6 +188,12 @@
 
   /* ── Button ghost arrow nudge ── */
   --btn-ghost-arrow-nudge: 3px;
+
+  /* ── Amenity list ── */
+  --amenity-item-min-height: 48px;
+
+  /* ── Gallery filter ── */
+  --gallery-filter-tab-height: 36px;
 }
 
 /* ─────────────────────────────────────────────────────────────────────────────
