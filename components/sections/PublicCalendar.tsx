@@ -461,7 +461,7 @@ export default function PublicCalendar({ availability = [] }: PublicCalendarProp
                 <button
                   type="button"
                   onClick={() => { setRangeStart(null); setRangeEnd(null) }}
-                  className="font-sans text-[length:var(--text-12)] text-neutral-400 hover:text-neutral-600 transition-colors duration-[var(--transition-fast)]"
+                  className="h-[var(--btn-height-md)] px-7 font-sans font-semibold text-[length:var(--text-12)] uppercase tracking-btn text-neutral-500 hover:text-neutral-800 transition-colors duration-[var(--transition-fast)]"
                 >
                   Clear
                 </button>
