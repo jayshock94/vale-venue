@@ -40,8 +40,8 @@ export default function SpacePhotos() {
               Inside The Vale
             </p>
             <h2 className="font-serif font-semibold text-4xl text-neutral-800 tracking-tightest">
-              The room before{' '}
-              <em className="italic text-gold-600">it&apos;s yours</em>.
+              The room,{' '}
+              <em className="italic text-gold-600">before you</em>.
             </h2>
           </div>
           <p className="font-sans font-regular text-md text-neutral-500 mt-4 md:mt-0 flex items-end">
@@ -66,11 +66,8 @@ export default function SpacePhotos() {
                 />
               </div>
               <div className="px-5 py-4 flex flex-col gap-1.5">
-                <h3 className="font-sans font-medium text-lg text-neutral-800">
-                  {photo.titleStart}{' '}
-                  <em className="font-serif font-semibold italic text-gold-600">
-                    {photo.titleItalic}
-                  </em>
+                <h3 className="font-sans font-semibold text-lg text-neutral-800">
+                  {photo.titleStart} {photo.titleItalic}
                 </h3>
                 <p className="font-sans font-regular text-sm text-neutral-500 leading-relaxed">
                   {photo.sub}

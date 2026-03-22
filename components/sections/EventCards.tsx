@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import Link from 'next/link'
+import { Button } from '@/components/ui/Button'
 import { SectionHeader } from '@/components/ui/SectionHeader'
 
 interface EventCard {
@@ -10,8 +10,6 @@ interface EventCard {
   image: string
   imageAlt: string
   imagePosition?: string
-  cta: string
-  href: string
 }
 
 const weddingCard: EventCard = {
@@ -22,8 +20,6 @@ const weddingCard: EventCard = {
   image: '/photos/events-wedding.png',
   imageAlt: 'Couple kissing on The Vale mezzanine — black metal railing, wood panels, and flowing veil',
   imagePosition: 'center 28%',
-  cta: 'See wedding photos',
-  href: '/gallery?category=weddings',
 }
 
 const celebrationCard: EventCard = {
@@ -31,11 +27,9 @@ const celebrationCard: EventCard = {
   titleStart: 'Private',
   titleItalic: 'Celebrations',
   body: 'High ceilings, real kitchen, open dance floor, mountain view. Short blocks from $300.',
-  image: '/photos/events-celebration.png',
-  imageAlt: 'Family gender reveal at The Vale — confetti and celebration in the open floor space',
-  imagePosition: 'center 60%',
-  cta: 'See celebration photos',
-  href: '/gallery?category=celebrations',
+  image: '/photos/gallery/Screenshot 2026-03-21 152103.png',
+  imageAlt: 'Full room at The Vale — round tables, wood cross-back chairs, and guests at a celebration',
+  imagePosition: 'center 70%',
 }
 
 const communityCard: EventCard = {
@@ -45,15 +39,11 @@ const communityCard: EventCard = {
   body: 'Seats 100. Works for vendor markets, ticketed events, and everything in between.',
   image: '/photos/events-community.png',
   imageAlt: 'ClubMommy Utah at The Vale — full venue with round tables and 100 guests',
-  cta: 'See community photos',
-  href: '/gallery?category=community-social',
 }
 
 function EventCardLarge({ card }: { card: EventCard }) {
   return (
-    // h-full fills the grid cell — matches the combined height of the two stacked right cards
     <div className="card-warm-glass rounded-soft overflow-hidden flex flex-col h-full">
-      {/* flex-1 lets the image grow to fill remaining space after the content area; min-h-64 ensures it has height on mobile where no fixed parent height exists */}
       <div className="relative flex-1 min-h-64 overflow-hidden">
         <Image
           src={card.image}
@@ -66,24 +56,12 @@ function EventCardLarge({ card }: { card: EventCard }) {
         />
       </div>
       <div className="px-6 py-5 flex flex-col gap-3">
-        <h3 className="font-sans font-medium text-xl text-neutral-800">
-          {card.titleStart}{' '}
-          <em className="font-serif font-semibold italic text-gold-600">
-            {card.titleItalic}
-          </em>
+        <h3 className="font-sans font-semibold text-xl text-neutral-800">
+          {card.titleStart} {card.titleItalic}
         </h3>
         <p className="font-sans font-regular text-base text-neutral-500">
           {card.body}
         </p>
-      </div>
-      {/* component.event-card CTA row — separated by border-top rule */}
-      <div className="border-t border-rule-light px-6 py-3">
-        <Link
-          href={card.href}
-          className="font-sans font-semibold text-2xs uppercase tracking-btn text-gold-600 hover:text-gold-500 transition-colors duration-fast"
-        >
-          {card.cta} →
-        </Link>
       </div>
     </div>
   )
@@ -103,24 +81,12 @@ function EventCardSmall({ card }: { card: EventCard }) {
         />
       </div>
       <div className="px-6 py-5 flex flex-col gap-2">
-        <h3 className="font-sans font-medium text-xl text-neutral-800">
-          {card.titleStart}{' '}
-          <em className="font-serif font-semibold italic text-gold-600">
-            {card.titleItalic}
-          </em>
+        <h3 className="font-sans font-semibold text-xl text-neutral-800">
+          {card.titleStart} {card.titleItalic}
         </h3>
         <p className="font-sans font-regular text-base text-neutral-500">
           {card.body}
         </p>
-      </div>
-      {/* component.event-card CTA row */}
-      <div className="mt-auto border-t border-rule-light px-6 py-3">
-        <Link
-          href={card.href}
-          className="font-sans font-semibold text-2xs uppercase tracking-btn text-gold-600 hover:text-gold-500 transition-colors duration-fast"
-        >
-          {card.cta} →
-        </Link>
       </div>
     </div>
   )
@@ -158,6 +124,13 @@ export default function EventCards() {
             <EventCardSmall card={celebrationCard} />
             <EventCardSmall card={communityCard} />
           </div>
+        </div>
+
+        {/* Section-level gallery CTA */}
+        <div className="mt-8 flex justify-end pt-6 border-t border-rule-light">
+          <Button href="/gallery" variant="ink" size="md">
+            View the gallery →
+          </Button>
         </div>
       </div>
     </section>
