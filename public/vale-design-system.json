@@ -40,7 +40,7 @@
       },
       "neutral": {
         "0":   { "$value": "#FFFFFF", "$type": "color" },
-        "50":  { "$value": "#F2EFE9", "$type": "color", "$description": "Page background — warm white walls of the main hall" },
+        "50":  { "$value": "#F8F7F4", "$type": "color", "$description": "Page background — warm white walls of the main hall" },
         "100": { "$value": "#E8E4DD", "$type": "color" },
         "150": { "$value": "#DEDAD2", "$type": "color" },
         "200": { "$value": "#D0CBC2", "$type": "color", "$description": "Concrete floor mid-tone" },

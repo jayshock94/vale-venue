@@ -15,7 +15,7 @@ export default function Hero() {
       />
 
       {/* Content */}
-      <div className="relative z-10 w-full max-w-content mx-auto px-5 md:px-page pb-20 pt-32">
+      <div className="relative z-10 w-full max-w-content mx-auto px-5 md:px-page pb-12 md:pb-20 pt-32">
         <div
           className="grid grid-cols-1 gap-12 md:gap-18"
           style={{ gridTemplateColumns: undefined }}
@@ -24,20 +24,18 @@ export default function Hero() {
           <div className="md:grid md:gap-18" style={{ gridTemplateColumns: '1fr 320px' }}>
             {/* Left: headline */}
             <div className="flex flex-col justify-end">
-              <p className="text-xs font-semibold font-sans uppercase tracking-eyebrow text-gold-300 mb-6">
-                Provo, Utah · Wasatch Mountains
+              <p className="text-xs font-semibold font-sans uppercase tracking-eyebrow text-gold-300 mb-4">
+                Provo, Utah
               </p>
               <h1 className="font-serif font-semibold text-5xl md:text-6xl text-neutral-50 tracking-tightest leading-tight">
-                The Wasatch through the{' '}
-                <em className="italic text-gold-300">windows</em>. Everything
-                else is yours.
+                Elevate your event.
               </h1>
             </div>
 
             {/* Right: sub-copy + CTAs */}
-            <div className="flex flex-col justify-end gap-8 mt-10 md:mt-0">
+            <div className="flex flex-col justify-end gap-5 md:gap-8 mt-5 md:mt-0">
               <p className="font-sans font-regular text-md text-neutral-50 opacity-80">
-                A sleek, modern venue nestled at the base of the mountains.
+                A sleek, modern venue nestled at the base of the Wasatch Mountains.
               </p>
               <div className="flex flex-col sm:flex-row md:flex-col gap-3">
                 <Button href="/contact" variant="gold" size="lg">

@@ -18,7 +18,7 @@ const weddingCard: EventCard = {
   eyebrow: 'Weddings & Receptions',
   titleStart: 'Weddings &',
   titleItalic: 'Receptions',
-  body: 'The temple ceremony is yours. The reception happens here, where your guests finally get to be in the same room. Three miles from the Provo City Center Temple, with dedicated bride and groom suites, mountain views, and parking for everyone who waited outside.',
+  body: 'Three miles from the Provo City Center Temple. Dedicated bride and groom suites, mountain views, and parking for everyone who came.',
   image: '/photos/events-wedding.png',
   imageAlt: 'Couple kissing on The Vale mezzanine — black metal railing, wood panels, and flowing veil',
   imagePosition: 'center 28%',
@@ -30,7 +30,7 @@ const celebrationCard: EventCard = {
   eyebrow: 'Celebrations',
   titleStart: 'Private',
   titleItalic: 'Celebrations',
-  body: 'Every occasion deserves a space that doesn\'t feel rented. High ceilings, real kitchen, open dance floor, mountain view. Short blocks start at $300 for groups under 50.',
+  body: 'High ceilings, real kitchen, open dance floor, mountain view. Short blocks from $300.',
   image: '/photos/events-celebration.png',
   imageAlt: 'Family gender reveal at The Vale — confetti and celebration in the open floor space',
   imagePosition: 'center 60%',
@@ -42,7 +42,7 @@ const communityCard: EventCard = {
   eyebrow: 'Community & Social',
   titleStart: 'Community &',
   titleItalic: 'Social Events',
-  body: 'Room for 100 people, or 20 vendor booths around the perimeter. Polished concrete floors and 18-foot ceilings. The space has hosted ClubMommy Utah, Dizzy Disco, and pop-up markets. Evening half-day blocks work for ticketed experiences.',
+  body: 'Seats 100. Works for vendor markets, ticketed events, and everything in between.',
   image: '/photos/events-community.png',
   imageAlt: 'ClubMommy Utah at The Vale — full venue with round tables and 100 guests',
   cta: 'See community photos',
@@ -53,8 +53,8 @@ function EventCardLarge({ card }: { card: EventCard }) {
   return (
     // h-full fills the grid cell — matches the combined height of the two stacked right cards
     <div className="card-warm-glass rounded-soft overflow-hidden flex flex-col h-full">
-      {/* flex-1 lets the image grow to fill remaining space after the content area */}
-      <div className="relative flex-1 overflow-hidden">
+      {/* flex-1 lets the image grow to fill remaining space after the content area; min-h-64 ensures it has height on mobile where no fixed parent height exists */}
+      <div className="relative flex-1 min-h-64 overflow-hidden">
         <Image
           src={card.image}
           alt={card.imageAlt}
