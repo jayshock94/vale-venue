@@ -31,9 +31,9 @@ const base = [
 ].join(' ')
 
 const variants: Record<Variant, string> = {
-  // Pill (100px). Warm champagne on cream. Elevation is the hover signal — no color change.
+  // 8px radius. Warm champagne on cream. Elevation is the hover signal — no color change.
   gold: [
-    'rounded-pill bg-gold-400 text-neutral-800',
+    'rounded-action bg-gold-400 text-neutral-800',
     'hover:shadow-hover hover:-translate-y-px',
     'active:translate-y-0 active:shadow-none',
   ].join(' '),
