@@ -69,7 +69,7 @@ export default async function ContactPage({
                   <p className="text-xs font-semibold font-sans uppercase tracking-eyebrow text-gold-600 mb-4">
                     Get in touch
                   </p>
-                  <h1 className="font-serif font-bold text-4xl text-neutral-800 tracking-tightest mb-3">
+                  <h1 className="font-serif font-semibold text-4xl text-neutral-800 tracking-tightest mb-3">
                     Tell us about your{' '}
                     <em className="italic text-gold-600">event</em>.
                   </h1>

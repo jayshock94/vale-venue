@@ -170,7 +170,7 @@ export default function PricingTable({
             Transparent pricing
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 md:gap-20">
-            <h2 className="font-serif font-bold text-4xl text-neutral-800 tracking-tightest">
+            <h2 className="font-serif font-semibold text-4xl text-neutral-800 tracking-tightest">
               No mystery. No{' '}
               <em className="italic text-gold-600">runaround</em>.
             </h2>

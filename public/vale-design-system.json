@@ -20,7 +20,7 @@
       "weight-nav":   "Nav links: medium (500)",
       "weight-label": "Labels and eyebrows: semibold (600)",
       "weight-card":  "Card titles, section subheadings: medium (500)",
-      "weight-serif": "Cormorant Garamond: bold (700) for all h1/h2/h3 content headings; semibold (600) for italic accent words and display numbers (stats, prices)"
+      "weight-serif": "Cormorant Garamond: semibold (600) everywhere — headings h1/h2/h3 and display numbers alike. 700 is loaded but unused; it overrides Cormorant's stroke contrast. 400 only for editorial contexts (testimonials, logo, decorative)."
     }
   },
 
@@ -116,8 +116,8 @@
     "weight": {
       "regular":  { "$value": 400, "$type": "fontWeight", "$description": "Body copy, body links, captions, input text, tertiary UI text" },
       "medium":   { "$value": 500, "$type": "fontWeight", "$description": "Nav links, card titles, section subheadings" },
-      "semibold": { "$value": 600, "$type": "fontWeight", "$description": "Labels, eyebrows, buttons, badges; Cormorant italic accent words and display numbers" },
-      "bold":     { "$value": 700, "$type": "fontWeight", "$description": "Cormorant headings — all h1/h2/h3 content headings above 24px" }
+      "semibold": { "$value": 600, "$type": "fontWeight", "$description": "Cormorant headings at all sizes and surfaces; labels, eyebrows, buttons, badges; display numbers (stats, prices)" },
+      "bold":     { "$value": 700, "$type": "fontWeight", "$description": "Loaded in font stack but not used — available for future one-off needs. Do not assign to recurring classes." }
     },
     "size": {
       "10": { "$value": "11px", "$type": "fontSize", "$description": "Minimum for any label/eyebrow/caption — nav, eyebrows, stat labels, badge text" },

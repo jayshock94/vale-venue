@@ -376,7 +376,7 @@ export default function PublicCalendar({ availability = [] }: PublicCalendarProp
             <p className="text-xs font-semibold font-sans uppercase tracking-eyebrow text-gold-600 mb-4">
               Check availability
             </p>
-            <h2 className="font-serif font-bold text-4xl text-neutral-800 tracking-tightest">
+            <h2 className="font-serif font-semibold text-4xl text-neutral-800 tracking-tightest">
               Find your <em className="italic text-gold-600">date</em>.
             </h2>
             <p className="font-sans font-regular text-sm text-neutral-500 mt-3">

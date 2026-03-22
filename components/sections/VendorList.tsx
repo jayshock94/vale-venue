@@ -54,7 +54,7 @@ export default function VendorList() {
             <p className="text-xs font-semibold font-sans uppercase tracking-eyebrow text-gold-600 mb-4">
               Trusted vendors
             </p>
-            <h2 className="font-serif font-bold text-4xl text-neutral-800 tracking-tightest">
+            <h2 className="font-serif font-semibold text-4xl text-neutral-800 tracking-tightest">
               People who know the{' '}
               <em className="italic text-gold-600">space</em>.
             </h2>

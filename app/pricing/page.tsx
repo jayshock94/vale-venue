@@ -49,7 +49,7 @@ export default async function PricingPage() {
             <p className="text-xs font-semibold font-sans uppercase tracking-eyebrow text-gold-300 mb-6">
               Transparent pricing
             </p>
-            <h1 className="font-serif font-bold text-5xl text-neutral-50 tracking-tightest mb-6 max-w-xl">
+            <h1 className="font-serif font-semibold text-5xl text-neutral-50 tracking-tightest mb-6 max-w-xl">
               Pricing that makes{' '}
               <em className="italic text-gold-300">sense</em>.
             </h1>
@@ -70,7 +70,7 @@ export default async function PricingPage() {
               <p className="text-xs font-semibold font-sans uppercase tracking-eyebrow text-gold-600 mb-4">
                 Common questions
               </p>
-              <h2 className="font-serif font-bold text-4xl text-neutral-800 tracking-tightest">
+              <h2 className="font-serif font-semibold text-4xl text-neutral-800 tracking-tightest">
                 Got <em className="italic text-gold-600">questions</em>?
               </h2>
             </div>
