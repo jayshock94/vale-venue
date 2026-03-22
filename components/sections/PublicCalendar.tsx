@@ -458,13 +458,13 @@ export default function PublicCalendar({ availability = [] }: PublicCalendarProp
             </div>
             <div className="flex items-center gap-3 flex-shrink-0">
               {(rangeStart || rangeEnd) && (
-                <button
-                  type="button"
+                <Button
+                  variant="ghost"
+                  size="md"
                   onClick={() => { setRangeStart(null); setRangeEnd(null) }}
-                  className="h-[var(--btn-height-md)] px-7 font-sans font-semibold text-[length:var(--text-12)] uppercase tracking-btn text-neutral-500 hover:text-neutral-800 transition-colors duration-[var(--transition-fast)]"
                 >
                   Clear
-                </button>
+                </Button>
               )}
               <Button href={contactHref} variant="gold" size="md">
                 Reserve Your Date
