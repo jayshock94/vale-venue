@@ -52,6 +52,7 @@ const defaultPackages: PricingPackage[] = [
 
 interface PricingTableProps {
   packages?: PricingPackage[]
+  hideHeader?: boolean
 }
 
 const dayRows = [
@@ -158,28 +159,30 @@ function PricingCard({ pkg }: { pkg: PricingPackage }) {
 
 export default function PricingTable({
   packages = defaultPackages,
+  hideHeader = false,
 }: PricingTableProps) {
   const activePackages = packages.length > 0 ? packages : defaultPackages
 
   return (
     <section className="bg-neutral-50 py-section px-5 md:px-page">
       <div className="max-w-content mx-auto">
-        {/* Section header */}
-        <div className="mb-12">
-          <p className="text-xs font-semibold font-sans uppercase tracking-eyebrow text-gold-600 mb-4">
-            Transparent pricing
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 md:gap-20">
-            <h2 className="font-serif font-semibold text-4xl text-neutral-800 tracking-tightest">
-              No mystery. No{' '}
-              <em className="italic text-gold-600">runaround</em>.
-            </h2>
-            <p className="font-sans font-regular text-md text-neutral-500 mt-4 md:mt-0 flex items-end">
-              Every package and price is here because your time matters. No
-              quote requests.
+        {!hideHeader && (
+          <div className="mb-12">
+            <p className="text-xs font-semibold font-sans uppercase tracking-eyebrow text-gold-600 mb-4">
+              Transparent pricing
             </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 md:gap-20">
+              <h2 className="font-serif font-semibold text-4xl text-neutral-800 tracking-tightest">
+                No mystery. No{' '}
+                <em className="italic text-gold-600">runaround</em>.
+              </h2>
+              <p className="font-sans font-regular text-md text-neutral-500 mt-4 md:mt-0 flex items-end">
+                Every package and price is here because your time matters. No
+                quote requests.
+              </p>
+            </div>
           </div>
-        </div>
+        )}
 
         {/* Cards + footnote — grouped so footnote reads as a caption for the grid */}
         <div>

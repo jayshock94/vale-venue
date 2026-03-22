@@ -60,7 +60,7 @@ export default async function PricingPage() {
           </div>
         </section>
 
-        <PricingTable packages={packages} />
+        <PricingTable packages={packages} hideHeader />
         <AmenityList />
 
         {/* FAQ section */}

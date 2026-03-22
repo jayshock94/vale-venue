@@ -370,20 +370,8 @@ export default function PublicCalendar({ availability = [] }: PublicCalendarProp
     <section id="availability" className="py-section px-5 md:px-page border-t border-rule" style={{ background: 'var(--surface-card)' }}>
       <div className="max-w-content mx-auto">
 
-        {/* Header + nav */}
-        <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6 mb-10">
-          <div>
-            <p className="text-xs font-semibold font-sans uppercase tracking-eyebrow text-gold-600 mb-4">
-              Check availability
-            </p>
-            <h2 className="font-serif font-semibold text-4xl text-neutral-800 tracking-tightest">
-              Find your <em className="italic text-gold-600">date</em>.
-            </h2>
-            <p className="font-sans font-regular text-sm text-neutral-500 mt-3">
-              Tap a date to start — tap a second date to mark a range.
-            </p>
-          </div>
-
+        {/* Month nav */}
+        <div className="flex justify-end mb-10">
           <div className="flex items-center gap-2">
             <NavBtn
               onClick={() => setOffset((o) => Math.max(0, o - 2))}

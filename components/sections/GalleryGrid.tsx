@@ -103,7 +103,7 @@ export default function GalleryGrid({ images, defaultCategory = 'all' }: Gallery
             key={tab.value}
             onClick={() => setActiveTab(tab.value)}
             className={cn(
-              'h-12 sm:h-[var(--gallery-filter-tab-height)] px-4 border rounded-sharp',
+              'h-12 sm:h-[var(--gallery-filter-tab-height)] px-4 border rounded-action',
               'font-sans font-semibold text-2xs uppercase tracking-btn',
               'whitespace-nowrap flex-shrink-0 transition-colors duration-fast',
               activeTab === tab.value

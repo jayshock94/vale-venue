@@ -180,7 +180,7 @@
     "none":   { "$value": "0px" },
     "sharp":  { "$value": "0px",   "$description": "Badges, tags, status flags — zero radius" },
     "soft":   { "$value": "2px",   "$description": "Cards — barely perceptible, reads as designed not browser-default" },
-    "action": { "$value": "8px",   "$description": "Secondary and outline buttons, modal actions" },
+    "action": { "$value": "6px",   "$description": "Buttons and interactive controls — 6px, clearly rounded without being pill" },
     "admin":  { "$value": "4px",   "$description": "Admin panels and inputs only" },
     "pill":   { "$value": "100px", "$description": "Primary CTA buttons only — pill shape for maximum distinctiveness" }
   },
