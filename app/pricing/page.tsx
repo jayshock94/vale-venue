@@ -64,7 +64,7 @@ export default async function PricingPage() {
         <AmenityList />
 
         {/* FAQ section */}
-        <section className="bg-surface-bright py-section px-5 md:px-page border-t border-rule">
+        <section className="bg-neutral-50 py-section px-5 md:px-page border-t border-rule">
           <div className="max-w-content mx-auto">
             <div className="mb-12">
               <p className="text-xs font-semibold font-sans uppercase tracking-eyebrow text-gold-600 mb-4">

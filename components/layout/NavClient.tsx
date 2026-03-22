@@ -39,7 +39,7 @@ export default function NavClient() {
           'fixed top-0 left-0 right-0 z-50 h-16 transition-all duration-300',
           isTransparent
             ? 'bg-transparent border-b border-white/[0.08]'
-            : 'bg-surface-bright border-b border-rule'
+            : 'bg-neutral-50 border-b border-rule'
         )}
       >
         <div className="max-w-content mx-auto px-5 md:px-page h-full flex items-center justify-between">

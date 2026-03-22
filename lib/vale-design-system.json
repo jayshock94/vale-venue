@@ -75,7 +75,6 @@
     "semantic": {
       "surface": {
         "page":     { "$value": "{color.primitive.neutral.50}" },
-        "bright":   { "$value": "{color.primitive.gold.50}", "$description": "Bright page/section background — warm near-white with subtle gold warmth, lighter than surface.page, complements the gold palette" },
         "raised":   { "$value": "{color.primitive.neutral.0}" },
         "sunken":   { "$value": "{color.primitive.neutral.100}" },
         "dark":     { "$value": "{color.primitive.neutral.800}" },

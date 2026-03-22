@@ -53,11 +53,6 @@ export const color = {
   },
 } as const
 
-// ── SEMANTIC SURFACE ─────────────────────────────────────────────────────────
-export const surface = {
-  bright: cp.gold['50'].$value,   // #FBF7F0 — warm near-white, lighter than surface.page
-} as const
-
 // ── TYPOGRAPHY ───────────────────────────────────────────────────────────────
 const ts = ds.typography
 
@@ -181,7 +176,6 @@ export const adminColor = {
 
 export default {
   color,
-  surface,
   typography,
   spacing,
   borderRadius,

@@ -73,7 +73,7 @@ export default async function Home() {
         <AmenityList />
         <VendorList />
         {/* FAQ — catering policy + common questions surfaced before closing CTA */}
-        <section className="bg-surface-bright py-section px-5 md:px-page">
+        <section className="bg-neutral-50 py-section px-5 md:px-page">
           <div className="max-w-content mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-2 md:gap-20">
               <div>
