@@ -9,6 +9,7 @@ interface EventCard {
   body: string
   image: string
   imageAlt: string
+  imagePosition?: string
   cta: string
   href: string
 }
@@ -19,7 +20,8 @@ const weddingCard: EventCard = {
   titleItalic: 'Receptions',
   body: 'The temple ceremony is yours. The reception — where every guest celebrates together — happens here. Three miles from the Provo City Center Temple, with dedicated bride and groom suites, mountain views, and parking for everyone who waited outside.',
   image: '/photos/events-wedding.png',
-  imageAlt: 'Wedding ceremony at The Vale — couple at the altar with pampas florals',
+  imageAlt: 'Couple kissing on The Vale mezzanine — black metal railing, wood panels, and flowing veil',
+  imagePosition: 'center 28%',
   cta: 'See wedding photos',
   href: '/gallery?category=weddings',
 }
@@ -30,7 +32,8 @@ const celebrationCard: EventCard = {
   titleItalic: 'Celebrations',
   body: 'Every milestone deserves a space that doesn\'t feel rented. High ceilings, real kitchen, open dance floor, mountain view. Birthdays and anniversaries for groups under 50 — short blocks starting at $300.',
   image: '/photos/events-celebration.png',
-  imageAlt: 'Birthday celebration at The Vale — balloon arch setup',
+  imageAlt: 'Family gender reveal at The Vale — confetti and celebration in the open floor space',
+  imagePosition: 'center 60%',
   cta: 'See celebration photos',
   href: '/gallery?category=celebrations',
 }
@@ -50,14 +53,15 @@ function EventCardLarge({ card }: { card: EventCard }) {
   return (
     // h-full fills the grid cell — matches the combined height of the two stacked right cards
     <div className="card-warm-glass rounded-soft overflow-hidden flex flex-col h-full">
-      {/* TODO: Replace with real venue photo from Supabase storage */}
       {/* flex-1 lets the image grow to fill remaining space after the content area */}
       <div className="relative flex-1 overflow-hidden">
         <Image
           src={card.image}
           alt={card.imageAlt}
           fill
-          className="object-cover"
+          priority
+          className="object-cover scale-[1.12]"
+          style={card.imagePosition ? { objectPosition: card.imagePosition } : undefined}
           sizes="(max-width: 768px) 100vw, 60vw"
         />
       </div>
@@ -88,13 +92,13 @@ function EventCardLarge({ card }: { card: EventCard }) {
 function EventCardSmall({ card }: { card: EventCard }) {
   return (
     <div className="card-warm-glass rounded-soft overflow-hidden flex flex-col">
-      {/* TODO: Replace with real venue photo from Supabase storage */}
       <div className="relative h-44 overflow-hidden">
         <Image
           src={card.image}
           alt={card.imageAlt}
           fill
-          className="object-cover"
+          className="object-cover scale-[1.12]"
+          style={card.imagePosition ? { objectPosition: card.imagePosition } : undefined}
           sizes="(max-width: 768px) 100vw, 40vw"
         />
       </div>

@@ -6,8 +6,8 @@ export default function Hero() {
     <section className="relative min-h-screen bg-neutral-800 flex items-end">
       {/* Background image */}
       <Image
-        src="/photos/hero.png"
-        alt="Couple on The Vale mezzanine — the venue's signature black metal railing and warm wood"
+        src="/photos/hero.jpg"
+        alt="Elegantly set reception tables with white florals and gold accents at The Vale"
         fill
         priority
         className="object-cover opacity-30"
