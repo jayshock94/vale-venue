@@ -60,7 +60,7 @@ export default function VendorList() {
             </h2>
           </div>
           <p className="font-sans font-regular text-md text-neutral-500 mt-4 md:mt-0 flex items-end">
-            We don&apos;t require you to use anyone on this list — but these vendors have worked here and know the room.
+            We don&apos;t require you to use anyone on this list. These vendors have worked here and know the room.
           </p>
         </div>
 

@@ -16,7 +16,7 @@ const defaultTestimonials: Testimonial[] = [
   },
   {
     quote:
-      'Clean, professional, and completely effortless. Our company retreat felt elevated without being over the top.',
+      'Exactly what we needed. Clean space, easy to set up, nothing to worry about on the day. The team could actually focus.',
     attribution: 'Marcus T., Corporate Retreat, March 2024',
   },
   {

@@ -54,8 +54,8 @@ export default async function PricingPage() {
               <em className="italic text-gold-300">sense</em>.
             </h1>
             <p className="font-sans font-regular text-md text-neutral-50 opacity-70 max-w-md">
-              Half-day and full-day packages. Every price is here — no quote
-              requests.
+              Half-day and full-day packages. Every price is on the page. No
+              quote requests.
             </p>
           </div>
         </section>

@@ -41,7 +41,7 @@ export default async function AvailabilityPage() {
               <em className="italic text-gold-300">date</em>.
             </h1>
             <p className="font-sans font-regular text-md text-neutral-50 opacity-70 max-w-md">
-              Tap a date to start your reservation. Saturdays book fast — if you see your date open, reach out now.
+              Tap a date to start your reservation. Saturdays book fast. If you see your date open, reach out now.
             </p>
           </div>
         </section>

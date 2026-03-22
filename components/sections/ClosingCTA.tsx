@@ -13,7 +13,7 @@ export default function ClosingCTA() {
         </h2>
         <p className="font-sans font-regular text-md text-neutral-50 opacity-70 max-w-md mx-auto mb-10">
           Tours by appointment, Monday through Saturday. Bobbi will walk you
-          through — no pressure, no sales pitch.
+          through. No pressure, no sales pitch.
         </p>
 
         {/* Bobbi attribution */}

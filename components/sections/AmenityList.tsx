@@ -103,7 +103,7 @@ const amenities: Amenity[] = [
     label: 'Kitchen',
     icon: <KitchenIcon />,
     headline: 'Full kitchen & prep area',
-    detail: 'Commercial-grade prep surfaces, refrigeration, and counter workspace. Bring any caterer you like — we provide the infrastructure, they bring the skill. No catering exclusivity.',
+    detail: 'Commercial-grade prep surfaces, refrigeration, and counter workspace. Bring any caterer you like. We provide the infrastructure, they bring the skill. No catering exclusivity.',
   },
   {
     id: 'bride-suite',
@@ -117,49 +117,49 @@ const amenities: Amenity[] = [
     label: 'Groom suite',
     icon: <SuiteIcon />,
     headline: 'Groom suite & dressing area',
-    detail: 'A separate, quiet space for the groom and groomsmen — own entrance, own mirror, own seating. No hallway crossings before the ceremony.',
+    detail: 'A separate, quiet space for the groom and groomsmen. Own entrance, own mirror, own seating. No hallway crossings before the ceremony.',
   },
   {
     id: 'av',
     label: 'AV system',
     icon: <SpeakerIcon />,
     headline: 'Built-in audio + visual',
-    detail: 'In-ceiling speakers throughout, drop-down projector and screen, wireless microphone, and HDMI connectivity. Plug in your playlist, run a slideshow, or connect a DJ — the room is wired for it.',
+    detail: 'In-ceiling speakers throughout, drop-down projector and screen, wireless microphone, and HDMI connectivity. Plug in your playlist, run a slideshow, or connect a DJ. The room is wired for it.',
   },
   {
     id: 'tables',
     label: 'Tables & chairs',
     icon: <TableIcon />,
     headline: 'Tables & chairs for 100',
-    detail: '4,200 sq ft main floor. Round banquet tables and cushioned chairs included — 100 guests seated, up to 150 for a flowing reception layout. Standard arrangements available or tell us how you want the room set.',
+    detail: '4,200 sq ft main floor. Round banquet tables and cushioned chairs included. Seats 100, up to 150 for a flowing reception. Standard arrangements available or tell us how you want the room set.',
   },
   {
     id: 'parking',
     label: 'Free parking',
     icon: <ParkingIcon />,
     headline: 'On-site parking for 40+ vehicles',
-    detail: 'Surface lot with 40+ spaces, free for all guests. Three miles from the Provo Temple — straightforward for anyone arriving straight from a ceremony.',
+    detail: 'Surface lot with 40+ spaces, free for all guests. Three miles from the Provo Temple. Easy for guests coming straight from a ceremony.',
   },
   {
     id: 'views',
     label: 'Mountain views',
     icon: <ViewIcon />,
     headline: 'Floor-to-ceiling Wasatch views',
-    detail: 'The west wall is nearly all glass. The Wasatch Mountains are the backdrop — no decoration required. Best during golden hour, which lines up well with most reception timelines.',
+    detail: 'The west wall is nearly all glass. The Wasatch Mountains are the backdrop. No decoration required. Best during golden hour, which lines up well with most reception timelines.',
   },
   {
     id: 'climate',
     label: 'Climate control',
     icon: <ClimateIcon />,
     headline: 'Full climate control',
-    detail: 'Independent HVAC throughout the venue. Comfortable in Utah summers and winters alike. You set the temperature — no fighting with a building manager.',
+    detail: 'Independent HVAC throughout the venue. Comfortable in Utah summers and winters alike. You set the temperature. No fighting with a building manager.',
   },
   {
     id: 'dance-floor',
     label: 'Dance floor',
     icon: <DanceFloorIcon />,
     headline: 'Open dance floor',
-    detail: 'The main floor clears easily for dancing. Tables arrange around the perimeter and the center opens up — no awkward layout compromises. Works for weddings, birthdays, and any event where the dancing matters.',
+    detail: 'The main floor clears easily for dancing. Tables arrange around the perimeter and the center opens up. No awkward layout compromises. Works for weddings, birthdays, and any event where the dancing matters.',
   },
 ]
 
@@ -182,7 +182,7 @@ export default function AmenityList() {
               Everything you <em className="italic text-gold-600">need</em>.
             </>
           }
-          body="Every package includes all of the below — no add-on fees."
+          body="Every package includes all of the below. No add-on fees."
         />
 
         {/* Chip grid */}
@@ -278,7 +278,7 @@ export default function AmenityList() {
             <p className="font-sans text-base text-neutral-800">
               Your caterer, your choice.{' '}
               <span className="font-regular text-neutral-500">
-                We provide the kitchen — who cooks is entirely up to you.
+                We provide the kitchen. Who cooks is entirely up to you.
               </span>
             </p>
           </div>

@@ -93,7 +93,7 @@ export default async function ContactPage({
 
                   <p className="font-sans font-regular text-base text-neutral-600 leading-relaxed mb-4">
                     Every inquiry comes directly to me. I&apos;ll read what you send, check the date,
-                    and give you a real answer — not a form reply.
+                    and give you a real answer. Not a form reply.
                   </p>
 
                   <p className="font-sans font-medium text-sm text-gold-600">
