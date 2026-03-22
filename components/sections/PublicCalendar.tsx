@@ -467,7 +467,7 @@ export default function PublicCalendar({ availability = [] }: PublicCalendarProp
                 </Button>
               )}
               <Button href={contactHref} variant="gold" size="md">
-                Reserve Your Date
+                Request Your Date
               </Button>
             </div>
           </div>

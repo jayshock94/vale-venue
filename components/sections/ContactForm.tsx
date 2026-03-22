@@ -33,35 +33,45 @@ function formatDate(dateStr: string) {
 }
 
 // Step indicator — numbered circles, no labels
-function StepIndicator({ step }: { step: 1 | 2 }) {
+function StepIndicator({ step }: { step: 1 | 2 | 3 }) {
+  const nodes = [
+    { label: '1', active: step >= 1 },
+    { label: '2', active: step >= 2 },
+    { label: 'Done', active: step >= 3 },
+  ]
+
   return (
     <div className="flex items-center gap-3 mb-8">
-      <div className="w-5 h-5 rounded-full bg-gold-400 flex items-center justify-center flex-shrink-0">
-        <span className="font-sans font-semibold text-xs text-neutral-800">1</span>
-      </div>
-      <div
-        className={cn(
-          'h-px w-8 transition-colors duration-default',
-          step === 2 ? 'bg-gold-400' : 'bg-neutral-200'
-        )}
-      />
-      <div
-        className={cn(
-          'w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 border transition-colors duration-default',
-          step === 2
-            ? 'bg-gold-400 border-gold-400'
-            : 'bg-transparent border-neutral-300'
-        )}
-      >
-        <span
-          className={cn(
-            'font-sans font-semibold text-xs transition-colors duration-default',
-            step === 2 ? 'text-neutral-800' : 'text-neutral-400'
+      {nodes.map((node, i) => (
+        <div key={node.label} className="flex items-center gap-3">
+          <div
+            className={cn(
+              'flex items-center justify-center flex-shrink-0 rounded-full border transition-colors duration-default',
+              node.label === 'Done' ? 'h-5 px-2.5' : 'w-5 h-5',
+              node.active
+                ? 'bg-gold-400 border-gold-400'
+                : 'bg-transparent border-neutral-300'
+            )}
+          >
+            <span
+              className={cn(
+                'font-sans font-semibold text-xs transition-colors duration-default',
+                node.active ? 'text-neutral-800' : 'text-neutral-400'
+              )}
+            >
+              {node.label}
+            </span>
+          </div>
+          {i < nodes.length - 1 && (
+            <div
+              className={cn(
+                'h-px w-8 transition-colors duration-default',
+                step > i + 1 ? 'bg-gold-400' : 'bg-neutral-200'
+              )}
+            />
           )}
-        >
-          2
-        </span>
-      </div>
+        </div>
+      ))}
     </div>
   )
 }
@@ -150,7 +160,7 @@ function SuccessView({ onReset }: { onReset: () => void }) {
 }
 
 export default function ContactForm({ defaultDate, defaultEndDate }: { defaultDate?: string; defaultEndDate?: string }) {
-  const [step, setStep] = useState<1 | 2>(1)
+  const [step, setStep] = useState<1 | 2 | 3>(1)
   const [formData, setFormData] = useState<FormData>({
     full_name: '',
     email: '',
@@ -240,15 +250,13 @@ export default function ContactForm({ defaultDate, defaultEndDate }: { defaultDa
     </div>
   ) : null
 
-  if (submitted) {
-    return <SuccessView onReset={handleReset} />
-  }
-
   return (
     <div>
-      <StepIndicator step={step} />
+      <StepIndicator step={submitted ? 3 : step} />
 
-      {step === 1 ? (
+      {submitted && <SuccessView onReset={handleReset} />}
+
+      {!submitted && step === 1 ? (
         <div className="flex flex-col gap-8">
           {dateNotice}
           <Input
@@ -286,7 +294,7 @@ export default function ContactForm({ defaultDate, defaultEndDate }: { defaultDa
             Continue
           </Button>
         </div>
-      ) : (
+      ) : !submitted ? (
         <form onSubmit={handleSubmit} className="flex flex-col gap-8">
           <Select
             label="Estimated guest count"
@@ -339,7 +347,7 @@ export default function ContactForm({ defaultDate, defaultEndDate }: { defaultDa
             </button>
           </div>
         </form>
-      )}
+      ) : null}
     </div>
   )
 }

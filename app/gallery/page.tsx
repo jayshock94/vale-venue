@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     'Photos from weddings, corporate events, and private celebrations at The Vale in Provo, Utah.',
 }
 
-const validCategories = ['all', 'weddings', 'corporate', 'celebrations']
+const validCategories = ['all', 'weddings', 'corporate', 'celebrations', 'the-space']
 
 export default async function GalleryPage({
   searchParams,

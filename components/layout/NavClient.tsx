@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { cn } from '@/lib/utils'
 import { Button } from '@/components/ui/Button'
+import ValeLogo from '@/components/ui/ValeLogo'
 import MobileNav from './MobileNav'
 
 const navLinks = [
@@ -44,23 +45,13 @@ export default function NavClient() {
       >
         <div className="max-w-content mx-auto px-5 md:px-page h-full flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex flex-col leading-none group">
-            <span
+          <Link href="/" aria-label="The Vale — home">
+            <ValeLogo
               className={cn(
-                'font-serif italic text-xl transition-colors',
+                'h-8 w-auto transition-colors duration-300',
                 isTransparent ? 'text-neutral-50' : 'text-neutral-800'
               )}
-            >
-              The Vale
-            </span>
-            <span
-              className={cn(
-                'font-sans font-regular text-2xs uppercase tracking-nav transition-colors',
-                isTransparent ? 'text-neutral-300' : 'text-neutral-400'
-              )}
-            >
-              at ten seventy-eight
-            </span>
+            />
           </Link>
 
           {/* Desktop nav */}

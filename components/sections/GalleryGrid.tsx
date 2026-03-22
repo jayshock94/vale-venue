@@ -76,6 +76,7 @@ const tabs = [
   { value: 'weddings',       label: 'Weddings' },
   { value: 'celebrations',   label: 'Celebrations' },
   { value: 'community-social', label: 'Community & Social' },
+  { value: 'the-space',      label: 'The Space' },
 ]
 
 interface GalleryGridProps {
@@ -116,35 +117,52 @@ export default function GalleryGrid({ images, defaultCategory = 'all' }: Gallery
         ))}
       </div>
 
-      {/* Masonry grid */}
-      <div className="columns-1 sm:columns-2 lg:columns-3 gap-3">
-        {filtered.map((img, index) => (
-          <div
-            key={img.id || img.public_url}
-            className="mb-3 break-inside-avoid cursor-pointer group relative overflow-hidden rounded-soft"
-            onClick={() => setLightboxIndex(index)}
-          >
-            {/* TODO: Replace with real venue photos from Supabase storage */}
-            <Image
-              src={img.public_url}
-              alt={img.caption || 'The Vale event space'}
-              width={800}
-              height={600}
-              className="w-full object-cover rounded-soft transition-transform duration-slow group-hover:scale-[1.02]"
-              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-            />
-            {img.caption && (
-              <div className="absolute inset-0 bg-neutral-800/0 group-hover:bg-neutral-800/40 transition-all duration-slow flex items-end p-4 opacity-0 group-hover:opacity-100">
-                <span className="font-sans font-regular text-sm text-neutral-50">
-                  {img.caption}
-                </span>
-              </div>
-            )}
-          </div>
-        ))}
-      </div>
+      {/* The Space — coming soon */}
+      {activeTab === 'the-space' && (
+        <div className="py-24 flex flex-col items-center text-center">
+          <p className="font-sans font-semibold text-xs uppercase tracking-eyebrow text-gold-600 mb-4">
+            Coming soon
+          </p>
+          <h2 className="font-serif font-semibold text-4xl text-neutral-800 tracking-tightest mb-4">
+            Still being built.
+          </h2>
+          <p className="font-sans font-regular text-base text-neutral-500 max-w-sm">
+            Floor plan, full photo set, and a room-by-room walkthrough. Check back soon.
+          </p>
+        </div>
+      )}
 
-      {filtered.length === 0 && (
+      {/* Masonry grid */}
+      {activeTab !== 'the-space' && (
+        <div className="columns-1 sm:columns-2 lg:columns-3 gap-3">
+          {filtered.map((img, index) => (
+            <div
+              key={img.id || img.public_url}
+              className="mb-3 break-inside-avoid cursor-pointer group relative overflow-hidden rounded-soft"
+              onClick={() => setLightboxIndex(index)}
+            >
+              {/* TODO: Replace with real venue photos from Supabase storage */}
+              <Image
+                src={img.public_url}
+                alt={img.caption || 'The Vale event space'}
+                width={800}
+                height={600}
+                className="w-full object-cover rounded-soft transition-transform duration-slow group-hover:scale-[1.02]"
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+              />
+              {img.caption && (
+                <div className="absolute inset-0 bg-neutral-800/0 group-hover:bg-neutral-800/40 transition-all duration-slow flex items-end p-4 opacity-0 group-hover:opacity-100">
+                  <span className="font-sans font-regular text-sm text-neutral-50">
+                    {img.caption}
+                  </span>
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+      )}
+
+      {activeTab !== 'the-space' && filtered.length === 0 && (
         <div className="text-center py-20">
           <p className="font-sans font-regular text-base text-neutral-400">
             No photos in this category yet.

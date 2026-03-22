@@ -6,8 +6,8 @@ export default function Hero() {
     <section className="relative min-h-screen bg-neutral-800 flex items-end">
       {/* Background image */}
       <Image
-        src="/photos/hero.jpg"
-        alt="Elegantly set reception tables with white florals and gold accents at The Vale"
+        src="/photos/gallery/vale outside photo.png"
+        alt="The Vale exterior — modern white building with the Wasatch mountains behind it"
         fill
         priority
         className="object-cover opacity-30"
@@ -28,8 +28,8 @@ export default function Hero() {
                 Provo, Utah · Wasatch Mountains
               </p>
               <h1 className="font-serif font-semibold text-5xl md:text-6xl text-neutral-50 tracking-tightest leading-tight">
-                Clean lines. Mountain{' '}
-                <em className="italic text-gold-300">backdrop</em>. Everything
+                The Wasatch through the{' '}
+                <em className="italic text-gold-300">windows</em>. Everything
                 else is yours.
               </h1>
             </div>
@@ -37,9 +37,7 @@ export default function Hero() {
             {/* Right: sub-copy + CTAs */}
             <div className="flex flex-col justify-end gap-8 mt-10 md:mt-0">
               <p className="font-sans font-regular text-md text-neutral-50 opacity-80">
-                Floor-to-ceiling windows. A modern building set against the
-                Wasatch mountains. Weddings, community events, and private
-                celebrations.
+                A sleek, modern venue nestled at the base of the mountains.
               </p>
               <div className="flex flex-col sm:flex-row md:flex-col gap-3">
                 <Button href="/contact" variant="gold" size="lg">

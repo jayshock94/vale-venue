@@ -10,7 +10,7 @@ import PricingTable from '@/components/sections/PricingTable'
 import AmenityList from '@/components/sections/AmenityList'
 import FaqAccordion from '@/components/sections/FaqAccordion'
 import VendorList from '@/components/sections/VendorList'
-import InstagramGrid from '@/components/sections/InstagramGrid'
+import SpacePhotos from '@/components/sections/SpacePhotos'
 import ClosingCTA from '@/components/sections/ClosingCTA'
 import type { PricingPackage } from '@/components/sections/PricingTable'
 import type { Faq } from '@/components/sections/FaqAccordion'
@@ -69,13 +69,13 @@ export default async function Home() {
         <Hero />
         <StatsBar />
         <EventCards />
+        <SpacePhotos />
         <TestimonialSection testimonials={testimonials} />
         <PricingTable packages={packages} />
         <AmenityList />
-        <InstagramGrid />
-        <VendorList />
+<VendorList />
         {/* FAQ — catering policy + common questions surfaced before closing CTA */}
-        <section className="bg-neutral-50 py-section px-5 md:px-page">
+        <section className="bg-neutral-50 py-section px-5 md:px-page border-t border-rule">
           <div className="max-w-content mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-2 md:gap-20">
               <div>

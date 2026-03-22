@@ -4,6 +4,7 @@ import Nav from '@/components/layout/Nav'
 import Footer from '@/components/layout/Footer'
 import PricingTable from '@/components/sections/PricingTable'
 import AmenityList from '@/components/sections/AmenityList'
+import VendorList from '@/components/sections/VendorList'
 import FaqAccordion from '@/components/sections/FaqAccordion'
 import ClosingCTA from '@/components/sections/ClosingCTA'
 import type { PricingPackage } from '@/components/sections/PricingTable'
@@ -62,6 +63,7 @@ export default async function PricingPage() {
 
         <PricingTable packages={packages} hideHeader />
         <AmenityList />
+        <VendorList />
 
         {/* FAQ section */}
         <section className="bg-neutral-50 py-section px-5 md:px-page border-t border-rule">

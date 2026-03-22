@@ -19,7 +19,7 @@ export default function InstagramGrid() {
               @thevaleprovoutah
             </p>
             <h2 className="font-serif font-semibold text-4xl text-neutral-800 tracking-tightest">
-              The space in{' '}
+              In{' '}
               <em className="italic text-gold-600">action</em>.
             </h2>
           </div>

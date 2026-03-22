@@ -97,9 +97,6 @@ export default function TestimonialSection({
 
           {/* ── LEFT: Testimonials + Badges ── */}
           <div>
-            <p className="font-sans font-semibold text-xs uppercase tracking-eyebrow text-gold-300 mb-8">
-              What people say
-            </p>
 
             {/* Featured quote */}
             {featured && (
@@ -108,7 +105,16 @@ export default function TestimonialSection({
                   &ldquo;
                 </p>
                 <blockquote className="font-serif italic text-2xl md:text-3xl text-neutral-50 leading-snug tracking-tightest">
-                  {featured.quote}
+                  {(() => {
+                    const dot = featured.quote.indexOf('. ')
+                    if (dot === -1) return featured.quote
+                    return (
+                      <>
+                        <span className="text-gold-300 text-[1.15em]">{featured.quote.slice(0, dot + 1)}</span>
+                        {featured.quote.slice(dot + 1)}
+                      </>
+                    )
+                  })()}
                 </blockquote>
                 <p className="font-sans text-xs uppercase tracking-stat text-neutral-400 mt-5">
                   — {featured.attribution}
@@ -120,7 +126,7 @@ export default function TestimonialSection({
             {secondaries.length > 0 && (
               <div className="border-t border-white/10 pt-8 space-y-6">
                 {secondaries.map((t, i) => (
-                  <div key={i} className="opacity-45">
+                  <div key={i} className="opacity-60">
                     <p className="font-sans italic text-sm text-neutral-200 leading-relaxed">
                       &ldquo;{t.quote}&rdquo;
                     </p>
