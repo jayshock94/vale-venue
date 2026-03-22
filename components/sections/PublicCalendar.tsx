@@ -251,7 +251,7 @@ function MonthGrid({
             )
           }
 
-          if (isBooked && !isSelected) {
+          if (isBooked && !isSelected && !isToday) {
             return (
               <div key={dateStr} className="aspect-square flex items-center justify-center rounded-[var(--calendar-day-radius)] bg-neutral-100">
                 <span className="font-sans text-[length:var(--text-13)] text-neutral-300 line-through select-none">{day}</span>
@@ -273,7 +273,7 @@ function MonthGrid({
                 isSelected
                   ? 'rounded-[var(--calendar-day-radius)] bg-gold-400 text-neutral-800 font-semibold'
                   : inRange
-                  ? 'bg-gold-50 text-neutral-800'
+                  ? 'bg-gold-100 text-neutral-800'
                   : isToday
                   ? 'rounded-[var(--calendar-day-radius)] bg-neutral-0 border-2 border-gold-400 text-neutral-800 font-medium hover:bg-gold-50'
                   : 'rounded-[var(--calendar-day-radius)] bg-neutral-0 border border-rule text-neutral-700 hover:border-gold-400 hover:text-gold-600'
@@ -426,7 +426,7 @@ export default function PublicCalendar({ availability = [] }: PublicCalendarProp
               <LegendSwatch className="bg-neutral-0 border border-rule" label="Available" />
               <LegendSwatch className="border-2 border-gold-400 bg-neutral-0" label="Today" />
               <LegendSwatch className="bg-gold-400" label="Selected" />
-              <LegendSwatch className="bg-gold-50 border border-gold-100" label="Your range" />
+              <LegendSwatch className="bg-gold-100 border border-gold-200" label="Your range" />
               <LegendSwatch className="bg-neutral-100" label="Booked" />
             </div>
           </>
