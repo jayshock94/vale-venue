@@ -91,7 +91,7 @@ function PricingCard({ pkg }: { pkg: PricingPackage }) {
 
         <p
           className={cn(
-            'font-serif text-[length:var(--text-24)]',
+            'font-serif font-semibold text-[length:var(--text-24)]',
             featured ? 'text-neutral-50' : 'text-neutral-800'
           )}
         >
@@ -143,7 +143,7 @@ function PricingCard({ pkg }: { pkg: PricingPackage }) {
             </span>
             <span
               className={cn(
-                'font-serif text-[length:var(--text-18)]',
+                'font-serif font-semibold text-[length:var(--text-18)]',
                 featured ? 'text-neutral-50' : 'text-neutral-800'
               )}
             >
@@ -170,7 +170,7 @@ export default function PricingTable({
             Transparent pricing
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 md:gap-20">
-            <h2 className="font-serif text-4xl text-neutral-800 tracking-tightest">
+            <h2 className="font-serif font-bold text-4xl text-neutral-800 tracking-tightest">
               No mystery. No{' '}
               <em className="italic text-gold-600">runaround</em>.
             </h2>
@@ -208,7 +208,7 @@ export default function PricingTable({
               <p className="font-sans font-semibold text-[length:var(--text-10)] uppercase tracking-eyebrow text-gold-600 mb-3">
                 Small gatherings
               </p>
-              <h3 className="font-serif text-[length:var(--text-24)] text-neutral-800 mb-4 leading-snug">
+              <h3 className="font-serif font-semibold text-[length:var(--text-24)] text-neutral-800 mb-4 leading-snug">
                 Hosting under 50 guests?
               </h3>
 

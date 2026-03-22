@@ -7,7 +7,7 @@ export default function ClosingCTA() {
         <p className="text-xs font-semibold font-sans uppercase tracking-eyebrow text-gold-300 mb-6">
           Schedule a tour
         </p>
-        <h2 className="font-serif font-semibold text-4xl text-neutral-50 tracking-tightest mb-6">
+        <h2 className="font-serif font-bold text-4xl text-neutral-50 tracking-tightest mb-6">
           You know the price. Come see the{' '}
           <em className="italic text-gold-300">space</em>.
         </h2>

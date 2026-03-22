@@ -27,7 +27,7 @@ export default function Hero() {
               <p className="text-xs font-semibold font-sans uppercase tracking-eyebrow text-gold-300 mb-6">
                 Provo, Utah · Wasatch Mountains
               </p>
-              <h1 className="font-serif font-semibold text-5xl md:text-6xl text-neutral-50 tracking-tightest leading-tight">
+              <h1 className="font-serif font-bold text-5xl md:text-6xl text-neutral-50 tracking-tightest leading-tight">
                 Clean lines. Mountain{' '}
                 <em className="italic text-gold-300">backdrop</em>. Everything
                 else is yours.

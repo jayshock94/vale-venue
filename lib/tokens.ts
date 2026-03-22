@@ -80,6 +80,7 @@ export const typography = {
     regular:  String(ts.weight.regular.$value),
     medium:   String(ts.weight.medium.$value),
     semibold: String(ts.weight.semibold.$value),
+    bold:     String(ts.weight.bold.$value),
   },
   letterSpacing: {
     tight:   ts.letterSpacing.tight.$value,

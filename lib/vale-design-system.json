@@ -8,7 +8,7 @@
     "fonts": {
       "display": "Cormorant Garamond",
       "ui": "Inter",
-      "googleFontsUrl": "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Inter:wght@400;500;600&display=swap"
+      "googleFontsUrl": "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&family=Inter:wght@400;500;600&display=swap"
     },
     "rules": {
       "serif":        "Headlines ≥ 24px only — hero h1, section h2, pull quotes, testimonials, price and stat display numbers. One italic accent word per card title at any size. Never body copy, captions, labels, or anything read as a sentence.",
@@ -20,7 +20,7 @@
       "weight-nav":   "Nav links: medium (500)",
       "weight-label": "Labels and eyebrows: semibold (600)",
       "weight-card":  "Card titles, section subheadings: medium (500)",
-      "weight-serif": "Cormorant Garamond: semibold (600) for hero h1 and any headline on a dark surface; regular (400) for section h2 on light surfaces where the 46px scale carries the weight"
+      "weight-serif": "Cormorant Garamond: bold (700) for all h1/h2/h3 content headings; semibold (600) for italic accent words and display numbers (stats, prices)"
     }
   },
 
@@ -116,7 +116,8 @@
     "weight": {
       "regular":  { "$value": 400, "$type": "fontWeight", "$description": "Body copy, body links, captions, input text, tertiary UI text" },
       "medium":   { "$value": 500, "$type": "fontWeight", "$description": "Nav links, card titles, section subheadings" },
-      "semibold": { "$value": 600, "$type": "fontWeight", "$description": "Labels, eyebrows, buttons, badges, hero headline, headlines on dark surfaces" }
+      "semibold": { "$value": 600, "$type": "fontWeight", "$description": "Labels, eyebrows, buttons, badges; Cormorant italic accent words and display numbers" },
+      "bold":     { "$value": 700, "$type": "fontWeight", "$description": "Cormorant headings — all h1/h2/h3 content headings above 24px" }
     },
     "size": {
       "10": { "$value": "11px", "$type": "fontSize", "$description": "Minimum for any label/eyebrow/caption — nav, eyebrows, stat labels, badge text" },

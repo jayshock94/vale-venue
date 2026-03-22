@@ -124,7 +124,7 @@ function MonthYearPicker({ currentYear, currentMonth, today, onSelect, onClose }
         >
           <ChevronLeft />
         </NavBtn>
-        <span className="font-serif text-[length:var(--text-24)] text-neutral-800 select-none">
+        <span className="font-serif font-semibold text-[length:var(--text-24)] text-neutral-800 select-none">
           {pickerYear}
         </span>
         <NavBtn
@@ -209,7 +209,7 @@ function MonthGrid({
         className="w-full flex items-center justify-center gap-1.5 mb-5 group"
         aria-label={`Jump to a different month (currently ${MONTHS[month]} ${year})`}
       >
-        <span className="font-serif text-[length:var(--text-20)] text-neutral-800 group-hover:text-gold-600 transition-colors duration-[var(--transition-fast)]">
+        <span className="font-serif font-semibold text-[length:var(--text-20)] text-neutral-800 group-hover:text-gold-600 transition-colors duration-[var(--transition-fast)]">
           {MONTHS[month]} {year}
         </span>
         <span className="text-neutral-400 group-hover:text-gold-600 transition-colors duration-[var(--transition-fast)] mt-0.5">
@@ -376,7 +376,7 @@ export default function PublicCalendar({ availability = [] }: PublicCalendarProp
             <p className="text-xs font-semibold font-sans uppercase tracking-eyebrow text-gold-600 mb-4">
               Check availability
             </p>
-            <h2 className="font-serif text-4xl text-neutral-800 tracking-tightest">
+            <h2 className="font-serif font-bold text-4xl text-neutral-800 tracking-tightest">
               Find your <em className="italic text-gold-600">date</em>.
             </h2>
             <p className="font-sans font-regular text-sm text-neutral-500 mt-3">

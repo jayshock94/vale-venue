@@ -62,12 +62,9 @@ function EventCardLarge({ card }: { card: EventCard }) {
         />
       </div>
       <div className="px-6 py-5 flex flex-col gap-3">
-        <p className="text-2xs font-semibold font-sans uppercase tracking-eyebrow text-gold-600">
-          {card.eyebrow}
-        </p>
         <h3 className="font-sans font-medium text-xl text-neutral-800">
           {card.titleStart}{' '}
-          <em className="font-serif italic text-gold-600">
+          <em className="font-serif font-semibold italic text-gold-600">
             {card.titleItalic}
           </em>
         </h3>
@@ -102,12 +99,9 @@ function EventCardSmall({ card }: { card: EventCard }) {
         />
       </div>
       <div className="px-6 py-5 flex flex-col gap-2">
-        <p className="text-2xs font-semibold font-sans uppercase tracking-eyebrow text-gold-600">
-          {card.eyebrow}
-        </p>
         <h3 className="font-sans font-medium text-xl text-neutral-800">
           {card.titleStart}{' '}
-          <em className="font-serif italic text-gold-600">
+          <em className="font-serif font-semibold italic text-gold-600">
             {card.titleItalic}
           </em>
         </h3>

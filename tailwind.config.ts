@@ -47,6 +47,7 @@ const config: Config = {
         regular:  typography.weight.regular,
         medium:   typography.weight.medium,
         semibold: typography.weight.semibold,
+        bold:     typography.weight.bold,
       },
       letterSpacing: {
         tightest: typography.letterSpacing.tight,

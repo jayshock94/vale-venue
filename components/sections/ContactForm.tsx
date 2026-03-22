@@ -100,7 +100,7 @@ function SuccessView({ onReset }: { onReset: () => void }) {
         <p className="font-sans font-medium text-xs uppercase tracking-label text-gold-600 mb-2">
           Inquiry received
         </p>
-        <h3 className="font-serif text-3xl text-neutral-800 tracking-tightest mb-3">
+        <h3 className="font-serif font-bold text-3xl text-neutral-800 tracking-tightest mb-3">
           You&apos;re all set.
         </h3>
         <p className="font-sans font-regular text-sm text-neutral-500 leading-relaxed max-w-[230px] mx-auto">

@@ -25,7 +25,7 @@ export default function StatsBar() {
                 index < 2 ? 'border-b border-rule md:border-b-0' : ''
               }`}
             >
-              <span className={`font-serif text-3xl ${stat.accent ? 'text-gold-600' : 'text-neutral-800'}`}>
+              <span className={`font-serif font-semibold text-3xl ${stat.accent ? 'text-gold-600' : 'text-neutral-800'}`}>
                 {stat.value}
               </span>
               <span className="font-sans text-xs text-neutral-500 uppercase tracking-stat mt-1">
