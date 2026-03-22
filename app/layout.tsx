@@ -62,7 +62,7 @@ export default function RootLayout({
       lang="en"
       className={`${cormorant.variable} ${inter.variable} h-full antialiased`}
     >
-      <body className="font-sans min-h-full flex flex-col bg-neutral-50 text-neutral-800">
+      <body className="font-sans min-h-full flex flex-col bg-surface-bright text-neutral-800">
         {children}
         <Toaster position="bottom-right" richColors />
       </body>

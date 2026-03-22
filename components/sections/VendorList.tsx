@@ -45,7 +45,7 @@ const categories: VendorCategory[] = [
 
 export default function VendorList() {
   return (
-    <section className="bg-neutral-50 py-section px-5 md:px-page border-t border-rule">
+    <section className="bg-surface-bright py-section px-5 md:px-page border-t border-rule">
       <div className="max-w-content mx-auto">
 
         {/* Header */}

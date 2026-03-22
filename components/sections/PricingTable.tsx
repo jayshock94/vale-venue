@@ -164,7 +164,7 @@ export default function PricingTable({
   const activePackages = packages.length > 0 ? packages : defaultPackages
 
   return (
-    <section className="bg-neutral-50 py-section px-5 md:px-page">
+    <section className="bg-surface-bright py-section px-5 md:px-page">
       <div className="max-w-content mx-auto">
         {!hideHeader && (
           <div className="mb-12">

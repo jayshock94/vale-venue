@@ -53,6 +53,7 @@
   --color-amber-800:     #5A3810;
 
   /* ── Semantic color aliases ── */
+  --surface-bright:      var(--color-gold-50);
   --surface-page:        var(--color-neutral-50);
   --surface-raised:      var(--color-neutral-0);
   --surface-sunken:      var(--color-neutral-100);

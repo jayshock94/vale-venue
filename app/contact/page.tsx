@@ -57,7 +57,7 @@ export default async function ContactPage({
       <main className="flex-1 pb-24 md:pb-0">
 
         {/* Two-column body — form visible on load, no hero re-introduction */}
-        <section className="bg-neutral-50 pt-32 pb-section px-5 md:px-page">
+        <section className="bg-surface-bright pt-32 pb-section px-5 md:px-page">
           <div className="max-w-content mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-[1fr_1.2fr] gap-16 md:gap-20 items-start">
 

@@ -124,7 +124,7 @@ function EventCardSmall({ card }: { card: EventCard }) {
 
 export default function EventCards() {
   return (
-    <section className="bg-neutral-50 py-section px-5 md:px-page">
+    <section className="bg-surface-bright py-section px-5 md:px-page">
       <div className="max-w-content mx-auto">
         <SectionHeader
           eyebrow="Weddings · Celebrations · Community & Social"

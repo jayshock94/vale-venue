@@ -57,7 +57,7 @@ export default async function GalleryPage({
           </div>
         </section>
 
-        <section className="bg-neutral-50 py-section px-5 md:px-page">
+        <section className="bg-surface-bright py-section px-5 md:px-page">
           <div className="max-w-content mx-auto">
             <GalleryGrid images={images} defaultCategory={defaultCategory} />
           </div>

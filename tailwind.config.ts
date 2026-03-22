@@ -1,7 +1,7 @@
 // Token pipeline: vale-design-system.json → lib/tokens.ts → here
 // Zero hardcoded hex values. All primitives imported from tokens.ts.
 import type { Config } from 'tailwindcss'
-import { color, typography, spacing, borderRadius, shadow, maxWidth, adminColor } from './lib/tokens'
+import { color, surface, typography, spacing, borderRadius, shadow, maxWidth, adminColor } from './lib/tokens'
 
 const config: Config = {
   content: [
@@ -18,6 +18,8 @@ const config: Config = {
         sage:    color.sage,
         rust:    color.rust,
         amber:   color.amber,
+        // Semantic surface tokens
+        surface: surface,
         // Admin palette — functional/neutral, not warm
         admin: adminColor,
       },
