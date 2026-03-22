@@ -10,6 +10,7 @@ import PricingTable from '@/components/sections/PricingTable'
 import AmenityList from '@/components/sections/AmenityList'
 import FaqAccordion from '@/components/sections/FaqAccordion'
 import VendorList from '@/components/sections/VendorList'
+import InstagramGrid from '@/components/sections/InstagramGrid'
 import ClosingCTA from '@/components/sections/ClosingCTA'
 import type { PricingPackage } from '@/components/sections/PricingTable'
 import type { Faq } from '@/components/sections/FaqAccordion'
@@ -71,6 +72,7 @@ export default async function Home() {
         <TestimonialSection testimonials={testimonials} />
         <PricingTable packages={packages} />
         <AmenityList />
+        <InstagramGrid />
         <VendorList />
         {/* FAQ — catering policy + common questions surfaced before closing CTA */}
         <section className="bg-neutral-50 py-section px-5 md:px-page">

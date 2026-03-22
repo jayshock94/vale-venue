@@ -19,7 +19,7 @@ const weddingCard: EventCard = {
   titleItalic: 'Receptions',
   body: 'The temple ceremony is yours. The reception — where every guest celebrates together — happens here. Three miles from the Provo City Center Temple, with dedicated bride and groom suites, mountain views, and parking for everyone who waited outside.',
   image: '/photos/events-wedding.png',
-  imageAlt: 'Wedding ceremony at The Vale — couple at the altar',
+  imageAlt: 'Wedding ceremony at The Vale — couple at the altar with pampas florals',
   cta: 'See wedding photos',
   href: '/gallery?category=weddings',
 }
@@ -40,8 +40,8 @@ const communityCard: EventCard = {
   titleStart: 'Community &',
   titleItalic: 'Social Events',
   body: 'Room for 100 people, or 20 vendor booths around the perimeter. Polished concrete floors and 18-foot ceilings. The space has hosted ClubMommy Utah, Dizzy Disco, and pop-up markets. Evening half-day blocks work for ticketed experiences.',
-  image: '/photos/events-corporate.jpg',
-  imageAlt: 'The Vale main floor — open floor plan for any layout',
+  image: '/photos/events-community.png',
+  imageAlt: 'ClubMommy Utah at The Vale — full venue with round tables and 100 guests',
   cta: 'See community photos',
   href: '/gallery?category=community-social',
 }

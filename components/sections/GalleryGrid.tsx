@@ -15,58 +15,58 @@ export interface GalleryImage {
 
 const placeholderImages: GalleryImage[] = [
   {
-    public_url: '/photos/gallery/weddings-1.jpg',
-    caption: 'Wedding reception — white florals and geometric pendant lights',
+    public_url: '/photos/gallery/weddings-1.png',
+    caption: 'Reception dinner — candlelit long table with string lights',
     category: 'weddings',
   },
   {
-    public_url: '/photos/gallery/weddings-2.jpg',
-    caption: 'Wedding reception — candlelit round tables',
+    public_url: '/photos/gallery/weddings-2.png',
+    caption: 'Sweetheart table — boho florals and natural light',
     category: 'weddings',
   },
   {
     public_url: '/photos/gallery/weddings-3.png',
-    caption: 'Wedding ceremony at The Vale',
+    caption: 'Couple on The Vale mezzanine',
     category: 'weddings',
   },
   {
     public_url: '/photos/gallery/weddings-4.png',
-    caption: 'Ceremony under floral arch',
+    caption: 'First kiss under the greenery arch',
     category: 'weddings',
   },
   {
     public_url: '/photos/gallery/weddings-5.png',
-    caption: 'Bridal portrait',
+    caption: 'First dance under string lights',
     category: 'weddings',
   },
   {
     public_url: '/photos/gallery/weddings-6.png',
-    caption: 'Bridal portrait — natural window light',
+    caption: 'Couple walking down the aisle',
     category: 'weddings',
   },
   {
-    public_url: '/photos/gallery/corporate-1.jpg',
-    caption: 'The Vale main floor — evening',
+    public_url: '/photos/gallery/community-1.png',
+    caption: 'ClubMommy Utah — full venue at capacity',
     category: 'community-social',
   },
   {
-    public_url: '/photos/gallery/corporate-2.jpg',
-    caption: 'The Vale main floor — full capacity layout',
+    public_url: '/photos/gallery/community-2.png',
+    caption: 'Evening event under string lights',
     category: 'community-social',
   },
   {
     public_url: '/photos/gallery/celebrations-1.png',
-    caption: 'Birthday celebration — balloon arch',
+    caption: 'Birthday celebration — balloon arch and high chair',
     category: 'celebrations',
   },
   {
     public_url: '/photos/gallery/celebrations-2.png',
-    caption: 'Gender reveal party at The Vale',
+    caption: 'Girls birthday party — pink balloon arch',
     category: 'celebrations',
   },
   {
-    public_url: '/photos/gallery/celebrations-3.jpg',
-    caption: 'Bar and prep area',
+    public_url: '/photos/gallery/celebrations-3.png',
+    caption: 'Race car birthday — custom cake and cookies',
     category: 'celebrations',
   },
 ]
