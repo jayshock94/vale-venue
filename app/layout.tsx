@@ -1,71 +1,46 @@
-import type { Metadata } from 'next'
-import { Cormorant_Garamond, Inter } from 'next/font/google'
-import { Toaster } from 'sonner'
-import './globals.css'
+import type { Metadata } from "next";
+import { Cormorant_Garamond, DM_Sans } from "next/font/google";
+import ThemeProvider from "@/components/theme/ThemeProvider";
+import ThemePicker from "@/components/theme/ThemePicker";
+import Nav from "@/components/layout/Nav";
+import Footer from "@/components/layout/Footer";
+import "./globals.css";
 
-const cormorant = Cormorant_Garamond({
-  subsets: ['latin'],
-  weight: ['300', '400', '600', '700'],
-  style: ['normal', 'italic'],
-  variable: '--font-serif',
-  display: 'swap',
-})
+const heading = Cormorant_Garamond({
+  variable: "--font-heading",
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  display: "swap",
+});
 
-const inter = Inter({
-  subsets: ['latin'],
-  weight: ['400', '500', '600'],
-  variable: '--font-sans',
-  display: 'swap',
-})
+const body = DM_Sans({
+  variable: "--font-body",
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "700"],
+  display: "swap",
+});
 
 export const metadata: Metadata = {
-  title: {
-    default: 'The Vale — Modern Event Venue in Provo, Utah',
-    template: '%s | The Vale Venue',
-  },
+  title: "The Vale | Event Venue in Provo, Utah",
   description:
-    'Floor-to-ceiling windows. The Wasatch mountains behind you. A modern event space in Provo, Utah for weddings, corporate events, and private celebrations. Starting at $300.',
-  keywords: [
-    'event venue provo utah',
-    'wedding venue provo',
-    'corporate event space utah',
-    'wasatch mountains venue',
-    'private event space provo',
-  ],
-  openGraph: {
-    type: 'website',
-    locale: 'en_US',
-    url: 'https://valevenue.com',
-    siteName: 'The Vale',
-    title: 'The Vale — Modern Event Venue in Provo, Utah',
-    description:
-      'Floor-to-ceiling windows. The Wasatch mountains behind you. Weddings, corporate events, and private celebrations in Provo, Utah.',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'The Vale — Modern Event Venue in Provo, Utah',
-    description:
-      'Floor-to-ceiling windows. The Wasatch mountains behind you. Starting at $300.',
-  },
-  metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL || 'https://valevenue.com'
-  ),
-}
+    "6,500 square feet of open space in Provo, Utah. Your caterer, your vendors, your rules. Weddings, receptions, corporate events, and more.",
+};
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode
+  children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${cormorant.variable} ${inter.variable} h-full antialiased`}
-    >
-      <body className="font-sans min-h-full flex flex-col bg-neutral-50 text-neutral-800">
-        {children}
-        <Toaster position="bottom-right" richColors />
+    <html lang="en" className={`${heading.variable} ${body.variable}`}>
+      <body className="flex flex-col min-h-screen">
+        <ThemeProvider>
+          <Nav />
+          <div className="flex-1">{children}</div>
+          <Footer />
+          <ThemePicker />
+        </ThemeProvider>
       </body>
     </html>
-  )
+  );
 }

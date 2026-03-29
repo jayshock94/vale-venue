@@ -1,115 +1,73 @@
-import Link from 'next/link'
+import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="bg-neutral-800">
-      {/* Main grid */}
-      <div className="max-w-content mx-auto px-5 md:px-page py-16">
-        <div
-          className="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-8"
-          style={{ gridTemplateColumns: undefined }}
-        >
-          {/* Col 1: Brand */}
-          <div className="md:col-span-1" style={{ flex: '1.5' }}>
-            <div className="flex flex-col leading-none mb-4">
-              <span className="font-serif italic text-xl text-neutral-50">
-                The Vale
-              </span>
-              <span className="font-sans font-regular text-2xs uppercase tracking-nav text-neutral-400 mt-1">
-                at ten seventy-eight
-              </span>
-            </div>
-            <p className="font-sans font-regular text-sm text-neutral-400 max-w-[260px]">
-              A modern event space at the base of the Wasatch mountains. Provo, Utah.
+    <footer className="border-t border-vale-border bg-vale-bg-alt">
+      <div className="mx-auto max-w-6xl px-5 md:px-8 py-12 md:py-16">
+        <div className="grid gap-10 md:grid-cols-[1.5fr_1fr_1fr] md:gap-16">
+          {/* Brand column */}
+          <div>
+            <span className="font-[family-name:var(--font-heading)] text-2xl font-normal tracking-tight">
+              The Vale
+            </span>
+            <p className="mt-3 text-sm text-vale-fg-muted leading-relaxed max-w-xs">
+              An event venue in Provo, Utah. 6,500 square feet of open space,
+              200+ private parking spots, and zero restrictions on your vendors.
             </p>
           </div>
 
-          {/* Col 2: Venue */}
+          {/* Pages */}
           <div>
-            <h4 className="font-sans font-medium text-xs uppercase tracking-label text-neutral-50 mb-4">
-              Venue
+            <h4 className="text-sm font-medium uppercase tracking-wider mb-4">
+              Pages
             </h4>
-            <nav className="flex flex-col gap-3">
+            <ul className="space-y-2.5">
               {[
-                { href: '/', label: 'Home' },
-                { href: '/pricing', label: 'Pricing' },
-                { href: '/availability', label: 'Availability' },
-                { href: '/gallery', label: 'Gallery' },
-                { href: '/contact', label: 'Contact' },
-              ].map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className="font-sans font-regular text-sm text-neutral-400 hover:text-neutral-50 transition-colors"
-                >
-                  {link.label}
-                </Link>
+                { href: "/your-vale", label: "Your Vale" },
+                { href: "/space", label: "The Space" },
+                { href: "/pricing", label: "Pricing" },
+                { href: "/gallery", label: "Gallery" },
+                { href: "/contact", label: "Contact" },
+              ].map(({ href, label }) => (
+                <li key={href}>
+                  <Link
+                    href={href}
+                    className="text-sm text-vale-fg-muted hover:text-vale-fg transition-colors"
+                  >
+                    {label}
+                  </Link>
+                </li>
               ))}
-            </nav>
+            </ul>
           </div>
 
-          {/* Col 3: Events */}
+          {/* Contact */}
           <div>
-            <h4 className="font-sans font-medium text-xs uppercase tracking-label text-neutral-50 mb-4">
-              Events
+            <h4 className="text-sm font-medium uppercase tracking-wider mb-4">
+              Get in Touch
             </h4>
-            <nav className="flex flex-col gap-3">
-              {[
-                { label: 'Weddings', href: '/gallery?category=weddings' },
-                { label: 'Corporate', href: '/gallery?category=corporate' },
-                { label: 'Celebrations', href: '/gallery?category=celebrations' },
-              ].map((item) => (
-                <Link
-                  key={item.label}
-                  href={item.href}
-                  className="font-sans font-regular text-sm text-neutral-400 hover:text-neutral-50 transition-colors"
+            <ul className="space-y-2.5 text-sm text-vale-fg-muted">
+              <li>
+                <a
+                  href="mailto:bobbi@valevenue.com"
+                  className="hover:text-vale-fg transition-colors"
                 >
-                  {item.label}
-                </Link>
-              ))}
-            </nav>
-          </div>
-
-          {/* Col 4: Contact */}
-          <div>
-            <h4 className="font-sans font-medium text-xs uppercase tracking-label text-neutral-50 mb-4">
-              Contact
-            </h4>
-            <div className="flex flex-col gap-3">
-              <address className="not-italic font-sans font-regular text-sm text-neutral-400">
-                1078 South 250 East
-                <br />
-                Provo, Utah
-              </address>
-              <a
-                href="tel:8015926287"
-                className="font-sans font-regular text-sm text-neutral-400 hover:text-neutral-50 transition-colors"
-              >
-                801-592-6287
-              </a>
-              <a
-                href="mailto:bobbi@valevenue.com"
-                className="font-sans font-regular text-sm text-neutral-400 hover:text-neutral-50 transition-colors"
-              >
-                bobbi@valevenue.com
-              </a>
-            </div>
+                  bobbi@valevenue.com
+                </a>
+              </li>
+              <li>Provo, Utah</li>
+              <li>Close to I-15 &amp; University Ave</li>
+            </ul>
           </div>
         </div>
-      </div>
 
-      {/* Bottom bar */}
-      <div className="border-t border-white/10">
-        <div className="max-w-content mx-auto px-5 md:px-page py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p className="font-sans font-regular text-xs text-neutral-500">
+        {/* Bottom bar */}
+        <div className="mt-12 pt-6 border-t border-vale-border flex flex-col md:flex-row justify-between items-center gap-3">
+          <p className="text-xs text-vale-fg-muted">
             &copy; {new Date().getFullYear()} The Vale. All rights reserved.
-          </p>
-
-          <p className="font-sans font-regular text-xs text-neutral-500">
-            Provo, Utah
           </p>
         </div>
       </div>
     </footer>
-  )
+  );
 }

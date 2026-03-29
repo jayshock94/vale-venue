@@ -1,105 +1,64 @@
-import { cn } from '@/lib/utils'
-import Link from 'next/link'
-import React from 'react'
+import { type ButtonHTMLAttributes, type AnchorHTMLAttributes } from "react";
 
-type Variant = 'gold' | 'ink' | 'outline' | 'ghost'
-type Size = 'sm' | 'md' | 'lg'
+type Variant = "primary" | "secondary" | "ghost";
+type Size = "sm" | "md" | "lg";
 
-interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: Variant
-  size?: Size
-  href?: string
-  arrow?: boolean
-  className?: string
-  children: React.ReactNode
-  target?: string
-  rel?: string
-}
+type BaseProps = {
+  variant?: Variant;
+  size?: Size;
+};
 
-// component.button — vale-design-system.json
-//
-// Hover model (gold / ink / outline): translateY(-1px) + box-shadow lift.
-//   No ::before state layer — color and elevation are the only signals.
-// Active model: translateY(0) + shadow removed. Ink resets to base bg.
-// Ghost: text color change + arrow nudge only. No lift, no shadow.
-// Arrow nudge requires `group` on the root element — included in base.
-const base = [
-  'group relative',
-  'inline-flex items-center justify-center whitespace-nowrap',
-  'font-sans font-semibold uppercase tracking-btn',
-  'transition-all duration-fast select-none',
-].join(' ')
+type ButtonAsButton = BaseProps &
+  ButtonHTMLAttributes<HTMLButtonElement> & { href?: never };
 
-const variants: Record<Variant, string> = {
-  // 8px radius. Warm champagne on cream. Elevation is the hover signal — no color change.
-  gold: [
-    'rounded-action bg-gold-400 text-neutral-800',
-    'hover:shadow-hover hover:-translate-y-px',
-    'active:translate-y-0 active:shadow-none',
-  ].join(' '),
+type ButtonAsLink = BaseProps &
+  AnchorHTMLAttributes<HTMLAnchorElement> & { href: string };
 
-  // 8px radius. Ink fill, cream text. Lightens on hover, resets on press.
-  ink: [
-    'rounded-action bg-neutral-800 text-neutral-50',
-    'hover:bg-neutral-700 hover:shadow-hover hover:-translate-y-px',
-    'active:bg-neutral-800 active:translate-y-0 active:shadow-none',
-  ].join(' '),
+type ButtonProps = ButtonAsButton | ButtonAsLink;
 
-  // 8px radius. Transparent + stone border by default. Solidifies to ink on hover.
-  outline: [
-    'rounded-action bg-transparent border border-neutral-300 text-neutral-600',
-    'hover:bg-neutral-800 hover:border-neutral-800 hover:text-neutral-50 hover:shadow-hover hover:-translate-y-px',
-    'active:translate-y-0 active:shadow-none',
-  ].join(' '),
+const variantClasses: Record<Variant, string> = {
+  primary:
+    "bg-vale-accent text-vale-accent-fg hover:bg-vale-accent-hover active:bg-vale-accent-hover",
+  secondary:
+    "bg-transparent text-vale-fg border border-vale-border-strong hover:bg-vale-bg-alt active:bg-vale-bg-alt",
+  ghost:
+    "bg-transparent text-vale-fg hover:bg-vale-bg-alt active:bg-vale-bg-alt",
+};
 
-  // No bg, no border. Muted text snaps to ink on hover. No lift.
-  ghost: 'bg-transparent text-neutral-500 hover:text-neutral-800',
-}
+const sizeClasses: Record<Size, string> = {
+  sm: "px-4 py-2 text-sm",
+  md: "px-6 py-3 text-base",
+  lg: "px-8 py-4 text-lg",
+};
 
-// Heights: sm=40px(h-10), md=48px(h-12), lg=56px(h-14)
-// Padding: sm=0 20px(px-5), md=0 28px(px-7), lg=0 36px(px-9)
-// Font:    sm=11px(text-2xs), md=12px(text-sm), lg=13px(text-base)
-const sizes: Record<Size, string> = {
-  sm: 'h-10 px-5 text-2xs gap-2',
-  md: 'h-12 px-7 text-sm  gap-2',
-  lg: 'h-14 px-9 text-base gap-2',
-}
-
-export function Button({
-  variant = 'ink',
-  size = 'md',
-  href,
-  arrow = false,
-  className,
-  children,
-  target,
-  rel,
+export default function Button({
+  variant = "primary",
+  size = "md",
+  className = "",
   ...props
 }: ButtonProps) {
-  const classes = cn(base, variants[variant], sizes[size], className)
+  const classes = [
+    "inline-flex items-center justify-center font-medium",
+    "rounded-md transition-colors",
+    "focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-vale-accent",
+    "disabled:opacity-50 disabled:pointer-events-none",
+    "font-[family-name:var(--font-body)]",
+    "tracking-wide uppercase text-[0.85em] leading-none",
+    variantClasses[variant],
+    sizeClasses[size],
+    className,
+  ]
+    .filter(Boolean)
+    .join(" ");
 
-  const content = (
-    <>
-      {children}
-      {arrow && variant === 'ghost' && (
-        <span className="transition-transform duration-fast group-hover:translate-x-1">
-          →
-        </span>
-      )}
-    </>
-  )
-
-  if (href) {
+  if ("href" in props && props.href) {
+    const { href, ...rest } = props as ButtonAsLink;
     return (
-      <Link href={href} className={classes} target={target} rel={rel}>
-        {content}
-      </Link>
-    )
+      <a href={href} className={classes} {...rest} />
+    );
   }
 
   return (
-    <button className={classes} {...props}>
-      {content}
-    </button>
-  )
+    <button className={classes} {...(props as ButtonAsButton)} />
+  );
 }

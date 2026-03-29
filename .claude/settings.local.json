@@ -38,7 +38,12 @@
       "Bash(cp \"C:\\\\Users\\\\jaysh\\\\Desktop\\\\Design Stuff\\\\the vale screenshot photos\\\\Screenshot 2026-03-21 142931.png\" \"C:\\\\Users\\\\jaysh\\\\Desktop\\\\vale-venue\\\\public\\\\instagram\\\\ig-4.png\")",
       "Bash(cp \"C:\\\\Users\\\\jaysh\\\\Desktop\\\\Design Stuff\\\\the vale screenshot photos\\\\Screenshot 2026-03-21 143011.png\" \"C:\\\\Users\\\\jaysh\\\\Desktop\\\\vale-venue\\\\public\\\\instagram\\\\ig-6.png\")",
       "Bash(xargs grep:*)",
-      "Bash(xargs sed:*)"
+      "Bash(xargs sed:*)",
+      "Bash(npx create-next-app@latest . --typescript --tailwind --eslint --app --src-dir=false --import-alias=\"@/*\" --turbopack --yes)",
+      "Bash(mv CLAUDE.md /tmp/CLAUDE.md.bak)",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(npm ls:*)",
+      "Bash(npx @tailwindcss/cli@4 --input app/globals.css --content /tmp/test-tw.html)"
     ]
   }
 }

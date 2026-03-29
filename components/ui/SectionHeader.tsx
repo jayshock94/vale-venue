@@ -1,68 +1,31 @@
-import { cn } from '@/lib/utils'
-import React from 'react'
+type SectionHeaderProps = {
+  label?: string;
+  title: string;
+  description?: string;
+  align?: "left" | "center";
+};
 
-interface SectionHeaderProps {
-  eyebrow: string
-  headline: React.ReactNode
-  body?: string
-  action?: React.ReactNode
-  dark?: boolean
-  className?: string
-}
-
-export function SectionHeader({
-  eyebrow,
-  headline,
-  body,
-  action,
-  dark = false,
-  className,
+export default function SectionHeader({
+  label,
+  title,
+  description,
+  align = "center",
 }: SectionHeaderProps) {
-  return (
-    <div
-      className={cn(
-        'grid gap-y-8 mb-16',
-        'grid-cols-1 md:grid-cols-2 md:gap-x-20',
-        className
-      )}
-      style={{ gridTemplateColumns: undefined }}
-    >
-      {/* Left: eyebrow + headline */}
-      <div>
-        <p
-          className={cn(
-            'text-xs font-semibold font-sans uppercase tracking-eyebrow mb-4',
-            dark ? 'text-gold-300' : 'text-gold-600'
-          )}
-        >
-          {eyebrow}
-        </p>
-        <h2
-          className={cn(
-            'font-serif font-semibold text-4xl tracking-tightest leading-tight',
-            dark ? 'text-neutral-50' : 'text-neutral-800'
-          )}
-        >
-          {headline}
-        </h2>
-      </div>
+  const alignment = align === "center" ? "text-center" : "text-left";
 
-      {/* Right: body + action */}
-      {(body || action) && (
-        <div className="flex flex-col justify-end gap-6">
-          {body && (
-            <p
-              className={cn(
-                'font-sans font-regular text-md leading-relaxed',
-                dark ? 'text-neutral-50 opacity-70' : 'text-neutral-500'
-              )}
-            >
-              {body}
-            </p>
-          )}
-          {action && <div>{action}</div>}
-        </div>
+  return (
+    <div className={`${alignment} mb-10 md:mb-14`}>
+      {label && (
+        <span className="block font-[family-name:var(--font-body)] text-sm font-medium uppercase tracking-widest text-vale-fg-muted mb-3">
+          {label}
+        </span>
+      )}
+      <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold">{title}</h2>
+      {description && (
+        <p className="mt-4 text-vale-fg-muted text-lg max-w-2xl leading-relaxed mx-auto">
+          {description}
+        </p>
       )}
     </div>
-  )
+  );
 }
