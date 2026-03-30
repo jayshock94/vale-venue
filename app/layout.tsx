@@ -34,8 +34,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${heading.variable} ${body.variable}`}>
-      <body className="flex flex-col min-h-screen">
+    <html lang="en" className={`${heading.variable} ${body.variable} overflow-x-hidden`}>
+      <body className="flex flex-col min-h-screen overflow-x-hidden">
         <ThemeProvider>
           <ChatProvider>
             <Nav />
