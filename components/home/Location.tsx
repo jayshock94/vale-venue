@@ -1,5 +1,4 @@
 import Container from "@/components/ui/Container";
-import DecorDots from "@/components/ui/DecorDots";
 
 export default function Location() {
   return (
@@ -8,7 +7,6 @@ export default function Location() {
         <div className="relative grid md:grid-cols-[1fr_1.1fr] gap-10 md:gap-16 items-center">
           {/* Text column */}
           <div className="relative z-10">
-            <DecorDots className="-top-6 -left-4" count={6} spread={60} />
             <span className="block text-sm font-medium uppercase tracking-widest text-vale-fg-muted mb-3">
               Section 7 — Getting Here
             </span>

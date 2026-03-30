@@ -1,5 +1,4 @@
 import BgShape from "@/components/ui/BgShape";
-import DecorDots from "@/components/ui/DecorDots";
 
 export default function ClosingCTA() {
   return (
@@ -11,10 +10,6 @@ export default function ClosingCTA() {
       />
 
       <div className="relative z-10 mx-auto max-w-6xl px-5 md:px-8 text-center">
-        {/* Flanking dots */}
-        <DecorDots className="hidden md:block top-0 left-16" count={10} spread={100} />
-        <DecorDots className="hidden md:block top-0 right-16" count={10} spread={100} />
-
         <span className="block text-sm font-medium uppercase tracking-widest text-vale-fg-muted mb-4">
           Section 8 — Closing CTA
         </span>

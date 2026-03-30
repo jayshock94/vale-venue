@@ -1,6 +1,5 @@
 import Container from "@/components/ui/Container";
 import BgShape from "@/components/ui/BgShape";
-import DecorDots from "@/components/ui/DecorDots";
 
 export default function Flexibility() {
   return (
@@ -29,7 +28,6 @@ export default function Flexibility() {
 
           {/* Text column */}
           <div className="relative z-10 order-1 md:order-2">
-            <DecorDots className="-top-4 right-0" count={8} spread={70} />
             <span className="block text-sm font-medium uppercase tracking-widest text-vale-fg-muted mb-3">
               Section 6 — Your Rules, Your Vendors
             </span>

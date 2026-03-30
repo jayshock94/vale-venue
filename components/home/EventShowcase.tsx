@@ -1,7 +1,5 @@
 import Container from "@/components/ui/Container";
 import SectionHeader from "@/components/ui/SectionHeader";
-import DecorDots from "@/components/ui/DecorDots";
-
 const EVENTS = [
   { title: "Weddings & Receptions" },
   { title: "Corporate Events" },
@@ -19,8 +17,6 @@ export default function EventShowcase() {
           title="Show what people have done here"
           description="Photo cards by event type. Proves the space works for everything. Five cards, asymmetric layout."
         />
-
-        <DecorDots className="hidden md:block -top-2 right-20" count={10} spread={100} />
 
         {/* Asymmetric masonry grid */}
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-5">

@@ -1,6 +1,5 @@
 import Container from "@/components/ui/Container";
 import BgShape from "@/components/ui/BgShape";
-import DecorDots from "@/components/ui/DecorDots";
 
 export default function BlankCanvas() {
   return (
@@ -12,7 +11,6 @@ export default function BlankCanvas() {
         <div className="relative grid md:grid-cols-[1fr_1.2fr] gap-10 md:gap-12 items-center">
           {/* Text column */}
           <div className="relative z-10">
-            <DecorDots className="-top-6 -left-4" count={6} spread={60} />
             <span className="block text-sm font-medium uppercase tracking-widest text-vale-fg-muted mb-3">
               Section 2 — The Blank Canvas Pitch
             </span>

@@ -4,7 +4,6 @@ import { useState, useEffect, useRef } from "react";
 import { useChatUI } from "./ChatProvider";
 import { ChatMessages } from "./ChatMessages";
 import { ChatInput } from "./ChatInput";
-import DecorDots from "@/components/ui/DecorDots";
 interface Message {
   id: string;
   role: "user" | "assistant";
@@ -165,7 +164,6 @@ export default function ChatWidget() {
       >
         {/* Header */}
         <div className="relative px-5 pt-5 pb-3 shrink-0">
-          <DecorDots className="top-1 right-1 opacity-30" count={6} spread={50} />
           <div className="flex items-start justify-between">
             <div className="flex items-center gap-3">
               <div className="w-9 h-9 rounded-full bg-vale-accent text-vale-accent-fg flex items-center justify-center shrink-0">
