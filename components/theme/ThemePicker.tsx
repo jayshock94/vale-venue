@@ -11,7 +11,7 @@ import DecorDots from "@/components/ui/DecorDots";
 type Tab = "presets" | "hex" | "name" | "image";
 
 export default function ThemePicker() {
-  const { customColors, setTheme, resetTheme, isCustomTheme, isPickerOpen: isOpen, openPicker, closePicker } = useTheme();
+  const { customColors, setTheme, resetTheme, isCustomTheme, isPickerOpen: isOpen, closePicker } = useTheme();
   const [activeTab, setActiveTab] = useState<Tab>("presets");
 
   useEffect(() => {
@@ -26,26 +26,6 @@ export default function ThemePicker() {
 
   return (
     <>
-      {/* Floating controls */}
-      <div className="fixed bottom-6 right-6 z-40 flex flex-col items-end gap-3">
-        {isCustomTheme && (
-          <button
-            onClick={resetTheme}
-            className="h-10 px-4 rounded-full bg-[#2E2B26] text-[#F3F1EB] text-sm font-medium shadow-lg hover:bg-[#3D3A34] transition-colors"
-          >
-            Reset colors
-          </button>
-        )}
-        <button
-          onClick={() => openPicker()}
-          className="w-12 h-12 rounded-full bg-[#2E2B26] text-[#F3F1EB] flex items-center justify-center shadow-lg hover:scale-105 transition-transform"
-          aria-label="Customize colors"
-          title="Customize colors"
-        >
-          <PaletteIcon />
-        </button>
-      </div>
-
       {/* Backdrop */}
       <div
         className={`fixed inset-0 z-50 bg-black/40 transition-opacity duration-300 ${
@@ -79,13 +59,23 @@ export default function ThemePicker() {
                   Pick your palette and watch the site change.
                 </p>
               </div>
-              <button
-                onClick={() => closePicker()}
-                className="mt-1 w-9 h-9 flex items-center justify-center rounded-full hover:bg-vale-bg-alt transition-colors shrink-0"
-                aria-label="Close"
-              >
-                <CloseIcon />
-              </button>
+              <div className="flex items-center gap-2 shrink-0">
+                {isCustomTheme && (
+                  <button
+                    onClick={resetTheme}
+                    className="mt-1 h-8 px-3 text-xs font-medium rounded-full text-vale-fg-muted hover:bg-vale-bg-alt transition-colors"
+                  >
+                    Reset
+                  </button>
+                )}
+                <button
+                  onClick={() => closePicker()}
+                  className="mt-1 w-9 h-9 flex items-center justify-center rounded-full hover:bg-vale-bg-alt transition-colors"
+                  aria-label="Close"
+                >
+                  <CloseIcon />
+                </button>
+              </div>
             </div>
 
             {/* Pill tabs */}

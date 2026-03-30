@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Cormorant_Garamond, DM_Sans } from "next/font/google";
 import ThemeProvider from "@/components/theme/ThemeProvider";
 import ThemePicker from "@/components/theme/ThemePicker";
+import { ChatProvider } from "@/components/chat/ChatProvider";
+import ChatWidget from "@/components/chat/ChatWidget";
 import Nav from "@/components/layout/Nav";
 import Footer from "@/components/layout/Footer";
 import "./globals.css";
@@ -35,10 +37,13 @@ export default function RootLayout({
     <html lang="en" className={`${heading.variable} ${body.variable}`}>
       <body className="flex flex-col min-h-screen">
         <ThemeProvider>
-          <Nav />
-          <div className="flex-1">{children}</div>
-          <Footer />
-          <ThemePicker />
+          <ChatProvider>
+            <Nav />
+            <div className="flex-1">{children}</div>
+            <Footer />
+            <ThemePicker />
+            <ChatWidget />
+          </ChatProvider>
         </ThemeProvider>
       </body>
     </html>
