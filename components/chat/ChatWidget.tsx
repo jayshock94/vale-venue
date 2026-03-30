@@ -137,10 +137,10 @@ export default function ChatWidget() {
       >
         <div className="relative flex items-center gap-2.5 pl-4 pr-2 py-2 rounded-full bg-vale-surface border border-vale-border shadow-lg hover:shadow-xl hover:border-vale-accent/40 transition-all">
           <span className="text-sm font-medium text-vale-fg whitespace-nowrap">
-            Ask Bobbi&rsquo;s AI
+            Ask Vale
           </span>
           <div className="w-10 h-10 rounded-full bg-vale-accent text-vale-accent-fg flex items-center justify-center shrink-0">
-            <BotIcon />
+            <SparkleIcon />
           </div>
           {/* Pulse dot */}
           <span className="absolute -top-1 -right-1 flex h-3.5 w-3.5">
@@ -172,13 +172,18 @@ export default function ChatWidget() {
         <div className="relative px-5 pt-5 pb-3 shrink-0">
           <DecorDots className="top-1 right-1 opacity-30" count={6} spread={50} />
           <div className="flex items-start justify-between">
-            <div>
-              <h2 className="text-xl font-semibold font-[family-name:var(--font-heading)] leading-tight">
-                Bobbi&rsquo;s Assistant
-              </h2>
-              <p className="text-xs text-vale-fg-muted mt-1">
-                Here to help you plan
-              </p>
+            <div className="flex items-center gap-3">
+              <div className="w-9 h-9 rounded-full bg-vale-accent text-vale-accent-fg flex items-center justify-center shrink-0">
+                <SparkleIcon />
+              </div>
+              <div>
+                <h2 className="text-lg font-semibold font-[family-name:var(--font-heading)] leading-tight">
+                  Vale
+                </h2>
+                <p className="text-xs text-vale-fg-muted mt-0.5">
+                  Bobbi&rsquo;s AI assistant
+                </p>
+              </div>
             </div>
             <button
               onClick={closeChat}
@@ -224,14 +229,10 @@ export default function ChatWidget() {
   );
 }
 
-function BotIcon() {
+function SparkleIcon() {
   return (
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-      <rect x="3" y="11" width="18" height="10" rx="3" />
-      <circle cx="9" cy="16" r="1" fill="currentColor" stroke="none" />
-      <circle cx="15" cy="16" r="1" fill="currentColor" stroke="none" />
-      <path d="M8.5 3.5a3.5 3.5 0 0 1 7 0V11h-7V3.5z" />
-      <line x1="12" y1="0" x2="12" y2="3" />
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M12 2L13.09 8.26L18 6L14.74 10.91L21 12L14.74 13.09L18 18L13.09 15.74L12 22L10.91 15.74L6 18L9.26 13.09L3 12L9.26 10.91L6 6L10.91 8.26L12 2Z" />
     </svg>
   );
 }
