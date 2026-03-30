@@ -7,7 +7,11 @@ import SectionHeader from "@/components/ui/SectionHeader";
 import BgShape from "@/components/ui/BgShape";
 import { useChatUI } from "@/components/chat/ChatProvider";
 
-type Chip = { label: string; content: string };
+type Chip = {
+  label: string;
+  content: string;
+  photos?: string[]; // placeholder image paths
+};
 
 type Item = {
   title: string;
@@ -24,9 +28,9 @@ const ITEMS: Item[] = [
     description:
       "Choose from 60-inch rounds, 8-foot banquet tables, or farmhouse style. We have enough for up to 200 seated guests. Setup and teardown are on us for the first arrangement.",
     chips: [
-      { label: "Table types", content: "60-inch round tables seat 8 comfortably (or 10 cozy). 8-foot banquet tables work for plated dinners or long family-style setups. Farmhouse tables have that rustic, warm vibe and seat 8 per table." },
+      { label: "Table types", content: "60-inch round tables seat 8 comfortably (or 10 cozy). 8-foot banquet tables work for plated dinners or long family-style setups. Farmhouse tables have that rustic, warm vibe and seat 8 per table.", photos: ["/photos/included/tables-round.jpg", "/photos/included/tables-farmhouse.jpg"] },
       { label: "How many?", content: "We have enough tables for up to 200 seated guests in any combination. Most weddings use a mix of rounds for dinner and a few banquet tables for the head table, dessert, or gifts." },
-      { label: "Setup included?", content: "First table arrangement is set up and torn down by us at no extra charge. If you need a flip (ceremony to reception, for example), that's an add-on." },
+      { label: "Upgrades?", content: "Need a ceremony-to-reception flip? That's available as an add-on. You can also rent specialty tables (sweetheart tables, half-rounds) from outside vendors with no markup from us." },
     ],
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-7 h-7">
@@ -42,9 +46,9 @@ const ITEMS: Item[] = [
     description:
       "Cross-back wooden chairs and bentwood chairs are included at no extra cost. Both styles photograph well and work for everything from rustic barn weddings to polished corporate dinners.",
     chips: [
-      { label: "Chair styles", content: "Cross-back chairs have a classic farmhouse look with an X-pattern backrest. Bentwood chairs are sleek, curved, and modern. Both are real wood, not plastic, and photograph beautifully." },
+      { label: "Chair styles", content: "Cross-back chairs have a classic farmhouse look with an X-pattern backrest. Bentwood chairs are sleek, curved, and modern. Both are real wood, not plastic, and photograph beautifully.", photos: ["/photos/included/chairs-crossback.jpg", "/photos/included/chairs-bentwood.jpg"] },
       { label: "How many?", content: "We have enough chairs for up to 350 guests (ceremony style) or 200 seated at tables. You can mix styles if you want different vibes for ceremony vs. reception." },
-      { label: "Cushions?", content: "Chair cushions aren't included but are available as an add-on. Most clients skip them for events under 3 hours and add them for longer seated dinners." },
+      { label: "Upgrades?", content: "Chair cushions are available as an add-on. Most clients skip them for events under 3 hours and add them for longer seated dinners. You can also bring in specialty chairs (ghost chairs, chiavari) from a rental vendor." },
     ],
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-7 h-7">
@@ -61,8 +65,8 @@ const ITEMS: Item[] = [
     description:
       "White or ivory tablecloths for up to 12 tables, included with every rental. If you want colored linens or specialty fabrics, you can bring your own or rent from a vendor.",
     chips: [
-      { label: "What colors?", content: "White and ivory tablecloths are included. If your event colors are specific (dusty rose, sage, navy), you can bring your own linens or rent from a vendor. No restrictions on outside linen rentals." },
-      { label: "Napkins too?", content: "Cloth napkins aren't included in the standard package but are available as an add-on. Most clients either add them through us or pick up disposable ones that match their color scheme." },
+      { label: "What colors?", content: "White and ivory tablecloths are included. If your event colors are specific (dusty rose, sage, navy), you can bring your own linens or rent from a vendor. No restrictions on outside linen rentals.", photos: ["/photos/included/linens-white.jpg", "/photos/included/linens-ivory.jpg"] },
+      { label: "Upgrades?", content: "Cloth napkins, colored linens, specialty fabrics, and runners are all available as add-ons or through outside rental vendors. A second linen setup (for ceremony-to-reception flips) is also an add-on." },
       { label: "Extra setups?", content: "One linen setup is included. If you need a second setup (like flipping from ceremony to reception), that's an add-on. Your coordinator can handle the flip if you have one." },
     ],
     icon: (
@@ -82,7 +86,7 @@ const ITEMS: Item[] = [
     chips: [
       { label: "Bring a DJ?", content: "DJs and live bands can plug directly into the house system. There's an aux input and standard audio hookups. Most DJs bring their own equipment too, and there's plenty of power outlets along every wall." },
       { label: "Mic details", content: "Two wireless handheld mics are included. They work great for toasts, ceremonies, and announcements. If you need a lapel mic or headset, you'd bring your own or have your DJ provide one." },
-      { label: "Outdoor sound?", content: "The built-in speakers cover the indoor space. For outdoor ceremonies or cocktail hours in the parking area, you'd need a portable speaker or your DJ's equipment." },
+      { label: "Upgrades?", content: "Need more mics, a subwoofer, or outdoor speakers? You can rent additional audio equipment through us as an add-on, or bring your own. Most DJs come fully equipped." },
     ],
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-7 h-7">
@@ -100,7 +104,7 @@ const ITEMS: Item[] = [
     chips: [
       { label: "Screen size", content: "It's a large flat-screen TV mounted in a visible spot. Works well for photo slideshows during cocktail hour, a welcome sign as guests arrive, or a schedule board for corporate events." },
       { label: "How to connect", content: "Bring your content on a USB drive for the simplest setup. You can also cast wirelessly from most phones and laptops, or plug in via HDMI." },
-      { label: "Projector?", content: "A projector isn't included but the space works well with one if you bring your own or rent one. The white walls make a decent projection surface, or you can bring a screen." },
+      { label: "Upgrades?", content: "A projector isn't included but the space works well with one. Rent one through us as an add-on or bring your own. The white walls make a decent projection surface, or you can bring a screen." },
     ],
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-7 h-7">
@@ -116,7 +120,7 @@ const ITEMS: Item[] = [
     description:
       "Full commercial kitchen with industrial fridge, freezer, prep counters, and sink. Your caterer can stage, plate, and serve right on-site. No warming trucks needed.",
     chips: [
-      { label: "What's in it?", content: "Commercial-grade refrigerator, standalone freezer, stainless prep counters, a triple-basin sink, and plenty of counter space. Your caterer can do full prep and plating on-site." },
+      { label: "What's in it?", content: "Commercial-grade refrigerator, standalone freezer, stainless prep counters, a triple-basin sink, and plenty of counter space. Your caterer can do full prep and plating on-site.", photos: ["/photos/included/kitchen-overview.jpg", "/photos/included/kitchen-prep.jpg"] },
       { label: "Can I cook?", content: "There's no stove or oven, so full cooking isn't possible on-site. But caterers use it for staging, warming (bring chafing dishes), plating, and storing food. Some clients bring in food trucks for hot food." },
       { label: "Alcohol?", content: "You can serve alcohol at your event. If alcohol is being served, you'll need a licensed bartender and security guard on-site. That's a Utah requirement, not a Vale rule." },
     ],
@@ -135,7 +139,7 @@ const ITEMS: Item[] = [
     description:
       "Two private suites for the wedding party, performers, or VIPs to get ready, decompress, or store personal items. Each has mirrors, seating, and good lighting.",
     chips: [
-      { label: "What's inside?", content: "Each suite has full-length mirrors, comfortable seating, good lighting, and enough space for a small group to get ready together. Think of it as a dressing room, not a bedroom." },
+      { label: "What's inside?", content: "Each suite has full-length mirrors, comfortable seating, good lighting, and enough space for a small group to get ready together. Think of it as a dressing room, not a bedroom.", photos: ["/photos/included/suite-bride.jpg", "/photos/included/suite-groom.jpg"] },
       { label: "Both included?", content: "Both suites are included with every rental. One is typically used by the bride's party, the other by the groom's. For corporate events, they work as green rooms or breakout spaces." },
       { label: "Can I decorate?", content: "You can decorate the suites however you want. Some brides set up a mimosa bar, hang robes, or bring in a hair and makeup station. Just no permanent changes to the walls or fixtures." },
     ],
@@ -154,7 +158,7 @@ const ITEMS: Item[] = [
     description:
       "Over 200 private parking spots right outside the venue. No shuttles, no street parking headaches. Guests walk straight from their car to your event.",
     chips: [
-      { label: "Where exactly?", content: "The parking lot wraps around the south and east sides of the building. Guests walk directly from their car to the entrance. It's all private, well-lit, and paved." },
+      { label: "Where exactly?", content: "The parking lot wraps around the south and east sides of the building. Guests walk directly from their car to the entrance. It's all private, well-lit, and paved.", photos: ["/photos/included/parking-aerial.jpg"] },
       { label: "Food trucks?", content: "The south parking area is perfect for food trucks. Easy truck access right off the road, power hookups available, and guests can walk straight from the trucks back inside." },
       { label: "Accessibility", content: "ADA-accessible parking spots are available near the main entrance. The venue itself is single-level with no stairs, so wheelchair and mobility access is straightforward throughout." },
     ],
@@ -182,7 +186,9 @@ export default function Included() {
     setActiveChip(null);
   };
 
-  const activeChipContent = activeItem?.chips.find((c) => c.label === activeChip)?.content;
+  const activeChipData = activeItem?.chips.find((c) => c.label === activeChip);
+  const activeChipContent = activeChipData?.content;
+  const activeChipPhotos = activeChipData?.photos;
 
   return (
     <section className="relative py-20 md:py-32 bg-vale-bg-alt overflow-hidden">
@@ -259,6 +265,22 @@ export default function Included() {
                   <p className="text-sm text-vale-fg leading-relaxed">
                     {activeChipContent || activeItem.description}
                   </p>
+
+                  {/* Photos (when chip has them) */}
+                  {activeChipPhotos && activeChipPhotos.length > 0 && (
+                    <div className={`mt-4 grid gap-2.5 ${activeChipPhotos.length === 1 ? "grid-cols-1" : "grid-cols-2"}`}>
+                      {activeChipPhotos.map((src) => (
+                        <div
+                          key={src}
+                          className="aspect-[4/3] rounded-lg bg-vale-bg-alt border border-vale-border flex items-center justify-center overflow-hidden"
+                        >
+                          <span className="text-vale-fg-muted text-[11px] tracking-wide uppercase">
+                            [Photo placeholder]
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+                  )}
                 </div>
 
                 {/* Assistive chips */}
