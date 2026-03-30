@@ -126,16 +126,28 @@ export default function ChatWidget() {
 
   return (
     <>
-      {/* FAB */}
+      {/* Bot trigger */}
       <button
         onClick={toggleChat}
-        className={`fixed bottom-6 right-6 z-40 w-14 h-14 rounded-full bg-vale-accent text-vale-accent-fg flex items-center justify-center shadow-lg hover:scale-105 transition-all duration-300 ${
+        className={`fixed bottom-6 right-6 z-40 group transition-all duration-300 ${
           isChatOpen ? "scale-0 opacity-0 pointer-events-none" : "scale-100 opacity-100"
         }`}
         aria-label="Chat with Bobbi's Assistant"
         title="Chat with Bobbi's Assistant"
       >
-        <ChatIcon />
+        <div className="relative flex items-center gap-2.5 pl-4 pr-2 py-2 rounded-full bg-vale-surface border border-vale-border shadow-lg hover:shadow-xl hover:border-vale-accent/40 transition-all">
+          <span className="text-sm font-medium text-vale-fg whitespace-nowrap">
+            Ask Bobbi&rsquo;s AI
+          </span>
+          <div className="w-10 h-10 rounded-full bg-vale-accent text-vale-accent-fg flex items-center justify-center shrink-0">
+            <BotIcon />
+          </div>
+          {/* Pulse dot */}
+          <span className="absolute -top-1 -right-1 flex h-3.5 w-3.5">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-vale-accent opacity-50" />
+            <span className="relative inline-flex rounded-full h-3.5 w-3.5 bg-vale-accent border-2 border-vale-surface" />
+          </span>
+        </div>
       </button>
 
       {/* Backdrop (mobile only) */}
@@ -212,10 +224,14 @@ export default function ChatWidget() {
   );
 }
 
-function ChatIcon() {
+function BotIcon() {
   return (
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <rect x="3" y="11" width="18" height="10" rx="3" />
+      <circle cx="9" cy="16" r="1" fill="currentColor" stroke="none" />
+      <circle cx="15" cy="16" r="1" fill="currentColor" stroke="none" />
+      <path d="M8.5 3.5a3.5 3.5 0 0 1 7 0V11h-7V3.5z" />
+      <line x1="12" y1="0" x2="12" y2="3" />
     </svg>
   );
 }
