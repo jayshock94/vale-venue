@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useTheme } from "@/components/theme/ThemeProvider";
 
 const NAV_LINKS = [
   { href: "/", label: "Home" },
@@ -16,6 +17,7 @@ const NAV_LINKS = [
 export default function Nav() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const pathname = usePathname();
+  const { openPicker, isCustomTheme } = useTheme();
 
   // Close mobile menu on route change
   useEffect(() => {
@@ -60,6 +62,27 @@ export default function Nav() {
               {label}
             </Link>
           ))}
+          <button
+            onClick={openPicker}
+            className={`relative p-2 rounded-full transition-colors ${
+              isCustomTheme
+                ? "text-vale-accent hover:bg-vale-bg-alt"
+                : "text-vale-fg-muted hover:text-vale-fg hover:bg-vale-bg-alt"
+            }`}
+            aria-label="Customize colors"
+            title="Customize colors"
+          >
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+              <circle cx="13.5" cy="6.5" r="2" />
+              <circle cx="17.5" cy="10.5" r="2" />
+              <circle cx="8.5" cy="7.5" r="2" />
+              <circle cx="6.5" cy="12.5" r="2" />
+              <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z" />
+            </svg>
+            {isCustomTheme && (
+              <span className="absolute -top-0.5 -right-0.5 w-2.5 h-2.5 rounded-full bg-vale-accent border-2 border-vale-bg" />
+            )}
+          </button>
           <Link
             href="/contact"
             className="ml-2 inline-flex items-center justify-center px-5 py-2.5 text-sm font-medium uppercase tracking-wide rounded-md bg-vale-accent text-vale-accent-fg hover:bg-vale-accent-hover transition-colors"
@@ -122,13 +145,29 @@ export default function Nav() {
               {label}
             </Link>
           ))}
-          <div className="mt-6 pt-6 border-t border-vale-border">
+          <div className="mt-6 pt-6 border-t border-vale-border space-y-3">
             <Link
               href="/contact"
               className="block w-full text-center py-3 text-sm font-medium uppercase tracking-wide rounded-md bg-vale-accent text-vale-accent-fg hover:bg-vale-accent-hover transition-colors"
             >
               Check Availability
             </Link>
+            <button
+              onClick={() => { openPicker(); setMobileOpen(false); }}
+              className="flex items-center gap-3 w-full py-3 text-sm text-vale-fg-muted hover:text-vale-fg transition-colors"
+            >
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                <circle cx="13.5" cy="6.5" r="2" />
+                <circle cx="17.5" cy="10.5" r="2" />
+                <circle cx="8.5" cy="7.5" r="2" />
+                <circle cx="6.5" cy="12.5" r="2" />
+                <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z" />
+              </svg>
+              Customize Colors
+              {isCustomTheme && (
+                <span className="w-2 h-2 rounded-full bg-vale-accent" />
+              )}
+            </button>
           </div>
         </div>
       </div>

@@ -154,3 +154,9 @@ html {
   background-color: var(--vale-accent);
   color: var(--vale-accent-fg);
 }
+
+/* Chat typing indicator */
+@keyframes chat-dot-bounce {
+  0%, 60%, 100% { transform: translateY(0); }
+  30% { transform: translateY(-6px); }
+}
