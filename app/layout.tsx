@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Cormorant_Garamond, DM_Sans } from "next/font/google";
 import ThemeProvider from "@/components/theme/ThemeProvider";
 import ThemePicker from "@/components/theme/ThemePicker";
@@ -21,6 +21,13 @@ const body = DM_Sans({
   weight: ["300", "400", "500", "700"],
   display: "swap",
 });
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
+};
 
 export const metadata: Metadata = {
   title: "The Vale | Event Venue in Provo, Utah",

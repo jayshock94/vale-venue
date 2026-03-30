@@ -41,7 +41,8 @@ export function ChatInput({
         onKeyDown={handleKeyDown}
         placeholder="Ask about The Vale..."
         rows={1}
-        className="flex-1 resize-none px-4 py-3 rounded-xl border border-vale-border bg-vale-bg text-sm leading-relaxed focus:outline-none focus:ring-2 focus:ring-vale-accent/30 focus:border-vale-accent"
+        inputMode="text"
+        className="flex-1 resize-none px-4 py-3 rounded-xl border border-vale-border bg-vale-bg text-base md:text-sm leading-relaxed focus:outline-none focus:ring-2 focus:ring-vale-accent/30 focus:border-vale-accent"
         disabled={isLoading}
       />
       <button

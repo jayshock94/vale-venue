@@ -33,7 +33,7 @@ export default function Included() {
             {ITEMS.map(({ title, detail }) => (
               <div
                 key={title}
-                className="bg-vale-surface rounded-xl p-5 md:p-6 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300"
+                className="bg-vale-surface rounded-xl p-5 md:p-6 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 border-t-2 border-vale-accent"
               >
                 <h3 className="font-medium text-sm md:text-base">{title}</h3>
                 <p className="text-sm text-vale-fg-muted mt-1.5 leading-relaxed">

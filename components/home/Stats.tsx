@@ -26,16 +26,18 @@ export default function Stats() {
             Quick-scan stats. Four numbers answering the questions people ask
             first.
           </p>
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-12 md:gap-16">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
             {STATS.map(({ number, unit, label }) => (
-              <div key={label} className="text-center">
-                <div className="font-[family-name:var(--font-heading)] text-5xl md:text-6xl font-medium text-vale-accent leading-none">
-                  {number}
+              <div key={label} className="flex flex-col items-center text-center">
+                <div className="w-28 h-28 md:w-32 md:h-32 rounded-full border-2 border-vale-accent/20 flex flex-col items-center justify-center">
+                  <div className="font-[family-name:var(--font-heading)] text-4xl md:text-5xl font-medium text-vale-accent leading-none">
+                    {number}
+                  </div>
+                  <div className="text-[10px] uppercase tracking-widest text-vale-fg-muted mt-1.5">
+                    {unit}
+                  </div>
                 </div>
-                <div className="text-xs uppercase tracking-widest text-vale-fg-muted mt-3">
-                  {unit}
-                </div>
-                <div className="text-sm text-vale-fg-muted mt-2">{label}</div>
+                <div className="text-sm text-vale-fg-muted mt-3">{label}</div>
               </div>
             ))}
           </div>

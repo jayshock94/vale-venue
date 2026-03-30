@@ -100,14 +100,29 @@ export default function ChatWidget() {
     }
   };
 
-  // Lock body scroll on mobile when open
+  // iOS-safe body scroll lock: position-fixed pattern
+  const scrollYRef = useRef(0);
   useEffect(() => {
     if (isChatOpen) {
+      scrollYRef.current = window.scrollY;
+      document.body.style.position = "fixed";
+      document.body.style.top = `-${scrollYRef.current}px`;
+      document.body.style.left = "0";
+      document.body.style.right = "0";
       document.body.style.overflow = "hidden";
     } else {
+      document.body.style.position = "";
+      document.body.style.top = "";
+      document.body.style.left = "";
+      document.body.style.right = "";
       document.body.style.overflow = "";
+      window.scrollTo(0, scrollYRef.current);
     }
     return () => {
+      document.body.style.position = "";
+      document.body.style.top = "";
+      document.body.style.left = "";
+      document.body.style.right = "";
       document.body.style.overflow = "";
     };
   }, [isChatOpen]);
@@ -154,7 +169,7 @@ export default function ChatWidget() {
 
       {/* Chat panel */}
       <div
-        className={`fixed z-50 bg-vale-surface shadow-2xl transition-all duration-300 ease-out overflow-hidden flex flex-col
+        className={`fixed z-50 bg-vale-surface shadow-2xl transition-all duration-300 ease-out overflow-hidden flex flex-col overscroll-contain
           inset-4 top-16 rounded-3xl
           md:inset-auto md:bottom-6 md:right-6 md:w-[400px] md:h-[min(600px,70vh)] md:rounded-2xl
           ${isChatOpen

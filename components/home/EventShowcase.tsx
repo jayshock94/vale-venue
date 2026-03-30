@@ -34,7 +34,7 @@ export default function EventShowcase() {
                   [Photo needed]
                 </span>
               </div>
-              <div className="absolute inset-0 bg-gradient-to-t from-vale-fg/80 via-vale-fg/30 to-transparent opacity-80 group-hover:opacity-90 transition-opacity" />
+              <div className="absolute inset-0 bg-gradient-to-t from-vale-accent/50 via-vale-fg/25 to-transparent opacity-80 group-hover:opacity-90 transition-opacity" />
               <div className="absolute bottom-0 left-0 right-0 p-5 md:p-6">
                 <h3 className="text-lg md:text-xl font-[family-name:var(--font-heading)] font-medium text-white">
                   {title}

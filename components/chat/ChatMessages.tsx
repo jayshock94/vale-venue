@@ -51,7 +51,7 @@ export function ChatMessages({
   );
 
   return (
-    <div ref={scrollRef} className="flex-1 overflow-y-auto px-4 py-4 space-y-3">
+    <div ref={scrollRef} className="flex-1 overflow-y-auto overscroll-contain px-4 py-4 space-y-3">
       {/* Welcome message */}
       <ChatBubble role="assistant" content={WELCOME_TEXT} />
 
