@@ -142,11 +142,6 @@ export default function ChatWidget() {
           <div className="w-10 h-10 rounded-full bg-vale-accent text-vale-accent-fg flex items-center justify-center shrink-0">
             <SparkleIcon />
           </div>
-          {/* Pulse dot */}
-          <span className="absolute -top-1 -right-1 flex h-3.5 w-3.5">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-vale-accent opacity-50" />
-            <span className="relative inline-flex rounded-full h-3.5 w-3.5 bg-vale-accent border-2 border-vale-surface" />
-          </span>
         </div>
       </button>
 
