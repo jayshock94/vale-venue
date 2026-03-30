@@ -13,7 +13,7 @@ interface ChatMessage {
 }
 
 const WELCOME_TEXT =
-  "Hi there! I'm Bobbi's assistant. I can help with questions about The Vale, pricing, what's included, and more. What are you planning?";
+  "Hey! I'm Vale, Bobbi's AI assistant for The Vale venue. I know the space inside and out and can help with pricing, what's included, catering, capacity, and anything else about the venue. What are you planning?";
 
 export function ChatMessages({
   messages,

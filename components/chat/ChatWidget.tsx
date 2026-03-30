@@ -126,16 +126,23 @@ export default function ChatWidget() {
 
   return (
     <>
-      {/* FAB */}
+      {/* Bot trigger */}
       <button
         onClick={toggleChat}
-        className={`fixed bottom-6 right-6 z-40 w-14 h-14 rounded-full bg-vale-accent text-vale-accent-fg flex items-center justify-center shadow-lg hover:scale-105 transition-all duration-300 ${
+        className={`fixed bottom-6 right-6 z-40 group transition-all duration-300 ${
           isChatOpen ? "scale-0 opacity-0 pointer-events-none" : "scale-100 opacity-100"
         }`}
         aria-label="Chat with Bobbi's Assistant"
         title="Chat with Bobbi's Assistant"
       >
-        <ChatIcon />
+        <div className="relative flex items-center gap-2.5 pl-4 pr-2 py-2 rounded-full bg-vale-surface border border-vale-border shadow-lg hover:shadow-xl hover:border-vale-accent/40 transition-all">
+          <span className="text-sm font-medium text-vale-fg whitespace-nowrap">
+            Ask Vale
+          </span>
+          <div className="w-10 h-10 rounded-full bg-vale-accent text-vale-accent-fg flex items-center justify-center shrink-0">
+            <SparkleIcon />
+          </div>
+        </div>
       </button>
 
       {/* Backdrop (mobile only) */}
@@ -160,13 +167,18 @@ export default function ChatWidget() {
         <div className="relative px-5 pt-5 pb-3 shrink-0">
           <DecorDots className="top-1 right-1 opacity-30" count={6} spread={50} />
           <div className="flex items-start justify-between">
-            <div>
-              <h2 className="text-xl font-semibold font-[family-name:var(--font-heading)] leading-tight">
-                Bobbi&rsquo;s Assistant
-              </h2>
-              <p className="text-xs text-vale-fg-muted mt-1">
-                Here to help you plan
-              </p>
+            <div className="flex items-center gap-3">
+              <div className="w-9 h-9 rounded-full bg-vale-accent text-vale-accent-fg flex items-center justify-center shrink-0">
+                <SparkleIcon />
+              </div>
+              <div>
+                <h2 className="text-lg font-semibold font-[family-name:var(--font-heading)] leading-tight">
+                  Vale
+                </h2>
+                <p className="text-xs text-vale-fg-muted mt-0.5">
+                  Bobbi&rsquo;s AI assistant
+                </p>
+              </div>
             </div>
             <button
               onClick={closeChat}
@@ -212,10 +224,10 @@ export default function ChatWidget() {
   );
 }
 
-function ChatIcon() {
+function SparkleIcon() {
   return (
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M12 2L13.09 8.26L18 6L14.74 10.91L21 12L14.74 13.09L18 18L13.09 15.74L12 22L10.91 15.74L6 18L9.26 13.09L3 12L9.26 10.91L6 6L10.91 8.26L12 2Z" />
     </svg>
   );
 }

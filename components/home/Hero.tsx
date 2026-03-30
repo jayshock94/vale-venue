@@ -1,60 +1,54 @@
 "use client";
 
+import Link from "next/link";
 import { useTheme } from "@/components/theme/ThemeProvider";
-import DecorDots from "@/components/ui/DecorDots";
 
 export default function Hero() {
   const { openPicker } = useTheme();
 
   return (
-    <section className="relative overflow-hidden">
-      {/* Photo placeholder */}
-      <div className="absolute inset-0 bg-vale-bg-alt flex items-center justify-center">
-        <span className="text-vale-fg-muted text-sm tracking-wide uppercase">
-          [Hero photo needed]
-        </span>
-      </div>
+    <section className="relative min-h-[85vh] md:min-h-[90vh] flex items-end overflow-hidden">
+      {/* Background — will be replaced with actual photo */}
+      <div className="absolute inset-0 bg-vale-bg-alt" />
+      <div className="absolute inset-0 bg-gradient-to-t from-vale-fg/70 via-vale-fg/30 to-transparent" />
 
-      {/* Gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-vale-fg/50 via-vale-fg/25 to-vale-fg/60" />
-
-      {/* Decorative dots */}
-      <DecorDots className="top-8 right-8 md:top-12 md:right-16 hidden md:block" count={16} spread={160} />
-      <DecorDots className="bottom-28 left-8 md:left-16 opacity-60" count={8} spread={80} />
-
-      {/* Content */}
-      <div className="relative mx-auto max-w-6xl px-5 md:px-8 py-32 md:py-44 lg:py-52">
-        <div className="max-w-2xl">
-          {/* Eyebrow */}
-          <span className="inline-block text-sm font-medium uppercase tracking-widest text-white/50 mb-5">
+      {/* Content pinned to bottom */}
+      <div className="relative w-full mx-auto max-w-6xl px-5 md:px-8 pb-20 md:pb-24 pt-32">
+        <div className="max-w-xl">
+          <span className="text-xs font-medium uppercase tracking-[0.2em] text-white/50">
             Event Venue &middot; Provo, Utah
           </span>
 
-          {/* Headline */}
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-white leading-tight">
-            First impression. One bold headline.
+          <h1 className="mt-4 text-[2.5rem] md:text-5xl lg:text-6xl font-[family-name:var(--font-heading)] font-semibold text-white leading-[1.1]">
+            Your event.{" "}
+            <span className="block">Your way.</span>
           </h1>
 
-          {/* Subtext */}
-          <p className="mt-5 text-lg md:text-xl text-white/80 leading-relaxed max-w-lg">
-            Full-width photo with overlay. The visitor should immediately know
-            what The Vale is, where it is, and feel something about it.
+          <p className="mt-5 text-base md:text-lg text-white/75 leading-relaxed max-w-md">
+            6,500 sq ft of open space in Provo. Your caterer, your vendors, your
+            rules. We just make it easy.
           </p>
 
-          {/* CTAs */}
-          <div className="mt-10 flex flex-wrap gap-4">
+          <div className="mt-8 flex flex-col sm:flex-row gap-3">
+            <Link
+              href="/brochure"
+              className="inline-flex items-center justify-center px-7 py-3.5 rounded-md bg-vale-accent text-vale-accent-fg text-sm uppercase tracking-wide font-medium hover:bg-vale-accent-hover transition-colors"
+            >
+              Build Your Brochure
+            </Link>
             <button
               onClick={openPicker}
-              className="px-8 py-4 rounded-md bg-vale-accent text-vale-accent-fg border border-vale-accent text-sm uppercase tracking-wide font-medium hover:bg-vale-accent-hover hover:border-vale-accent-hover transition-colors shadow-md"
+              className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-md bg-white/10 backdrop-blur-sm text-white border border-white/20 text-sm uppercase tracking-wide font-medium hover:bg-white/20 transition-colors"
             >
-              See it in your colors
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                <circle cx="13.5" cy="6.5" r="2" />
+                <circle cx="17.5" cy="10.5" r="2" />
+                <circle cx="8.5" cy="7.5" r="2" />
+                <circle cx="6.5" cy="12.5" r="2" />
+                <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z" />
+              </svg>
+              See It in Your Colors
             </button>
-            <a
-              href="/brochure"
-              className="px-8 py-4 rounded-md bg-vale-surface text-vale-fg border border-vale-border text-sm uppercase tracking-wide font-medium hover:bg-vale-bg-alt transition-colors shadow-md"
-            >
-              Build your brochure
-            </a>
           </div>
         </div>
       </div>
@@ -62,13 +56,13 @@ export default function Hero() {
       {/* Curved bottom edge */}
       <div className="absolute bottom-0 left-0 right-0">
         <svg
-          viewBox="0 0 1440 60"
+          viewBox="0 0 1440 48"
           fill="none"
           preserveAspectRatio="none"
-          className="w-full h-8 md:h-12 block"
+          className="w-full h-6 md:h-10 block"
         >
           <path
-            d="M0 60V20C360 0 720 0 1080 20C1260 30 1380 45 1440 60V60H0Z"
+            d="M0 48V16C360 0 720 0 1080 16C1260 24 1380 36 1440 48H0Z"
             className="fill-vale-bg"
           />
         </svg>

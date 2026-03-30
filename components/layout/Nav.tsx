@@ -7,10 +7,8 @@ import { useTheme } from "@/components/theme/ThemeProvider";
 
 const NAV_LINKS = [
   { href: "/", label: "Home" },
-  { href: "/brochure", label: "Brochure" },
   { href: "/space", label: "The Space" },
   { href: "/pricing", label: "Pricing" },
-  { href: "/gallery", label: "Gallery" },
   { href: "/contact", label: "Contact" },
 ];
 
@@ -84,10 +82,10 @@ export default function Nav() {
             )}
           </button>
           <Link
-            href="/contact"
+            href="/brochure"
             className="ml-2 inline-flex items-center justify-center px-5 py-2.5 text-sm font-medium uppercase tracking-wide rounded-md bg-vale-accent text-vale-accent-fg hover:bg-vale-accent-hover transition-colors"
           >
-            Check Availability
+            Build Your Brochure
           </Link>
         </div>
 
@@ -147,10 +145,10 @@ export default function Nav() {
           ))}
           <div className="mt-6 pt-6 border-t border-vale-border space-y-3">
             <Link
-              href="/contact"
+              href="/brochure"
               className="block w-full text-center py-3 text-sm font-medium uppercase tracking-wide rounded-md bg-vale-accent text-vale-accent-fg hover:bg-vale-accent-hover transition-colors"
             >
-              Check Availability
+              Build Your Brochure
             </Link>
             <button
               onClick={() => { openPicker(); setMobileOpen(false); }}
