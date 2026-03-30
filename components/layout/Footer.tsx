@@ -23,7 +23,7 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2.5">
               {[
-                { href: "/your-vale", label: "Your Vale" },
+                { href: "/brochure", label: "Brochure" },
                 { href: "/space", label: "The Space" },
                 { href: "/pricing", label: "Pricing" },
                 { href: "/gallery", label: "Gallery" },
