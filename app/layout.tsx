@@ -3,6 +3,7 @@ import { Cormorant_Garamond, DM_Sans } from "next/font/google";
 import ThemeProvider from "@/components/theme/ThemeProvider";
 import ThemePicker from "@/components/theme/ThemePicker";
 import { ChatProvider } from "@/components/chat/ChatProvider";
+import { BrochureProvider } from "@/components/brochure/BrochureProvider";
 import ChatWidget from "@/components/chat/ChatWidget";
 import Nav from "@/components/layout/Nav";
 import Footer from "@/components/layout/Footer";
@@ -44,13 +45,15 @@ export default function RootLayout({
     <html lang="en" className={`${heading.variable} ${body.variable} overflow-x-hidden`}>
       <body className="flex flex-col min-h-screen overflow-x-hidden">
         <ThemeProvider>
-          <ChatProvider>
-            <Nav />
-            <div className="flex-1">{children}</div>
-            <Footer />
-            <ThemePicker />
-            <ChatWidget />
-          </ChatProvider>
+          <BrochureProvider>
+            <ChatProvider>
+              <Nav />
+              <div className="flex-1">{children}</div>
+              <Footer />
+              <ThemePicker />
+              <ChatWidget />
+            </ChatProvider>
+          </BrochureProvider>
         </ThemeProvider>
       </body>
     </html>

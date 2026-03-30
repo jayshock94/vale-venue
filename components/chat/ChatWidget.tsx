@@ -2,8 +2,40 @@
 
 import { useState, useEffect, useRef } from "react";
 import { useChatUI } from "./ChatProvider";
+import { useBrochure } from "@/components/brochure/BrochureProvider";
 import { ChatMessages } from "./ChatMessages";
 import { ChatInput } from "./ChatInput";
+import type { BrochureItem } from "@/lib/brochure/brochure-store";
+
+// Parse and strip brochure markers from assistant text
+function parseBrochureMarkers(text: string) {
+  const adds: BrochureItem[] = [];
+  const removes: string[] = [];
+
+  const addRegex = /\[BROCHURE_ADD:([^|]+)\|([^|]+)\|([^\]]+)\]/g;
+  const removeRegex = /\[BROCHURE_REMOVE:([^\]]+)\]/g;
+
+  let match;
+  while ((match = addRegex.exec(text)) !== null) {
+    adds.push({
+      id: match[1].trim(),
+      label: match[2].trim(),
+      category: match[3].trim() as BrochureItem["category"],
+    });
+  }
+  while ((match = removeRegex.exec(text)) !== null) {
+    removes.push(match[1].trim());
+  }
+
+  const cleaned = text
+    .replace(addRegex, "")
+    .replace(removeRegex, "")
+    .replace(/\n{3,}/g, "\n\n")
+    .trim();
+
+  return { cleaned, adds, removes };
+}
+
 interface Message {
   id: string;
   role: "user" | "assistant";
@@ -13,12 +45,27 @@ interface Message {
 
 export default function ChatWidget() {
   const { isChatOpen, toggleChat, closeChat, consumePendingMessage } = useChatUI();
+  const { addItem, removeItem, itemCount, lastAction, clearLastAction } = useBrochure();
   const [input, setInput] = useState("");
   const [messages, setMessages] = useState<Message[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [toast, setToast] = useState<string | null>(null);
   const messagesRef = useRef<Message[]>([]);
   const hasSentPending = useRef(false);
+
+  // Show toast when brochure action happens
+  useEffect(() => {
+    if (lastAction) {
+      const msg = lastAction.type === "add"
+        ? `Added "${lastAction.label}" to brochure`
+        : `Removed "${lastAction.label}" from brochure`;
+      setToast(msg);
+      clearLastAction();
+      const timer = setTimeout(() => setToast(null), 3000);
+      return () => clearTimeout(timer);
+    }
+  }, [lastAction, clearLastAction]);
 
   // Send pending message when chat opens with one
   useEffect(() => {
@@ -108,6 +155,20 @@ export default function ChatWidget() {
           }
         }
       }
+
+      // Process brochure markers from the final response
+      if (assistantText) {
+        const { cleaned, adds, removes } = parseBrochureMarkers(assistantText);
+        if (adds.length > 0 || removes.length > 0) {
+          adds.forEach((item) => addItem(item));
+          removes.forEach((id) => removeItem(id));
+          // Update displayed text with markers stripped
+          messagesRef.current = messagesRef.current.map((m) =>
+            m.id === assistantId ? { ...m, content: cleaned } : m
+          );
+          setMessages([...messagesRef.current]);
+        }
+      }
     } catch (err) {
       setError("Something went wrong. Please try again.");
       console.error("Chat error:", err);
@@ -172,6 +233,11 @@ export default function ChatWidget() {
           <div className="w-10 h-10 rounded-full bg-vale-accent text-vale-accent-fg flex items-center justify-center shrink-0">
             <SparkleIcon />
           </div>
+          {itemCount > 0 && (
+            <span className="absolute -top-2 -left-1 min-w-[22px] h-[22px] flex items-center justify-center rounded-full bg-vale-fg text-vale-bg text-[11px] font-bold px-1.5 border-2 border-vale-surface">
+              {itemCount}
+            </span>
+          )}
         </div>
       </button>
 
@@ -236,6 +302,15 @@ export default function ChatWidget() {
         {error && (
           <div className="px-5 py-2 text-xs text-red-600 shrink-0">
             Something went wrong. Please try again.
+          </div>
+        )}
+
+        {/* Toast */}
+        {toast && (
+          <div className="absolute bottom-16 left-4 right-4 z-10 flex justify-center pointer-events-none">
+            <div className="bg-vale-fg text-vale-bg text-xs font-medium px-4 py-2 rounded-full shadow-lg">
+              {toast}
+            </div>
           </div>
         )}
 

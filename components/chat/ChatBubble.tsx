@@ -68,7 +68,12 @@ export function ChatBubble({
   content?: string;
 }) {
   const isUser = role === "user";
-  const text = content ?? "";
+  // Strip any brochure markers that may appear during streaming
+  const text = (content ?? "")
+    .replace(/\[BROCHURE_ADD:[^\]]+\]/g, "")
+    .replace(/\[BROCHURE_REMOVE:[^\]]+\]/g, "")
+    .replace(/\n{3,}/g, "\n\n")
+    .trim();
 
   if (!text) return null;
 
