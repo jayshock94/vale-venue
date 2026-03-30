@@ -12,12 +12,28 @@ interface Message {
 }
 
 export default function ChatWidget() {
-  const { isChatOpen, toggleChat, closeChat } = useChatUI();
+  const { isChatOpen, toggleChat, closeChat, consumePendingMessage } = useChatUI();
   const [input, setInput] = useState("");
   const [messages, setMessages] = useState<Message[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const messagesRef = useRef<Message[]>([]);
+  const hasSentPending = useRef(false);
+
+  // Send pending message when chat opens with one
+  useEffect(() => {
+    if (isChatOpen && !hasSentPending.current) {
+      const pending = consumePendingMessage();
+      if (pending) {
+        hasSentPending.current = true;
+        sendMessage(pending);
+      }
+    }
+    if (!isChatOpen) {
+      hasSentPending.current = false;
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isChatOpen]);
 
   const sendMessage = async (text: string) => {
     if (!text.trim()) return;
