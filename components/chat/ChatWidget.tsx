@@ -167,7 +167,7 @@ export default function ChatWidget() {
       >
         <div className="relative flex items-center gap-2.5 pl-4 pr-2 py-2 rounded-full bg-vale-surface border border-vale-border shadow-lg hover:shadow-xl hover:border-vale-accent/40 transition-all">
           <span className="text-sm font-medium text-vale-fg whitespace-nowrap">
-            Ask Vale
+            Ask Val
           </span>
           <div className="w-10 h-10 rounded-full bg-vale-accent text-vale-accent-fg flex items-center justify-center shrink-0">
             <SparkleIcon />
@@ -202,7 +202,7 @@ export default function ChatWidget() {
               </div>
               <div>
                 <h2 className="text-lg font-semibold font-[family-name:var(--font-heading)] leading-tight">
-                  Vale
+                  Val
                 </h2>
                 <p className="text-xs text-vale-fg-muted mt-0.5">
                   Bobbi&rsquo;s AI assistant
