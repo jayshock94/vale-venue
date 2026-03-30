@@ -19,14 +19,13 @@ import {
 } from "@/lib/theme-engine";
 
 type ThemeContextValue = {
-  /** Current custom colors, or null if using default theme */
   customColors: ThemeColors | null;
-  /** Apply a custom theme from three colors */
   setTheme: (colors: ThemeColors) => void;
-  /** Reset to the default Vale theme */
   resetTheme: () => void;
-  /** Whether a custom theme is currently active */
   isCustomTheme: boolean;
+  isPickerOpen: boolean;
+  openPicker: () => void;
+  closePicker: () => void;
 };
 
 const ThemeContext = createContext<ThemeContextValue | null>(null);
@@ -41,8 +40,8 @@ export function useTheme(): ThemeContextValue {
 
 export default function ThemeProvider({ children }: { children: ReactNode }) {
   const [customColors, setCustomColors] = useState<ThemeColors | null>(null);
+  const [isPickerOpen, setIsPickerOpen] = useState(false);
 
-  // Restore theme from session on mount
   useEffect(() => {
     const stored = loadThemeFromSession();
     if (stored) {
@@ -65,6 +64,9 @@ export default function ThemeProvider({ children }: { children: ReactNode }) {
     setCustomColors(null);
   }, []);
 
+  const openPicker = useCallback(() => setIsPickerOpen(true), []);
+  const closePicker = useCallback(() => setIsPickerOpen(false), []);
+
   return (
     <ThemeContext.Provider
       value={{
@@ -72,6 +74,9 @@ export default function ThemeProvider({ children }: { children: ReactNode }) {
         setTheme,
         resetTheme,
         isCustomTheme: customColors !== null,
+        isPickerOpen,
+        openPicker,
+        closePicker,
       }}
     >
       {children}

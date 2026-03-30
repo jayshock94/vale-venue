@@ -1,6 +1,11 @@
+"use client";
+
+import { useTheme } from "@/components/theme/ThemeProvider";
 import DecorDots from "@/components/ui/DecorDots";
 
 export default function Hero() {
+  const { openPicker } = useTheme();
+
   return (
     <section className="relative overflow-hidden">
       {/* Photo placeholder */}
@@ -15,29 +20,41 @@ export default function Hero() {
 
       {/* Decorative dots */}
       <DecorDots className="top-8 right-8 md:top-12 md:right-16 hidden md:block" count={16} spread={160} />
-      <DecorDots className="bottom-24 left-8 md:left-16 opacity-60" count={8} spread={80} />
+      <DecorDots className="bottom-28 left-8 md:left-16 opacity-60" count={8} spread={80} />
 
       {/* Content */}
-      <div className="relative mx-auto max-w-6xl px-5 md:px-8 py-36 md:py-48 lg:py-56">
+      <div className="relative mx-auto max-w-6xl px-5 md:px-8 py-32 md:py-44 lg:py-52">
         <div className="max-w-2xl">
-          <span className="block text-sm font-medium uppercase tracking-widest text-white/60 mb-4">
-            Section 1 — Hero
+          {/* Eyebrow */}
+          <span className="inline-block text-sm font-medium uppercase tracking-widest text-white/50 mb-5">
+            Event Venue &middot; Provo, Utah
           </span>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-light text-white leading-tight">
+
+          {/* Headline */}
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-white leading-tight">
             First impression. One bold headline.
           </h1>
+
+          {/* Subtext */}
           <p className="mt-5 text-lg md:text-xl text-white/80 leading-relaxed max-w-lg">
             Full-width photo with overlay. The visitor should immediately know
-            what The Vale is, where it is, and feel something about it. Two
-            CTAs below.
+            what The Vale is, where it is, and feel something about it.
           </p>
+
+          {/* CTAs */}
           <div className="mt-10 flex flex-wrap gap-4">
-            <div className="px-8 py-4 rounded-md bg-white/20 backdrop-blur-sm text-white text-sm uppercase tracking-wide font-medium border border-white/10">
-              Primary CTA
-            </div>
-            <div className="px-8 py-4 rounded-md border border-white/30 text-white text-sm uppercase tracking-wide font-medium backdrop-blur-sm">
-              Secondary CTA
-            </div>
+            <button
+              onClick={openPicker}
+              className="px-8 py-4 rounded-md bg-vale-accent text-vale-accent-fg border border-vale-accent text-sm uppercase tracking-wide font-medium hover:bg-vale-accent-hover hover:border-vale-accent-hover transition-colors shadow-md"
+            >
+              See it in your colors
+            </button>
+            <a
+              href="/brochure"
+              className="px-8 py-4 rounded-md bg-vale-surface text-vale-fg border border-vale-border text-sm uppercase tracking-wide font-medium hover:bg-vale-bg-alt transition-colors shadow-md"
+            >
+              Build your brochure
+            </a>
           </div>
         </div>
       </div>
